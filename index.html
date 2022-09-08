@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 
-    <title>PyDyna &#8212; PyDyna</title>
+    <title>PyDyna Documentation 0.0.1 &#8212; PyDyna</title>
     
 <script>
   document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
@@ -46,7 +46,7 @@
     <link rel="shortcut icon" href="_static/favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Getting_Started" href="Resources/Getting_Started.html" />
+    <link rel="next" title="Getting Started" href="Resources/Getting_Started.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="docsearch:language" content="en">
   </head>
@@ -93,7 +93,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="Resources/Getting_Started.html">
-  Getting_Started
+  Getting Started
  </a>
 </li>
 
@@ -105,7 +105,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="API/index.html">
-  API Documentation
+  API reference
  </a>
 </li>
 
@@ -165,7 +165,7 @@
     
     
 
-        <li class="nav-item nav-item-this"><a href="">PyDyna</a></li> 
+        <li class="nav-item nav-item-this"><a href="">PyDyna Documentation  0.0.1</a></li> 
       </ul>
     </div>
         </div>
@@ -211,41 +211,48 @@
 <nav id="bd-toc-nav">
     <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#project-overview">
-   Project Overview
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#installation">
-   Installation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#documentation">
-   Documentation
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#usage">
-   Usage
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#license">
-   License
+  <a class="reference internal nav-link" href="#pydyna">
+   PyDyna
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#code-examples">
-     Code Examples
+    <a class="reference internal nav-link" href="#project-overview">
+     Project Overview
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#installation">
+     Installation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#documentation">
+     Documentation
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#usage">
+     Usage
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#license">
+     License
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#code-examples">
+       Code Examples
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rendered-python-code">
+     Rendered Python Code
     </a>
    </li>
   </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#rendered-python-code">
-   Rendered Python Code
-  </a>
  </li>
 </ul>
 
@@ -266,13 +273,14 @@
               
               <article class="bd-article" role="main">
                 
-  <p>PyDyna Documentation  0.0.1</p>
+  <section id="pydyna-documentation-0-0-1">
+<h1>PyDyna Documentation  0.0.1<a class="headerlink" href="#pydyna-documentation-0-0-1" title="Permalink to this heading">#</a></h1>
 <section id="pydyna">
-<h1>PyDyna<a class="headerlink" href="#pydyna" title="Permalink to this heading">#</a></h1>
+<h2>PyDyna<a class="headerlink" href="#pydyna" title="Permalink to this heading">#</a></h2>
 <p>This repository holds Python code for a simple gRPC interface
 to the LS-DYNA solver tools.</p>
 <section id="project-overview">
-<h2>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this heading">#</a></h2>
+<h3>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this heading">#</a></h3>
 <p>There are 3 related packages here, all under the ansys/dyna/ directory.</p>
 <p>pre and post are for code related to pre and post processing support for LS-DYNA.</p>
 <p>solver contains code for interfacing with the LS-DYNA solver directly.
@@ -284,7 +292,7 @@ input files to the container, starting LS-DYNA and monitoring its
 progress, and retrieving results files.</p>
 </section>
 <section id="installation">
-<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h2>
+<h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
 <p>This package is not yet available on PyPI, so for now the only real
 option is for you to download the code from GitHub:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">pyansys</span><span class="o">/</span><span class="n">pyDyna</span>
@@ -293,10 +301,10 @@ option is for you to download the code from GitHub:</p>
 <p>and copy the required files</p>
 </section>
 <section id="documentation">
-<h2>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h2>
+<h3>Documentation<a class="headerlink" href="#documentation" title="Permalink to this heading">#</a></h3>
 </section>
 <section id="usage">
-<h2>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h2>
+<h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
 <p>Here is a basic example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dyna.solver</span> <span class="k">as</span> <span class="nn">solver</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">=</span><span class="n">solver</span><span class="o">.</span><span class="n">DynaSovler</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">)</span>           <span class="c1"># connect to the container</span>
@@ -307,20 +315,20 @@ option is for you to download the code from GitHub:</p>
 </div>
 </section>
 <section id="license">
-<h2>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h2>
+<h3>License<a class="headerlink" href="#license" title="Permalink to this heading">#</a></h3>
 <p>Distributed under the MIT license.  See LICENSE in the root directory
 of the repository for details.</p>
 <div class="toctree-wrapper compound">
 </div>
 <section id="code-examples">
-<h3>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this heading">#</a></h3>
+<h4>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this heading">#</a></h4>
 <p>Here’s a quick preview for how Python code looks using the
 <code class="docutils literal notranslate"><span class="pre">pyansys-DynaSolver</span></code>.  For more examples, click the links at the
 top of the page to see function, method, and class documentation.</p>
 </section>
 </section>
 <section id="rendered-python-code">
-<h2>Rendered Python Code<a class="headerlink" href="#rendered-python-code" title="Permalink to this heading">#</a></h2>
+<h3>Rendered Python Code<a class="headerlink" href="#rendered-python-code" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dyna.solver</span> <span class="k">as</span> <span class="nn">solver</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;5000&quot;</span>
@@ -330,6 +338,7 @@ top of the page to see function, method, and class documentation.</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;i=input.k&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
 </section>
 </section>
 

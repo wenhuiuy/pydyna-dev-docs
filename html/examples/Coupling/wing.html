@@ -94,7 +94,7 @@
         <ul id="navbar-main-elements" class="navbar-nav">
     <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../Resources/Getting_Started.html">
-  Getting_Started
+  Getting Started
  </a>
 </li>
 
@@ -106,7 +106,7 @@
 
 <li class="toctree-l1 nav-item">
  <a class="reference internal nav-link" href="../../API/index.html">
-  API Documentation
+  API reference
  </a>
 </li>
 
@@ -442,14 +442,6 @@ to download the full example code</p>
     <span class="c1">#icfd.create_section_icfd(sid=1)</span>
     <span class="n">mat</span> <span class="o">=</span> <span class="n">MatICFD</span><span class="p">(</span><span class="n">flow_density</span><span class="o">=</span><span class="mf">1.28e-9</span><span class="p">,</span><span class="n">dynamic_viscosity</span><span class="o">=</span><span class="mf">17e-9</span><span class="p">)</span>
 
-    <span class="n">pids</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-    <span class="n">icfd</span><span class="o">.</span><span class="n">mesh_embed_shell</span><span class="p">(</span><span class="n">volid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="n">pids</span><span class="p">)</span>
-    <span class="n">parameter</span> <span class="o">=</span> <span class="p">[</span><span class="o">-</span><span class="mi">950</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">,</span> <span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">]</span>
-    <span class="n">icfd</span><span class="o">.</span><span class="n">mesh_create_size_shape</span><span class="p">(</span>
-        <span class="s2">&quot;BOX&quot;</span><span class="p">,</span> <span class="n">force</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">method</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">msize</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span> <span class="n">parameter</span><span class="o">=</span><span class="n">parameter</span>
-    <span class="p">)</span>
-
-
     <span class="n">slot</span> <span class="o">=</span> <span class="n">ICFDPart</span><span class="p">(</span><span class="mi">129</span><span class="p">)</span>
     <span class="n">slot</span><span class="o">.</span><span class="n">set_material</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
     <span class="n">slot</span><span class="o">.</span><span class="n">set_prescribed_velocity</span><span class="p">(</span><span class="n">dof</span><span class="o">=</span><span class="n">DOF</span><span class="o">.</span><span class="n">X</span><span class="p">,</span><span class="n">motion</span><span class="o">=</span><span class="n">Curve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1e3</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]))</span>
@@ -488,6 +480,8 @@ to download the full example code</p>
     <span class="n">partvol</span><span class="o">.</span><span class="n">set_material</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
 
     <span class="n">meshvol</span> <span class="o">=</span> <span class="n">MeshedVolume</span><span class="p">(</span><span class="n">surfaces</span> <span class="o">=</span> <span class="p">[</span><span class="mi">125</span><span class="p">,</span> <span class="mi">126</span><span class="p">,</span> <span class="mi">127</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="mi">129</span><span class="p">])</span>
+    <span class="n">meshvol</span><span class="o">.</span><span class="n">embed_shell</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">])</span>
+    <span class="n">meshvol</span><span class="o">.</span><span class="n">meshsize_box</span><span class="p">(</span><span class="n">size</span><span class="o">=</span><span class="mf">3.2</span><span class="p">,</span><span class="n">min_point</span><span class="o">=</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">950</span><span class="p">,</span> <span class="o">-</span><span class="mi">80</span><span class="p">,</span> <span class="o">-</span><span class="mi">200</span><span class="p">),</span><span class="n">max_point</span><span class="o">=</span><span class="n">Point</span><span class="p">(</span><span class="o">-</span><span class="mi">600</span><span class="p">,</span> <span class="mi">150</span><span class="p">,</span> <span class="mi">30</span><span class="p">))</span>
 
     <span class="c1"># fe-rig.k</span>
     <span class="n">icfd</span><span class="o">.</span><span class="n">create_control_accuracy</span><span class="p">(</span><span class="n">osu</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">inn</span><span class="o">=</span><span class="mi">4</span><span class="p">)</span>
