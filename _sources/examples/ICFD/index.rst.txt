@@ -1,0 +1,43 @@
+
+
+.. _sphx_glr_examples_ICFD:
+
+ICFD examples
+~~~~~~~~~~~~~~
+
+These examples show how to create ICFD model.
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a simple ICFD cylinder flow input deck.">
+
+.. only:: html
+
+  .. image:: /examples/ICFD/images/thumb/sphx_glr_icfd_cylinderflow_thumb.png
+    :alt: Cylinder flow example
+
+  :ref:`sphx_glr_examples_ICFD_icfd_cylinderflow.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cylinder flow example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/ICFD/icfd_cylinderflow
+

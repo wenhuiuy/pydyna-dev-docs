@@ -1,0 +1,58 @@
+
+
+.. _sphx_glr_examples_solver:
+
+PyDyna-slover examples
+~~~~~~~~~~~~~~~~~~~~~~~
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Sample use of DynaSolver to run a small job in minikube">
+
+.. only:: html
+
+  .. image:: /examples/solver/images/thumb/sphx_glr_runjob_example_thumb.png
+    :alt: DynaSolver example
+
+  :ref:`sphx_glr_examples_solver_runjob_example.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">DynaSolver example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="Commands are read from an optional file, or interactively,and sent to DYNA via gRPC">
+
+.. only:: html
+
+  .. image:: /examples/solver/images/thumb/sphx_glr_client_thumb.png
+    :alt: Sample interactive client for DynaSolver.
+
+  :ref:`sphx_glr_examples_solver_client.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Sample interactive client for DynaSolver.</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/solver/runjob_example
+   /examples/solver/client
+

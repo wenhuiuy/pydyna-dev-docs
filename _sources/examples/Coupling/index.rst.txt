@@ -1,0 +1,43 @@
+
+
+.. _sphx_glr_examples_Coupling:
+
+Coupling examples
+~~~~~~~~~~~~~~~~~~
+These examples show how to create coupling model.
+The wing model: ICFD-DEM coupling
+
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an Wing input deck.">
+
+.. only:: html
+
+  .. image:: /examples/Coupling/images/thumb/sphx_glr_wing_thumb.png
+    :alt: Wing example
+
+  :ref:`sphx_glr_examples_Coupling_wing.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Wing example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/Coupling/wing
+

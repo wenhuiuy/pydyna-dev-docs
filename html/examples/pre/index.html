@@ -1,0 +1,348 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>PyDyna examples &#8212; PyDyna</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Cylinder flow example" href="icfd_cylinderflow.html" />
+    <link rel="prev" title="Examples" href="../index.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/Getting_Started.html">
+  Getting_Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/User_Guide.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API/index.html">
+  API Documentation
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="../index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/Contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pydyna" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDyna</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Examples</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">PyDyna examples</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="current reference internal" href="#">
+   PyDyna examples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="icfd_cylinderflow.html">
+     Cylinder flow example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="em_railgun.html">
+     Railgun example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="sale_efp.html">
+     Cylinder flow example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="airbag_deploy.html">
+     Airbag deploy example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="iga_sample.html">
+     IGA example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="camry_rc.html">
+     Crash example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="belted_dummy.html">
+     Belted dummy example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="wing.html">
+     Wing example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+
+<nav id="bd-toc-nav">
+    
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="pydyna-examples">
+<span id="sphx-glr-examples-pre"></span><h1>PyDyna examples<a class="headerlink" href="#pydyna-examples" title="Permalink to this heading">#</a></h1>
+<p>These examples show how to create dyna keyword inputdeck using PyDyna-pre.</p>
+<div class="sphx-glr-thumbnails"><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a simple ICFD cylinder flow input deck."><img alt="Cylinder flow example" src="../../_images/sphx_glr_icfd_cylinderflow_thumb.png" />
+<p><a class="reference internal" href="icfd_cylinderflow.html#sphx-glr-examples-pre-icfd-cylinderflow-py"><span class="std std-ref">Cylinder flow example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Cylinder flow example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an EM Railgun input deck."><img alt="Railgun example" src="../../_images/sphx_glr_em_railgun_thumb.png" />
+<p><a class="reference internal" href="em_railgun.html#sphx-glr-examples-pre-em-railgun-py"><span class="std std-ref">Railgun example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Railgun example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a SALE input deck."><img alt="Cylinder flow example" src="../../_images/sphx_glr_sale_efp_thumb.png" />
+<p><a class="reference internal" href="sale_efp.html#sphx-glr-examples-pre-sale-efp-py"><span class="std std-ref">Cylinder flow example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Cylinder flow example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example show how to create an Airbag deploy model with Pydyna-pre module"><img alt="Airbag deploy example" src="../../_images/sphx_glr_airbag_deploy_thumb.png" />
+<p><a class="reference internal" href="airbag_deploy.html#sphx-glr-examples-pre-airbag-deploy-py"><span class="std std-ref">Airbag deploy example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Airbag deploy example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an IGA input deck."><img alt="IGA example" src="../../_images/sphx_glr_iga_sample_thumb.png" />
+<p><a class="reference internal" href="iga_sample.html#sphx-glr-examples-pre-iga-sample-py"><span class="std std-ref">IGA example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">IGA example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a simple crash input deck."><img alt="Crash example" src="../../_images/sphx_glr_camry_rc_thumb.png" />
+<p><a class="reference internal" href="camry_rc.html#sphx-glr-examples-pre-camry-rc-py"><span class="std std-ref">Crash example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Crash example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example show how to create an Belted dummy model with Pydyna-pre module"><img alt="Belted dummy example" src="../../_images/sphx_glr_belted_dummy_thumb.png" />
+<p><a class="reference internal" href="belted_dummy.html#sphx-glr-examples-pre-belted-dummy-py"><span class="std std-ref">Belted dummy example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Belted dummy example</div>
+</div><div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an Wing input deck."><img alt="Wing example" src="../../_images/sphx_glr_wing_thumb.png" />
+<p><a class="reference internal" href="wing.html#sphx-glr-examples-pre-wing-py"><span class="std std-ref">Wing example</span></a></p>
+  <div class="sphx-glr-thumbnail-title">Wing example</div>
+</div></div><div class="toctree-wrapper compound">
+</div>
+</section>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

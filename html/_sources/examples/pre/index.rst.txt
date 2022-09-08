@@ -1,0 +1,167 @@
+
+
+.. _sphx_glr_examples_pre:
+
+PyDyna examples
+~~~~~~~~~~~~~~~
+These examples show how to create dyna keyword inputdeck using PyDyna-pre. 
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbnails">
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a simple ICFD cylinder flow input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_icfd_cylinderflow_thumb.png
+    :alt: Cylinder flow example
+
+  :ref:`sphx_glr_examples_pre_icfd_cylinderflow.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cylinder flow example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an EM Railgun input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_em_railgun_thumb.png
+    :alt: Railgun example
+
+  :ref:`sphx_glr_examples_pre_em_railgun.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Railgun example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a SALE input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_sale_efp_thumb.png
+    :alt: Cylinder flow example
+
+  :ref:`sphx_glr_examples_pre_sale_efp.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Cylinder flow example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create an Airbag deploy model with Pydyna-pre module">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_airbag_deploy_thumb.png
+    :alt: Airbag deploy example
+
+  :ref:`sphx_glr_examples_pre_airbag_deploy.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Airbag deploy example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an IGA input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_iga_sample_thumb.png
+    :alt: IGA example
+
+  :ref:`sphx_glr_examples_pre_iga_sample.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">IGA example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create a simple crash input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_camry_rc_thumb.png
+    :alt: Crash example
+
+  :ref:`sphx_glr_examples_pre_camry_rc.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Crash example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example show how to create an Belted dummy model with Pydyna-pre module">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_belted_dummy_thumb.png
+    :alt: Belted dummy example
+
+  :ref:`sphx_glr_examples_pre_belted_dummy.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Belted dummy example</div>
+    </div>
+
+
+.. raw:: html
+
+    <div class="sphx-glr-thumbcontainer" tooltip="This example demonstrates how to create an Wing input deck.">
+
+.. only:: html
+
+  .. image:: /examples/pre/images/thumb/sphx_glr_wing_thumb.png
+    :alt: Wing example
+
+  :ref:`sphx_glr_examples_pre_wing.py`
+
+.. raw:: html
+
+      <div class="sphx-glr-thumbnail-title">Wing example</div>
+    </div>
+
+
+.. raw:: html
+
+    </div>
+
+
+.. toctree::
+   :hidden:
+
+   /examples/pre/icfd_cylinderflow
+   /examples/pre/em_railgun
+   /examples/pre/sale_efp
+   /examples/pre/airbag_deploy
+   /examples/pre/iga_sample
+   /examples/pre/camry_rc
+   /examples/pre/belted_dummy
+   /examples/pre/wing
+
