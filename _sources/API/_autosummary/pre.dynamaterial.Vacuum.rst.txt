@@ -1,0 +1,34 @@
+pre.dynamaterial.Vacuum
+=======================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: Vacuum
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Vacuum.create
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Vacuum.estimated_material_density
+      
+   
+   

@@ -1,0 +1,28 @@
+pre.dynabase.HourglassType
+==========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: HourglassType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+      
+      
+      
+   
+   

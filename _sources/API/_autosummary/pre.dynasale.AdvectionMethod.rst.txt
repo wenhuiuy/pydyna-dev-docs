@@ -1,0 +1,25 @@
+pre.dynasale.AdvectionMethod
+============================
+
+.. currentmodule:: pre.dynasale
+
+.. autoclass:: AdvectionMethod
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

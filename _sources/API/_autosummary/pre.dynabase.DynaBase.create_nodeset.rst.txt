@@ -1,0 +1,6 @@
+create\_nodeset
+===============
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_nodeset

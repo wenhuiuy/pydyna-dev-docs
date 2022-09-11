@@ -1,0 +1,23 @@
+pre.dynabase.EnergyFlag
+=======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: EnergyFlag
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

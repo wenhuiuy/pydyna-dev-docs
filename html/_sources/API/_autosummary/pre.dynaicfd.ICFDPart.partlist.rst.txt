@@ -1,0 +1,6 @@
+partlist
+========
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoattribute:: ICFDPart.partlist

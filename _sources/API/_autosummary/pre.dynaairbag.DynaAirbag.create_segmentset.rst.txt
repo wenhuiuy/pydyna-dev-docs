@@ -1,0 +1,6 @@
+create\_segmentset
+==================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_segmentset

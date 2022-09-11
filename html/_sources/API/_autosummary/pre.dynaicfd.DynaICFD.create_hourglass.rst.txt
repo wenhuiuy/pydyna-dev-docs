@@ -1,0 +1,6 @@
+create\_hourglass
+=================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_hourglass

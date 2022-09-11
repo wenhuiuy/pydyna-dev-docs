@@ -1,0 +1,6 @@
+mesh\_create\_size\_shape
+=========================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.mesh_create_size_shape

@@ -1,0 +1,23 @@
+pre.dynaem.FEMSOLVER
+====================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: FEMSOLVER
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

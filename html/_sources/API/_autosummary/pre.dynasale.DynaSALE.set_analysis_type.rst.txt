@@ -1,0 +1,6 @@
+set\_analysis\_type
+===================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.set_analysis_type

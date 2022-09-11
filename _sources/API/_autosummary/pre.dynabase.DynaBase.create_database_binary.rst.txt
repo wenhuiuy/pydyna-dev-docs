@@ -1,0 +1,6 @@
+create\_database\_binary
+========================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_database_binary

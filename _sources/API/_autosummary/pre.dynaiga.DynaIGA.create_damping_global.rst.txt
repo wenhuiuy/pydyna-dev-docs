@@ -1,0 +1,6 @@
+create\_damping\_global
+=======================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_damping_global

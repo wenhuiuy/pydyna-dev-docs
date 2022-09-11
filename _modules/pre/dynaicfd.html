@@ -1,0 +1,933 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pre.dynaicfd &#8212; PyDyna</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../../index.html">
+  
+  
+  
+  
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/Getting_Started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/User_Guide.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../API/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../../Resources/Contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pydyna" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../../index.html">PyDyna</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="../index.html" accesskey="U">Module code</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">pre.dynaicfd</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+    
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <h1>Source code for pre.dynaicfd</h1><div class="highlight"><pre>
+<span></span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">ICFD API</span>
+<span class="sd">==========</span>
+
+<span class="sd">Module to create Incompressible Computational Fluid Dynamics(ICFD) dyna input deck</span>
+<span class="sd">&quot;&quot;&quot;</span>
+
+<span class="kn">import</span> <span class="nn">logging</span>
+
+<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
+
+
+<div class="viewcode-block" id="DynaICFD"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.html#pre.dynaicfd.DynaICFD">[docs]</a><span class="k">class</span> <span class="nc">DynaICFD</span><span class="p">(</span><span class="n">DynaBase</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Contains methods to create keyword related to ICFD.&quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">):</span>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_section_icfd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timestep</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">termination</span> <span class="o">=</span> <span class="mf">1e28</span>
+
+<div class="viewcode-block" id="DynaICFD.set_timestep"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.set_timestep.html#pre.dynaicfd.DynaICFD.set_timestep">[docs]</a>    <span class="k">def</span> <span class="nf">set_timestep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestep</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set time step for the fluid problem.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dt : float</span>
+<span class="sd">            Time step for the fluid problem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">timestep</span> <span class="o">=</span> <span class="n">timestep</span></div>
+
+<div class="viewcode-block" id="DynaICFD.set_termination"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.set_termination.html#pre.dynaicfd.DynaICFD.set_termination">[docs]</a>    <span class="k">def</span> <span class="nf">set_termination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">termination_time</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set total time of simulation for the fluid problem.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        termination_time : float</span>
+<span class="sd">            Total time of simulation for the fluid problem.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">termination</span> <span class="o">=</span> <span class="n">termination_time</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_control_general"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_control_general.html#pre.dynaicfd.DynaICFD.create_control_general">[docs]</a>    <span class="k">def</span> <span class="nf">create_control_general</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dvcl</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">rdvcl</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Specify the type of CFD analysis.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        atype : int</span>
+<span class="sd">            Analysis type.</span>
+<span class="sd">        mtype : int</span>
+<span class="sd">            Solving method type.</span>
+<span class="sd">        dvcl : int</span>
+<span class="sd">            Divergence cleaning flag.</span>
+<span class="sd">        rdvcl : int</span>
+<span class="sd">            Remeshing divergence cleaning.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlGeneral</span><span class="p">(</span>
+            <span class="n">ICFDControlGeneralRequest</span><span class="p">(</span><span class="n">atype</span><span class="o">=</span><span class="n">atype</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">dvcl</span><span class="o">=</span><span class="n">dvcl</span><span class="p">,</span> <span class="n">rdvcl</span><span class="o">=</span><span class="n">rdvcl</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control general Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_control_output"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_control_output.html#pre.dynaicfd.DynaICFD.create_control_output">[docs]</a>    <span class="k">def</span> <span class="nf">create_control_output</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">msgl</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Modifies default values for screen and file outputs related to this fluid solver only.</span>
+<span class="sd">     </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        msgl : int</span>
+<span class="sd">            Message level.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlOutput</span><span class="p">(</span><span class="n">ICFDControlOutputRequest</span><span class="p">(</span><span class="n">msgl</span><span class="o">=</span><span class="n">msgl</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control output Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_control_turbulence"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_control_turbulence.html#pre.dynaicfd.DynaICFD.create_control_turbulence">[docs]</a>    <span class="k">def</span> <span class="nf">create_control_turbulence</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tmod</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Modify the default values for the turbulence model.</span>
+<span class="sd">  </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        tmod : int</span>
+<span class="sd">            Indicates what turbulence model will be used.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlTurbulence</span><span class="p">(</span>
+            <span class="n">ICFDControlTurbulenceRequest</span><span class="p">(</span><span class="n">tmod</span><span class="o">=</span><span class="n">tmod</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control turbulence Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_control_dem_coupling"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_control_dem_coupling.html#pre.dynaicfd.DynaICFD.create_control_dem_coupling">[docs]</a>    <span class="k">def</span> <span class="nf">create_control_dem_coupling</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ctype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">bt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">1e28</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Activate coupling between the ICFD and DEM solvers.</span>
+<span class="sd">       </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        ctype : int</span>
+<span class="sd">            Indicates the coupling direction to the solver.</span>
+<span class="sd">        bt : float</span>
+<span class="sd">            Birth time for the DEM coupling.</span>
+<span class="sd">        dt : float</span>
+<span class="sd">            Death time for the DEM coupling.</span>
+<span class="sd">        sf : float</span>
+<span class="sd">            Scale factor applied to the force transmitted by the fluid to the structure.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlDEMCoupling</span><span class="p">(</span>
+            <span class="n">ICFDControlDEMCouplingRequest</span><span class="p">(</span><span class="n">ctype</span><span class="o">=</span><span class="n">ctype</span><span class="p">,</span> <span class="n">bt</span><span class="o">=</span><span class="n">bt</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">sf</span><span class="o">=</span><span class="n">sf</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control dem coupling Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_section_icfd"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_section_icfd.html#pre.dynaicfd.DynaICFD.create_section_icfd">[docs]</a>    <span class="k">def</span> <span class="nf">create_section_icfd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_SECTION keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sid : int</span>
+<span class="sd">            Section identifier.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateSection</span><span class="p">(</span><span class="n">ICFDSectionRequest</span><span class="p">(</span><span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD Section Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_mat_icfd"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_mat_icfd.html#pre.dynaicfd.DynaICFD.create_mat_icfd">[docs]</a>    <span class="k">def</span> <span class="nf">create_mat_icfd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">flg</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">vis</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_MAT keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        mid : int</span>
+<span class="sd">            Material ID.</span>
+<span class="sd">        flg : int</span>
+<span class="sd">            Flag to choose between fully incompressible, slightly compressible, or barotropic flows:</span>
+<span class="sd">            EQ.0: Vacuum (free surface problems only)</span>
+<span class="sd">            EQ.1: Fully incompressible fluid.</span>
+<span class="sd">        ro : float</span>
+<span class="sd">            Flow density.</span>
+<span class="sd">        vis : float</span>
+<span class="sd">            Dynamic viscosity.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateMat</span><span class="p">(</span><span class="n">ICFDMatRequest</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">flg</span><span class="o">=</span><span class="n">flg</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="n">ro</span><span class="p">,</span> <span class="n">vis</span><span class="o">=</span><span class="n">vis</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD material Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_part_icfd"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_part_icfd.html#pre.dynaicfd.DynaICFD.create_part_icfd">[docs]</a>    <span class="k">def</span> <span class="nf">create_part_icfd</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">secid</span><span class="p">,</span> <span class="n">mid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_PART keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            Part identifier for fluid surfaces.</span>
+<span class="sd">        secid : int</span>
+<span class="sd">            Section identifier defined with the *ICFD_SECTION card.</span>
+<span class="sd">        mid : int</span>
+<span class="sd">            Material identifier defined with the *ICFD_MAT card.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreatePart</span><span class="p">(</span><span class="n">ICFDPartRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD part Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_part_vol"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_part_vol.html#pre.dynaicfd.DynaICFD.create_part_vol">[docs]</a>    <span class="k">def</span> <span class="nf">create_part_vol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">secid</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">spids</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_PART_VOL keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            Part identifier for fluid volumes.</span>
+<span class="sd">        secid : int</span>
+<span class="sd">            Section identifier defined by the *ICFD_SECTION card.</span>
+<span class="sd">        mid : int</span>
+<span class="sd">            Material identifier.</span>
+<span class="sd">        spids : list</span>
+<span class="sd">            List of Part IDs for the surface elements that define the volume mesh.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreatePartVol</span><span class="p">(</span>
+            <span class="n">ICFDPartVolRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">spids</span><span class="o">=</span><span class="n">spids</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD part volume Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_db_drag"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_db_drag.html#pre.dynaicfd.DynaICFD.create_db_drag">[docs]</a>    <span class="k">def</span> <span class="nf">create_db_drag</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_DATABASE_DRAG keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            Part ID of the surface where the drag force will be computed.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateDBDrag</span><span class="p">(</span><span class="n">ICFDDBDragRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD database drag Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_bdy_prescribed_vel"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_bdy_prescribed_vel.html#pre.dynaicfd.DynaICFD.create_bdy_prescribed_vel">[docs]</a>    <span class="k">def</span> <span class="nf">create_bdy_prescribed_vel</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">dof</span><span class="p">,</span> <span class="n">vad</span><span class="p">,</span> <span class="n">lcid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_BOUNDARY_PRESCRIBED_VEL keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            PID for a fluid surface.</span>
+<span class="sd">        dof : int</span>
+<span class="sd">            Applicable degrees of freedom:</span>
+<span class="sd">            EQ.1: x-degree of freedom.</span>
+<span class="sd">            EQ.2: y-degree of freedom.</span>
+<span class="sd">            EQ.3: z-degree of freedom.</span>
+<span class="sd">            EQ.4: Normal direction degree of freedom.</span>
+<span class="sd">        vad : int</span>
+<span class="sd">            Velocity flag:</span>
+<span class="sd">            EQ.1: Linear velocity.</span>
+<span class="sd">            EQ.2: Angular velocity.</span>
+<span class="sd">            EQ.3: Parabolic velocity profile.</span>
+<span class="sd">            EQ.4: Activates synthetic turbulent field on part.</span>
+<span class="sd">        lcid : int</span>
+<span class="sd">            Load curve ID used to describe motion value versus time.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyPrescribedVel</span><span class="p">(</span>
+            <span class="n">ICFDBdyPrescribedVelRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="n">dof</span><span class="p">,</span> <span class="n">vad</span><span class="o">=</span><span class="n">vad</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary prescribed velocity Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_bdy_prescribed_pre"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_bdy_prescribed_pre.html#pre.dynaicfd.DynaICFD.create_bdy_prescribed_pre">[docs]</a>    <span class="k">def</span> <span class="nf">create_bdy_prescribed_pre</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">lcid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_BOUNDARY_PRESCRIBED_PRE keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            PID for a fluid surface..</span>
+<span class="sd">        lcid : int</span>
+<span class="sd">            Load curve ID to describe the pressure value versus time.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyPrescribedPre</span><span class="p">(</span>
+            <span class="n">ICFDBdyPrescribedPreRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary prescribed pressure Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_bdy_free_slip"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_bdy_free_slip.html#pre.dynaicfd.DynaICFD.create_bdy_free_slip">[docs]</a>    <span class="k">def</span> <span class="nf">create_bdy_free_slip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_BOUNDARY_FREESLIP keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            PID of the fluid surface where a free-slip boundary condition is applied.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyFreeSlip</span><span class="p">(</span><span class="n">ICFDBdyFreeSlipRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary freeslip Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_bdy_non_slip"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_bdy_non_slip.html#pre.dynaicfd.DynaICFD.create_bdy_non_slip">[docs]</a>    <span class="k">def</span> <span class="nf">create_bdy_non_slip</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *ICFD_BOUNDARY_NONSLIP keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            PID of the fluid surface where a non-slip boundary condition is applied.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyNonSlip</span><span class="p">(</span><span class="n">ICFDBdyNonSlipRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary nonslip Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.create_solver_tol_mmov"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.create_solver_tol_mmov.html#pre.dynaicfd.DynaICFD.create_solver_tol_mmov">[docs]</a>    <span class="k">def</span> <span class="nf">create_solver_tol_mmov</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">atol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="mf">1e-8</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Allows the user to change the default tolerance values for the mesh movement algorithm.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        atol : float</span>
+<span class="sd">            Absolute convergence criteria.</span>
+<span class="sd">        rtol : float</span>
+<span class="sd">            Relative convergence criteria.</span>
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateSolverTolMMOV</span><span class="p">(</span>
+            <span class="n">ICFDSolverTolMMOVRequest</span><span class="p">(</span><span class="n">atol</span><span class="o">=</span><span class="n">atol</span><span class="p">,</span> <span class="n">rtol</span><span class="o">=</span><span class="n">rtol</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;tolerance values for the mesh movement algorithm changed...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.mesh_create_volume"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.mesh_create_volume.html#pre.dynaicfd.DynaICFD.mesh_create_volume">[docs]</a>    <span class="k">def</span> <span class="nf">mesh_create_volume</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volid</span><span class="p">,</span> <span class="n">pids</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *MESH_VOLUME keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        volid : int</span>
+<span class="sd">            ID assigned to the new volume.</span>
+<span class="sd">        pids : list</span>
+<span class="sd">            list of Part IDs for the surface elements that are used to define the volume.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateVolume</span><span class="p">(</span><span class="n">MeshVolumeRequest</span><span class="p">(</span><span class="n">volid</span><span class="o">=</span><span class="n">volid</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="n">pids</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;MESH volume Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.mesh_create_bl"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.mesh_create_bl.html#pre.dynaicfd.DynaICFD.mesh_create_bl">[docs]</a>    <span class="k">def</span> <span class="nf">mesh_create_bl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">,</span> <span class="n">nelth</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create *MESH_BL keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pid : int</span>
+<span class="sd">            Part identifier for the surface element.</span>
+<span class="sd">        nelth : int</span>
+<span class="sd">            Number of elements normal to the surface (in the boundary layer) is NELTH+1.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateBl</span><span class="p">(</span><span class="n">MeshBlRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">pid</span><span class="p">,</span> <span class="n">nelth</span><span class="o">=</span><span class="n">nelth</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;MESH boundary-layer Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.mesh_create_size_shape"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.mesh_create_size_shape.html#pre.dynaicfd.DynaICFD.mesh_create_size_shape">[docs]</a>    <span class="k">def</span> <span class="nf">mesh_create_size_shape</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sname</span><span class="p">,</span> <span class="n">force</span><span class="p">,</span> <span class="n">method</span><span class="p">,</span> <span class="n">msize</span><span class="p">,</span> <span class="n">parameter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Defines a local mesh size in specific zones corresponding to given geometrical shapes.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        sname : string</span>
+<span class="sd">            Shape name. Possibilities include &quot;box&quot;, &quot;cylinder&quot;, &quot;pol&quot; and &quot;sphere&quot;</span>
+<span class="sd">        force : int</span>
+<span class="sd">            Force to keep the mesh size criteria even after a remeshing is done.</span>
+<span class="sd">        method : int</span>
+<span class="sd">            Specifies which method to use when defining the second card.</span>
+<span class="sd">        msize : float</span>
+<span class="sd">            Mesh size that needs to be applied in the zone of the shape defined by SNAME</span>
+<span class="sd">        parameter : list</span>
+<span class="sd">            The parameters to define shape.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateSizeShape</span><span class="p">(</span>
+            <span class="n">MeshSizeShapeRequest</span><span class="p">(</span>
+                <span class="n">sname</span><span class="o">=</span><span class="n">sname</span><span class="p">,</span>
+                <span class="n">force</span><span class="o">=</span><span class="n">force</span><span class="p">,</span>
+                <span class="n">method</span><span class="o">=</span><span class="n">method</span><span class="p">,</span>
+                <span class="n">msize</span><span class="o">=</span><span class="n">msize</span><span class="p">,</span>
+                <span class="n">parameter</span><span class="o">=</span><span class="n">parameter</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;MESH size shape Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.mesh_embed_shell"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.mesh_embed_shell.html#pre.dynaicfd.DynaICFD.mesh_embed_shell">[docs]</a>    <span class="k">def</span> <span class="nf">mesh_embed_shell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">volid</span><span class="p">,</span> <span class="n">pids</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define surfaces that the mesher will embed inside the volume mesh.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        volid : int</span>
+<span class="sd">            Volume mesh ID.</span>
+<span class="sd">        pids : list</span>
+<span class="sd">            Part IDs for the surface elements that will be embedded in the volume mesh.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateEmbedShell</span><span class="p">(</span>
+            <span class="n">MeshEmbedShellRequest</span><span class="p">(</span><span class="n">volid</span><span class="o">=</span><span class="n">volid</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="n">pids</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Embed surfaces Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaICFD.save_file"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DynaICFD.save_file.html#pre.dynaicfd.DynaICFD.save_file">[docs]</a>    <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save keyword files.&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlTime</span><span class="p">(</span>
+            <span class="n">ICFDControlTimeRequest</span><span class="p">(</span><span class="n">tim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">termination</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timestep</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control time Created...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">create_section_icfd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">ICFDPart</span><span class="o">.</span><span class="n">partlist</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">set_property</span><span class="p">()</span>
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">ICFDVolumePart</span><span class="o">.</span><span class="n">partlist</span><span class="p">:</span>
+            <span class="n">obj</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">SaveFile</span><span class="p">(</span><span class="n">SaveFileRequest</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mainname</span><span class="p">))</span>
+        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mainname</span> <span class="o">+</span> <span class="s2">&quot; is outputed...&quot;</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div></div>
+
+
+<div class="viewcode-block" id="Compressible"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.Compressible.html#pre.dynaicfd.Compressible">[docs]</a><span class="k">class</span> <span class="nc">Compressible</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">VACUUM</span> <span class="o">=</span> <span class="mi">0</span>
+    <span class="n">FULLY_INCOMPRESSIBLE_FLUID</span> <span class="o">=</span> <span class="mi">1</span></div>
+
+<div class="viewcode-block" id="MatICFD"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.MatICFD.html#pre.dynaicfd.MatICFD">[docs]</a><span class="k">class</span> <span class="nc">MatICFD</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Specify physical properties for the fluid material.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">        mid : int</span>
+<span class="sd">            Material ID.</span>
+<span class="sd">        flag : int</span>
+<span class="sd">            Flag to choose between fully incompressible, slightly compressible, or barotropic flows:</span>
+<span class="sd">            EQ.0: Vacuum (free surface problems only)</span>
+<span class="sd">            EQ.1: Fully incompressible fluid.</span>
+<span class="sd">        flow_density : float</span>
+<span class="sd">            Flow density.</span>
+<span class="sd">        dynamic_viscosity : float</span>
+<span class="sd">            Dynamic viscosity.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span>
+        <span class="n">flag</span><span class="o">=</span><span class="n">Compressible</span><span class="o">.</span><span class="n">FULLY_INCOMPRESSIBLE_FLUID</span><span class="p">,</span>
+        <span class="n">flow_density</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+        <span class="n">dynamic_viscosity</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateMat</span><span class="p">(</span>
+            <span class="n">ICFDMatRequest</span><span class="p">(</span><span class="n">flg</span><span class="o">=</span><span class="n">flag</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="n">flow_density</span><span class="p">,</span> <span class="n">vis</span><span class="o">=</span><span class="n">dynamic_viscosity</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ICFD material </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">material_id</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span></div>
+
+
+<div class="viewcode-block" id="DOF"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.DOF.html#pre.dynaicfd.DOF">[docs]</a><span class="k">class</span> <span class="nc">DOF</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">X</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">Y</span> <span class="o">=</span> <span class="mi">2</span>
+    <span class="n">Z</span> <span class="o">=</span> <span class="mi">3</span></div>
+
+
+<div class="viewcode-block" id="Vel"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.Vel.html#pre.dynaicfd.Vel">[docs]</a><span class="k">class</span> <span class="nc">Vel</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
+    <span class="n">LINEAR_VELOCITY</span> <span class="o">=</span> <span class="mi">1</span>
+    <span class="n">ANGULAR_VELOCITY</span> <span class="o">=</span> <span class="mi">2</span></div>
+
+
+<div class="viewcode-block" id="ICFDPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.html#pre.dynaicfd.ICFDPart">[docs]</a><span class="k">class</span> <span class="nc">ICFDPart</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define part for the incompressible flow solver.&quot;&quot;&quot;</span>
+
+    <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">secid</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="n">ICFDPart</span><span class="o">.</span><span class="n">partlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ICFDPart.set_material"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_material.html#pre.dynaicfd.ICFDPart.set_material">[docs]</a>    <span class="k">def</span> <span class="nf">set_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set material&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">material_id</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_prescribed_velocity"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_prescribed_velocity.html#pre.dynaicfd.ICFDPart.set_prescribed_velocity">[docs]</a>    <span class="k">def</span> <span class="nf">set_prescribed_velocity</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">motion</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="n">DOF</span><span class="o">.</span><span class="n">X</span><span class="p">,</span> <span class="n">velocity_flag</span><span class="o">=</span><span class="n">Vel</span><span class="o">.</span><span class="n">LINEAR_VELOCITY</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Impose the fluid velocity on the boundary.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        dof : int</span>
+<span class="sd">            Applicable degrees of freedom:</span>
+<span class="sd">            EQ.1: x-degree of freedom.</span>
+<span class="sd">            EQ.2: y-degree of freedom.</span>
+<span class="sd">            EQ.3: z-degree of freedom.</span>
+<span class="sd">            EQ.4: Normal direction degree of freedom.</span>
+<span class="sd">        velocity_flag : int</span>
+<span class="sd">            Velocity flag:</span>
+<span class="sd">            EQ.1: Linear velocity.</span>
+<span class="sd">            EQ.2: Angular velocity.</span>
+<span class="sd">            EQ.3: Parabolic velocity profile.</span>
+<span class="sd">            EQ.4: Activates synthetic turbulent field on part.</span>
+<span class="sd">        motion : Curve</span>
+<span class="sd">            Load curve used to describe motion value versus time.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">motion</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
+        <span class="n">lcid</span> <span class="o">=</span> <span class="n">motion</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyPrescribedVel</span><span class="p">(</span>
+            <span class="n">ICFDBdyPrescribedVelRequest</span><span class="p">(</span>
+                <span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">dof</span><span class="o">=</span><span class="n">dof</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">vad</span><span class="o">=</span><span class="n">velocity_flag</span><span class="o">.</span><span class="n">value</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary prescribed velocity Created...&quot;</span><span class="p">)</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_prescribed_pressure"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_prescribed_pressure.html#pre.dynaicfd.ICFDPart.set_prescribed_pressure">[docs]</a>    <span class="k">def</span> <span class="nf">set_prescribed_pressure</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pressure</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Impose a fluid pressure on the boundary.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        pressure : Curve</span>
+<span class="sd">            Load curve to describe the pressure value versus time.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">pressure</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
+        <span class="n">lcid</span> <span class="o">=</span> <span class="n">pressure</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyPrescribedPre</span><span class="p">(</span>
+            <span class="n">ICFDBdyPrescribedPreRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary prescribed pressure Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_free_slip"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_free_slip.html#pre.dynaicfd.ICFDPart.set_free_slip">[docs]</a>    <span class="k">def</span> <span class="nf">set_free_slip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Specify the fluid boundary with free-slip boundary condition.&quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyFreeSlip</span><span class="p">(</span><span class="n">ICFDBdyFreeSlipRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary freeslip Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_non_slip"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_non_slip.html#pre.dynaicfd.ICFDPart.set_non_slip">[docs]</a>    <span class="k">def</span> <span class="nf">set_non_slip</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Specify the fluid boundary with a non-slip boundary condition.&quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateBdyNonSlip</span><span class="p">(</span><span class="n">ICFDBdyNonSlipRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD boundary nonslip Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ICFDPart.compute_drag_force"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.compute_drag_force.html#pre.dynaicfd.ICFDPart.compute_drag_force">[docs]</a>    <span class="k">def</span> <span class="nf">compute_drag_force</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Enables the computation of drag forces over given surface parts of the model.&quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateDBDrag</span><span class="p">(</span><span class="n">ICFDDBDragRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD database drag Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_boundary_layer"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_boundary_layer.html#pre.dynaicfd.ICFDPart.set_boundary_layer">[docs]</a>    <span class="k">def</span> <span class="nf">set_boundary_layer</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="o">=</span><span class="mi">3</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;define a boundary-layer mesh as a refinement on volume-mesh.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        number : int</span>
+<span class="sd">            Number of elements normal to the surface (in the boundary layer).</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateBl</span><span class="p">(</span><span class="n">MeshBlRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">nelth</span><span class="o">=</span><span class="n">number</span> <span class="o">-</span> <span class="mi">1</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;MESH boundary-layer Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="ICFDPart.set_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_property.html#pre.dynaicfd.ICFDPart.set_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">secid</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">SetICFDPartProperty</span><span class="p">(</span>
+            <span class="n">ICFDPartPropertyRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mid</span><span class="p">)</span>
+        <span class="p">)</span></div></div>
+
+
+<div class="viewcode-block" id="ICFDVolumePart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDVolumePart.html#pre.dynaicfd.ICFDVolumePart">[docs]</a><span class="k">class</span> <span class="nc">ICFDVolumePart</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Assigns material properties to the nodes enclosed by surface ICFD parts.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    surfaces : list</span>
+<span class="sd">        List of Part IDs for the surface elements that define the volume mesh.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">secid</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surfaces</span> <span class="o">=</span> <span class="n">surfaces</span>
+        <span class="n">ICFDVolumePart</span><span class="o">.</span><span class="n">partlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
+
+<div class="viewcode-block" id="ICFDVolumePart.set_material"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDVolumePart.set_material.html#pre.dynaicfd.ICFDVolumePart.set_material">[docs]</a>    <span class="k">def</span> <span class="nf">set_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set material&quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">material_id</span></div>
+
+<div class="viewcode-block" id="ICFDVolumePart.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDVolumePart.create.html#pre.dynaicfd.ICFDVolumePart.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreatePartVol</span><span class="p">(</span>
+            <span class="n">ICFDPartVolRequest</span><span class="p">(</span><span class="n">secid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mid</span><span class="p">,</span> <span class="n">spids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">surfaces</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ICFD part volume </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">ret</span></div></div>
+
+
+<div class="viewcode-block" id="MeshedVolume"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.MeshedVolume.html#pre.dynaicfd.MeshedVolume">[docs]</a><span class="k">class</span> <span class="nc">MeshedVolume</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Defines the volume space that will be meshed.</span>
+
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    surfaces : list</span>
+<span class="sd">            list of Part IDs for the surface elements that are used to define the volume.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">surfaces</span> <span class="o">=</span> <span class="n">surfaces</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embeded_surf</span> <span class="o">=</span> <span class="p">[]</span>
+
+<div class="viewcode-block" id="MeshedVolume.embed_shell"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.MeshedVolume.embed_shell.html#pre.dynaicfd.MeshedVolume.embed_shell">[docs]</a>    <span class="k">def</span> <span class="nf">embed_shell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">embeded</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define surfaces that the mesher will embed inside the volume mesh.</span>
+
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        embeded : list</span>
+<span class="sd">            Part IDs for the surface elements that will be embedded in the volume mesh.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">embeded_surf</span> <span class="o">=</span> <span class="n">embeded</span></div>
+
+<div class="viewcode-block" id="MeshedVolume.meshsize_box"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.MeshedVolume.meshsize_box.html#pre.dynaicfd.MeshedVolume.meshsize_box">[docs]</a>    <span class="k">def</span> <span class="nf">meshsize_box</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">min_point</span><span class="p">,</span><span class="n">max_point</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Defines a local mesh size in specific zones corresponding to given geometrical shapes.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        size : float</span>
+<span class="sd">            Mesh size that needs to be applied in the zone of the shape defined by SNAME</span>
+<span class="sd">        parameter : list</span>
+<span class="sd">            The parameters to define shape.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">parameter</span> <span class="o">=</span> <span class="p">[</span><span class="n">min_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">min_point</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="n">min_point</span><span class="o">.</span><span class="n">z</span><span class="p">,</span><span class="n">max_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="n">max_point</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="n">max_point</span><span class="o">.</span><span class="n">z</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="s2">&quot;BOX&quot;</span><span class="p">,</span><span class="n">size</span><span class="p">,</span><span class="n">parameter</span><span class="p">])</span></div>
+
+<div class="viewcode-block" id="MeshedVolume.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.MeshedVolume.create.html#pre.dynaicfd.MeshedVolume.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateVolume</span><span class="p">(</span><span class="n">MeshVolumeRequest</span><span class="p">(</span><span class="n">pids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">surfaces</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">id</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;MESH volume </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateEmbedShell</span><span class="p">(</span>
+            <span class="n">MeshEmbedShellRequest</span><span class="p">(</span><span class="n">volid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">id</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">embeded_surf</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Embed surfaces Created...&quot;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span><span class="p">)):</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">MESHCreateSizeShape</span><span class="p">(</span>
+            <span class="n">MeshSizeShapeRequest</span><span class="p">(</span>
+                <span class="n">sname</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span>
+                <span class="n">force</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
+                <span class="n">method</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
+                <span class="n">msize</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span>
+                <span class="n">parameter</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meshsizeshape</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">],</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;MESH size shape Created...&quot;</span><span class="p">)</span></div></div>
+        
+        
+</pre></div>
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

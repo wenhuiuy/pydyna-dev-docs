@@ -1,0 +1,24 @@
+pre.dynaem.EMContactType
+========================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: EMContactType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

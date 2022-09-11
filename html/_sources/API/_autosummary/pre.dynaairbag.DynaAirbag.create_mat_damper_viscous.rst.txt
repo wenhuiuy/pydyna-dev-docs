@@ -1,0 +1,6 @@
+create\_mat\_damper\_viscous
+============================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_mat_damper_viscous

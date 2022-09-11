@@ -1,0 +1,25 @@
+pre.dynabase.ContactCategory
+============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ContactCategory
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

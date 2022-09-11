@@ -1,0 +1,38 @@
+﻿pre.dynaicfd
+============
+
+.. automodule:: pre.dynaicfd
+  
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Compressible
+      DOF
+      DynaICFD
+      ICFDPart
+      ICFDVolumePart
+      MatICFD
+      MeshedVolume
+      Vel
+   
+   
+
+   
+   
+   
+
+
+

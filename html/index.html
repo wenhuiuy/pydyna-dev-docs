@@ -26,6 +26,7 @@
     href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="_static/css\ansys_sphinx_theme.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="_static/sg_gallery-binder.css" />
@@ -239,18 +240,6 @@
     <a class="reference internal nav-link" href="#license">
      License
     </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#code-examples">
-       Code Examples
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#rendered-python-code">
-     Rendered Python Code
-    </a>
    </li>
   </ul>
  </li>
@@ -277,12 +266,13 @@
 <h1>PyDyna Documentation  0.0.1<a class="headerlink" href="#pydyna-documentation-0-0-1" title="Permalink to this heading">#</a></h1>
 <section id="pydyna">
 <h2>PyDyna<a class="headerlink" href="#pydyna" title="Permalink to this heading">#</a></h2>
-<p>This repository holds Python code for a simple gRPC interface
-to the LS-DYNA solver tools.</p>
+<p>PyDyna is a pythonic dyna package aims to provide user a more convient and complete way to
+build up ansys-dyna input deck, submit to solver and finally post processing their results.</p>
 <section id="project-overview">
 <h3>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this heading">#</a></h3>
-<p>There are 3 related packages here, all under the ansys/dyna/ directory.</p>
-<p>pre and post are for code related to pre and post processing support for LS-DYNA.</p>
+<p>There are 2 related packages here, all under the ansys/dyna/ directory.</p>
+<p>pre contains highly abstracted APIs for setting up a LS-DYNA input deck, so far,
+it includes DynaMech, DynaIGA, DynaICFD, DynaSALE, DynaEM, DynaAirbag and so on.</p>
 <p>solver contains code for interfacing with the LS-DYNA solver directly.
 As LS-DYNA is primarily a batch solver with very limited interactive
 capabilities, the code here is similarly limited.  The target
@@ -305,7 +295,28 @@ option is for you to download the code from GitHub:</p>
 </section>
 <section id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
-<p>Here is a basic example:</p>
+<p>Here is a basic pre-processing example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pre.dynaiga</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
+<span class="n">iga</span> <span class="o">=</span> <span class="n">DynaIGA</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
+<span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s2">&quot;input&quot;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s2">&quot;iga_sample&quot;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
+<span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;maino.k&quot;</span><span class="p">)</span>
+<span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;rkrwelds.key&quot;</span><span class="p">)</span>
+<span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;27parts.key&quot;</span><span class="p">)</span>
+<span class="n">iga</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+<span class="n">iga</span><span class="o">.</span><span class="n">set_timestep</span><span class="p">(</span><span class="n">timestep_size_for_mass_scaled</span><span class="o">=-</span><span class="mf">0.0004</span><span class="p">)</span>
+<span class="n">iga</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="o">...</span>
+<span class="n">selfcontact</span> <span class="o">=</span> <span class="n">Contact</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ContactType</span><span class="o">.</span><span class="n">AUTOMATIC</span><span class="p">)</span>
+<span class="n">selfcontact</span><span class="o">.</span><span class="n">set_friction_coefficient</span><span class="p">(</span><span class="n">static</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
+<span class="n">surf1</span><span class="o">=</span><span class="n">ContactSurface</span><span class="p">(</span><span class="n">PartSet</span><span class="p">(</span><span class="n">igaparts</span><span class="p">))</span>
+<span class="n">selfcontact</span><span class="o">.</span><span class="n">set_slave_surface</span><span class="p">(</span><span class="n">surf1</span><span class="p">)</span>
+<span class="n">iga</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">iga</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
+</pre></div>
+</div>
+<p>Here is a basic solving example:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dyna.solver</span> <span class="k">as</span> <span class="nn">solver</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">=</span><span class="n">solver</span><span class="o">.</span><span class="n">DynaSovler</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">)</span>           <span class="c1"># connect to the container</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;input.k&quot;</span><span class="p">)</span>                            <span class="c1"># push an input file</span>
@@ -319,24 +330,6 @@ option is for you to download the code from GitHub:</p>
 <p>Distributed under the MIT license.  See LICENSE in the root directory
 of the repository for details.</p>
 <div class="toctree-wrapper compound">
-</div>
-<section id="code-examples">
-<h4>Code Examples<a class="headerlink" href="#code-examples" title="Permalink to this heading">#</a></h4>
-<p>Here’s a quick preview for how Python code looks using the
-<code class="docutils literal notranslate"><span class="pre">pyansys-DynaSolver</span></code>.  For more examples, click the links at the
-top of the page to see function, method, and class documentation.</p>
-</section>
-</section>
-<section id="rendered-python-code">
-<h3>Rendered Python Code<a class="headerlink" href="#rendered-python-code" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">ansys.dyna.solver</span> <span class="k">as</span> <span class="nn">solver</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">port</span><span class="o">=</span><span class="s2">&quot;5000&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">=</span><span class="n">solver</span><span class="o">.</span><span class="n">DynaSolver</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span><span class="n">port</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;input.k&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;i=input.k&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
 </section>
 </section>
@@ -361,7 +354,7 @@ top of the page to see function, method, and class documentation.</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   

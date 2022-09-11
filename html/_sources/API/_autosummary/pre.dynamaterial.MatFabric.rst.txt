@@ -1,0 +1,25 @@
+pre.dynamaterial.MatFabric
+==========================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatFabric
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatFabric.create
+      
+   
+   
+
+   
+   
+   

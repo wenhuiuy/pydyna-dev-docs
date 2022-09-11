@@ -1,0 +1,6 @@
+create\_shellset
+================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_shellset

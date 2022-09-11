@@ -1,0 +1,166 @@
+﻿pre.dynaiga.DynaIGA
+===================
+
+.. currentmodule:: pre.dynaiga
+
+.. autoclass:: DynaIGA
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaIGA.create_boundary_prescribed_motion
+      
+      
+      DynaIGA.create_boundary_spc
+      
+      
+      DynaIGA.create_constrained_extra_nodes
+      
+      
+      DynaIGA.create_constrained_joint
+      
+      
+      DynaIGA.create_contact
+      
+      
+      DynaIGA.create_control_contact
+      
+      
+      DynaIGA.create_control_output
+      
+      
+      DynaIGA.create_control_shell
+      
+      
+      DynaIGA.create_control_solid
+      
+      
+      DynaIGA.create_damping_global
+      
+      
+      DynaIGA.create_database_ascii
+      
+      
+      DynaIGA.create_database_binary
+      
+      
+      DynaIGA.create_definecurve
+      
+      
+      DynaIGA.create_defineorientation
+      
+      
+      DynaIGA.create_definevector
+      
+      
+      DynaIGA.create_general_keyword
+      
+      
+      DynaIGA.create_hourglass
+      
+      
+      DynaIGA.create_init_vel
+      
+      
+      DynaIGA.create_init_vel_bodies
+      
+      
+      DynaIGA.create_init_vel_rigidbody
+      
+      
+      DynaIGA.create_load_body
+      
+      
+      DynaIGA.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaIGA.create_mat_damper_viscous
+      
+      
+      DynaIGA.create_mat_fabric
+      
+      
+      DynaIGA.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaIGA.create_nodeset
+      
+      
+      DynaIGA.create_partset
+      
+      
+      DynaIGA.create_rigidwall_geom
+      
+      
+      DynaIGA.create_rigidwall_planar
+      
+      
+      DynaIGA.create_section_discrete
+      
+      
+      DynaIGA.create_section_igashell
+      
+      
+      DynaIGA.create_section_shell
+      
+      
+      DynaIGA.create_section_solid
+      
+      
+      DynaIGA.create_segmentset
+      
+      
+      DynaIGA.create_shellset
+      
+      
+      DynaIGA.create_solidset
+      
+      
+      DynaIGA.get_solid_elements
+      
+      
+      DynaIGA.get_stub
+      
+      
+      DynaIGA.open_files
+      
+      
+      DynaIGA.save_file
+      
+      
+      DynaIGA.set_accuracy
+      
+      
+      DynaIGA.set_bulk_viscosity
+      
+      
+      DynaIGA.set_energy
+      
+      
+      DynaIGA.set_hourglass
+      
+      
+      DynaIGA.set_output_database
+      
+      
+      DynaIGA.set_part_damping_stiffness
+      
+      
+      DynaIGA.set_termination
+      
+      
+      DynaIGA.set_timestep
+      
+   
+   
+
+   
+   
+   

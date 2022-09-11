@@ -1,0 +1,6 @@
+create\_spc
+===========
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: BoundaryCondition.create_spc

@@ -1,0 +1,61 @@
+pre.dynabase.Contact
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Contact
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Contact.create
+      
+      
+      Contact.set_active_time
+      
+      
+      Contact.set_algorithm
+      
+      
+      Contact.set_friction_coefficient
+      
+      
+      Contact.set_initial_penetration
+      
+      
+      Contact.set_master_surface
+      
+      
+      Contact.set_mortar
+      
+      
+      Contact.set_penalty_algorithm
+      
+      
+      Contact.set_slave_surface
+      
+      
+      Contact.set_tiebreak
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Contact.contactlist
+      
+   
+   

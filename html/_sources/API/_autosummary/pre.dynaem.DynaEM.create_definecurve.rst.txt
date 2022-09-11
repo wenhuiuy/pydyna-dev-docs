@@ -1,0 +1,6 @@
+create\_definecurve
+===================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_definecurve

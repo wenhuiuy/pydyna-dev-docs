@@ -1,0 +1,214 @@
+﻿pre.dynaicfd.DynaICFD
+=====================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: DynaICFD
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaICFD.create_bdy_free_slip
+      
+      
+      DynaICFD.create_bdy_non_slip
+      
+      
+      DynaICFD.create_bdy_prescribed_pre
+      
+      
+      DynaICFD.create_bdy_prescribed_vel
+      
+      
+      DynaICFD.create_boundary_prescribed_motion
+      
+      
+      DynaICFD.create_boundary_spc
+      
+      
+      DynaICFD.create_constrained_extra_nodes
+      
+      
+      DynaICFD.create_constrained_joint
+      
+      
+      DynaICFD.create_contact
+      
+      
+      DynaICFD.create_control_contact
+      
+      
+      DynaICFD.create_control_dem_coupling
+      
+      
+      DynaICFD.create_control_general
+      
+      
+      DynaICFD.create_control_output
+      
+      
+      DynaICFD.create_control_shell
+      
+      
+      DynaICFD.create_control_solid
+      
+      
+      DynaICFD.create_control_turbulence
+      
+      
+      DynaICFD.create_damping_global
+      
+      
+      DynaICFD.create_database_ascii
+      
+      
+      DynaICFD.create_database_binary
+      
+      
+      DynaICFD.create_db_drag
+      
+      
+      DynaICFD.create_definecurve
+      
+      
+      DynaICFD.create_defineorientation
+      
+      
+      DynaICFD.create_definevector
+      
+      
+      DynaICFD.create_general_keyword
+      
+      
+      DynaICFD.create_hourglass
+      
+      
+      DynaICFD.create_init_vel
+      
+      
+      DynaICFD.create_init_vel_bodies
+      
+      
+      DynaICFD.create_init_vel_rigidbody
+      
+      
+      DynaICFD.create_load_body
+      
+      
+      DynaICFD.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaICFD.create_mat_damper_viscous
+      
+      
+      DynaICFD.create_mat_fabric
+      
+      
+      DynaICFD.create_mat_icfd
+      
+      
+      DynaICFD.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaICFD.create_nodeset
+      
+      
+      DynaICFD.create_part_icfd
+      
+      
+      DynaICFD.create_part_vol
+      
+      
+      DynaICFD.create_partset
+      
+      
+      DynaICFD.create_rigidwall_geom
+      
+      
+      DynaICFD.create_rigidwall_planar
+      
+      
+      DynaICFD.create_section_discrete
+      
+      
+      DynaICFD.create_section_icfd
+      
+      
+      DynaICFD.create_section_shell
+      
+      
+      DynaICFD.create_section_solid
+      
+      
+      DynaICFD.create_segmentset
+      
+      
+      DynaICFD.create_shellset
+      
+      
+      DynaICFD.create_solidset
+      
+      
+      DynaICFD.create_solver_tol_mmov
+      
+      
+      DynaICFD.get_solid_elements
+      
+      
+      DynaICFD.get_stub
+      
+      
+      DynaICFD.mesh_create_bl
+      
+      
+      DynaICFD.mesh_create_size_shape
+      
+      
+      DynaICFD.mesh_create_volume
+      
+      
+      DynaICFD.mesh_embed_shell
+      
+      
+      DynaICFD.open_files
+      
+      
+      DynaICFD.save_file
+      
+      
+      DynaICFD.set_accuracy
+      
+      
+      DynaICFD.set_bulk_viscosity
+      
+      
+      DynaICFD.set_energy
+      
+      
+      DynaICFD.set_hourglass
+      
+      
+      DynaICFD.set_output_database
+      
+      
+      DynaICFD.set_part_damping_stiffness
+      
+      
+      DynaICFD.set_termination
+      
+      
+      DynaICFD.set_timestep
+      
+   
+   
+
+   
+   
+   

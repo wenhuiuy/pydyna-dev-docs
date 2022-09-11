@@ -1,0 +1,6 @@
+resume
+======
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.resume

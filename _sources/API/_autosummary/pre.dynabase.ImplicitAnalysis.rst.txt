@@ -1,0 +1,34 @@
+pre.dynabase.ImplicitAnalysis
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ImplicitAnalysis
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      ImplicitAnalysis.set_dynamic
+      
+      
+      ImplicitAnalysis.set_eigenvalue
+      
+      
+      ImplicitAnalysis.set_solution
+      
+      
+      ImplicitAnalysis.set_timestep
+      
+   
+   
+
+   
+   
+   

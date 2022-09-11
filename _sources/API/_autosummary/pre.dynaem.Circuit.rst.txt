@@ -1,0 +1,37 @@
+pre.dynaem.Circuit
+==================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: Circuit
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Circuit.create
+      
+      
+      Circuit.set_current
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Circuit.circuitlist
+      
+   
+   

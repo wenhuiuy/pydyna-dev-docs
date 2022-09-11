@@ -1,0 +1,6 @@
+create\_control\_general
+========================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_control_general

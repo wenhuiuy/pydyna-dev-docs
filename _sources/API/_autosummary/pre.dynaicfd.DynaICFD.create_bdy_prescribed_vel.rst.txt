@@ -1,0 +1,6 @@
+create\_bdy\_prescribed\_vel
+============================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_bdy_prescribed_vel

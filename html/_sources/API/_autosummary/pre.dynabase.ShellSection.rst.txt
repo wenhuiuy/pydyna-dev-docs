@@ -1,0 +1,22 @@
+pre.dynabase.ShellSection
+=========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ShellSection
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,23 @@
+pre.dynasale.FillDirection
+==========================
+
+.. currentmodule:: pre.dynasale
+
+.. autoclass:: FillDirection
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

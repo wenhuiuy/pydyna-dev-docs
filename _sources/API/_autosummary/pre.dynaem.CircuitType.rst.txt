@@ -1,0 +1,23 @@
+pre.dynaem.CircuitType
+======================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: CircuitType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

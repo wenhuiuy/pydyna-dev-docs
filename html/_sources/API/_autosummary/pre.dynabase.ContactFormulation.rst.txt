@@ -1,0 +1,24 @@
+pre.dynabase.ContactFormulation
+===============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ContactFormulation
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

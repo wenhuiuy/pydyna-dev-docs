@@ -1,0 +1,6 @@
+﻿upload
+======
+
+.. currentmodule:: solver
+
+.. automethod:: DynaSolver.upload

@@ -1,0 +1,6 @@
+create\_em\_timestep
+====================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_timestep

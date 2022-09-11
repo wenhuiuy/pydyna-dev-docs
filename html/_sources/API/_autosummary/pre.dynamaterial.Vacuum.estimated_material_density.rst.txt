@@ -1,0 +1,6 @@
+estimated\_material\_density
+============================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoattribute:: Vacuum.estimated_material_density

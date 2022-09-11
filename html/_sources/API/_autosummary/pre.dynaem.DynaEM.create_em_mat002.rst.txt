@@ -1,0 +1,6 @@
+create\_em\_mat002
+==================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_mat002

@@ -1,0 +1,46 @@
+pre.dynabase.IGAPart
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: IGAPart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      IGAPart.set_element_formulation
+      
+      
+      IGAPart.set_material
+      
+      
+      IGAPart.set_property
+      
+      
+      IGAPart.set_shear_factor
+      
+      
+      IGAPart.set_thickness
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      IGAPart.partlist
+      
+   
+   

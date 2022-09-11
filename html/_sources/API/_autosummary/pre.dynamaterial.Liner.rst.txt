@@ -1,0 +1,25 @@
+pre.dynamaterial.Liner
+======================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: Liner
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Liner.create
+      
+   
+   
+
+   
+   
+   

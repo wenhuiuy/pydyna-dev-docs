@@ -1,0 +1,25 @@
+pre.dynabase.IGAFormulation
+===========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: IGAFormulation
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

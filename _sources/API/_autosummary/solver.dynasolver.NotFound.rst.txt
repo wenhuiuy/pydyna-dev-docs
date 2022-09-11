@@ -1,0 +1,6 @@
+NotFound
+========
+
+.. currentmodule:: solver.dynasolver
+
+.. autoexception:: NotFound

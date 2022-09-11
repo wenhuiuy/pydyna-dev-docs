@@ -1,0 +1,43 @@
+pre.dynabase.SolidPart
+======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: SolidPart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      SolidPart.set_element_formulation
+      
+      
+      SolidPart.set_hourglass
+      
+      
+      SolidPart.set_material
+      
+      
+      SolidPart.set_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      SolidPart.partlist
+      
+   
+   

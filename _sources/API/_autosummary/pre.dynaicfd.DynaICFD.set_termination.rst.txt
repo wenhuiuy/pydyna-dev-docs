@@ -1,0 +1,6 @@
+set\_termination
+================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.set_termination

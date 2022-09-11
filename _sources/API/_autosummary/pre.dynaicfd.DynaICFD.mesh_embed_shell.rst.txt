@@ -1,0 +1,6 @@
+mesh\_embed\_shell
+==================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.mesh_embed_shell

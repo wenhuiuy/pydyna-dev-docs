@@ -1,0 +1,35 @@
+﻿pre.dynasale
+============
+
+.. automodule:: pre.dynasale
+  
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      AdvectionMethod
+      ControlPoint
+      DynaSALE
+      FillDirection
+      StructuredMesh
+   
+   
+
+   
+   
+   
+
+
+

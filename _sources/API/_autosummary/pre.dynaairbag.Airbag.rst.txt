@@ -1,0 +1,22 @@
+pre.dynaairbag.Airbag
+=====================
+
+.. currentmodule:: pre.dynaairbag
+
+.. autoclass:: Airbag
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+set\_partproperty
+=================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.set_partproperty

@@ -1,0 +1,25 @@
+pre.dynabase.SolidFormulation
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: SolidFormulation
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

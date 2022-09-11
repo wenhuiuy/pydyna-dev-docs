@@ -1,0 +1,43 @@
+﻿pre.dynamaterial
+================
+
+.. automodule:: pre.dynamaterial
+  
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      Air
+      EMMATTYPE
+      HighExplosive
+      Liner
+      MatAdditional
+      MatElastic
+      MatFabric
+      MatModifiedPiecewiseLinearPlasticity
+      MatNull
+      MatPiecewiseLinearPlasticity
+      MatRigid
+      MatSpotweld
+      Vacuum
+   
+   
+
+   
+   
+   
+
+
+

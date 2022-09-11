@@ -1,0 +1,6 @@
+UnexpectedResponse
+==================
+
+.. currentmodule:: solver.dynasolver
+
+.. autoexception:: UnexpectedResponse

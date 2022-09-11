@@ -1,0 +1,24 @@
+pre.dynamaterial.EMMATTYPE
+==========================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: EMMATTYPE
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

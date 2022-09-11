@@ -1,0 +1,6 @@
+refine
+======
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: StructuredMesh.refine

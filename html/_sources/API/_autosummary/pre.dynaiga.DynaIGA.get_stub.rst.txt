@@ -1,0 +1,6 @@
+get\_stub
+=========
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.get_stub

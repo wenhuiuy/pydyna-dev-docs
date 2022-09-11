@@ -1,0 +1,24 @@
+pre.dynabase.ShellFormulation
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ShellFormulation
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

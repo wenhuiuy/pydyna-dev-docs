@@ -1,0 +1,211 @@
+﻿pre.dynaem.DynaEM
+=================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: DynaEM
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaEM.create_Permanent_magnet
+      
+      
+      DynaEM.create_boundary_prescribed_motion
+      
+      
+      DynaEM.create_boundary_spc
+      
+      
+      DynaEM.create_circuit
+      
+      
+      DynaEM.create_constrained_extra_nodes
+      
+      
+      DynaEM.create_constrained_joint
+      
+      
+      DynaEM.create_contact
+      
+      
+      DynaEM.create_control_contact
+      
+      
+      DynaEM.create_control_output
+      
+      
+      DynaEM.create_control_shell
+      
+      
+      DynaEM.create_control_solid
+      
+      
+      DynaEM.create_damping_global
+      
+      
+      DynaEM.create_database_ascii
+      
+      
+      DynaEM.create_database_binary
+      
+      
+      DynaEM.create_definecurve
+      
+      
+      DynaEM.create_defineorientation
+      
+      
+      DynaEM.create_definevector
+      
+      
+      DynaEM.create_em_contact
+      
+      
+      DynaEM.create_em_control
+      
+      
+      DynaEM.create_em_control_contact
+      
+      
+      DynaEM.create_em_database_globalenergy
+      
+      
+      DynaEM.create_em_eos_permeability
+      
+      
+      DynaEM.create_em_mat001
+      
+      
+      DynaEM.create_em_mat002
+      
+      
+      DynaEM.create_em_output
+      
+      
+      DynaEM.create_em_solver_bem
+      
+      
+      DynaEM.create_em_solver_bemmat
+      
+      
+      DynaEM.create_em_solver_fem
+      
+      
+      DynaEM.create_em_solver_fembem_monolithic
+      
+      
+      DynaEM.create_em_timestep
+      
+      
+      DynaEM.create_general_keyword
+      
+      
+      DynaEM.create_hourglass
+      
+      
+      DynaEM.create_init_vel
+      
+      
+      DynaEM.create_init_vel_bodies
+      
+      
+      DynaEM.create_init_vel_rigidbody
+      
+      
+      DynaEM.create_load_body
+      
+      
+      DynaEM.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaEM.create_mat_damper_viscous
+      
+      
+      DynaEM.create_mat_fabric
+      
+      
+      DynaEM.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaEM.create_nodeset
+      
+      
+      DynaEM.create_partset
+      
+      
+      DynaEM.create_rigidwall_geom
+      
+      
+      DynaEM.create_rigidwall_planar
+      
+      
+      DynaEM.create_section_discrete
+      
+      
+      DynaEM.create_section_shell
+      
+      
+      DynaEM.create_section_solid
+      
+      
+      DynaEM.create_segmentset
+      
+      
+      DynaEM.create_shellset
+      
+      
+      DynaEM.create_solidset
+      
+      
+      DynaEM.get_solid_elements
+      
+      
+      DynaEM.get_stub
+      
+      
+      DynaEM.open_files
+      
+      
+      DynaEM.save_file
+      
+      
+      DynaEM.set_accuracy
+      
+      
+      DynaEM.set_bulk_viscosity
+      
+      
+      DynaEM.set_energy
+      
+      
+      DynaEM.set_hourglass
+      
+      
+      DynaEM.set_output_database
+      
+      
+      DynaEM.set_part_damping_stiffness
+      
+      
+      DynaEM.set_rogowsky_coil_to_output_current
+      
+      
+      DynaEM.set_termination
+      
+      
+      DynaEM.set_timestep
+      
+   
+   
+
+   
+   
+   

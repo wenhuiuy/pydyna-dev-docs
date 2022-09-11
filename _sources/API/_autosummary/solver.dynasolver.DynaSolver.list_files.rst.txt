@@ -1,0 +1,6 @@
+list\_files
+===========
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.list_files

@@ -1,0 +1,6 @@
+create\_solidset
+================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_solidset

@@ -1,0 +1,6 @@
+create\_control\_contact
+========================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_control_contact

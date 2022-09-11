@@ -1,0 +1,31 @@
+pre.dynabase.NodeSet
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: NodeSet
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      NodeSet.create
+      
+      
+      NodeSet.id
+      
+      
+      NodeSet.num
+      
+   
+   
+
+   
+   
+   

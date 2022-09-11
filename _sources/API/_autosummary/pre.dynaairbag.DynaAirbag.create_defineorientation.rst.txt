@@ -1,0 +1,6 @@
+create\_defineorientation
+=========================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_defineorientation

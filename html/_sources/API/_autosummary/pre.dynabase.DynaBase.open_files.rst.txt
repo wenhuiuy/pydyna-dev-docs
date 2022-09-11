@@ -1,0 +1,6 @@
+open\_files
+===========
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.open_files

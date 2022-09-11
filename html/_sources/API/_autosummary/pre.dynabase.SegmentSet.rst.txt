@@ -1,0 +1,25 @@
+pre.dynabase.SegmentSet
+=======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: SegmentSet
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      SegmentSet.create
+      
+   
+   
+
+   
+   
+   

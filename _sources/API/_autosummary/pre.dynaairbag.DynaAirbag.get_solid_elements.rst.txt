@@ -1,0 +1,6 @@
+get\_solid\_elements
+====================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.get_solid_elements

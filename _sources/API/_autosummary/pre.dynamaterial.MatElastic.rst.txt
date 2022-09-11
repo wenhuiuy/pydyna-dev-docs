@@ -1,0 +1,28 @@
+pre.dynamaterial.MatElastic
+===========================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatElastic
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatElastic.create
+      
+      
+      MatElastic.set_electromagnetic_property
+      
+   
+   
+
+   
+   
+   

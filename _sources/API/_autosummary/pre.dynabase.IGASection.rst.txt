@@ -1,0 +1,22 @@
+pre.dynabase.IGASection
+=======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: IGASection
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

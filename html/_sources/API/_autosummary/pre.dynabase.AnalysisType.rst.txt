@@ -1,0 +1,24 @@
+pre.dynabase.AnalysisType
+=========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: AnalysisType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

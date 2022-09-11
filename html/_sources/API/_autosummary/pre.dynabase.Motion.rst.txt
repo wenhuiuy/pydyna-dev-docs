@@ -1,0 +1,24 @@
+pre.dynabase.Motion
+===================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Motion
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+   
+   

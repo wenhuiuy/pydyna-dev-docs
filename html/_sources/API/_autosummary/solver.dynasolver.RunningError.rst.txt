@@ -1,0 +1,6 @@
+RunningError
+============
+
+.. currentmodule:: solver.dynasolver
+
+.. autoexception:: RunningError

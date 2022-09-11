@@ -1,0 +1,6 @@
+create\_section\_solid
+======================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_section_solid

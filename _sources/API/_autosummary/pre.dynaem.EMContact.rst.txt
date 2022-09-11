@@ -1,0 +1,22 @@
+pre.dynaem.EMContact
+====================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: EMContact
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+setlc
+=====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.setlc

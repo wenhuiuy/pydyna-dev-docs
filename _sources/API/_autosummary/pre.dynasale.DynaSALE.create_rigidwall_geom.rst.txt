@@ -1,0 +1,6 @@
+create\_rigidwall\_geom
+=======================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.create_rigidwall_geom

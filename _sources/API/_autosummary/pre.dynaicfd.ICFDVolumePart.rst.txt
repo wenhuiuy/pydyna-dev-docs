@@ -1,0 +1,37 @@
+pre.dynaicfd.ICFDVolumePart
+===========================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: ICFDVolumePart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      ICFDVolumePart.create
+      
+      
+      ICFDVolumePart.set_material
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ICFDVolumePart.partlist
+      
+   
+   

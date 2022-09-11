@@ -1,0 +1,6 @@
+switch
+======
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.switch

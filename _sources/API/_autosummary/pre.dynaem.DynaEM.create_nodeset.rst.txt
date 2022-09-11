@@ -1,0 +1,6 @@
+create\_nodeset
+===============
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_nodeset

@@ -1,0 +1,73 @@
+solver.dynasolver.DynaSolver
+============================
+
+.. currentmodule:: solver.dynasolver
+
+.. autoclass:: DynaSolver
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaSolver.download
+      
+      
+      DynaSolver.list_files
+      
+      
+      DynaSolver.node
+      
+      
+      DynaSolver.pause
+      
+      
+      DynaSolver.pull
+      
+      
+      DynaSolver.push
+      
+      
+      DynaSolver.quit
+      
+      
+      DynaSolver.resume
+      
+      
+      DynaSolver.run
+      
+      
+      DynaSolver.runfile
+      
+      
+      DynaSolver.send
+      
+      
+      DynaSolver.setlc
+      
+      
+      DynaSolver.start
+      
+      
+      DynaSolver.switch
+      
+      
+      DynaSolver.tail
+      
+      
+      DynaSolver.time
+      
+      
+      DynaSolver.upload
+      
+   
+   
+
+   
+   
+   

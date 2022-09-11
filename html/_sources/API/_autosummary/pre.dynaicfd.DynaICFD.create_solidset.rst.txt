@@ -1,0 +1,6 @@
+create\_solidset
+================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_solidset

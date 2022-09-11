@@ -1,0 +1,6 @@
+set\_energy
+===========
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.set_energy

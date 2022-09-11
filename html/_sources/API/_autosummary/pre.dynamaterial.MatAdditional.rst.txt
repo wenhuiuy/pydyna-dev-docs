@@ -1,0 +1,28 @@
+pre.dynamaterial.MatAdditional
+==============================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatAdditional
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatAdditional.create
+      
+      
+      MatAdditional.set_electromagnetic_property
+      
+   
+   
+
+   
+   
+   

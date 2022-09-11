@@ -1,0 +1,23 @@
+pre.dynabase.Switch
+===================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Switch
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

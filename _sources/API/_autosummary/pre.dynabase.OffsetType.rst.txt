@@ -1,0 +1,25 @@
+pre.dynabase.OffsetType
+=======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: OffsetType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

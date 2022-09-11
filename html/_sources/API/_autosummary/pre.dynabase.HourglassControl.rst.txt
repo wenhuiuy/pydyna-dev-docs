@@ -1,0 +1,23 @@
+pre.dynabase.HourglassControl
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: HourglassControl
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

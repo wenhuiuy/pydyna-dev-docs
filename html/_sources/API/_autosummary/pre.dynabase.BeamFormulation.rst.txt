@@ -1,0 +1,22 @@
+pre.dynabase.BeamFormulation
+============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: BeamFormulation
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   

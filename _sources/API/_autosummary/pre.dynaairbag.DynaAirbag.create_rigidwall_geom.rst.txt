@@ -1,0 +1,6 @@
+create\_rigidwall\_geom
+=======================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_rigidwall_geom

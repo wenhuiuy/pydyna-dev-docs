@@ -1,0 +1,172 @@
+﻿pre.dynasale.DynaSALE
+=====================
+
+.. currentmodule:: pre.dynasale
+
+.. autoclass:: DynaSALE
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaSALE.create_boundary_prescribed_motion
+      
+      
+      DynaSALE.create_boundary_spc
+      
+      
+      DynaSALE.create_constrained_extra_nodes
+      
+      
+      DynaSALE.create_constrained_joint
+      
+      
+      DynaSALE.create_contact
+      
+      
+      DynaSALE.create_control_contact
+      
+      
+      DynaSALE.create_control_output
+      
+      
+      DynaSALE.create_control_shell
+      
+      
+      DynaSALE.create_control_solid
+      
+      
+      DynaSALE.create_damping_global
+      
+      
+      DynaSALE.create_database_ascii
+      
+      
+      DynaSALE.create_database_binary
+      
+      
+      DynaSALE.create_definecurve
+      
+      
+      DynaSALE.create_defineorientation
+      
+      
+      DynaSALE.create_definevector
+      
+      
+      DynaSALE.create_general_keyword
+      
+      
+      DynaSALE.create_hourglass
+      
+      
+      DynaSALE.create_init_vel
+      
+      
+      DynaSALE.create_init_vel_bodies
+      
+      
+      DynaSALE.create_init_vel_rigidbody
+      
+      
+      DynaSALE.create_load_body
+      
+      
+      DynaSALE.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaSALE.create_mat_damper_viscous
+      
+      
+      DynaSALE.create_mat_fabric
+      
+      
+      DynaSALE.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaSALE.create_mesh
+      
+      
+      DynaSALE.create_nodeset
+      
+      
+      DynaSALE.create_partset
+      
+      
+      DynaSALE.create_rigidwall_geom
+      
+      
+      DynaSALE.create_rigidwall_planar
+      
+      
+      DynaSALE.create_section_discrete
+      
+      
+      DynaSALE.create_section_shell
+      
+      
+      DynaSALE.create_section_solid
+      
+      
+      DynaSALE.create_segmentset
+      
+      
+      DynaSALE.create_shellset
+      
+      
+      DynaSALE.create_solidset
+      
+      
+      DynaSALE.get_solid_elements
+      
+      
+      DynaSALE.get_stub
+      
+      
+      DynaSALE.open_files
+      
+      
+      DynaSALE.save_file
+      
+      
+      DynaSALE.set_accuracy
+      
+      
+      DynaSALE.set_analysis_type
+      
+      
+      DynaSALE.set_bulk_viscosity
+      
+      
+      DynaSALE.set_energy
+      
+      
+      DynaSALE.set_hourglass
+      
+      
+      DynaSALE.set_output_database
+      
+      
+      DynaSALE.set_output_interval
+      
+      
+      DynaSALE.set_part_damping_stiffness
+      
+      
+      DynaSALE.set_termination
+      
+      
+      DynaSALE.set_timestep
+      
+   
+   
+
+   
+   
+   

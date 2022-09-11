@@ -1,0 +1,6 @@
+create\_definecurve
+===================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_definecurve

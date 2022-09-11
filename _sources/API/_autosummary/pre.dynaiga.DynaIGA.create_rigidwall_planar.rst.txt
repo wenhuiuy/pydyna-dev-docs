@@ -1,0 +1,6 @@
+create\_rigidwall\_planar
+=========================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_rigidwall_planar

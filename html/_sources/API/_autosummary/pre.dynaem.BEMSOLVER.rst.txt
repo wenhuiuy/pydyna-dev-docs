@@ -1,0 +1,23 @@
+pre.dynaem.BEMSOLVER
+====================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: BEMSOLVER
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

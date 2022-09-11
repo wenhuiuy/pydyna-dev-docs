@@ -1,0 +1,6 @@
+time
+====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.time

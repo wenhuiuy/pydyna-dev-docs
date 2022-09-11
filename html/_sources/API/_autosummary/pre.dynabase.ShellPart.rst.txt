@@ -1,0 +1,55 @@
+pre.dynabase.ShellPart
+======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ShellPart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      ShellPart.set_element_formulation
+      
+      
+      ShellPart.set_hourglass
+      
+      
+      ShellPart.set_integration_points
+      
+      
+      ShellPart.set_material
+      
+      
+      ShellPart.set_printout
+      
+      
+      ShellPart.set_property
+      
+      
+      ShellPart.set_shear_factor
+      
+      
+      ShellPart.set_thickness
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ShellPart.partlist
+      
+   
+   

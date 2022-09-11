@@ -1,0 +1,25 @@
+pre.dynabase.Box
+================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Box
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Box.create
+      
+   
+   
+
+   
+   
+   

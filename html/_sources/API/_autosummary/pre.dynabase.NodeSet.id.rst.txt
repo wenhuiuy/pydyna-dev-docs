@@ -1,0 +1,6 @@
+id
+==
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: NodeSet.id

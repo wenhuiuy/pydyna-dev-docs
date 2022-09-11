@@ -1,0 +1,6 @@
+set\_contact\_region
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: ContactSurface.set_contact_region

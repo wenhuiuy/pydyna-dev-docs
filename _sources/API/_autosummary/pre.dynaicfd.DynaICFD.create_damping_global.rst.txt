@@ -1,0 +1,6 @@
+create\_damping\_global
+=======================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_damping_global

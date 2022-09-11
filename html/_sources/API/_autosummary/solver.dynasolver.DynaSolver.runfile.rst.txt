@@ -1,0 +1,6 @@
+runfile
+=======
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.runfile

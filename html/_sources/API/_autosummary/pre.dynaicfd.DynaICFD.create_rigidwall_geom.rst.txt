@@ -1,0 +1,6 @@
+create\_rigidwall\_geom
+=======================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_rigidwall_geom

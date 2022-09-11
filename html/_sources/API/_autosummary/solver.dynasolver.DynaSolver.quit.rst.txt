@@ -1,0 +1,6 @@
+quit
+====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.quit

@@ -1,0 +1,6 @@
+get\_stub
+=========
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.get_stub

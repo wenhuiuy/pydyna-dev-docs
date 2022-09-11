@@ -1,0 +1,26 @@
+pre.dynabase.CaseType
+=====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: CaseType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+      
+   
+   

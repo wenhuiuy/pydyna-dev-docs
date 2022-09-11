@@ -1,0 +1,6 @@
+pause
+=====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.pause

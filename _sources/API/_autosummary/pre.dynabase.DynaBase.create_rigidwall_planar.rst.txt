@@ -1,0 +1,6 @@
+create\_rigidwall\_planar
+=========================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_rigidwall_planar

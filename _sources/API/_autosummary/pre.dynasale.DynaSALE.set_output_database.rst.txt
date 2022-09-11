@@ -1,0 +1,6 @@
+set\_output\_database
+=====================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.set_output_database

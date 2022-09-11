@@ -1,0 +1,25 @@
+pre.dynabase.Curve
+==================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Curve
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Curve.create
+      
+   
+   
+
+   
+   
+   

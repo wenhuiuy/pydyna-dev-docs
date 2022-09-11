@@ -1,0 +1,25 @@
+pre.dynamaterial.MatSpotweld
+============================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatSpotweld
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatSpotweld.create
+      
+   
+   
+
+   
+   
+   

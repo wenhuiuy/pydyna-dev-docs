@@ -1,0 +1,6 @@
+contactlist
+===========
+
+.. currentmodule:: pre.dynabase
+
+.. autoattribute:: Contact.contactlist

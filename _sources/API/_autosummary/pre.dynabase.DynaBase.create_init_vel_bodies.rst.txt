@@ -1,0 +1,6 @@
+create\_init\_vel\_bodies
+=========================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_init_vel_bodies

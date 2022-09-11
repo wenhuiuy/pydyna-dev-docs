@@ -1,0 +1,85 @@
+﻿pre.dynabase
+============
+
+.. automodule:: pre.dynabase
+  
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      download
+      get_file_chunks
+      init_log
+      upload
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      AnalysisType
+      BeamFormulation
+      BeamPart
+      BeamSection
+      BoundaryCondition
+      Box
+      BulkViscosity
+      CaseType
+      Constraint
+      Contact
+      ContactAlgorithm
+      ContactCategory
+      ContactFormulation
+      ContactSurface
+      ContactType
+      Curve
+      DOF
+      Direction
+      DynaBase
+      EnergyFlag
+      HourglassControl
+      HourglassType
+      IGAFormulation
+      IGAPart
+      IGASection
+      ImplicitAnalysis
+      Integration
+      InvariantNode
+      Motion
+      NodeSet
+      OffsetType
+      Part
+      PartSet
+      Point
+      RigidwallCylinder
+      RigidwallPlanar
+      SBOPT
+      SegmentSet
+      ShellFormulation
+      ShellPart
+      ShellSection
+      SolidFormulation
+      SolidPart
+      Switch
+      TimestepCtrol
+   
+   
+
+   
+   
+   
+
+
+

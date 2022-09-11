@@ -1,0 +1,6 @@
+create\_mesh
+============
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.create_mesh

@@ -1,0 +1,55 @@
+pre.dynaicfd.ICFDPart
+=====================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: ICFDPart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      ICFDPart.compute_drag_force
+      
+      
+      ICFDPart.set_boundary_layer
+      
+      
+      ICFDPart.set_free_slip
+      
+      
+      ICFDPart.set_material
+      
+      
+      ICFDPart.set_non_slip
+      
+      
+      ICFDPart.set_prescribed_pressure
+      
+      
+      ICFDPart.set_prescribed_velocity
+      
+      
+      ICFDPart.set_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      ICFDPart.partlist
+      
+   
+   

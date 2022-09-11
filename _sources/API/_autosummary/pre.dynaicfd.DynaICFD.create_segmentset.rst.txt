@@ -1,0 +1,6 @@
+create\_segmentset
+==================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_segmentset

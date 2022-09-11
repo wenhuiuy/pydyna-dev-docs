@@ -1,0 +1,6 @@
+num\_meshpart
+=============
+
+.. currentmodule:: pre.dynasale
+
+.. autoattribute:: StructuredMesh.num_meshpart

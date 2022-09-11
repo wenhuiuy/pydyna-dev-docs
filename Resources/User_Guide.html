@@ -26,6 +26,7 @@
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
@@ -195,6 +196,11 @@
    PyDyna-pre
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pydyna_solver.html">
+   PyDyna-solver
+  </a>
+ </li>
 </ul>
 
     
@@ -238,6 +244,13 @@
 <h1>User Guide<a class="headerlink" href="#user-guide" title="Permalink to this heading">#</a></h1>
 <p>There are 3 related packages here, all under the ansys/dyna/ directory.</p>
 <p>PyDyna-pre and PyDyna-post are for code related to pre and post processing support for LS-DYNA.</p>
+<p>PyDyna-solver contains code for interfacing with the LS-DYNA solver directly.
+As LS-DYNA is primarily a batch solver with very limited interactive
+capabilities, the code here is similarly limited.  The target
+use case is that LS-DYNA will be running in a container environment
+such as Docker or Kubernetes.  The code here then allows for pushing
+input files to the container, starting LS-DYNA and monitoring its
+progress, and retrieving results files.</p>
 <div class="toctree-wrapper compound">
 </div>
 </section>
@@ -261,7 +274,7 @@
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   

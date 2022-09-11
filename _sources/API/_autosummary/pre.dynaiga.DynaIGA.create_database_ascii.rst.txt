@@ -1,0 +1,6 @@
+create\_database\_ascii
+=======================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_database_ascii

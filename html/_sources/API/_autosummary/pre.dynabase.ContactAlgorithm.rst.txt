@@ -1,0 +1,23 @@
+pre.dynabase.ContactAlgorithm
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ContactAlgorithm
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

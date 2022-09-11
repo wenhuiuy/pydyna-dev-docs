@@ -1,0 +1,6 @@
+create\_em\_eos\_permeability
+=============================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_eos_permeability

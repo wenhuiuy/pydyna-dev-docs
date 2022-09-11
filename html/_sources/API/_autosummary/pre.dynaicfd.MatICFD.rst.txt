@@ -1,0 +1,22 @@
+pre.dynaicfd.MatICFD
+====================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: MatICFD
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

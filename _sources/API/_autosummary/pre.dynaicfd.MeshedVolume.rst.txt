@@ -1,0 +1,31 @@
+pre.dynaicfd.MeshedVolume
+=========================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: MeshedVolume
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MeshedVolume.create
+      
+      
+      MeshedVolume.embed_shell
+      
+      
+      MeshedVolume.meshsize_box
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+create\_damping\_global
+=======================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_damping_global

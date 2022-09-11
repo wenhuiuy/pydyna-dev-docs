@@ -1,0 +1,6 @@
+partlist
+========
+
+.. currentmodule:: pre.dynabase
+
+.. autoattribute:: BeamPart.partlist

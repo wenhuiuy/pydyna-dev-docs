@@ -1,0 +1,6 @@
+create\_hourglass
+=================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_hourglass

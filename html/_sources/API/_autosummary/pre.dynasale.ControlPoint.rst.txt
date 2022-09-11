@@ -1,0 +1,22 @@
+pre.dynasale.ControlPoint
+=========================
+
+.. currentmodule:: pre.dynasale
+
+.. autoclass:: ControlPoint
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

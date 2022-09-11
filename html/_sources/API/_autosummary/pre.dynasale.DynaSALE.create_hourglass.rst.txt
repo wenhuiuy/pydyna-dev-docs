@@ -1,0 +1,6 @@
+create\_hourglass
+=================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.create_hourglass

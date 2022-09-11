@@ -1,0 +1,39 @@
+﻿pre.dynaem
+==========
+
+.. automodule:: pre.dynaem
+  
+   
+   
+   
+
+   
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      BEMSOLVER
+      Circuit
+      CircuitType
+      DynaEM
+      EMAnalysis
+      EMContact
+      EMContactType
+      EMType
+      FEMSOLVER
+   
+   
+
+   
+   
+   
+
+
+

@@ -1,0 +1,6 @@
+meshsize\_box
+=============
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: MeshedVolume.meshsize_box

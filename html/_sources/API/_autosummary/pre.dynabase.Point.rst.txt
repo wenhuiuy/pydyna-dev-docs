@@ -1,0 +1,22 @@
+pre.dynabase.Point
+==================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Point
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

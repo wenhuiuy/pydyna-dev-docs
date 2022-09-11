@@ -1,0 +1,6 @@
+create\_control\_shell
+======================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_control_shell

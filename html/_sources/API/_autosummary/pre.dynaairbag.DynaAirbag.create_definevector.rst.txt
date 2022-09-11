@@ -1,0 +1,6 @@
+create\_definevector
+====================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_definevector

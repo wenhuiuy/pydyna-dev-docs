@@ -1,0 +1,6 @@
+create\_nodeset
+===============
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_nodeset

@@ -1,0 +1,6 @@
+tail
+====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.tail

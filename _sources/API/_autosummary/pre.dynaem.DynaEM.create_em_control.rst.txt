@@ -1,0 +1,6 @@
+create\_em\_control
+===================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_control

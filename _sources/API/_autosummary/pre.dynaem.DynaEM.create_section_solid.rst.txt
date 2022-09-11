@@ -1,0 +1,6 @@
+create\_section\_solid
+======================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_section_solid

@@ -1,0 +1,6 @@
+save\_file
+==========
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.save_file

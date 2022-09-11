@@ -1,0 +1,25 @@
+pre.dynamaterial.MatPiecewiseLinearPlasticity
+=============================================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatPiecewiseLinearPlasticity
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatPiecewiseLinearPlasticity.create
+      
+   
+   
+
+   
+   
+   

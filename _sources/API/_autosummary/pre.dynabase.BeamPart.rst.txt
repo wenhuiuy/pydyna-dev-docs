@@ -1,0 +1,46 @@
+pre.dynabase.BeamPart
+=====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: BeamPart
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      BeamPart.set_cross_type
+      
+      
+      BeamPart.set_diameter
+      
+      
+      BeamPart.set_element_formulation
+      
+      
+      BeamPart.set_material
+      
+      
+      BeamPart.set_property
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      BeamPart.partlist
+      
+   
+   

@@ -1,0 +1,6 @@
+create\_database\_binary
+========================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_database_binary

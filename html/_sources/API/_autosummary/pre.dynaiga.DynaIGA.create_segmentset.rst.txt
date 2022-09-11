@@ -1,0 +1,6 @@
+create\_segmentset
+==================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_segmentset

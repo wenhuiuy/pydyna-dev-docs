@@ -1,0 +1,6 @@
+create\_constrained\_extra\_nodes
+=================================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.create_constrained_extra_nodes

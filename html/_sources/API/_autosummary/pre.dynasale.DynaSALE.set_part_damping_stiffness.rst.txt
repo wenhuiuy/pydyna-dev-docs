@@ -1,0 +1,6 @@
+set\_part\_damping\_stiffness
+=============================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.set_part_damping_stiffness

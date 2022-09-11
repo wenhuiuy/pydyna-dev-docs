@@ -1,0 +1,6 @@
+num
+===
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: PartSet.num

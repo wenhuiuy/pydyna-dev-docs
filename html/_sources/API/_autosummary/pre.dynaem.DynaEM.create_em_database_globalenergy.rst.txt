@@ -1,0 +1,6 @@
+create\_em\_database\_globalenergy
+==================================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_database_globalenergy

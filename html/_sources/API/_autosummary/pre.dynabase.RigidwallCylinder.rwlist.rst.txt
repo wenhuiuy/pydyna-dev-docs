@@ -1,0 +1,6 @@
+rwlist
+======
+
+.. currentmodule:: pre.dynabase
+
+.. autoattribute:: RigidwallCylinder.rwlist

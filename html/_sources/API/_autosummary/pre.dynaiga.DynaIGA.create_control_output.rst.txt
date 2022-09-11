@@ -1,0 +1,6 @@
+create\_control\_output
+=======================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_control_output

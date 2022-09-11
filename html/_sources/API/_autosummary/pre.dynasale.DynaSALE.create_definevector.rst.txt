@@ -1,0 +1,6 @@
+create\_definevector
+====================
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.create_definevector

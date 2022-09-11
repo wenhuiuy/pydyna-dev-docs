@@ -1,0 +1,37 @@
+pre.dynabase.RigidwallCylinder
+==============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: RigidwallCylinder
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      RigidwallCylinder.create
+      
+      
+      RigidwallCylinder.set_motion
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      RigidwallCylinder.rwlist
+      
+   
+   

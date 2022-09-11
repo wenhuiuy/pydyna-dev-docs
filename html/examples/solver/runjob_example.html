@@ -26,6 +26,7 @@
     href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/graphviz.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/css\ansys_sphinx_theme.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sg_gallery-binder.css" />
@@ -407,10 +408,10 @@ to download the full example code</p>
 <span class="k">def</span> <span class="nf">get_from_minikube</span><span class="p">():</span>
     <span class="sd">&quot;&quot;&quot;Get the IP address and port of the DYNA server service when running</span>
 <span class="sd">    under minikube locally&quot;&quot;&quot;</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;minikube ip&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/os.html#os.popen" title="os.popen" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">popen</span></a><span class="p">(</span><span class="s2">&quot;minikube ip&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
     <span class="n">ip</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
     <span class="n">f</span><span class="o">.</span><span class="n">close</span>
-    <span class="n">f</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">popen</span><span class="p">(</span><span class="s2">&quot;kubectl get svc server&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+    <span class="n">f</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/os.html#os.popen" title="os.popen" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">popen</span></a><span class="p">(</span><span class="s2">&quot;kubectl get svc server&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
     <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
     <span class="n">p</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
     <span class="n">n1</span> <span class="o">=</span> <span class="n">p</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s2">&quot;:&quot;</span><span class="p">)</span>
@@ -427,7 +428,7 @@ to download the full example code</p>
     <span class="n">dyna</span> <span class="o">=</span> <span class="n">solver</span><span class="o">.</span><span class="n">DynaSolver</span><span class="p">(</span><span class="n">hostname</span><span class="p">,</span> <span class="n">port</span><span class="p">)</span>
     <span class="n">dyna</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="n">fname</span><span class="p">)</span>
     <span class="n">dyna</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="n">nproc</span><span class="p">)</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># let dyna get going?  Shouldn&#39;t the pipe just hang?</span>
+    <a href="https://docs.python.org/dev/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>  <span class="c1"># let dyna get going?  Shouldn&#39;t the pipe just hang?</span>
     <span class="n">dyna</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="n">cmdline</span><span class="p">)</span>
     <span class="k">return</span> <span class="n">dyna</span>
 
@@ -446,7 +447,7 @@ to download the full example code</p>
 <span class="c1"># And watch it until it gets there</span>
 <span class="c1">#</span>
 <span class="k">while</span> <span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <a href="https://docs.python.org/dev/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">dyna</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">solver</span><span class="o">.</span><span class="n">RunningError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -466,7 +467,7 @@ to download the full example code</p>
 <span class="c1"># wait a moment, then get some switch 2 output</span>
 <span class="c1">#</span>
 <span class="n">dyna</span><span class="o">.</span><span class="n">resume</span><span class="p">()</span>
-<span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+<a href="https://docs.python.org/dev/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
 <span class="n">s</span> <span class="o">=</span> <span class="n">dyna</span><span class="o">.</span><span class="n">switch</span><span class="p">(</span><span class="s2">&quot;sw2.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Output from switch sw2.&quot;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">s</span><span class="p">)</span>
@@ -475,7 +476,7 @@ to download the full example code</p>
 <span class="c1">#</span>
 <span class="n">getnode</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="k">while</span><span class="p">(</span><span class="mi">1</span><span class="p">):</span>
-    <span class="n">time</span><span class="o">.</span><span class="n">sleep</span><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
+    <a href="https://docs.python.org/dev/library/time.html#time.sleep" title="time.sleep" class="sphx-glr-backref-module-time sphx-glr-backref-type-py-function"><span class="n">time</span><span class="o">.</span><span class="n">sleep</span></a><span class="p">(</span><span class="mf">1.0</span><span class="p">)</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">t</span><span class="p">)</span> <span class="o">=</span> <span class="n">dyna</span><span class="o">.</span><span class="n">time</span><span class="p">()</span>
     <span class="k">except</span> <span class="n">solver</span><span class="o">.</span><span class="n">RunningError</span> <span class="k">as</span> <span class="n">err</span><span class="p">:</span>
@@ -523,7 +524,7 @@ to download the full example code</p>
   
   <div class="footer-item">
     <p class="copyright">
-    &copy; Copyright (c) 2021 ANSYS, Inc. All rights reserved.<br>
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
 </p>
   </div>
   

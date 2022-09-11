@@ -1,0 +1,6 @@
+create\_definevector
+====================
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: DynaICFD.create_definevector

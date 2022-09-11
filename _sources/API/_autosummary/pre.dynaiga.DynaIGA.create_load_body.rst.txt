@@ -1,0 +1,6 @@
+create\_load\_body
+==================
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_load_body

@@ -1,0 +1,6 @@
+pull
+====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.pull

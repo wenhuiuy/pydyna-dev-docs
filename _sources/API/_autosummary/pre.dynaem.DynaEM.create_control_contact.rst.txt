@@ -1,0 +1,6 @@
+create\_control\_contact
+========================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_control_contact

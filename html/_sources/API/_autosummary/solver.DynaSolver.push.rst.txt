@@ -1,0 +1,6 @@
+﻿push
+====
+
+.. currentmodule:: solver
+
+.. automethod:: DynaSolver.push

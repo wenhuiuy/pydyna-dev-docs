@@ -1,0 +1,6 @@
+set\_hourglass
+==============
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.set_hourglass

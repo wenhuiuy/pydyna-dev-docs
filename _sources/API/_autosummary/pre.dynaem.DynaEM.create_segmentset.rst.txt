@@ -1,0 +1,6 @@
+create\_segmentset
+==================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_segmentset

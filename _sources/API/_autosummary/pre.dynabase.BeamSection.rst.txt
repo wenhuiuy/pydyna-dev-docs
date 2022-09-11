@@ -1,0 +1,22 @@
+pre.dynabase.BeamSection
+========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: BeamSection
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

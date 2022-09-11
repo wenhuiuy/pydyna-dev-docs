@@ -1,0 +1,6 @@
+open\_files
+===========
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.open_files

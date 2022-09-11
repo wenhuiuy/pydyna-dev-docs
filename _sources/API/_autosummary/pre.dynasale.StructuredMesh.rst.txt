@@ -1,0 +1,40 @@
+pre.dynasale.StructuredMesh
+===========================
+
+.. currentmodule:: pre.dynasale
+
+.. autoclass:: StructuredMesh
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      StructuredMesh.fill
+      
+      
+      StructuredMesh.initial_detonation
+      
+      
+      StructuredMesh.refine
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      StructuredMesh.num_meshpart
+      
+   
+   

@@ -1,0 +1,25 @@
+pre.dynabase.InvariantNode
+==========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: InvariantNode
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

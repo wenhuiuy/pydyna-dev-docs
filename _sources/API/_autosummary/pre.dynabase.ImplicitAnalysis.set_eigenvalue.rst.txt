@@ -1,0 +1,6 @@
+set\_eigenvalue
+===============
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: ImplicitAnalysis.set_eigenvalue

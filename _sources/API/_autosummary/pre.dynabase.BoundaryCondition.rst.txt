@@ -1,0 +1,28 @@
+pre.dynabase.BoundaryCondition
+==============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: BoundaryCondition
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      BoundaryCondition.create_imposed_motion
+      
+      
+      BoundaryCondition.create_spc
+      
+   
+   
+
+   
+   
+   

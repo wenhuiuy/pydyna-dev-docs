@@ -1,0 +1,25 @@
+pre.dynaem.EMType
+=================
+
+.. currentmodule:: pre.dynaem
+
+.. autoclass:: EMType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+   
+   

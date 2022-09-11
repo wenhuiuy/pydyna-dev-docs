@@ -1,0 +1,25 @@
+pre.dynamaterial.MatNull
+========================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatNull
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatNull.create
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,6 @@
+create\_em\_solver\_fembem\_monolithic
+======================================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_em_solver_fembem_monolithic

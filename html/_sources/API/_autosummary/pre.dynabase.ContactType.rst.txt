@@ -1,0 +1,29 @@
+pre.dynabase.ContactType
+========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ContactType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+      
+      
+      
+      
+   
+   

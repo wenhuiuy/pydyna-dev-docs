@@ -1,0 +1,25 @@
+pre.dynamaterial.Air
+====================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: Air
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Air.create
+      
+   
+   
+
+   
+   
+   

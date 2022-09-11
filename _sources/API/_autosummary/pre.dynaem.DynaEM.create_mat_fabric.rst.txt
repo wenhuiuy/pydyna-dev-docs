@@ -1,0 +1,6 @@
+create\_mat\_fabric
+===================
+
+.. currentmodule:: pre.dynaem
+
+.. automethod:: DynaEM.create_mat_fabric

@@ -1,0 +1,163 @@
+﻿pre.dynabase.DynaBase
+=====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: DynaBase
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaBase.create_boundary_prescribed_motion
+      
+      
+      DynaBase.create_boundary_spc
+      
+      
+      DynaBase.create_constrained_extra_nodes
+      
+      
+      DynaBase.create_constrained_joint
+      
+      
+      DynaBase.create_contact
+      
+      
+      DynaBase.create_control_contact
+      
+      
+      DynaBase.create_control_output
+      
+      
+      DynaBase.create_control_shell
+      
+      
+      DynaBase.create_control_solid
+      
+      
+      DynaBase.create_damping_global
+      
+      
+      DynaBase.create_database_ascii
+      
+      
+      DynaBase.create_database_binary
+      
+      
+      DynaBase.create_definecurve
+      
+      
+      DynaBase.create_defineorientation
+      
+      
+      DynaBase.create_definevector
+      
+      
+      DynaBase.create_general_keyword
+      
+      
+      DynaBase.create_hourglass
+      
+      
+      DynaBase.create_init_vel
+      
+      
+      DynaBase.create_init_vel_bodies
+      
+      
+      DynaBase.create_init_vel_rigidbody
+      
+      
+      DynaBase.create_load_body
+      
+      
+      DynaBase.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaBase.create_mat_damper_viscous
+      
+      
+      DynaBase.create_mat_fabric
+      
+      
+      DynaBase.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaBase.create_nodeset
+      
+      
+      DynaBase.create_partset
+      
+      
+      DynaBase.create_rigidwall_geom
+      
+      
+      DynaBase.create_rigidwall_planar
+      
+      
+      DynaBase.create_section_discrete
+      
+      
+      DynaBase.create_section_shell
+      
+      
+      DynaBase.create_section_solid
+      
+      
+      DynaBase.create_segmentset
+      
+      
+      DynaBase.create_shellset
+      
+      
+      DynaBase.create_solidset
+      
+      
+      DynaBase.get_solid_elements
+      
+      
+      DynaBase.get_stub
+      
+      
+      DynaBase.open_files
+      
+      
+      DynaBase.save_file
+      
+      
+      DynaBase.set_accuracy
+      
+      
+      DynaBase.set_bulk_viscosity
+      
+      
+      DynaBase.set_energy
+      
+      
+      DynaBase.set_hourglass
+      
+      
+      DynaBase.set_output_database
+      
+      
+      DynaBase.set_part_damping_stiffness
+      
+      
+      DynaBase.set_termination
+      
+      
+      DynaBase.set_timestep
+      
+   
+   
+
+   
+   
+   

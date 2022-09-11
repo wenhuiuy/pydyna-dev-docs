@@ -1,0 +1,22 @@
+pre.dynabase.RigidwallPlanar
+============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: RigidwallPlanar
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

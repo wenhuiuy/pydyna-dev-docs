@@ -1,0 +1,6 @@
+create\_mat\_spring\_nonlinear\_elastic
+=======================================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_mat_spring_nonlinear_elastic

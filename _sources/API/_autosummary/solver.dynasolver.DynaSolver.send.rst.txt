@@ -1,0 +1,6 @@
+send
+====
+
+.. currentmodule:: solver.dynasolver
+
+.. automethod:: DynaSolver.send

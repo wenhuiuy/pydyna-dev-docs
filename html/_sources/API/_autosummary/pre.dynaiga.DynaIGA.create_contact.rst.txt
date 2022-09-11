@@ -1,0 +1,6 @@
+create\_contact
+===============
+
+.. currentmodule:: pre.dynaiga
+
+.. automethod:: DynaIGA.create_contact

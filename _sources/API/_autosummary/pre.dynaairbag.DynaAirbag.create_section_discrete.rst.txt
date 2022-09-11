@@ -1,0 +1,6 @@
+create\_section\_discrete
+=========================
+
+.. currentmodule:: pre.dynaairbag
+
+.. automethod:: DynaAirbag.create_section_discrete

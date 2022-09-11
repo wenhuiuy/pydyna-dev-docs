@@ -1,0 +1,25 @@
+pre.dynamaterial.HighExplosive
+==============================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: HighExplosive
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      HighExplosive.create
+      
+   
+   
+
+   
+   
+   

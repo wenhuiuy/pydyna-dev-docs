@@ -1,0 +1,6 @@
+cnrbsetidlist
+=============
+
+.. currentmodule:: pre.dynabase
+
+.. autoattribute:: Constraint.cnrbsetidlist

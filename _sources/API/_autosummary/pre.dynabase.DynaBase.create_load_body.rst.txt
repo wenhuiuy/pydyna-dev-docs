@@ -1,0 +1,6 @@
+create\_load\_body
+==================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: DynaBase.create_load_body

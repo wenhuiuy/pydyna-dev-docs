@@ -1,0 +1,23 @@
+pre.dynaicfd.Vel
+================
+
+.. currentmodule:: pre.dynaicfd
+
+.. autoclass:: Vel
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

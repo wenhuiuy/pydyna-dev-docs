@@ -1,0 +1,6 @@
+get\_stub
+=========
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: DynaSALE.get_stub

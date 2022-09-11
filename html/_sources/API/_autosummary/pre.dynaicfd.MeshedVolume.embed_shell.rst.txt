@@ -1,0 +1,6 @@
+embed\_shell
+============
+
+.. currentmodule:: pre.dynaicfd
+
+.. automethod:: MeshedVolume.embed_shell

@@ -1,0 +1,22 @@
+pre.dynabase.Direction
+======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Direction
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

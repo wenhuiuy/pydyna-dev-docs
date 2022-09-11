@@ -1,0 +1,23 @@
+pre.dynabase.TimestepCtrol
+==========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: TimestepCtrol
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+   
+   

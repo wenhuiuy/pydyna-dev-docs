@@ -1,0 +1,28 @@
+pre.dynamaterial.MatRigid
+=========================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatRigid
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatRigid.create
+      
+      
+      MatRigid.set_electromagnetic_property
+      
+   
+   
+
+   
+   
+   

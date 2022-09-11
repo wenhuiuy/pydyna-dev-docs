@@ -1,0 +1,6 @@
+w\_matrix\_tol
+==============
+
+.. currentmodule:: pre.dynaem
+
+.. autoattribute:: EMAnalysis.w_matrix_tol

@@ -1,0 +1,40 @@
+pre.dynabase.Constraint
+=======================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Constraint
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Constraint.create
+      
+      
+      Constraint.create_cnrb
+      
+      
+      Constraint.create_spotweld
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      Constraint.cnrbsetidlist
+      
+   
+   
