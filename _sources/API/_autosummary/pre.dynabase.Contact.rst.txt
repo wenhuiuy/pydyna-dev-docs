@@ -21,9 +21,6 @@ pre.dynabase.Contact
       Contact.set_active_time
       
       
-      Contact.set_algorithm
-      
-      
       Contact.set_friction_coefficient
       
       

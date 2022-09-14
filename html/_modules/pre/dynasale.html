@@ -239,6 +239,17 @@
 
 
 <div class="viewcode-block" id="ControlPoint"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.ControlPoint.html#pre.dynasale.ControlPoint">[docs]</a><span class="k">class</span> <span class="nc">ControlPoint</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Provide spacing information to generate a 3D structured ALE mesh.</span>
+<span class="sd">        </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    number : int</span>
+<span class="sd">        Control point node number.</span>
+<span class="sd">    position : float</span>
+<span class="sd">        Control point position.</span>
+<span class="sd">    ratio : float   </span>
+<span class="sd">        Ratio for progressive mesh spacing.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">ratio</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="n">number</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
@@ -246,6 +257,15 @@
 
 
 <div class="viewcode-block" id="StructuredMesh"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.html#pre.dynasale.StructuredMesh">[docs]</a><span class="k">class</span> <span class="nc">StructuredMesh</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Generate a structured 2D or 3D mesh and invoke the Structured ALE (S-ALE) solver.</span>
+<span class="sd">        </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    meshid : int</span>
+<span class="sd">        S-ALE Mesh ID.</span>
+<span class="sd">    partid : int</span>
+<span class="sd">        Default Part ID. The elements generated are assigned to DPID.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
     <span class="n">num_meshpart</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">,</span> <span class="n">meshid</span><span class="p">,</span> <span class="n">partid</span><span class="p">):</span>
@@ -337,7 +357,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="StructuredMesh.initial_detonation"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.initial_detonation.html#pre.dynasale.StructuredMesh.initial_detonation">[docs]</a>    <span class="k">def</span> <span class="nf">initial_detonation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detonation_point</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *ICFD_DATABASE_DRAG keyword.</span>
+        <span class="sd">&quot;&quot;&quot;Define points to initiate the location of high explosive detonations.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -366,9 +386,33 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBSALE</span><span class="p">(</span><span class="n">DBSALERequest</span><span class="p">(</span><span class="n">switch</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
 <div class="viewcode-block" id="DynaSALE.set_termination"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_termination.html#pre.dynasale.DynaSALE.set_termination">[docs]</a>    <span class="k">def</span> <span class="nf">set_termination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endtime</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Setting termination time to stop the job.</span>
+<span class="sd">    </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        termination_time : float</span>
+<span class="sd">            Termination time.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateTermination</span><span class="p">(</span><span class="n">TerminationRequest</span><span class="p">(</span><span class="n">endtim</span><span class="o">=</span><span class="n">endtime</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="DynaSALE.set_output_interval"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_output_interval.html#pre.dynasale.DynaSALE.set_output_interval">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database_plot_interval</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Request binary output.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        database_plot_interval : float</span>
+<span class="sd">            Defines the time interval between output states.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBBinary</span><span class="p">(</span>
             <span class="n">DBBinaryRequest</span><span class="p">(</span><span class="n">filetype</span><span class="o">=</span><span class="s2">&quot;D3PLOT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">database_plot_interval</span><span class="p">)</span>
         <span class="p">)</span></div>

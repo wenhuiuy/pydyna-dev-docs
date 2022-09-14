@@ -1,4 +1,4 @@
-pre.dynamaterial.Vacuum
+﻿pre.dynamaterial.Vacuum
 =======================
 
 .. currentmodule:: pre.dynamaterial
@@ -21,14 +21,5 @@ pre.dynamaterial.Vacuum
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      Vacuum.estimated_material_density
-      
    
    

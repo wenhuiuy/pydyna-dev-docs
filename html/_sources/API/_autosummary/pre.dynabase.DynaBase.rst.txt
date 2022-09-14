@@ -1,4 +1,4 @@
-﻿pre.dynabase.DynaBase
+pre.dynabase.DynaBase
 =====================
 
 .. currentmodule:: pre.dynabase
@@ -18,16 +18,10 @@
       DynaBase.create_boundary_prescribed_motion
       
       
-      DynaBase.create_boundary_spc
-      
-      
       DynaBase.create_constrained_extra_nodes
       
       
       DynaBase.create_constrained_joint
-      
-      
-      DynaBase.create_contact
       
       
       DynaBase.create_control_contact
@@ -51,13 +45,7 @@
       DynaBase.create_database_binary
       
       
-      DynaBase.create_definecurve
-      
-      
       DynaBase.create_defineorientation
-      
-      
-      DynaBase.create_definevector
       
       
       DynaBase.create_general_keyword
@@ -84,19 +72,7 @@
       DynaBase.create_mat_damper_viscous
       
       
-      DynaBase.create_mat_fabric
-      
-      
       DynaBase.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaBase.create_nodeset
-      
-      
-      DynaBase.create_partset
-      
-      
-      DynaBase.create_rigidwall_geom
       
       
       DynaBase.create_rigidwall_planar
@@ -105,13 +81,7 @@
       DynaBase.create_section_discrete
       
       
-      DynaBase.create_section_shell
-      
-      
       DynaBase.create_section_solid
-      
-      
-      DynaBase.create_segmentset
       
       
       DynaBase.create_shellset

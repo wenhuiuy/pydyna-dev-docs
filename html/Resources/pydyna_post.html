@@ -1,0 +1,1259 @@
+
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+    <title>PyDPF-post-for-DYNA &#8212; PyDyna</title>
+    
+<script>
+  document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+  document.documentElement.dataset.theme = localStorage.getItem("theme") || "light"
+</script>
+
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../_static/styles/theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=92025949c220c2e29695" rel="stylesheet">
+
+
+  <link rel="stylesheet"
+    href="../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/graphviz.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/css\ansys_sphinx_theme.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-binder.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-dataframe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sg_gallery-rendered-html.css" />
+
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695">
+
+    
+        <link href="../_static/css/breadcrumbs.css" rel="stylesheet">
+    
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="API reference" href="../API/index.html" />
+    <link rel="prev" title="PyDyna-solver" href="pydyna_solver.html" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="docsearch:language" content="en">
+  </head>
+  
+  
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="180" data-default-mode="">
+    <div class="bd-header-announcement container-fluid" id="banner">
+      
+
+    </div>
+
+    
+    
+    <nav class="bd-header navbar navbar-light navbar-expand-lg bg-light fixed-top bd-navbar" id="navbar-main"><div class="bd-header__inner container-xl">
+
+  <div id="navbar-start">
+    
+    
+  
+
+
+<a class="navbar-brand logo" href="../index.html">
+  
+  
+  
+  
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-light" alt="Logo image">
+    <img src="../_static/pyansys-logo-black-cropped.png" class="logo__image only-dark" alt="Logo image">
+  
+  
+</a>
+    
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapsible" aria-controls="navbar-collapsible" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="fas fa-bars"></span>
+  </button>
+
+  
+  <div id="navbar-collapsible" class="col-lg-9 collapse navbar-collapse">
+    <div id="navbar-center" class="mr-auto">
+      
+      <div class="navbar-center-item">
+        <ul id="navbar-main-elements" class="navbar-nav">
+    <li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Getting_Started.html">
+  Getting Started
+ </a>
+</li>
+
+<li class="toctree-l1 current active nav-item">
+ <a class="reference internal nav-link" href="User_Guide.html">
+  User Guide
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../API/index.html">
+  API reference
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="../examples/index.html">
+  Examples
+ </a>
+</li>
+
+<li class="toctree-l1 nav-item">
+ <a class="reference internal nav-link" href="Contributing.html">
+  Contributing
+ </a>
+</li>
+
+    
+</ul>
+      </div>
+      
+    </div>
+
+    <div id="navbar-end">
+      
+      <div class="navbar-end-item">
+        <span id="theme-switch" class="btn btn-sm btn-outline-primary navbar-btn rounded-circle">
+    <a class="theme-switch" data-mode="light"><i class="fas fa-sun"></i></a>
+    <a class="theme-switch" data-mode="dark"><i class="far fa-moon"></i></a>
+    <a class="theme-switch" data-mode="auto"><i class="fas fa-adjust"></i></a>
+</span>
+      </div>
+      
+      <div class="navbar-end-item">
+        <ul id="navbar-icon-links" class="navbar-nav" aria-label="Icon Links">
+        <li class="nav-item">
+          <a class="nav-link" href="https://github.com/pyansys/pydyna" rel="noopener" target="_blank" title="GitHub"><span><i class="fab fa-github-square"></i></span>
+            <label class="sr-only">GitHub</label></a>
+        </li>
+      </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+    </nav>
+    
+    
+        <div class="container-xl">
+    <div class="row">
+        <div class="col-12 col-md-3" id="breadcrumbs-spacer"></div>
+        <div class="col-12 col-md-11 col-xl-9" id="breadcrumbs">
+          
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>Navigation</h3>
+      <ul>
+    
+        <li class="nav-item nav-item-additional-breadcrumb"><a href="https://docs.pyansys.com/">PyAnsys</a> » </li>
+    
+    
+        <li class="nav-item nav-item-0"><a href="../index.html">PyDyna</a> » </li>
+    
+
+          <li class="nav-item nav-item-1"><a href="User_Guide.html" accesskey="U">User Guide</a> » </li>
+        <li class="nav-item nav-item-this"><a href="">PyDPF-post-for-DYNA</a></li> 
+      </ul>
+    </div>
+        </div>
+  </div>
+</div>
+    
+
+
+    <div class="bd-container container-xl">
+      <div class="bd-container__inner row">
+          
+
+<!-- Only show if we have sidebars configured, else just a small margin  -->
+<div class="bd-sidebar-primary col-12 col-md-3 bd-sidebar">
+  <div class="sidebar-start-items"><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search the docs ..." aria-label="Search the docs ..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <div class="bd-toc-item active">
+    
+    <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="pydyna_pre.html">
+   PyDyna-pre
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pydyna_solver.html">
+   PyDyna-solver
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   PyDPF-post-for-DYNA
+  </a>
+ </li>
+</ul>
+
+    
+  </div>
+</nav>
+  </div>
+  <div class="sidebar-end-items">
+  </div>
+</div>
+
+
+          
+
+
+<div class="bd-sidebar-secondary d-none d-xl-block col-xl-2 bd-toc">
+  
+    
+    <div class="toc-item">
+      
+<div class="tocsection onthispage mt-5 pt-1 pb-3">
+    <i class="fas fa-list"></i> On this page
+</div>
+
+<nav id="bd-toc-nav">
+    <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#operators">
+   operators
+  </a>
+ </li>
+</ul>
+
+</nav>
+    </div>
+    
+    <div class="toc-item">
+      
+    </div>
+    
+  
+</div>
+
+
+          
+          
+          <div class="bd-content col-12 col-md-9 col-xl-7">
+              
+              <article class="bd-article" role="main">
+                
+  <section id="pydpf-post-for-dyna">
+<h1>PyDPF-post-for-DYNA<a class="headerlink" href="#pydpf-post-for-dyna" title="Permalink to this heading">#</a></h1>
+<section id="operators">
+<h2>operators<a class="headerlink" href="#operators" title="Permalink to this heading">#</a></h2>
+<ol class="arabic">
+<li><p>d3plot</p>
+<ul>
+<li><p>lsdyna::d3plot::meshes_provider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="c1"># for regular mesh</span>
+<span class="n">meshOP</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::meshes_provider&quot;</span><span class="p">)</span>
+<span class="n">meshOP</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">meshes</span> <span class="o">=</span> <span class="n">meshOP</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">meshes</span><span class="p">()</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">meshes</span><span class="o">.</span><span class="n">get_mesh</span><span class="p">({})</span>
+
+<span class="c1"># for adaptive mesh</span>
+<span class="n">meshOP</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::meshes_provider&quot;</span><span class="p">)</span>
+<span class="n">meshOP</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">timeScoping</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Scoping</span><span class="p">()</span>
+<span class="n">timeScoping</span><span class="o">.</span><span class="n">ids</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">21</span><span class="p">))</span>
+<span class="n">meshOP</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">timeScoping</span><span class="p">)</span>
+<span class="n">meshes</span> <span class="o">=</span> <span class="n">meshOP</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">meshes</span><span class="p">()</span>
+<span class="n">mesh</span> <span class="o">=</span> <span class="n">meshes</span><span class="o">.</span><span class="n">get_mesh</span><span class="p">({</span><span class="s1">&#39;time&#39;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::U</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">coord</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::U&quot;</span><span class="p">)</span>
+<span class="n">coord</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">coord</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">coord</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">displacement</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">time</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">time</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_time_freq_support</span> <span class="o">=</span> <span class="n">time</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::result_info_provider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultInfoOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::result_info_provider&quot;</span><span class="p">)</span>
+<span class="n">resultInfoOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_info</span> <span class="o">=</span> <span class="n">resultInfoOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">result_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::eng_ke</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::eng_ke&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">global_kinetic_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::global_internal_energy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::global_internal_energy&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">global_internal_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::global_total_energy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::global_total_energy&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">global_total_energy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::global_velocity</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::global_velocity&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">global_velocity</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_initial_coordinates</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_initial_coordinates&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_initial_coordinates</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_coordinates</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_coordinates&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_coordinates</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::V</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::V&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_velocities</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::A</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::A&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_accelerations</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_temperature</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_temperature&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_temperature</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_heat_flux</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_heat_flux&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_heat_flux</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_mass_scaling</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_mass_scaling&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_mass_scaling</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_temperature_divide_time</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_temperature_divide_time&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_temperature_divide_time</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_residual_force</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_residual_force&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_residual_force</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_residual_moment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_residual_moment&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_residual_moment</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_penetration</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_penetration&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_penetration</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_relative_penetration</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_relative_penetration&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_relative_penetration</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::node_contact_energy_density</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::node_contact_energy_density&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">node_contact_energy_density</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::S</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::S&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::stress_von_mises</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::stress_von_mises&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">stress_von_mises</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::effective_plastic_strain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::effective_plastic_strain&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">effective_plastic_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::EPEL</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::EPEL&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">strain</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::strain_von_mises</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::strain_von_mises&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">strain_von_mises</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::history_var</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::history_var&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">history_var</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::thickness</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::thickness&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">thickness</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::element_dependent_var_1</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::element_dependent_var_1&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">element_dependent_var_1</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::element_dependent_var_2</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::element_dependent_var_2&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">element_dependent_var_2</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::mx</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::mx&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">mx</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::my</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::my&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">my</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::mxy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::mxy&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">mxy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::qx</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::qx&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">qx</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::qy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::qy&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">qy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::nx</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::nx&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">nx</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::ny</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::ny&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">ny</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::nxy</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::nxy&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">nxy</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::axial_force</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::axial_force&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">axial_force</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::s_shear_resultant</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::s_shear_resultant&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">s_shear_resultant</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::t_shear_resultant</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::t_shear_resultant&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">t_shear_resultant</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::s_bending_moment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::s_bending_moment&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">s_bending_moment</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::t_bending_moment</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::t_bending_moment&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">t_bending_moment</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::torsional_resultant</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::torsional_resultant&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">torsional_resultant</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::axial_stress</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::axial_stress&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">axial_stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::rs_shear_stress</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::rs_shear_stress&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">rs_shear_stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::tr_shear_stress</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::tr_shear_stress&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">tr_shear_stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::axial_plastic_strain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::axial_plastic_strain&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">axial_plastic_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::d3plot::axial_strain</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::axial_strain&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">axial_strain</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+<li><p>binout</p>
+<ul>
+<li><p>lsdyna::binout::meshes_provider</p>
+<p>```python from ansys.dpf import core as dpf</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>ds = dpf.DataSources() ds.set_result_file_path(r’./binout’, ‘binout’)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">meshOP</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::meshes_provider&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>meshOP.inputs.data_sources.connect(ds) meshes = meshOP.outputs.meshes()
+mesh = meshes.get_mesh({}) ```</p>
+<ul>
+<li><p>lsdyna::binout::U</p>
+<p>```python from ansys.dpf import core as dpf</p>
+</li>
+</ul>
+<p>ds = dpf.DataSources() ds.set_result_file_path(r’./binout’, ‘binout’)</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>coord = dpf.Operator(&quot;lsdyna::binout::U&quot;)
+coord.inputs.data_sources.connect(ds)
+# set the time
+coord.inputs.time_scoping.connect([3])
+fields = coord.outputs.displacement()
+```
+</pre></div>
+</div>
+<ul>
+<li><p>lsdyna::binout::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_time_freq_support</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::glstat::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;llsdyna::binout::glstat::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_time_freq_support</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::matsum::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;llsdyna::binout::matsum::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_time_freq_support</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::rcforc::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;llsdyna::binout::rcforc::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_time_freq_support</span> <span class="o">=</span> <span class="n">op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::result_info_provider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">resultInfoOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::result_info_provider&quot;</span><span class="p">)</span>
+<span class="n">resultInfoOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_info</span> <span class="o">=</span> <span class="n">resultInfoOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">result_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::S</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">stressOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::S&quot;</span><span class="p">)</span>
+<span class="n">stressOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">stressOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">stress</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::EPEL</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::EPEL&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">strain</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::glstat</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">glstat_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::glstat&quot;</span><span class="p">)</span>
+<span class="n">glstat_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">glstat_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">results</span><span class="p">()</span>
+
+<span class="c1"># get correponding result by component(from lsdyna::binout::result_info_provider)</span>
+<span class="n">field0</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">field1</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::matsum</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">glstat_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::matsum&quot;</span><span class="p">)</span>
+<span class="n">glstat_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">glstat_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">results</span><span class="p">()</span>
+
+<span class="c1"># get correponding result by component(from lsdyna::binout::result_info_provider)</span>
+<span class="n">field0</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">field1</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::binout::rcforc</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./binout&#39;</span><span class="p">,</span> <span class="s1">&#39;binout&#39;</span><span class="p">)</span>
+
+<span class="n">glstat_op</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::binout::rcforc&quot;</span><span class="p">)</span>
+<span class="n">glstat_op</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">glstat_op</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">results</span><span class="p">()</span>
+
+<span class="c1"># get correponding result by component(from lsdyna::binout::result_info_provider)</span>
+<span class="n">field0</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">0</span><span class="p">})</span>
+<span class="n">field1</span> <span class="o">=</span> <span class="n">fields</span><span class="o">.</span><span class="n">get_field</span><span class="p">({</span><span class="s2">&quot;component&quot;</span><span class="p">:</span><span class="mi">1</span><span class="p">})</span>
+<span class="o">...</span>
+</pre></div>
+</div>
+</li>
+</ul>
+<ol class="arabic" start="3">
+<li><p>nvh</p>
+<ul>
+<li><p>lsdyna::d3ssd::meshes_provider</p></li>
+<li><p>lsdyna::d3spcm::meshes_provider</p></li>
+<li><p>lsdyna::d3psd::meshes_provider</p></li>
+<li><p>lsdyna::d3rms::meshes_provider</p></li>
+<li><p>lsdyna::d3zcf::meshes_provider</p></li>
+<li><p>lsdyna::d3ssd::result_info_provider</p></li>
+<li><p>lsdyna::d3ssd::U</p></li>
+<li><p>lsdyna::d3ssd::V</p></li>
+<li><p>lsdyna::d3ssd::A</p></li>
+<li><p>lsdyna::d3ssd::S</p></li>
+<li><p>lsdyna::d3ssd::EPEL</p></li>
+<li><p>lsdyna::d3ssd::TimeFreqSupportProvider</p>
+<p>same as d3plot</p>
+</li>
+<li><p>lsdyna::moddynout::TimeFreqSupportProvider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::TimeFreqSupportProvider&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">time_freq_support</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::moddynout::result_info_provider</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">resultInfoOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::result_info_provider&quot;</span><span class="p">)</span>
+<span class="n">resultInfoOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">result_info</span> <span class="o">=</span> <span class="n">resultInfoOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">result_info</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::moddynout::F</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">disOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::F&quot;</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">disOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">moddynout_force</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::moddynout::A</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">disOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::A&quot;</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">disOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">moddynout_acceleration</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::moddynout::V</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">disOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::V&quot;</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">disOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">moddynout_velocity</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+<li><p>lsdyna::moddynout::U</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./moddynout&#39;</span><span class="p">,</span> <span class="s1">&#39;moddynout&#39;</span><span class="p">)</span>
+
+<span class="n">times</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">,</span> <span class="mi">10</span><span class="p">]</span>
+<span class="n">disOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::moddynout::U&quot;</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="n">disOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="p">(</span><span class="n">times</span><span class="p">)</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="n">disOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">moddynout_disp</span><span class="p">()</span>
+</pre></div>
+</div>
+</li>
+</ul>
+</li>
+</ol>
+</section>
+</section>
+
+
+              </article>
+              
+
+              
+          </div>
+          
+      </div>
+    </div>
+
+  
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=92025949c220c2e29695"></script>
+
+<footer class="bd-footer"><div class="bd-footer__inner container">
+  
+  <div class="footer-item">
+    <p class="copyright">
+    &copy; Copyright (c) 2022 ANSYS, Inc. All rights reserved.<br>
+</p>
+  </div>
+  
+  <div class="footer-item">
+    <p class="sphinx-version">
+Created using <a href="http://sphinx-doc.org/">Sphinx</a> 5.1.1.<br>
+</p>
+  </div>
+  
+</div>
+</footer>
+  </body>
+</html>

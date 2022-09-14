@@ -18,16 +18,10 @@
       DynaAirbag.create_boundary_prescribed_motion
       
       
-      DynaAirbag.create_boundary_spc
-      
-      
       DynaAirbag.create_constrained_extra_nodes
       
       
       DynaAirbag.create_constrained_joint
-      
-      
-      DynaAirbag.create_contact
       
       
       DynaAirbag.create_control_contact
@@ -51,13 +45,7 @@
       DynaAirbag.create_database_binary
       
       
-      DynaAirbag.create_definecurve
-      
-      
       DynaAirbag.create_defineorientation
-      
-      
-      DynaAirbag.create_definevector
       
       
       DynaAirbag.create_general_keyword
@@ -84,19 +72,7 @@
       DynaAirbag.create_mat_damper_viscous
       
       
-      DynaAirbag.create_mat_fabric
-      
-      
       DynaAirbag.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaAirbag.create_nodeset
-      
-      
-      DynaAirbag.create_partset
-      
-      
-      DynaAirbag.create_rigidwall_geom
       
       
       DynaAirbag.create_rigidwall_planar
@@ -105,13 +81,7 @@
       DynaAirbag.create_section_discrete
       
       
-      DynaAirbag.create_section_shell
-      
-      
       DynaAirbag.create_section_solid
-      
-      
-      DynaAirbag.create_segmentset
       
       
       DynaAirbag.create_shellset

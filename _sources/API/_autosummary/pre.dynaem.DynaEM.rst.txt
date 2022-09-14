@@ -21,19 +21,10 @@
       DynaEM.create_boundary_prescribed_motion
       
       
-      DynaEM.create_boundary_spc
-      
-      
-      DynaEM.create_circuit
-      
-      
       DynaEM.create_constrained_extra_nodes
       
       
       DynaEM.create_constrained_joint
-      
-      
-      DynaEM.create_contact
       
       
       DynaEM.create_control_contact
@@ -57,13 +48,7 @@
       DynaEM.create_database_binary
       
       
-      DynaEM.create_definecurve
-      
-      
       DynaEM.create_defineorientation
-      
-      
-      DynaEM.create_definevector
       
       
       DynaEM.create_em_contact
@@ -88,15 +73,6 @@
       
       
       DynaEM.create_em_output
-      
-      
-      DynaEM.create_em_solver_bem
-      
-      
-      DynaEM.create_em_solver_bemmat
-      
-      
-      DynaEM.create_em_solver_fem
       
       
       DynaEM.create_em_solver_fembem_monolithic
@@ -129,19 +105,7 @@
       DynaEM.create_mat_damper_viscous
       
       
-      DynaEM.create_mat_fabric
-      
-      
       DynaEM.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaEM.create_nodeset
-      
-      
-      DynaEM.create_partset
-      
-      
-      DynaEM.create_rigidwall_geom
       
       
       DynaEM.create_rigidwall_planar
@@ -150,13 +114,7 @@
       DynaEM.create_section_discrete
       
       
-      DynaEM.create_section_shell
-      
-      
       DynaEM.create_section_solid
-      
-      
-      DynaEM.create_segmentset
       
       
       DynaEM.create_shellset

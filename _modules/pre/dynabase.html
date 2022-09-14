@@ -241,6 +241,7 @@
 
 
 <div class="viewcode-block" id="get_file_chunks"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.get_file_chunks.html#pre.dynabase.get_file_chunks">[docs]</a><span class="k">def</span> <span class="nf">get_file_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Get file chunks.&quot;&quot;&quot;</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="s2">&quot;rb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">while</span> <span class="kc">True</span><span class="p">:</span>
             <span class="n">piece</span> <span class="o">=</span> <span class="n">f</span><span class="o">.</span><span class="n">read</span><span class="p">(</span><span class="n">CHUNK_SIZE</span><span class="p">)</span>
@@ -250,11 +251,13 @@
 
 
 <div class="viewcode-block" id="upload"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.upload.html#pre.dynabase.upload">[docs]</a><span class="k">def</span> <span class="nf">upload</span><span class="p">(</span><span class="n">stub_</span><span class="p">,</span> <span class="n">filename</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Upload files to server.&quot;&quot;&quot;</span>
     <span class="n">chunks_generator</span> <span class="o">=</span> <span class="n">get_file_chunks</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">stub_</span><span class="o">.</span><span class="n">Upload</span><span class="p">(</span><span class="n">chunks_generator</span><span class="p">)</span></div>
 
 
 <div class="viewcode-block" id="download"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.download.html#pre.dynabase.download">[docs]</a><span class="k">def</span> <span class="nf">download</span><span class="p">(</span><span class="n">stub_</span><span class="p">,</span> <span class="n">remote_name</span><span class="p">,</span> <span class="n">local_name</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Download files from server.&quot;&quot;&quot;</span>
     <span class="n">response</span> <span class="o">=</span> <span class="n">stub_</span><span class="o">.</span><span class="n">Download</span><span class="p">(</span><span class="n">DownloadRequest</span><span class="p">(</span><span class="n">url</span><span class="o">=</span><span class="n">remote_name</span><span class="p">))</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">local_name</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span> <span class="k">as</span> <span class="n">f</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">chunk</span> <span class="ow">in</span> <span class="n">response</span><span class="p">:</span>
@@ -262,6 +265,7 @@
 
 
 <div class="viewcode-block" id="init_log"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.init_log.html#pre.dynabase.init_log">[docs]</a><span class="k">def</span> <span class="nf">init_log</span><span class="p">(</span><span class="n">log_file</span><span class="p">):</span>
+    <span class="sd">&quot;&quot;&quot;Initial log file.&quot;&quot;&quot;</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">()</span><span class="o">.</span><span class="n">handlers</span><span class="p">:</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">basicConfig</span><span class="p">(</span>
             <span class="n">level</span><span class="o">=</span><span class="n">logging</span><span class="o">.</span><span class="n">DEBUG</span><span class="p">,</span>
@@ -345,10 +349,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">casetype</span> <span class="o">=</span> <span class="n">CaseType</span><span class="o">.</span><span class="n">STRUCTURE</span>
 
 <div class="viewcode-block" id="DynaBase.get_stub"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.get_stub.html#pre.dynabase.DynaBase.get_stub">[docs]</a>    <span class="k">def</span> <span class="nf">get_stub</span><span class="p">():</span>
+        <span class="sd">&quot;&quot;&quot;Get the stub of this DynaBase object.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">stub</span></div>
 
 <div class="viewcode-block" id="DynaBase.open_files"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.open_files.html#pre.dynabase.DynaBase.open_files">[docs]</a>    <span class="k">def</span> <span class="nf">open_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filenames</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Open IGA model files.</span>
+        <span class="sd">&quot;&quot;&quot;Open initial model files.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -374,7 +379,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">LoadFile</span><span class="p">(</span><span class="n">LoadFileRequest</span><span class="p">())</span></div>
 
 <div class="viewcode-block" id="DynaBase.set_timestep"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.set_timestep.html#pre.dynabase.DynaBase.set_timestep">[docs]</a>    <span class="k">def</span> <span class="nf">set_timestep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">tssfac</span><span class="o">=</span><span class="mf">0.9</span><span class="p">,</span> <span class="n">isdo</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">timestep_size_for_mass_scaled</span><span class="o">=</span><span class="mf">0.0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *CONTROL_TIMESTEP keyword.</span>
+        <span class="sd">&quot;&quot;&quot;Set structural time step size control using different options.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -382,7 +387,7 @@
 <span class="sd">            Scale factor for computed time step.</span>
 <span class="sd">        isdo : int</span>
 <span class="sd">            Basis of time size calculation for 4-node shell elements.</span>
-<span class="sd">        dt2ms : float</span>
+<span class="sd">        timestep_size_for_mass_scaled : float</span>
 <span class="sd">            Time step size for mass scaled solutions.</span>
 
 <span class="sd">        Returns</span>
@@ -616,7 +621,7 @@
         <span class="n">t10jtol</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span>
         <span class="n">icoh</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
         <span class="n">tet13k</span><span class="o">=</span><span class="mi">0</span><span class="p">,):</span>
-        <span class="sd">&quot;&quot;&quot;Provides controls for solid element response.</span>
+        <span class="sd">&quot;&quot;&quot;Provide controls for solid element response.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -627,7 +632,7 @@
 <span class="sd">        niptets : int</span>
 <span class="sd">            Number of integration points used in the quadratic tetrahedron elements.</span>
 <span class="sd">        swlocl : int</span>
-<span class="sd">            Output option for stresses in solid elements used as spot welds with material *MAT_SPOTWELD.</span>
+<span class="sd">            Output option for stresses in solid elements used as spot welds with material \*MAT_SPOTWELD.</span>
 <span class="sd">        psfail : int</span>
 <span class="sd">            Solid element erosion from negative volume is limited only to solid elements in the part set indicated by PSFAIL.</span>
 <span class="sd">        t10jtol : float</span>
@@ -699,7 +704,7 @@
 <span class="sd">        rwpnal : float</span>
 <span class="sd">            Scale factor for rigid wall penalties, which treat nodal points interacting with rigid walls.</span>
 <span class="sd">        ignore : int</span>
-<span class="sd">            Ignore initial penetrations in the *CONTACT_AUTOMATIC options.</span>
+<span class="sd">            Ignore initial penetrations in the \*CONTACT_AUTOMATIC options.</span>
 <span class="sd">        igactc : int</span>
 <span class="sd">            Options to use isogeometric shells for contact detection when contact involves isogeometric shells.</span>
 
@@ -759,7 +764,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_database_ascii"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_database_ascii.html#pre.dynabase.DynaBase.create_database_ascii">[docs]</a>    <span class="k">def</span> <span class="nf">create_database_ascii</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="mf">0.0</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *DATABASE keyword.</span>
+        <span class="sd">&quot;&quot;&quot;Obtain output files containing results information.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -783,45 +788,6 @@
             <span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="nb">type</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">dt</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="n">binary</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="n">lcur</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="n">ioopt</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DB Ascii Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_rigidwall_geom"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_rigidwall_geom.html#pre.dynabase.DynaBase.create_rigidwall_geom">[docs]</a>    <span class="k">def</span> <span class="nf">create_rigidwall_geom</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">geomtype</span><span class="p">,</span> <span class="n">motion</span><span class="p">,</span> <span class="n">display</span><span class="p">,</span> <span class="n">parameter</span><span class="p">,</span> <span class="n">lcid</span><span class="p">,</span> <span class="n">vx</span><span class="p">,</span> <span class="n">vy</span><span class="p">,</span> <span class="n">vz</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define a rigid wall with an analytically described form.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        geomtype : int</span>
-<span class="sd">            The available shape variants are FLAT, PRISM, CYLINDER and SPHERE.</span>
-<span class="sd">        motion : int</span>
-<span class="sd">            If prescribed motion is desired an additional option is available.</span>
-<span class="sd">        display : int</span>
-<span class="sd">            To view the rigid wall, this option is available.</span>
-<span class="sd">        parameter : list</span>
-<span class="sd">            x,y,z-coordinate of tail of normal vector n,x,y,z-coordinate of head of normal vector n,radius of cylinder and length of cylinder.</span>
-<span class="sd">        lcid : int</span>
-<span class="sd">            if motion defined,this is Rigidwall motion curve ID.</span>
-<span class="sd">        vx vy vz : float</span>
-<span class="sd">            if motion defined, these are x,y,z-direction cosine of velocity/displacement vector.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateRigidWallGeom</span><span class="p">(</span>
-            <span class="n">RigidWallGeomRequest</span><span class="p">(</span>
-                <span class="n">geomtype</span><span class="o">=</span><span class="n">geomtype</span><span class="p">,</span>
-                <span class="n">motion</span><span class="o">=</span><span class="n">motion</span><span class="p">,</span>
-                <span class="n">display</span><span class="o">=</span><span class="n">display</span><span class="p">,</span>
-                <span class="n">parameter</span><span class="o">=</span><span class="n">parameter</span><span class="p">,</span>
-                <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">,</span>
-                <span class="n">vx</span><span class="o">=</span><span class="n">vx</span><span class="p">,</span>
-                <span class="n">vy</span><span class="o">=</span><span class="n">vy</span><span class="p">,</span>
-                <span class="n">vz</span><span class="o">=</span><span class="n">vz</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Cylinder Rigidwall Geometric Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_rigidwall_planar"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_rigidwall_planar.html#pre.dynabase.DynaBase.create_rigidwall_planar">[docs]</a>    <span class="k">def</span> <span class="nf">create_rigidwall_planar</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">nsid</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">head</span><span class="p">,</span> <span class="n">nsidex</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">boxid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">fric</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -970,63 +936,6 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Initial velocity for bodies Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaBase.create_definecurve"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_definecurve.html#pre.dynabase.DynaBase.create_definecurve">[docs]</a>    <span class="k">def</span> <span class="nf">create_definecurve</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">lcid</span><span class="p">,</span> <span class="n">sfo</span><span class="p">,</span> <span class="n">abscissa</span><span class="p">,</span> <span class="n">ordinate</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *DEFINE_CURVE keyword.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        lcid : int</span>
-<span class="sd">            Load curve identification.</span>
-<span class="sd">        sfo : float</span>
-<span class="sd">            Scale factor for ordinate value.</span>
-<span class="sd">        abscissa : list</span>
-<span class="sd">            Abscissa values.</span>
-<span class="sd">        ordinate : list</span>
-<span class="sd">            Ordinate (function) values.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDefineCurve</span><span class="p">(</span>
-            <span class="n">DefineCurveRequest</span><span class="p">(</span><span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="n">sfo</span><span class="p">,</span> <span class="n">abscissa</span><span class="o">=</span><span class="n">abscissa</span><span class="p">,</span> <span class="n">ordinate</span><span class="o">=</span><span class="n">ordinate</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DefineCurve Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_definevector"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_definevector.html#pre.dynabase.DynaBase.create_definevector">[docs]</a>    <span class="k">def</span> <span class="nf">create_definevector</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">vid</span><span class="p">,</span> <span class="n">tail</span><span class="p">,</span> <span class="n">head</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *DEFINE_VECTOR keyword.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        vid : int</span>
-<span class="sd">            Vector ID.</span>
-<span class="sd">        tail : list [x,y,z]</span>
-<span class="sd">            x,y,z-coordinate of tail of vector.</span>
-<span class="sd">        head : list [x,y,z]</span>
-<span class="sd">            x,y,z-coordinate of head of vector.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDefineVector</span><span class="p">(</span>
-            <span class="n">DefineVectorRequest</span><span class="p">(</span>
-                <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-                <span class="n">vid</span><span class="o">=</span><span class="n">vid</span><span class="p">,</span>
-                <span class="n">xt</span><span class="o">=</span><span class="n">tail</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">yt</span><span class="o">=</span><span class="n">tail</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                <span class="n">zt</span><span class="o">=</span><span class="n">tail</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-                <span class="n">xh</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">yh</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                <span class="n">zh</span><span class="o">=</span><span class="n">head</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DefineVector Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
 <div class="viewcode-block" id="DynaBase.create_defineorientation"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_defineorientation.html#pre.dynabase.DynaBase.create_defineorientation">[docs]</a>    <span class="k">def</span> <span class="nf">create_defineorientation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">vid</span><span class="p">,</span> <span class="n">iop</span><span class="p">,</span> <span class="n">vector</span><span class="p">,</span> <span class="n">node1</span><span class="p">,</span> <span class="n">node2</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define orientation vectors for discrete springs and dampers.</span>
 
@@ -1058,25 +967,6 @@
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;DefineOrientation Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_partset"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_partset.html#pre.dynabase.DynaBase.create_partset">[docs]</a>    <span class="k">def</span> <span class="nf">create_partset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">pids</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define a set of parts with optional attributes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        sid : int</span>
-<span class="sd">            Set ID. All part sets should have a unique set ID.</span>
-<span class="sd">        pids : list</span>
-<span class="sd">            A list of part ID.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreatePartSet</span><span class="p">(</span><span class="n">PartSetRequest</span><span class="p">(</span><span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="n">pids</span><span class="p">))</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Part Set Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_shellset"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_shellset.html#pre.dynabase.DynaBase.create_shellset">[docs]</a>    <span class="k">def</span> <span class="nf">create_shellset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">eids</span><span class="p">):</span>
@@ -1125,107 +1015,15 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Solid Set Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaBase.create_nodeset"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_nodeset.html#pre.dynabase.DynaBase.create_nodeset">[docs]</a>    <span class="k">def</span> <span class="nf">create_nodeset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">entities</span><span class="p">,</span> <span class="n">genoption</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define a nodal set with some identical or unique attributes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        option : string</span>
-<span class="sd">            Available options:&lt;BLANK&gt;,LIST,GENERAL</span>
-<span class="sd">        sid : int</span>
-<span class="sd">            Set identification.</span>
-<span class="sd">        genoption : string</span>
-<span class="sd">            Option for GENERAL:ALL,NODE,PART</span>
-<span class="sd">        entities : list</span>
-<span class="sd">            Specified entity.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateNodeSet</span><span class="p">(</span>
-            <span class="n">NodeSetRequest</span><span class="p">(</span>
-                <span class="n">option</span><span class="o">=</span><span class="n">option</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">,</span> <span class="n">genoption</span><span class="o">=</span><span class="n">genoption</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="n">entities</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Node Set Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_segmentset"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_segmentset.html#pre.dynabase.DynaBase.create_segmentset">[docs]</a>    <span class="k">def</span> <span class="nf">create_segmentset</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">sid</span><span class="p">,</span> <span class="n">segments</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="s2">&quot;MECH&quot;</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define a nodal set with some identical or unique attributes.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        sid : int</span>
-<span class="sd">            Set ID.</span>
-<span class="sd">        segments : list [[point1,point2,point3,point4],[point5,point6,point7,point8]...]</span>
-<span class="sd">            Define segments.</span>
-<span class="sd">        solver : string</span>
-<span class="sd">            Name of solver using this set:MECH,CESE</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">n1</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">n2</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">n3</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">n4</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">segments</span><span class="p">)):</span>
-            <span class="n">n1</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
-            <span class="n">n2</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
-            <span class="n">n3</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">2</span><span class="p">])</span>
-            <span class="n">n4</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">3</span><span class="p">])</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateSegmentSet</span><span class="p">(</span>
-            <span class="n">SegmentSetRequest</span><span class="p">(</span><span class="n">sid</span><span class="o">=</span><span class="n">sid</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">solver</span><span class="p">,</span> <span class="n">n1</span><span class="o">=</span><span class="n">n1</span><span class="p">,</span> <span class="n">n2</span><span class="o">=</span><span class="n">n2</span><span class="p">,</span> <span class="n">n3</span><span class="o">=</span><span class="n">n3</span><span class="p">,</span> <span class="n">n4</span><span class="o">=</span><span class="n">n4</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Segment Set Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_section_shell"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_section_shell.html#pre.dynabase.DynaBase.create_section_shell">[docs]</a>    <span class="k">def</span> <span class="nf">create_section_shell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secid</span><span class="p">,</span> <span class="n">elform</span><span class="p">,</span> <span class="n">thick</span><span class="p">,</span> <span class="n">shrf</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span> <span class="n">nip</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">propt</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define section properties for shell elements.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        secid : int</span>
-<span class="sd">            Section ID.</span>
-<span class="sd">        elform : int</span>
-<span class="sd">            Element formulation options.</span>
-<span class="sd">        thick : list [t1,t2,t3,t4]</span>
-<span class="sd">            Shell thickness at node t1,t2,t3,t4</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateSectionShell</span><span class="p">(</span>
-            <span class="n">SectionShellRequest</span><span class="p">(</span>
-                <span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span>
-                <span class="n">elform</span><span class="o">=</span><span class="n">elform</span><span class="p">,</span>
-                <span class="n">shrf</span><span class="o">=</span><span class="n">shrf</span><span class="p">,</span>
-                <span class="n">nip</span><span class="o">=</span><span class="n">nip</span><span class="p">,</span>
-                <span class="n">propt</span><span class="o">=</span><span class="n">propt</span><span class="p">,</span>
-                <span class="n">t1</span><span class="o">=</span><span class="n">thick</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span>
-                <span class="n">t2</span><span class="o">=</span><span class="n">thick</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span>
-                <span class="n">t3</span><span class="o">=</span><span class="n">thick</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span>
-                <span class="n">t4</span><span class="o">=</span><span class="n">thick</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Section Shell Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
 <div class="viewcode-block" id="DynaBase.create_section_solid"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_section_solid.html#pre.dynabase.DynaBase.create_section_solid">[docs]</a>    <span class="k">def</span> <span class="nf">create_section_solid</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">title</span><span class="p">,</span> <span class="n">secid</span><span class="p">,</span> <span class="n">elform</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *SECTION_SOLID keyword.</span>
+        <span class="sd">&quot;&quot;&quot;Define section properties for solid continuum and fluid elements.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        title : string</span>
 <span class="sd">            Define title for section solid.</span>
 <span class="sd">        secid : int</span>
-<span class="sd">            Section ID. SECID is referenced on the *PART card. A unique number must be specified.</span>
+<span class="sd">            Section ID. SECID is referenced on the \*PART card. A unique number must be specified.</span>
 <span class="sd">        elform : int</span>
 <span class="sd">            Element formulation options.</span>
 
@@ -1279,7 +1077,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_hourglass"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_hourglass.html#pre.dynabase.DynaBase.create_hourglass">[docs]</a>    <span class="k">def</span> <span class="nf">create_hourglass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">ghid</span><span class="p">,</span> <span class="n">ihq</span><span class="p">,</span> <span class="n">qm</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="mf">1.5</span><span class="p">,</span> <span class="n">q2</span><span class="o">=</span><span class="mf">0.06</span><span class="p">,</span> <span class="n">qb</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">,</span> <span class="n">qw</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create *HOURGLASS keyword.</span>
+        <span class="sd">&quot;&quot;&quot;Define hourglass and bulk viscosity properties.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1307,118 +1105,6 @@
             <span class="n">HourglassRequest</span><span class="p">(</span><span class="n">ghid</span><span class="o">=</span><span class="n">ghid</span><span class="p">,</span> <span class="n">ihq</span><span class="o">=</span><span class="n">ihq</span><span class="p">,</span> <span class="n">qm</span><span class="o">=</span><span class="n">qm</span><span class="p">,</span> <span class="n">q1</span><span class="o">=</span><span class="n">q1</span><span class="p">,</span> <span class="n">q2</span><span class="o">=</span><span class="n">q2</span><span class="p">,</span> <span class="n">qb</span><span class="o">=</span><span class="n">qb</span><span class="p">,</span> <span class="n">qw</span><span class="o">=</span><span class="n">qw</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Hourglass 1 Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_contact"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_contact.html#pre.dynabase.DynaBase.create_contact">[docs]</a>    <span class="k">def</span> <span class="nf">create_contact</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">cid</span><span class="p">,</span>
-        <span class="n">title</span><span class="p">,</span>
-        <span class="n">option1</span><span class="p">,</span>
-        <span class="n">option3</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
-        <span class="n">offset</span><span class="o">=</span><span class="s2">&quot;&quot;</span><span class="p">,</span>
-        <span class="n">ssid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">msid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">sstyp</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">mstyp</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
-        <span class="n">sapr</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">sbpr</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">sfsa</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">sfsb</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">fs</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">fd</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">vdc</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">penchk</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">birthtime</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">sst</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">mst</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">optionres</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">nfls</span><span class="o">=</span><span class="mf">1e32</span><span class="p">,</span>
-        <span class="n">sfls</span><span class="o">=</span><span class="mf">1e32</span><span class="p">,</span>
-        <span class="n">param</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">ct2cn</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">soft</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">sofscl</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span>
-        <span class="n">lcidab</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">maxpar</span><span class="o">=</span><span class="mf">1.025</span><span class="p">,</span>
-        <span class="n">sbopt</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">depth</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span>
-        <span class="n">bsort</span><span class="o">=</span><span class="mi">10</span><span class="p">,</span>
-        <span class="n">frcfrq</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">igap</span><span class="o">=</span><span class="mi">1</span><span class="p">,):</span>
-        <span class="sd">&quot;&quot;&quot;Define a contact interface in a 3D model.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        option1 : string</span>
-<span class="sd">            Specifies contact type.</span>
-<span class="sd">            &quot;TIED_SHELL_EDGE_TO_SURFACE&quot;</span>
-<span class="sd">            &quot;AUTOMATIC_SURFACE_TO_SURFACE_TIEBREAK&quot;</span>
-<span class="sd">            &quot;AUTOMATIC_SINGLE_SURFACE_SMOOTH&quot;</span>
-<span class="sd">            &quot;AUTOMATIC_SINGLE_SURFACE&quot;</span>
-<span class="sd">            &quot;NODES_TO_SURFACE&quot;</span>
-<span class="sd">        option3 : bool</span>
-<span class="sd">            Flag indicating ID cards follow.</span>
-<span class="sd">        offset : string</span>
-<span class="sd">            Offset options.</span>
-<span class="sd">            NULL</span>
-<span class="sd">            OFFSET</span>
-<span class="sd">            BEAM_OFFSET</span>
-<span class="sd">            CONSTRAINED_OFFSET</span>
-<span class="sd">        ssid : int</span>
-<span class="sd">            Segment set ID, node set ID, part set ID, part ID, or shell element set ID for specifying the SURFA side of the contact interface.</span>
-<span class="sd">        msid : int</span>
-<span class="sd">            Segment set ID, node set ID, part set ID, part ID, or shell element set ID for the SURFB side of the contact.</span>
-<span class="sd">        sstyp : int</span>
-<span class="sd">            The ID type of SURFA.</span>
-<span class="sd">        mstyp : int</span>
-<span class="sd">            ID type of SURFB.</span>
-<span class="sd">        option : int</span>
-<span class="sd">            Soft constraint option.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateContact</span><span class="p">(</span>
-            <span class="n">ContactRequest</span><span class="p">(</span>
-                <span class="n">cid</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span>
-                <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-                <span class="n">option1</span><span class="o">=</span><span class="n">option1</span><span class="p">,</span>
-                <span class="n">option3</span><span class="o">=</span><span class="n">option3</span><span class="p">,</span>
-                <span class="n">offset</span><span class="o">=</span><span class="n">offset</span><span class="p">,</span>
-                <span class="n">ssid</span><span class="o">=</span><span class="n">ssid</span><span class="p">,</span>
-                <span class="n">msid</span><span class="o">=</span><span class="n">msid</span><span class="p">,</span>
-                <span class="n">sstyp</span><span class="o">=</span><span class="n">sstyp</span><span class="p">,</span>
-                <span class="n">mstyp</span><span class="o">=</span><span class="n">mstyp</span><span class="p">,</span>
-                <span class="n">sapr</span><span class="o">=</span><span class="n">sapr</span><span class="p">,</span>
-                <span class="n">sbpr</span><span class="o">=</span><span class="n">sbpr</span><span class="p">,</span>
-                <span class="n">sfsa</span><span class="o">=</span><span class="n">sfsa</span><span class="p">,</span>
-                <span class="n">sfsb</span><span class="o">=</span><span class="n">sfsb</span><span class="p">,</span>
-                <span class="n">fs</span><span class="o">=</span><span class="n">fs</span><span class="p">,</span>
-                <span class="n">fd</span><span class="o">=</span><span class="n">fd</span><span class="p">,</span>
-                <span class="n">vdc</span><span class="o">=</span><span class="n">vdc</span><span class="p">,</span>
-                <span class="n">penchk</span><span class="o">=</span><span class="n">penchk</span><span class="p">,</span>
-                <span class="n">birthtime</span><span class="o">=</span><span class="n">birthtime</span><span class="p">,</span>
-                <span class="n">sst</span><span class="o">=</span><span class="n">sst</span><span class="p">,</span>
-                <span class="n">mst</span><span class="o">=</span><span class="n">mst</span><span class="p">,</span>
-                <span class="n">optionres</span><span class="o">=</span><span class="n">optionres</span><span class="p">,</span>
-                <span class="n">nfls</span><span class="o">=</span><span class="n">nfls</span><span class="p">,</span>
-                <span class="n">sfls</span><span class="o">=</span><span class="n">sfls</span><span class="p">,</span>
-                <span class="n">param</span><span class="o">=</span><span class="n">param</span><span class="p">,</span>
-                <span class="n">ct2cn</span><span class="o">=</span><span class="n">ct2cn</span><span class="p">,</span>
-                <span class="n">soft</span><span class="o">=</span><span class="n">soft</span><span class="p">,</span>
-                <span class="n">sofscl</span><span class="o">=</span><span class="n">sofscl</span><span class="p">,</span>
-                <span class="n">lcidab</span><span class="o">=</span><span class="n">lcidab</span><span class="p">,</span>
-                <span class="n">maxpar</span><span class="o">=</span><span class="n">maxpar</span><span class="p">,</span>
-                <span class="n">sbopt</span><span class="o">=</span><span class="n">sbopt</span><span class="p">,</span>
-                <span class="n">depth</span><span class="o">=</span><span class="n">depth</span><span class="p">,</span>
-                <span class="n">bsort</span><span class="o">=</span><span class="n">bsort</span><span class="p">,</span>
-                <span class="n">frcfrq</span><span class="o">=</span><span class="n">frcfrq</span><span class="p">,</span>
-                <span class="n">igap</span><span class="o">=</span><span class="n">igap</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Contact  Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_boundary_prescribed_motion"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_boundary_prescribed_motion.html#pre.dynabase.DynaBase.create_boundary_prescribed_motion">[docs]</a>    <span class="k">def</span> <span class="nf">create_boundary_prescribed_motion</span><span class="p">(</span>
@@ -1482,68 +1168,6 @@
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Boundary prescribed motion Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
-<div class="viewcode-block" id="DynaBase.create_boundary_spc"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_boundary_spc.html#pre.dynabase.DynaBase.create_boundary_spc">[docs]</a>    <span class="k">def</span> <span class="nf">create_boundary_spc</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span>
-        <span class="n">option1</span><span class="p">,</span>
-        <span class="n">birthdeath</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-        <span class="n">nid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">cid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofz</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofrx</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofry</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">dofrz</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">birth</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-        <span class="n">death</span><span class="o">=</span><span class="mf">1e20</span><span class="p">,</span>
-    <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define nodal single point constraints.</span>
-<span class="sd">       </span>
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        id : int</span>
-<span class="sd">            Optional SPC set ID to which this node or node set belongs.</span>
-<span class="sd">        heading : string</span>
-<span class="sd">            An optional SPC descriptor that will be written into the d3hsp file and the spcforc file.</span>
-<span class="sd">        option : string</span>
-<span class="sd">            Available options:(NODE,SET)</span>
-<span class="sd">        birthdeath : bool</span>
-<span class="sd">            Allows optional birth and death times to be assigned the single node or node set.</span>
-<span class="sd">        nid : int</span>
-<span class="sd">            Node ID or nodal set ID.</span>
-<span class="sd">        cid : int</span>
-<span class="sd">            Coordinate system ID.</span>
-<span class="sd">        dofx/dofy/dofz : int</span>
-<span class="sd">            Insert 1 for translational constraint in local x/y/z-direction.</span>
-<span class="sd">        dofrx/dofry/dofrz : int</span>
-<span class="sd">            Insert 1 for rotational constraint about local x/y/z-axis.</span>
-<span class="sd">        birth/death : float</span>
-<span class="sd">            Activation/Deactivation time for SPC constraint.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateBdySpc</span><span class="p">(</span>
-            <span class="n">BdySpcRequest</span><span class="p">(</span>
-                <span class="n">option1</span><span class="o">=</span><span class="n">option1</span><span class="p">,</span>
-                <span class="n">birthdeath</span><span class="o">=</span><span class="n">birthdeath</span><span class="p">,</span>
-                <span class="n">nid</span><span class="o">=</span><span class="n">nid</span><span class="p">,</span>
-                <span class="n">cid</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span>
-                <span class="n">dofx</span><span class="o">=</span><span class="n">dofx</span><span class="p">,</span>
-                <span class="n">dofy</span><span class="o">=</span><span class="n">dofy</span><span class="p">,</span>
-                <span class="n">dofz</span><span class="o">=</span><span class="n">dofz</span><span class="p">,</span>
-                <span class="n">dofrx</span><span class="o">=</span><span class="n">dofrx</span><span class="p">,</span>
-                <span class="n">dofry</span><span class="o">=</span><span class="n">dofry</span><span class="p">,</span>
-                <span class="n">dofrz</span><span class="o">=</span><span class="n">dofrz</span><span class="p">,</span>
-                <span class="n">birth</span><span class="o">=</span><span class="n">birth</span><span class="p">,</span>
-                <span class="n">death</span><span class="o">=</span><span class="n">death</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Boundary spc Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_constrained_extra_nodes"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_constrained_extra_nodes.html#pre.dynabase.DynaBase.create_constrained_extra_nodes">[docs]</a>    <span class="k">def</span> <span class="nf">create_constrained_extra_nodes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">option</span><span class="o">=</span><span class="s2">&quot;NODE&quot;</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">nid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">iflag</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
@@ -1616,48 +1240,15 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Load body Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaBase.create_mat_fabric"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_mat_fabric.html#pre.dynabase.DynaBase.create_mat_fabric">[docs]</a>    <span class="k">def</span> <span class="nf">create_mat_fabric</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">ro</span><span class="p">,</span> <span class="n">ea</span><span class="p">,</span> <span class="n">eb</span><span class="p">,</span> <span class="n">prba</span><span class="p">,</span> <span class="n">prab</span><span class="p">,</span> <span class="n">gab</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Developed for airbag materials.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        mid : int</span>
-<span class="sd">            Material identification.</span>
-<span class="sd">        ro : float</span>
-<span class="sd">            Mass density.</span>
-<span class="sd">        ea : float</span>
-<span class="sd">            Young&#39;s modulus-longitudinal direction.</span>
-<span class="sd">        eb : float</span>
-<span class="sd">            Young&#39;s modulus-transverse direction.</span>
-<span class="sd">        prba : float</span>
-<span class="sd">            Minor Poisson&#39;s ratio ba direction.</span>
-<span class="sd">        prab : float</span>
-<span class="sd">            Major Poisson&#39;s ratio ab direction.</span>
-<span class="sd">        gab : float</span>
-<span class="sd">            shear modulus in the ab direction.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateMatFabric</span><span class="p">(</span>
-            <span class="n">MatFabricRequest</span><span class="p">(</span>
-                <span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="n">ro</span><span class="p">,</span> <span class="n">ea</span><span class="o">=</span><span class="n">ea</span><span class="p">,</span> <span class="n">eb</span><span class="o">=</span><span class="n">eb</span><span class="p">,</span> <span class="n">prba</span><span class="o">=</span><span class="n">prba</span><span class="p">,</span> <span class="n">prab</span><span class="o">=</span><span class="n">prab</span><span class="p">,</span> <span class="n">gab</span><span class="o">=</span><span class="n">gab</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Material Fabric Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
-
 <div class="viewcode-block" id="DynaBase.create_mat_spring_nonlinear_elastic"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_mat_spring_nonlinear_elastic.html#pre.dynabase.DynaBase.create_mat_spring_nonlinear_elastic">[docs]</a>    <span class="k">def</span> <span class="nf">create_mat_spring_nonlinear_elastic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lcid</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Provides a nonlinear elastic translational and rotational spring with arbitrary force as a function of displacement and moment as a function of rotation.</span>
+        <span class="sd">&quot;&quot;&quot;Provide a nonlinear elastic translational and rotational spring with arbitrary force as a function of displacement and moment as a function of rotation.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        mid : int</span>
 <span class="sd">            Material identification.</span>
 <span class="sd">        lcid : int</span>
-<span class="sd">            Load curve ID (see *DEFINE_CURVE) describing force as a function of displacement or moment as a function of rotation relationship.</span>
+<span class="sd">            Load curve ID (see \*DEFINE_CURVE) describing force as a function of displacement or moment as a function of rotation relationship.</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
@@ -1671,7 +1262,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_mat_damper_viscous"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_mat_damper_viscous.html#pre.dynabase.DynaBase.create_mat_damper_viscous">[docs]</a>    <span class="k">def</span> <span class="nf">create_mat_damper_viscous</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">dc</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Provides a linear translational or rotational damper located between two nodes.</span>
+        <span class="sd">&quot;&quot;&quot;Provide a linear translational or rotational damper located between two nodes.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1690,7 +1281,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaBase.create_mat_damper_nonlinear_viscous"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.DynaBase.create_mat_damper_nonlinear_viscous.html#pre.dynabase.DynaBase.create_mat_damper_nonlinear_viscous">[docs]</a>    <span class="k">def</span> <span class="nf">create_mat_damper_nonlinear_viscous</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">lcdr</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Provides a viscous translational damper with an arbitrary force as a function of velocity dependency or a rotational damper with an arbitrary moment as a function of rotational velocity dependency.</span>
+        <span class="sd">&quot;&quot;&quot;Provide a viscous translational damper with an arbitrary force as a function of velocity dependency or a rotational damper with an arbitrary moment as a function of rotational velocity dependency.</span>
 <span class="sd">        </span>
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -1792,19 +1383,18 @@
 
 <span class="sd">        Examples</span>
 <span class="sd">        --------</span>
-<span class="sd">        create a *INITIAL_VELOCITY keyword.</span>
-
-<span class="sd">        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-<span class="sd">        *INITIAL_VELOCITY</span>
-<span class="sd">        &amp;     nsid    nsidex     boxid</span>
-<span class="sd">                 0</span>
-
+<span class="sd">        Create a \*INITIAL_VELOCITY keyword.</span>
+<span class="sd">        </span>
+<span class="sd">        \$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="sd">        \*INITIAL_VELOCITY</span>
+<span class="sd">        </span>
+<span class="sd">        </span>
 <span class="sd">        &amp;       vx        vy        vz       vxr       vyr       vzr</span>
-<span class="sd">         1.480E+01 0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00</span>
-<span class="sd">        $$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
-
+<span class="sd">        1.480E+01 0.000E+00 0.000E+00 0.000E+00 0.000E+00 0.000E+00</span>
+<span class="sd">        \$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$</span>
+<span class="sd">        </span>
 <span class="sd">        opcode = &quot;INITIAL_VELOCITY&quot;</span>
-<span class="sd">        keyworddata = &quot;0\n1.480E+01,0.000E+00,0.000E+00,0.000E+00,0.000E+00,0.000E+00&quot;</span>
+<span class="sd">        keyworddata = &quot;0\\n1.480E+01,0.000E+00,0.000E+00,0.000E+00,0.000E+00,0.000E+00&quot;</span>
 <span class="sd">        create_general_keyword(opcode = opcode,keyworddata=keyworddata)</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateGeneralKWD</span><span class="p">(</span>
@@ -1953,6 +1543,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">xmax</span> <span class="o">=</span> <span class="n">zmax</span>
 
 <div class="viewcode-block" id="Box.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Box.create.html#pre.dynabase.Box.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create box.&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateDefineBox</span><span class="p">(</span>
             <span class="n">DefineBoxRequest</span><span class="p">(</span>
                 <span class="n">xmin</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">xmin</span><span class="p">,</span>
@@ -1976,6 +1567,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">ordinate</span> <span class="o">=</span> <span class="n">y</span>
 
 <div class="viewcode-block" id="Curve.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Curve.create.html#pre.dynabase.Curve.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create curve.&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateDefineCurve</span><span class="p">(</span>
             <span class="n">DefineCurveRequest</span><span class="p">(</span>
                 <span class="n">sfo</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sfo</span><span class="p">,</span> <span class="n">abscissa</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">abscissa</span><span class="p">,</span> <span class="n">ordinate</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ordinate</span>
@@ -1994,6 +1586,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">0</span>
 
 <div class="viewcode-block" id="NodeSet.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.NodeSet.create.html#pre.dynabase.NodeSet.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create node set.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateNodeSet</span><span class="p">(</span>
@@ -2007,9 +1600,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span></div>
 
 <div class="viewcode-block" id="NodeSet.num"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.NodeSet.num.html#pre.dynabase.NodeSet.num">[docs]</a>    <span class="k">def</span> <span class="nf">num</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the number of nodes in this set.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="NodeSet.id"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.NodeSet.id.html#pre.dynabase.NodeSet.id">[docs]</a>    <span class="k">def</span> <span class="nf">id</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the node ID by position.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">nodes</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span></div></div>
 
 
@@ -2021,6 +1616,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="mi">0</span>
 
 <div class="viewcode-block" id="PartSet.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.PartSet.create.html#pre.dynabase.PartSet.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create part set.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">parts</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreatePartSet</span><span class="p">(</span><span class="n">PartSetRequest</span><span class="p">(</span><span class="n">sid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">pids</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">parts</span><span class="p">))</span>
@@ -2032,9 +1628,11 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span></div>
 
 <div class="viewcode-block" id="PartSet.num"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.PartSet.num.html#pre.dynabase.PartSet.num">[docs]</a>    <span class="k">def</span> <span class="nf">num</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the number of parts in this set.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parts</span><span class="o">.</span><span class="n">len</span><span class="p">()</span></div>
 
 <div class="viewcode-block" id="PartSet.pos"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.PartSet.pos.html#pre.dynabase.PartSet.pos">[docs]</a>    <span class="k">def</span> <span class="nf">pos</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pos</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Get the part ID by position.&quot;&quot;&quot;</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">parts</span><span class="p">[</span><span class="n">pos</span><span class="p">]</span></div></div>
 
 
@@ -2053,6 +1651,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;SEGMENTSET&quot;</span>
 
 <div class="viewcode-block" id="SegmentSet.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.SegmentSet.create.html#pre.dynabase.SegmentSet.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create segement set.&quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">segments</span><span class="p">)</span> <span class="o">&lt;=</span> <span class="mi">0</span><span class="p">:</span>
             <span class="k">return</span> <span class="mi">0</span>
         <span class="n">n1</span> <span class="o">=</span> <span class="p">[]</span>
@@ -2210,6 +1809,7 @@
 
 
 <div class="viewcode-block" id="BeamSection"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.BeamSection.html#pre.dynabase.BeamSection">[docs]</a><span class="k">class</span> <span class="nc">BeamSection</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define cross sectional properties for beam, truss, discrete beam, and cable elements.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">element_formulation</span><span class="p">,</span>
@@ -2232,6 +1832,7 @@
 
 
 <div class="viewcode-block" id="ShellSection"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ShellSection.html#pre.dynabase.ShellSection">[docs]</a><span class="k">class</span> <span class="nc">ShellSection</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define section properties for shell elements.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">element_formulation</span><span class="p">,</span>
@@ -2260,6 +1861,7 @@
 
 
 <div class="viewcode-block" id="IGASection"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.IGASection.html#pre.dynabase.IGASection">[docs]</a><span class="k">class</span> <span class="nc">IGASection</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define section properties for isogeometric shell elements.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">element_formulation</span><span class="p">,</span> <span class="n">shear_factor</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateSectionIGAShell</span><span class="p">(</span>
@@ -2271,6 +1873,7 @@
 
 
 <div class="viewcode-block" id="Part"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Part.html#pre.dynabase.Part">[docs]</a><span class="k">class</span> <span class="nc">Part</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define part object.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
@@ -2289,15 +1892,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="n">mat</span><span class="o">.</span><span class="n">material_id</span></div>
 
 <div class="viewcode-block" id="Part.set_element_formulation"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Part.set_element_formulation.html#pre.dynabase.Part.set_element_formulation">[docs]</a>    <span class="k">def</span> <span class="nf">set_element_formulation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">formulation</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Element formulation options.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Set Element formulation.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">formulation</span> <span class="o">=</span> <span class="n">formulation</span><span class="o">.</span><span class="n">value</span></div></div>
 
 
 <div class="viewcode-block" id="BeamPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.BeamPart.html#pre.dynabase.BeamPart">[docs]</a><span class="k">class</span> <span class="nc">BeamPart</span><span class="p">(</span><span class="n">Part</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define parts, that is, combine material information, section properties, hourglass type, thermal properties, and a flag for part adaptivity.&quot;&quot;&quot;</span>
-
     <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
         <span class="n">Part</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
@@ -2305,12 +1906,15 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">crosstype</span> <span class="o">=</span> <span class="mi">1</span>
 
 <div class="viewcode-block" id="BeamPart.set_cross_type"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.BeamPart.set_cross_type.html#pre.dynabase.BeamPart.set_cross_type">[docs]</a>    <span class="k">def</span> <span class="nf">set_cross_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cross</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set cross section type.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">crosstype</span> <span class="o">=</span> <span class="n">cross</span></div>
 
 <div class="viewcode-block" id="BeamPart.set_diameter"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.BeamPart.set_diameter.html#pre.dynabase.BeamPart.set_diameter">[docs]</a>    <span class="k">def</span> <span class="nf">set_diameter</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">diameter</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set outer diameter for cross section.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">diameter</span> <span class="o">=</span> <span class="n">diameter</span></div>
 
 <div class="viewcode-block" id="BeamPart.set_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.BeamPart.set_property.html#pre.dynabase.BeamPart.set_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set Properties for beam part object.&quot;&quot;&quot;</span>
         <span class="n">sec</span> <span class="o">=</span> <span class="n">BeamSection</span><span class="p">(</span>
             <span class="n">element_formulation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formulation</span><span class="p">,</span>
             <span class="n">cross_section</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">crosstype</span><span class="p">,</span>
@@ -2334,9 +1938,7 @@
 
 <div class="viewcode-block" id="ShellPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ShellPart.html#pre.dynabase.ShellPart">[docs]</a><span class="k">class</span> <span class="nc">ShellPart</span><span class="p">(</span><span class="n">Part</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define parts, that is, combine material information, section properties, hourglass type, thermal properties, and a flag for part adaptivity.&quot;&quot;&quot;</span>
-
     <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
         <span class="n">Part</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
@@ -2348,6 +1950,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">hourglasstype</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <div class="viewcode-block" id="ShellPart.set_hourglass"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ShellPart.set_hourglass.html#pre.dynabase.ShellPart.set_hourglass">[docs]</a>    <span class="k">def</span> <span class="nf">set_hourglass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">HourglassType</span><span class="o">.</span><span class="n">STANDARD_LSDYNA_VISCOUS</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define hourglass/bulk viscosity identification.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hourglasstype</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span></div>
 
 <div class="viewcode-block" id="ShellPart.set_shear_factor"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ShellPart.set_shear_factor.html#pre.dynabase.ShellPart.set_shear_factor">[docs]</a>    <span class="k">def</span> <span class="nf">set_shear_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">factor</span><span class="p">):</span>
@@ -2367,6 +1970,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="n">thickness</span></div>
 
 <div class="viewcode-block" id="ShellPart.set_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ShellPart.set_property.html#pre.dynabase.ShellPart.set_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set properties for shell part.&quot;&quot;&quot;</span>
         <span class="n">sec</span> <span class="o">=</span> <span class="n">ShellSection</span><span class="p">(</span>
             <span class="n">element_formulation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formulation</span><span class="p">,</span>
             <span class="n">shear_factor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shear_factor</span><span class="p">,</span>
@@ -2401,9 +2005,7 @@
 
 <div class="viewcode-block" id="IGAPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.IGAPart.html#pre.dynabase.IGAPart">[docs]</a><span class="k">class</span> <span class="nc">IGAPart</span><span class="p">(</span><span class="n">Part</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define parts, that is, combine material information, section properties, hourglass type, thermal properties, and a flag for part adaptivity.&quot;&quot;&quot;</span>
-
     <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
         <span class="n">Part</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
@@ -2420,6 +2022,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="n">thickness</span></div>
 
 <div class="viewcode-block" id="IGAPart.set_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.IGAPart.set_property.html#pre.dynabase.IGAPart.set_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set properties for IGA part.&quot;&quot;&quot;</span>
         <span class="n">sec</span> <span class="o">=</span> <span class="n">IGASection</span><span class="p">(</span>
             <span class="n">element_formulation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formulation</span><span class="p">,</span>
             <span class="n">shear_factor</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">shear_factor</span><span class="p">,</span>
@@ -2442,9 +2045,7 @@
 
 <div class="viewcode-block" id="SolidPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.SolidPart.html#pre.dynabase.SolidPart">[docs]</a><span class="k">class</span> <span class="nc">SolidPart</span><span class="p">(</span><span class="n">Part</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Define parts, that is, combine material information, section properties, hourglass type, thermal properties, and a flag for part adaptivity.&quot;&quot;&quot;</span>
-
     <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">):</span>
         <span class="n">Part</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">pid</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
@@ -2452,9 +2053,11 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">hourglasstype</span> <span class="o">=</span> <span class="o">-</span><span class="mi">1</span>
 
 <div class="viewcode-block" id="SolidPart.set_hourglass"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.SolidPart.set_hourglass.html#pre.dynabase.SolidPart.set_hourglass">[docs]</a>    <span class="k">def</span> <span class="nf">set_hourglass</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">HourglassType</span><span class="o">.</span><span class="n">STANDARD_LSDYNA_VISCOUS</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set hourglass/bulk viscosity identification.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">hourglasstype</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span></div>
 
 <div class="viewcode-block" id="SolidPart.set_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.SolidPart.set_property.html#pre.dynabase.SolidPart.set_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_property</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set properties for solid part.&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateSectionSolid</span><span class="p">(</span><span class="n">SectionSolidRequest</span><span class="p">(</span><span class="n">elform</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">formulation</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">secid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">id</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">hourglasstype</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
@@ -2564,7 +2167,7 @@
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="ImplicitAnalysis.set_eigenvalue"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ImplicitAnalysis.set_eigenvalue.html#pre.dynabase.ImplicitAnalysis.set_eigenvalue">[docs]</a>    <span class="k">def</span> <span class="nf">set_eigenvalue</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number_eigenvalues</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">shift_scale</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Activates implicit eigenvalue analysis and defines associated input parameters.</span>
+        <span class="sd">&quot;&quot;&quot;Activate implicit eigenvalue analysis and defines associated input parameters.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -2643,9 +2246,9 @@
     <span class="n">EDGE</span> <span class="o">=</span> <span class="mi">7</span></div>
 
 
-<div class="viewcode-block" id="ContactAlgorithm"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ContactAlgorithm.html#pre.dynabase.ContactAlgorithm">[docs]</a><span class="k">class</span> <span class="nc">ContactAlgorithm</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
-    <span class="n">PENALTY_BASED</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">CONSTRAINT_BASED</span> <span class="o">=</span> <span class="mi">2</span></div>
+<span class="c1">#class ContactAlgorithm(Enum):</span>
+    <span class="c1">#PENALTY_BASED = 1</span>
+    <span class="c1">#CONSTRAINT_BASED = 2</span>
 
 
 <div class="viewcode-block" id="OffsetType"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.OffsetType.html#pre.dynabase.OffsetType">[docs]</a><span class="k">class</span> <span class="nc">OffsetType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -2697,7 +2300,7 @@
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">id</span></div>
 
 <div class="viewcode-block" id="ContactSurface.set_contact_thickness"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ContactSurface.set_contact_thickness.html#pre.dynabase.ContactSurface.set_contact_thickness">[docs]</a>    <span class="k">def</span> <span class="nf">set_contact_thickness</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;contact thickness for SURFA surface.</span>
+        <span class="sd">&quot;&quot;&quot;Set contact thickness for SURFA surface.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -2707,14 +2310,13 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">thickness</span> <span class="o">=</span> <span class="n">thickness</span></div>
 
 <div class="viewcode-block" id="ContactSurface.set_penalty_stiffness_scale_factor"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.ContactSurface.set_penalty_stiffness_scale_factor.html#pre.dynabase.ContactSurface.set_penalty_stiffness_scale_factor">[docs]</a>    <span class="k">def</span> <span class="nf">set_penalty_stiffness_scale_factor</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scalefactor</span><span class="o">=</span><span class="mf">1.0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set scale factor on default surface penalty stiffness.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">penalty_stiffness</span> <span class="o">=</span> <span class="n">scalefactor</span></div></div>
 
 
 <div class="viewcode-block" id="Contact"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.html#pre.dynabase.Contact">[docs]</a><span class="k">class</span> <span class="nc">Contact</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Provides a way of treating interaction between disjoint parts.&quot;&quot;&quot;</span>
-
+    <span class="sd">&quot;&quot;&quot;Provide a way of treating interaction between disjoint parts.&quot;&quot;&quot;</span>
     <span class="n">contactlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="nb">type</span><span class="o">=</span><span class="n">ContactType</span><span class="o">.</span><span class="n">NULL</span><span class="p">,</span>
@@ -2742,13 +2344,14 @@
         <span class="n">Contact</span><span class="o">.</span><span class="n">contactlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="Contact.set_mortar"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.set_mortar.html#pre.dynabase.Contact.set_mortar">[docs]</a>    <span class="k">def</span> <span class="nf">set_mortar</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;The mortar contact,is a segment to segment penalty based contact.&quot;&quot;&quot;</span>
+        <span class="sd">&quot;&quot;&quot;Set mortar contact,it is a segment to segment penalty based contact.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mortar</span> <span class="o">=</span> <span class="kc">True</span></div>
 
-<div class="viewcode-block" id="Contact.set_algorithm"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.set_algorithm.html#pre.dynabase.Contact.set_algorithm">[docs]</a>    <span class="k">def</span> <span class="nf">set_algorithm</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">algorithm</span><span class="o">=</span><span class="n">ContactAlgorithm</span><span class="o">.</span><span class="n">PENALTY_BASED</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">algorithm</span> <span class="o">=</span> <span class="n">algorithm</span><span class="o">.</span><span class="n">value</span></div>
+    <span class="c1">#def set_algorithm(self, algorithm=ContactAlgorithm.PENALTY_BASED):</span>
+    <span class="c1">#    self.algorithm = algorithm.value</span>
 
 <div class="viewcode-block" id="Contact.set_tiebreak"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.set_tiebreak.html#pre.dynabase.Contact.set_tiebreak">[docs]</a>    <span class="k">def</span> <span class="nf">set_tiebreak</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define the contact allow for failure, TIEBREAK is a special case of this in which after failure the contact usually becomes a normal one-way, two-way, or single surface version.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">option_tiebreak</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">optionres</span> <span class="o">=</span> <span class="mi">2</span></div>
 
@@ -2766,6 +2369,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dynamic_friction_coeff</span> <span class="o">=</span> <span class="n">dynamic</span></div>
 
 <div class="viewcode-block" id="Contact.set_active_time"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.set_active_time.html#pre.dynabase.Contact.set_active_time">[docs]</a>    <span class="k">def</span> <span class="nf">set_active_time</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">birth_time</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">death_time</span><span class="o">=</span><span class="mf">1e20</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set birth and death time to active and deactivate the contact.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">birth_time</span> <span class="o">=</span> <span class="n">birth_time</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">death_time</span> <span class="o">=</span> <span class="n">death_time</span></div>
 
@@ -2786,10 +2390,12 @@
         <span class="n">formulation</span><span class="o">=</span><span class="n">ContactFormulation</span><span class="o">.</span><span class="n">STANDARD_PENALTY</span><span class="p">,</span>
         <span class="n">segment_based_contact_option</span><span class="o">=</span><span class="n">SBOPT</span><span class="o">.</span><span class="n">ASSUME_PLANER_SEGMENTS</span><span class="p">,</span>
     <span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Set contact formulation.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">contact_formulation</span> <span class="o">=</span> <span class="n">formulation</span><span class="o">.</span><span class="n">value</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">segment_based_contact_option</span> <span class="o">=</span> <span class="n">segment_based_contact_option</span><span class="o">.</span><span class="n">value</span></div>
 
 <div class="viewcode-block" id="Contact.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Contact.create.html#pre.dynabase.Contact.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create contact.&quot;&quot;&quot;</span>
         <span class="n">opcode</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">==</span> <span class="n">ContactType</span><span class="o">.</span><span class="n">AUTOMATIC</span><span class="p">:</span>
             <span class="n">opcode</span> <span class="o">+=</span> <span class="s2">&quot;AUTOMATIC_&quot;</span>
@@ -2924,6 +2530,7 @@
 
 <div class="viewcode-block" id="Constraint.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Constraint.create.html#pre.dynabase.Constraint.create">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create constraint.&quot;&quot;&quot;</span>
         <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">Constraint</span><span class="o">.</span><span class="n">cnrbsetidlist</span><span class="p">)):</span>
             <span class="n">stub</span><span class="o">.</span><span class="n">CreateConstrainedNodalRigidBody</span><span class="p">(</span>
                 <span class="n">ConstrainedNodalRigidBodyRequest</span><span class="p">(</span>
@@ -2933,6 +2540,7 @@
 
 
 <div class="viewcode-block" id="Point"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Point.html#pre.dynabase.Point">[docs]</a><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define point.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -2940,6 +2548,7 @@
 
 
 <div class="viewcode-block" id="Direction"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.Direction.html#pre.dynabase.Direction">[docs]</a><span class="k">class</span> <span class="nc">Direction</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Define direction.&quot;&quot;&quot;</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">z</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
@@ -2984,6 +2593,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">dir</span> <span class="o">=</span> <span class="nb">dir</span></div>
 
 <div class="viewcode-block" id="RigidwallCylinder.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynabase.RigidwallCylinder.create.html#pre.dynabase.RigidwallCylinder.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create rigidwall cylinder.&quot;&quot;&quot;</span>
         <span class="n">parameter</span> <span class="o">=</span> <span class="p">[</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">x</span><span class="p">,</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">tail</span><span class="o">.</span><span class="n">y</span><span class="p">,</span>

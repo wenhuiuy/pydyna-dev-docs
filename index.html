@@ -270,7 +270,8 @@
 build up ansys-dyna input deck, submit to solver and finally post processing their results.</p>
 <section id="project-overview">
 <h3>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this heading">#</a></h3>
-<p>There are 2 related packages here, all under the ansys/dyna/ directory.</p>
+<p>There are 3 related packages here, pre and solver are all under the ansys/dyna/ directory,
+while pyDPF is used for post-processing.</p>
 <p>pre contains highly abstracted APIs for setting up a LS-DYNA input deck, so far,
 it includes DynaMech, DynaIGA, DynaICFD, DynaSALE, DynaEM, DynaAirbag and so on.</p>
 <p>solver contains code for interfacing with the LS-DYNA solver directly.
@@ -280,6 +281,17 @@ use case is that LS-DYNA will be running in a container environment
 such as Docker or Kubernetes.  The code here then allows for pushing
 input files to the container, starting LS-DYNA and monitoring its
 progress, and retrieving results files.</p>
+<p>The Data Processing Framework (DPF) is designed to provide numerical
+simulation users/engineers with a toolbox for accessing and
+transforming simulation data. DPF can access data from solver result
+files as well as several neutral formats (csv, hdf5, vtk,
+etc.). Various operators are available allowing the manipulation and
+the transformation of this data.</p>
+<p>The Python <cite>ansys-dpf-post</cite> package provides a simplified Python
+interface to DPF, thus enabling rapid postprocessing without ever
+leaving a Python environment.</p>
+<p>Visit the [DPF-Post Documentation](<a class="reference external" href="https://postdocs.pyansys.com">https://postdocs.pyansys.com</a>) for a
+detailed description of the package.</p>
 </section>
 <section id="installation">
 <h3>Installation<a class="headerlink" href="#installation" title="Permalink to this heading">#</a></h3>
@@ -322,6 +334,20 @@ option is for you to download the code from GitHub:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">push</span><span class="p">(</span><span class="s2">&quot;input.k&quot;</span><span class="p">)</span>                            <span class="c1"># push an input file</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">start</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>                                   <span class="c1"># start 4 ranks of mppdyna</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">dyna</span><span class="o">.</span><span class="n">run</span><span class="p">(</span><span class="s2">&quot;i=input.k memory=10m ncycle=20000&quot;</span><span class="p">)</span>   <span class="c1"># begin execution</span>
+</pre></div>
+</div>
+<p>Here is a basic post-processing example:</p>
+<p>lsdyna::d3plot::stress_von_mises</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dpf</span> <span class="kn">import</span> <span class="n">core</span> <span class="k">as</span> <span class="n">dpf</span>
+
+<span class="n">ds</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">DataSources</span><span class="p">()</span>
+<span class="n">ds</span><span class="o">.</span><span class="n">set_result_file_path</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;./d3plot&#39;</span><span class="p">,</span> <span class="s1">&#39;d3plot&#39;</span><span class="p">)</span>
+
+<span class="n">resultOp</span> <span class="o">=</span> <span class="n">dpf</span><span class="o">.</span><span class="n">Operator</span><span class="p">(</span><span class="s2">&quot;lsdyna::d3plot::stress_von_mises&quot;</span><span class="p">)</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">data_sources</span><span class="p">(</span><span class="n">ds</span><span class="p">)</span>
+<span class="c1"># set the time</span>
+<span class="n">resultOp</span><span class="o">.</span><span class="n">inputs</span><span class="o">.</span><span class="n">time_scoping</span><span class="o">.</span><span class="n">connect</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">resultOp</span><span class="o">.</span><span class="n">outputs</span><span class="o">.</span><span class="n">stress_von_mises</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>

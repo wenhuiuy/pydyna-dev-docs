@@ -15,31 +15,13 @@
    
       
       
-      DynaICFD.create_bdy_free_slip
-      
-      
-      DynaICFD.create_bdy_non_slip
-      
-      
-      DynaICFD.create_bdy_prescribed_pre
-      
-      
-      DynaICFD.create_bdy_prescribed_vel
-      
-      
       DynaICFD.create_boundary_prescribed_motion
-      
-      
-      DynaICFD.create_boundary_spc
       
       
       DynaICFD.create_constrained_extra_nodes
       
       
       DynaICFD.create_constrained_joint
-      
-      
-      DynaICFD.create_contact
       
       
       DynaICFD.create_control_contact
@@ -72,16 +54,7 @@
       DynaICFD.create_database_binary
       
       
-      DynaICFD.create_db_drag
-      
-      
-      DynaICFD.create_definecurve
-      
-      
       DynaICFD.create_defineorientation
-      
-      
-      DynaICFD.create_definevector
       
       
       DynaICFD.create_general_keyword
@@ -108,28 +81,10 @@
       DynaICFD.create_mat_damper_viscous
       
       
-      DynaICFD.create_mat_fabric
-      
-      
-      DynaICFD.create_mat_icfd
-      
-      
       DynaICFD.create_mat_spring_nonlinear_elastic
       
       
-      DynaICFD.create_nodeset
-      
-      
       DynaICFD.create_part_icfd
-      
-      
-      DynaICFD.create_part_vol
-      
-      
-      DynaICFD.create_partset
-      
-      
-      DynaICFD.create_rigidwall_geom
       
       
       DynaICFD.create_rigidwall_planar
@@ -141,13 +96,7 @@
       DynaICFD.create_section_icfd
       
       
-      DynaICFD.create_section_shell
-      
-      
       DynaICFD.create_section_solid
-      
-      
-      DynaICFD.create_segmentset
       
       
       DynaICFD.create_shellset
@@ -165,13 +114,7 @@
       DynaICFD.get_stub
       
       
-      DynaICFD.mesh_create_bl
-      
-      
       DynaICFD.mesh_create_size_shape
-      
-      
-      DynaICFD.mesh_create_volume
       
       
       DynaICFD.mesh_embed_shell

@@ -18,16 +18,10 @@
       DynaIGA.create_boundary_prescribed_motion
       
       
-      DynaIGA.create_boundary_spc
-      
-      
       DynaIGA.create_constrained_extra_nodes
       
       
       DynaIGA.create_constrained_joint
-      
-      
-      DynaIGA.create_contact
       
       
       DynaIGA.create_control_contact
@@ -51,13 +45,7 @@
       DynaIGA.create_database_binary
       
       
-      DynaIGA.create_definecurve
-      
-      
       DynaIGA.create_defineorientation
-      
-      
-      DynaIGA.create_definevector
       
       
       DynaIGA.create_general_keyword
@@ -84,19 +72,7 @@
       DynaIGA.create_mat_damper_viscous
       
       
-      DynaIGA.create_mat_fabric
-      
-      
       DynaIGA.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaIGA.create_nodeset
-      
-      
-      DynaIGA.create_partset
-      
-      
-      DynaIGA.create_rigidwall_geom
       
       
       DynaIGA.create_rigidwall_planar
@@ -108,13 +84,7 @@
       DynaIGA.create_section_igashell
       
       
-      DynaIGA.create_section_shell
-      
-      
       DynaIGA.create_section_solid
-      
-      
-      DynaIGA.create_segmentset
       
       
       DynaIGA.create_shellset
