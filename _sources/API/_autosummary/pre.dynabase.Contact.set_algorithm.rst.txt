@@ -1,6 +1,0 @@
-set\_algorithm
-==============
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: Contact.set_algorithm

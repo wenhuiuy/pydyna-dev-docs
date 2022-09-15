@@ -1,6 +1,0 @@
-create\_rigidwall\_geom
-=======================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_rigidwall_geom

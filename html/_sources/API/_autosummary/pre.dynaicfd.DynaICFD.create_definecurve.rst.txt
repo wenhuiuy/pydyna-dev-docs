@@ -1,6 +1,0 @@
-create\_definecurve
-===================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_definecurve

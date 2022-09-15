@@ -1,6 +1,0 @@
-create\_contact
-===============
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_contact

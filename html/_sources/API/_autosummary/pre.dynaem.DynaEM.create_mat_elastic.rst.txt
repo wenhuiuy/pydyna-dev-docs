@@ -1,6 +1,0 @@
-create\_mat\_elastic
-====================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_mat_elastic

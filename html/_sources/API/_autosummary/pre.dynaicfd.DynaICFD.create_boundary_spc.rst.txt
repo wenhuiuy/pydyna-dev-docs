@@ -1,6 +1,0 @@
-create\_boundary\_spc
-=====================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_boundary_spc

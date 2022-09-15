@@ -1,6 +1,0 @@
-create\_boundary\_spc
-=====================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_boundary_spc

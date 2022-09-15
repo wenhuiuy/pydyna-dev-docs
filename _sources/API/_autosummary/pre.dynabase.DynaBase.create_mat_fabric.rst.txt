@@ -1,6 +1,0 @@
-create\_mat\_fabric
-===================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_mat_fabric

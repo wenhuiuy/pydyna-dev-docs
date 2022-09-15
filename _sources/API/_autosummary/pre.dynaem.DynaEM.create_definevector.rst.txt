@@ -1,6 +1,0 @@
-create\_definevector
-====================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_definevector

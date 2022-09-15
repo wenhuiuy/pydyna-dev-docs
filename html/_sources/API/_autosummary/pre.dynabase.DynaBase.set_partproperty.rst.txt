@@ -1,6 +1,0 @@
-set\_partproperty
-=================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.set_partproperty

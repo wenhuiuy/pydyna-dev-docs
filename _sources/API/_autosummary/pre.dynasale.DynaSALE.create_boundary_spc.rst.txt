@@ -1,6 +1,0 @@
-create\_boundary\_spc
-=====================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_boundary_spc

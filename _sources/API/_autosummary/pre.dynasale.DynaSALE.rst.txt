@@ -1,4 +1,4 @@
-﻿pre.dynasale.DynaSALE
+pre.dynasale.DynaSALE
 =====================
 
 .. currentmodule:: pre.dynasale

@@ -1,6 +1,0 @@
-create\_partset
-===============
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_partset

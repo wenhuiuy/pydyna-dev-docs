@@ -1,6 +1,0 @@
-create\_em\_solver\_fem
-=======================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_em_solver_fem

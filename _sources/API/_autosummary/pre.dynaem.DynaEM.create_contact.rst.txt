@@ -1,6 +1,0 @@
-create\_contact
-===============
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_contact

@@ -1,4 +1,4 @@
-﻿pre.dynamaterial.Vacuum
+pre.dynamaterial.Vacuum
 =======================
 
 .. currentmodule:: pre.dynamaterial

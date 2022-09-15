@@ -1,6 +1,0 @@
-create\_contact
-===============
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_contact

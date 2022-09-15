@@ -1,6 +1,0 @@
-create\_segmentset
-==================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_segmentset

@@ -1,6 +1,0 @@
-create\_mat\_elastic
-====================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_mat_elastic

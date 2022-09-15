@@ -1,6 +1,0 @@
-create\_mat\_fabric
-===================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_mat_fabric

@@ -1,6 +1,0 @@
-﻿node
-====
-
-.. currentmodule:: solver
-
-.. automethod:: DynaSolver.node

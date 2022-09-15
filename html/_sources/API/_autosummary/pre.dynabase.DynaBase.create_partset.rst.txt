@@ -1,6 +1,0 @@
-create\_partset
-===============
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_partset

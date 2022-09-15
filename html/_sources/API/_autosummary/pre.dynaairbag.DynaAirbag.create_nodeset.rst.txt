@@ -1,6 +1,0 @@
-create\_nodeset
-===============
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_nodeset

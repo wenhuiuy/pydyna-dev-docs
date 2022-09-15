@@ -1,6 +1,0 @@
-create\_boundary\_spc
-=====================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_boundary_spc

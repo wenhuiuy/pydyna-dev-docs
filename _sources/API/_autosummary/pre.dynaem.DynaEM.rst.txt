@@ -1,4 +1,4 @@
-﻿pre.dynaem.DynaEM
+pre.dynaem.DynaEM
 =================
 
 .. currentmodule:: pre.dynaem

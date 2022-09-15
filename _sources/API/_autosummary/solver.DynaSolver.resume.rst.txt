@@ -1,6 +1,0 @@
-﻿resume
-======
-
-.. currentmodule:: solver
-
-.. automethod:: DynaSolver.resume

@@ -1,6 +1,0 @@
-create\_mat\_rigid
-==================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_mat_rigid

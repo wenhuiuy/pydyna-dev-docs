@@ -1,6 +1,0 @@
-create\_mat\_fabric
-===================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_mat_fabric

@@ -1,6 +1,0 @@
-create\_section\_shell
-======================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_section_shell

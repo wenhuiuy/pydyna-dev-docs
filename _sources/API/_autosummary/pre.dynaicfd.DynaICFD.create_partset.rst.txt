@@ -1,6 +1,0 @@
-create\_partset
-===============
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_partset

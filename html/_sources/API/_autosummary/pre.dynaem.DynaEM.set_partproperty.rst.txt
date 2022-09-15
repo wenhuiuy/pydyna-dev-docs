@@ -1,6 +1,0 @@
-set\_partproperty
-=================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.set_partproperty

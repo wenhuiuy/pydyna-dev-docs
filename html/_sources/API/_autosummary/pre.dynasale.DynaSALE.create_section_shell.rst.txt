@@ -1,6 +1,0 @@
-create\_section\_shell
-======================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_section_shell

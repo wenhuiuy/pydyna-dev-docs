@@ -1,6 +1,0 @@
-create\_definecurve
-===================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_definecurve

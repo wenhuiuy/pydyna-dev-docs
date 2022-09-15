@@ -1,6 +1,0 @@
-create\_partset
-===============
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_partset

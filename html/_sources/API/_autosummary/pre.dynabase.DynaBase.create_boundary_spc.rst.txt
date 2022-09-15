@@ -1,6 +1,0 @@
-create\_boundary\_spc
-=====================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_boundary_spc

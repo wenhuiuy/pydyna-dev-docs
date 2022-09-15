@@ -1,6 +1,0 @@
-create\_db\_drag
-================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_db_drag

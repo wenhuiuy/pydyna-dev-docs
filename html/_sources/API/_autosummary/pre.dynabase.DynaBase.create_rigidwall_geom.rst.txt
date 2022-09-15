@@ -1,6 +1,0 @@
-create\_rigidwall\_geom
-=======================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_rigidwall_geom

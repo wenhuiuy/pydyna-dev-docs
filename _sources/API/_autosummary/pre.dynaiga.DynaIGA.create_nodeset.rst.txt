@@ -1,6 +1,0 @@
-create\_nodeset
-===============
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_nodeset

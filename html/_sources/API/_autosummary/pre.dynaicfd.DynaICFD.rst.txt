@@ -1,4 +1,4 @@
-﻿pre.dynaicfd.DynaICFD
+pre.dynaicfd.DynaICFD
 =====================
 
 .. currentmodule:: pre.dynaicfd

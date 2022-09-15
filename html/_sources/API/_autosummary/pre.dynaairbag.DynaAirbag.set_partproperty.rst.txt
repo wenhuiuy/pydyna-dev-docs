@@ -1,6 +1,0 @@
-set\_partproperty
-=================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.set_partproperty

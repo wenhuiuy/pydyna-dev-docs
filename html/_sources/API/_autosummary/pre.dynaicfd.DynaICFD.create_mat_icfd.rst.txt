@@ -1,6 +1,0 @@
-create\_mat\_icfd
-=================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_mat_icfd

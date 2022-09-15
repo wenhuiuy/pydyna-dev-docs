@@ -1,4 +1,4 @@
-﻿pre.dynaiga.DynaIGA
+pre.dynaiga.DynaIGA
 ===================
 
 .. currentmodule:: pre.dynaiga

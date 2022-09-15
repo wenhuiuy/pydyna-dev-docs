@@ -1,6 +1,0 @@
-﻿download
-========
-
-.. currentmodule:: solver
-
-.. automethod:: DynaSolver.download

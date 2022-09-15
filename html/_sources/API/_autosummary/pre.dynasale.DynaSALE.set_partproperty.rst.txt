@@ -1,6 +1,0 @@
-set\_partproperty
-=================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.set_partproperty

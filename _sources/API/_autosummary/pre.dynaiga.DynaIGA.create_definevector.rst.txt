@@ -1,6 +1,0 @@
-create\_definevector
-====================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_definevector

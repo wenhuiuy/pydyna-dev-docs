@@ -1,6 +1,0 @@
-create\_partset
-===============
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_partset

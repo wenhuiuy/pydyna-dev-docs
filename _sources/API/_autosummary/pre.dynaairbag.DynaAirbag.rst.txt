@@ -1,4 +1,4 @@
-﻿pre.dynaairbag.DynaAirbag
+pre.dynaairbag.DynaAirbag
 =========================
 
 .. currentmodule:: pre.dynaairbag

@@ -1,6 +1,0 @@
-create\_circuit
-===============
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_circuit

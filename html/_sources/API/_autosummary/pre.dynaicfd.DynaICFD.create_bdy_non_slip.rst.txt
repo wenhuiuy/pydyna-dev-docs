@@ -1,6 +1,0 @@
-create\_bdy\_non\_slip
-======================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_bdy_non_slip
