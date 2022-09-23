@@ -44,7 +44,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Coupling examples" href="../Coupling/index.html" />
@@ -401,23 +401,27 @@ to download the full example code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../ansys/dyna&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">pre.dynaairbag</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynasolution</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamech</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">hostname</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">airbagdeploy</span> <span class="o">=</span> <span class="n">DynaAirbag</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
+
+    <span class="n">airbag_solution</span> <span class="o">=</span> <span class="n">DynaSolution</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
     <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">path</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/os.html#os.getcwd" title="os.getcwd" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">()</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a> <span class="o">+</span> <span class="s2">&quot;input&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a> <span class="o">+</span> <span class="s2">&quot;airbag_deploy&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;airbag_deploy.k&quot;</span><span class="p">)</span>
-    <span class="n">airbagdeploy</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+    <span class="n">airbag_solution</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
 
-    <span class="n">airbagdeploy</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span>
-    <span class="c1">#airbagdeploy.create_control_output(npopt=1, neecho=3)</span>
+    <span class="n">airbag_solution</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mf">0.03</span><span class="p">)</span>
+    <span class="n">airbag_solution</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">,</span> <span class="n">ieverp</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 
+    <span class="n">airbagdeploy</span> <span class="o">=</span> <span class="n">DynaMech</span><span class="p">()</span>
+    <span class="n">airbag_solution</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">airbagdeploy</span><span class="p">)</span>
 
     <span class="n">airbag</span> <span class="o">=</span> <span class="n">Airbag</span><span class="p">(</span><span class="nb">set</span><span class="o">=</span><span class="n">PartSet</span><span class="p">([</span><span class="mi">3</span><span class="p">]),</span>
         <span class="n">heat_capacity_at_constant_volume</span><span class="o">=</span><span class="mf">1.736e3</span><span class="p">,</span>
@@ -458,11 +462,9 @@ to download the full example code</p>
     <span class="n">airbagpart</span><span class="o">.</span><span class="n">set_thickness</span><span class="p">(</span><span class="mf">0.015</span><span class="p">)</span>
     <span class="n">airbagpart</span><span class="o">.</span><span class="n">set_integration_points</span><span class="p">(</span><span class="mi">4</span><span class="p">)</span>
 
-    <span class="n">airbagdeploy</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">5e-4</span><span class="p">,</span> <span class="n">ieverp</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-    <span class="c1">#airbagdeploy.create_database_binary(filetype=&quot;D3THDT&quot;, dt=999999)</span>
     <span class="n">airbagdeploy</span><span class="o">.</span><span class="n">set_output_database</span><span class="p">(</span><span class="n">abstat</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">,</span><span class="n">glstat</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">,</span><span class="n">matsum</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">,</span><span class="n">rcforc</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">,</span><span class="n">rbdout</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">,</span><span class="n">rwforc</span><span class="o">=</span><span class="mf">2.0e-4</span><span class="p">)</span>
 
-    <span class="n">airbagdeploy</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
+    <span class="n">airbag_solution</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>

@@ -1,6 +1,0 @@
-set\_energy
-===========
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.set_energy

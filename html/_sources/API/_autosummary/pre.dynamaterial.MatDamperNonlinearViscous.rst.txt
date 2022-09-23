@@ -1,0 +1,25 @@
+pre.dynamaterial.MatDamperNonlinearViscous
+==========================================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatDamperNonlinearViscous
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatDamperNonlinearViscous.create
+      
+   
+   
+
+   
+   
+   

@@ -1,0 +1,127 @@
+pre.dynadem.DynaDEM
+===================
+
+.. currentmodule:: pre.dynadem
+
+.. autoclass:: DynaDEM
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaDEM.create_boundary_prescribed_motion
+      
+      
+      DynaDEM.create_constrained_extra_nodes
+      
+      
+      DynaDEM.create_constrained_joint
+      
+      
+      DynaDEM.create_control_contact
+      
+      
+      DynaDEM.create_control_output
+      
+      
+      DynaDEM.create_control_shell
+      
+      
+      DynaDEM.create_control_solid
+      
+      
+      DynaDEM.create_damping_global
+      
+      
+      DynaDEM.create_define_de_mesh_surface
+      
+      
+      DynaDEM.create_defineorientation
+      
+      
+      DynaDEM.create_general_keyword
+      
+      
+      DynaDEM.create_hourglass
+      
+      
+      DynaDEM.create_init_vel_bodies
+      
+      
+      DynaDEM.create_init_vel_rigidbody
+      
+      
+      DynaDEM.create_load_body
+      
+      
+      DynaDEM.create_mat_damper_nonlinear_viscous
+      
+      
+      DynaDEM.create_mat_damper_viscous
+      
+      
+      DynaDEM.create_mat_spring_nonlinear_elastic
+      
+      
+      DynaDEM.create_rigidwall_planar
+      
+      
+      DynaDEM.create_section_discrete
+      
+      
+      DynaDEM.create_section_solid
+      
+      
+      DynaDEM.create_shellset
+      
+      
+      DynaDEM.create_solidset
+      
+      
+      DynaDEM.get_solid_elements
+      
+      
+      DynaDEM.get_stub
+      
+      
+      DynaDEM.save_file
+      
+      
+      DynaDEM.set_accuracy
+      
+      
+      DynaDEM.set_bulk_viscosity
+      
+      
+      DynaDEM.set_des
+      
+      
+      DynaDEM.set_energy
+      
+      
+      DynaDEM.set_hourglass
+      
+      
+      DynaDEM.set_init_velocity
+      
+      
+      DynaDEM.set_output_database
+      
+      
+      DynaDEM.set_part_damping_stiffness
+      
+      
+      DynaDEM.set_timestep
+      
+   
+   
+
+   
+   
+   

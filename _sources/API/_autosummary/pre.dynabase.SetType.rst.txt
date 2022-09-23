@@ -1,0 +1,26 @@
+pre.dynabase.SetType
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: SetType
+
+   
+
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      
+      
+      
+   
+   

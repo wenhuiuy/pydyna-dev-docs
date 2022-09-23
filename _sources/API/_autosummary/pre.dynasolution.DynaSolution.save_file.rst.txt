@@ -1,0 +1,6 @@
+save\_file
+==========
+
+.. currentmodule:: pre.dynasolution
+
+.. automethod:: DynaSolution.save_file

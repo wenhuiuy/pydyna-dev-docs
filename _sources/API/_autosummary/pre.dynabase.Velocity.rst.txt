@@ -1,0 +1,22 @@
+pre.dynabase.Velocity
+=====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Velocity
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

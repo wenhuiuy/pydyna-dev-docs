@@ -43,7 +43,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -222,18 +222,16 @@
 
 <span class="kn">import</span> <span class="nn">logging</span>
 
-<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa : F403</span>
 
 
 <div class="viewcode-block" id="DynaEM"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.html#pre.dynaem.DynaEM">[docs]</a><span class="k">class</span> <span class="nc">DynaEM</span><span class="p">(</span><span class="n">DynaBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Contain methods to create keyword related to EM.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">):</span>
-        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
-<div class="viewcode-block" id="DynaEM.create_em_control"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_control.html#pre.dynaem.DynaEM.create_em_control">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_control</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">emsol</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">numls</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">macrodt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ncylfem</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">ncylbem</span><span class="o">=</span><span class="mi">5000</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="DynaEM.create_em_control"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_control.html#pre.dynaem.DynaEM.create_em_control">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_control</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">emsol</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">numls</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">macrodt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ncylfem</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">ncylbem</span><span class="o">=</span><span class="mi">5000</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Enable the EM solver and set its options.</span>
 
 <span class="sd">        Parameters</span>
@@ -282,7 +280,8 @@
 <span class="sd">           Time step type:</span>
 <span class="sd">           EQ.1: constant time step given in DTCONST</span>
 <span class="sd">           EQ.2: time step as a function of time given by a load curve specified in LCID</span>
-<span class="sd">           EQ.3: automatic time step computation, depending on the solver type. This time step is then multiplied by FACTOR</span>
+<span class="sd">           EQ.3: automatic time step computation, depending on the solver type.</span>
+<span class="sd">           This time step is then multiplied by FACTOR</span>
 <span class="sd">        dtconst : float</span>
 <span class="sd">            Constant value for the time step for TSTYPE = 1.</span>
 
@@ -291,9 +290,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMTimestep</span><span class="p">(</span>
-            <span class="n">EMTimestepRequest</span><span class="p">(</span><span class="n">tstype</span><span class="o">=</span><span class="n">tstype</span><span class="p">,</span> <span class="n">dtconst</span><span class="o">=</span><span class="n">dtconst</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMTimestep</span><span class="p">(</span><span class="n">EMTimestepRequest</span><span class="p">(</span><span class="n">tstype</span><span class="o">=</span><span class="n">tstype</span><span class="p">,</span> <span class="n">dtconst</span><span class="o">=</span><span class="n">dtconst</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Timestep Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
@@ -307,15 +304,19 @@
 <span class="sd">           EQ.0: No contact detection</span>
 <span class="sd">           EQ.1: Contact detection</span>
 <span class="sd">        cconly : int</span>
-<span class="sd">            Determines on which parts of the model the EM contact should be activated</span>
-<span class="sd">            EQ.0: Contact detection between all active parts associated with a conducting material. (Default)</span>
-<span class="sd">            EQ.1: Only look for EM contact between parts associated through the EM_CONTACT card. In some cases this option can reduce the calculation time.</span>
+<span class="sd">            Determines on which parts of the model the EM contact should be activated.</span>
+
+<span class="sd">            * EQ.0: Contact detection between all active parts associated with a conducting material. (Default)</span>
+<span class="sd">            * EQ.1: Only look for EM contact between parts associated through the EM_CONTACT card.</span>
+<span class="sd">              In some cases this option can reduce the calculation time.</span>
 <span class="sd">        ctype : int</span>
 <span class="sd">            Contact type:</span>
-<span class="sd">            EQ.-1: Node to node contact based on constraints on the scalar potential. See Remark 1.</span>
-<span class="sd">            EQ.0: Node to node penalty based contact on the scalar potential.</span>
-<span class="sd">            EQ.1: Discrete mortar penalty contact on the scalar potential.</span>
-<span class="sd">            EQ.2: Continuous mortar penalty contact on the scalar potential and the vector potential (when active).</span>
+
+<span class="sd">            * EQ.-1: Node to node contact based on constraints on the scalar potential. See Remark 1.</span>
+<span class="sd">            * EQ.0: Node to node penalty based contact on the scalar potential.</span>
+<span class="sd">            * EQ.1: Discrete mortar penalty contact on the scalar potential.</span>
+<span class="sd">            * EQ.2: Continuous mortar penalty contact on the scalar potential and the vector</span>
+<span class="sd">              potential (when active).</span>
 <span class="sd">        dtype : int</span>
 <span class="sd">            Detection type.</span>
 
@@ -330,9 +331,7 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Control Contact Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaEM.create_em_contact"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_contact.html#pre.dynaem.DynaEM.create_em_contact">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_contact</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">contid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">psidm</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">psids</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">eps1</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">eps2</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">eps3</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">d0</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="DynaEM.create_em_contact"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_contact.html#pre.dynaem.DynaEM.create_em_contact">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_contact</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">psidm</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">psids</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">eps1</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">eps2</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">eps3</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">d0</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Optional card used for defining and specifying options on electromagnetic contacts between two sets of parts.</span>
 
 <span class="sd">        Parameters</span>
@@ -372,9 +371,7 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Contact Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaEM.set_rogowsky_coil_to_output_current"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.set_rogowsky_coil_to_output_current.html#pre.dynaem.DynaEM.set_rogowsky_coil_to_output_current">[docs]</a>    <span class="k">def</span> <span class="nf">set_rogowsky_coil_to_output_current</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">segmentset</span><span class="o">=</span><span class="n">SegmentSet</span><span class="p">([[]]),</span> <span class="n">settype</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">curtyp</span><span class="o">=</span><span class="mi">1</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="DynaEM.set_rogowsky_coil_to_output_current"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.set_rogowsky_coil_to_output_current.html#pre.dynaem.DynaEM.set_rogowsky_coil_to_output_current">[docs]</a>    <span class="k">def</span> <span class="nf">set_rogowsky_coil_to_output_current</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">segmentset</span><span class="o">=</span><span class="n">SegmentSet</span><span class="p">([[]]),</span> <span class="n">settype</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">curtyp</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define Rogowsky coils to measure a global current vs time through a segment set or a node set.</span>
 
 <span class="sd">        Parameters</span>
@@ -400,14 +397,13 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">segmentset</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="n">setid</span> <span class="o">=</span> <span class="n">segmentset</span><span class="o">.</span><span class="n">id</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMCircuitRogo</span><span class="p">(</span>
-            <span class="n">EMCircuitRogoRequest</span><span class="p">(</span><span class="n">setid</span><span class="o">=</span><span class="n">setid</span><span class="p">,</span> <span class="n">settype</span><span class="o">=</span><span class="n">settype</span><span class="p">,</span> <span class="n">curtyp</span><span class="o">=</span><span class="n">curtyp</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMCircuitRogo</span><span class="p">(</span><span class="n">EMCircuitRogoRequest</span><span class="p">(</span><span class="n">setid</span><span class="o">=</span><span class="n">setid</span><span class="p">,</span> <span class="n">settype</span><span class="o">=</span><span class="n">settype</span><span class="p">,</span> <span class="n">curtyp</span><span class="o">=</span><span class="n">curtyp</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Circuit Rogo Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span><span class="o">.</span><span class="n">id</span></div>
 
 <div class="viewcode-block" id="DynaEM.create_em_mat001"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_mat001.html#pre.dynaem.DynaEM.create_em_mat001">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_mat001</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define the electromagnetic material type and properties for a material whose permeability equals the free space permeability.</span>
+        <span class="sd">&quot;&quot;&quot;Define the electromagnetic material type and properties</span>
+<span class="sd">        for a material whose permeability equals the free space permeability.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -428,14 +424,13 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMMat001</span><span class="p">(</span>
-            <span class="n">EMMat001Request</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMMat001</span><span class="p">(</span><span class="n">EMMat001Request</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Material 001 Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
 <div class="viewcode-block" id="DynaEM.create_em_mat002"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_mat002.html#pre.dynaem.DynaEM.create_em_mat002">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_mat002</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="p">,</span> <span class="n">eosid</span><span class="p">,</span> <span class="n">murel</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define an electromagnetic material type and properties whose permeability is different than the free space permeability.</span>
+        <span class="sd">&quot;&quot;&quot;Define an electromagnetic material type and properties</span>
+<span class="sd">        whose permeability is different than the free space permeability.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
@@ -452,22 +447,19 @@
 <span class="sd">        eosid : int</span>
 <span class="sd">            ID of the EOS to be used for the electrical conductivity.</span>
 <span class="sd">        murel : float</span>
-<span class="sd">            Relative permeability which is the ratio of the permeability of a specific medium to the permeability of free space</span>
+<span class="sd">            Relative permeability which is the ratio of the permeability of a specific</span>
+<span class="sd">            medium to the permeability of free space</span>
 
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMMat002</span><span class="p">(</span>
-            <span class="n">EMMat002Request</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">eosid</span><span class="o">=</span><span class="n">eosid</span><span class="p">,</span> <span class="n">murel</span><span class="o">=</span><span class="n">murel</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMMat002</span><span class="p">(</span><span class="n">EMMat002Request</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">mid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">sigma</span><span class="o">=</span><span class="n">sigma</span><span class="p">,</span> <span class="n">eosid</span><span class="o">=</span><span class="n">eosid</span><span class="p">,</span> <span class="n">murel</span><span class="o">=</span><span class="n">murel</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Material 002 Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaEM.create_em_solver_fembem_monolithic"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_solver_fembem_monolithic.html#pre.dynaem.DynaEM.create_em_solver_fembem_monolithic">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_solver_fembem_monolithic</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">abstol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">500</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="DynaEM.create_em_solver_fembem_monolithic"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.DynaEM.create_em_solver_fembem_monolithic.html#pre.dynaem.DynaEM.create_em_solver_fembem_monolithic">[docs]</a>    <span class="k">def</span> <span class="nf">create_em_solver_fembem_monolithic</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">abstol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="mf">1e-4</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="mi">500</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Turn on the monolithic FEM-BEM solver.</span>
 
 <span class="sd">        Parameters</span>
@@ -492,9 +484,7 @@
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverFemBemMonolithic</span><span class="p">(</span>
-            <span class="n">EMSolverFemBemMonolithicRequest</span><span class="p">(</span>
-                <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="n">stype</span><span class="p">,</span> <span class="n">abstol</span><span class="o">=</span><span class="n">abstol</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">reltol</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="n">maxit</span>
-            <span class="p">)</span>
+            <span class="n">EMSolverFemBemMonolithicRequest</span><span class="p">(</span><span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">stype</span><span class="o">=</span><span class="n">stype</span><span class="p">,</span> <span class="n">abstol</span><span class="o">=</span><span class="n">abstol</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">reltol</span><span class="p">,</span> <span class="n">maxit</span><span class="o">=</span><span class="n">maxit</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Solver FEMBEM Monolithic Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
@@ -532,9 +522,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMOutput</span><span class="p">(</span>
-            <span class="n">EMOutputRequest</span><span class="p">(</span><span class="n">mats</span><span class="o">=</span><span class="n">mats</span><span class="p">,</span> <span class="n">matf</span><span class="o">=</span><span class="n">matf</span><span class="p">,</span> <span class="n">sols</span><span class="o">=</span><span class="n">sols</span><span class="p">,</span> <span class="n">solf</span><span class="o">=</span><span class="n">solf</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMOutput</span><span class="p">(</span><span class="n">EMOutputRequest</span><span class="p">(</span><span class="n">mats</span><span class="o">=</span><span class="n">mats</span><span class="p">,</span> <span class="n">matf</span><span class="o">=</span><span class="n">matf</span><span class="p">,</span> <span class="n">sols</span><span class="o">=</span><span class="n">sols</span><span class="p">,</span> <span class="n">solf</span><span class="o">=</span><span class="n">solf</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Output Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
@@ -553,9 +541,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMDatabaseGlobalEnergy</span><span class="p">(</span>
-            <span class="n">EMDatabaseGlobalEnergyRequest</span><span class="p">(</span><span class="n">outlv</span><span class="o">=</span><span class="n">outlv</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMDatabaseGlobalEnergy</span><span class="p">(</span><span class="n">EMDatabaseGlobalEnergyRequest</span><span class="p">(</span><span class="n">outlv</span><span class="o">=</span><span class="n">outlv</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Database Global Energy Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
@@ -587,9 +573,7 @@
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMPermanentMagnet</span><span class="p">(</span>
-            <span class="n">EMPermanentMagnetRequest</span><span class="p">(</span>
-                <span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">partid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">north</span><span class="o">=</span><span class="n">north</span><span class="p">,</span> <span class="n">sourth</span><span class="o">=</span><span class="n">sourth</span><span class="p">,</span> <span class="n">hc</span><span class="o">=</span><span class="n">hc</span>
-            <span class="p">)</span>
+            <span class="n">EMPermanentMagnetRequest</span><span class="p">(</span><span class="nb">id</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">partid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">mtype</span><span class="o">=</span><span class="n">mtype</span><span class="p">,</span> <span class="n">north</span><span class="o">=</span><span class="n">north</span><span class="p">,</span> <span class="n">sourth</span><span class="o">=</span><span class="n">sourth</span><span class="p">,</span> <span class="n">hc</span><span class="o">=</span><span class="n">hc</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Permanent Magnet Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
@@ -613,9 +597,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMEOSPermeability</span><span class="p">(</span>
-            <span class="n">EMEOSPermeabilityRequest</span><span class="p">(</span><span class="n">eosid</span><span class="o">=</span><span class="n">eosid</span><span class="p">,</span> <span class="n">eostype</span><span class="o">=</span><span class="n">eostype</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMEOSPermeability</span><span class="p">(</span><span class="n">EMEOSPermeabilityRequest</span><span class="p">(</span><span class="n">eosid</span><span class="o">=</span><span class="n">eosid</span><span class="p">,</span> <span class="n">eostype</span><span class="o">=</span><span class="n">eostype</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM EOS Permeability Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
@@ -627,11 +609,7 @@
             <span class="n">obj</span><span class="o">.</span><span class="n">set_property</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">Circuit</span><span class="o">.</span><span class="n">circuitlist</span><span class="p">:</span>
             <span class="n">obj</span><span class="o">.</span><span class="n">create</span><span class="p">()</span>
-        <span class="n">EMAnalysis</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">SaveFile</span><span class="p">(</span><span class="n">SaveFileRequest</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mainname</span><span class="p">))</span>
-        <span class="n">msg</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">mainname</span> <span class="o">+</span> <span class="s2">&quot; is outputed...&quot;</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div></div>
+        <span class="n">EMAnalysis</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span></div></div>
 
 
 <div class="viewcode-block" id="EMType"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMType.html#pre.dynaem.EMType">[docs]</a><span class="k">class</span> <span class="nc">EMType</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -654,15 +632,16 @@
 <div class="viewcode-block" id="EMAnalysis"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.html#pre.dynaem.EMAnalysis">[docs]</a><span class="k">class</span> <span class="nc">EMAnalysis</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Enable the EM solver and set its options.</span>
 
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        type : int</span>
-<span class="sd">           Electromagnetism solver selector:</span>
-<span class="sd">           EQ.1: Eddy current solver.</span>
-<span class="sd">           EQ.2: Induced heating solver.</span>
-<span class="sd">           EQ.3: Resistive heating solver.</span>
-<span class="sd">           EQ.11: Electrophysiology monodomain.</span>
-<span class="sd">        &quot;&quot;&quot;</span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    type : int</span>
+<span class="sd">       Electromagnetism solver selector:</span>
+<span class="sd">       EQ.1: Eddy current solver.</span>
+<span class="sd">       EQ.2: Induced heating solver.</span>
+<span class="sd">       EQ.3: Resistive heating solver.</span>
+<span class="sd">       EQ.11: Electrophysiology monodomain.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">p_matrix_tol</span> <span class="o">=</span> <span class="mf">1e-6</span>
     <span class="n">q_matrix_tol</span> <span class="o">=</span> <span class="mf">1e-6</span>
     <span class="n">w_matrix_tol</span> <span class="o">=</span> <span class="mf">1e-6</span>
@@ -670,20 +649,14 @@
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">type</span><span class="o">=</span><span class="n">EMType</span><span class="o">.</span><span class="n">EDDY_CURRENT</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="nb">type</span><span class="o">.</span><span class="n">value</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMControl</span><span class="p">(</span>
-            <span class="n">EMControlRequest</span><span class="p">(</span>
-                <span class="n">emsol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">numls</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">macrodt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ncylfem</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">ncylbem</span><span class="o">=</span><span class="mi">5000</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMControl</span><span class="p">(</span><span class="n">EMControlRequest</span><span class="p">(</span><span class="n">emsol</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">numls</span><span class="o">=</span><span class="mi">100</span><span class="p">,</span> <span class="n">macrodt</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ncylfem</span><span class="o">=</span><span class="mi">5000</span><span class="p">,</span> <span class="n">ncylbem</span><span class="o">=</span><span class="mi">5000</span><span class="p">))</span>
 
 <div class="viewcode-block" id="EMAnalysis.set_timestep"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_timestep.html#pre.dynaem.EMAnalysis.set_timestep">[docs]</a>    <span class="k">def</span> <span class="nf">set_timestep</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">timestep</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Control the EM time step and its evolution.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMTimestep</span><span class="p">(</span><span class="n">EMTimestepRequest</span><span class="p">(</span><span class="n">tstype</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">dtconst</span><span class="o">=</span><span class="n">timestep</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Timestep Created...&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EMAnalysis.set_solver_bem"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_solver_bem.html#pre.dynaem.EMAnalysis.set_solver_bem">[docs]</a>    <span class="k">def</span> <span class="nf">set_solver_bem</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">BEMSOLVER</span><span class="o">.</span><span class="n">PCG</span><span class="p">,</span> <span class="n">relative_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iteration</span><span class="o">=</span><span class="mi">1000</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="EMAnalysis.set_solver_bem"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_solver_bem.html#pre.dynaem.EMAnalysis.set_solver_bem">[docs]</a>    <span class="k">def</span> <span class="nf">set_solver_bem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">BEMSOLVER</span><span class="o">.</span><span class="n">PCG</span><span class="p">,</span> <span class="n">relative_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define the type of linear solver and pre-conditioner as well as tolerance for the EM_BEM solve.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBem</span><span class="p">(</span>
             <span class="n">EMSolverBemRequest</span><span class="p">(</span>
@@ -697,9 +670,7 @@
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Solver BEM Created...&quot;</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="EMAnalysis.set_solver_fem"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_solver_fem.html#pre.dynaem.EMAnalysis.set_solver_fem">[docs]</a>    <span class="k">def</span> <span class="nf">set_solver_fem</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">FEMSOLVER</span><span class="o">.</span><span class="n">DIRECT_SOLVER</span><span class="p">,</span> <span class="n">relative_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iteration</span><span class="o">=</span><span class="mi">1000</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="EMAnalysis.set_solver_fem"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_solver_fem.html#pre.dynaem.EMAnalysis.set_solver_fem">[docs]</a>    <span class="k">def</span> <span class="nf">set_solver_fem</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">solver</span><span class="o">=</span><span class="n">FEMSOLVER</span><span class="o">.</span><span class="n">DIRECT_SOLVER</span><span class="p">,</span> <span class="n">relative_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">max_iteration</span><span class="o">=</span><span class="mi">1000</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define some parameters for the EM FEM solver.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverFem</span><span class="p">(</span>
             <span class="n">EMSolverFemRequest</span><span class="p">(</span>
@@ -712,9 +683,7 @@
             <span class="p">)</span>
         <span class="p">)</span></div>
 
-<div class="viewcode-block" id="EMAnalysis.set_bem_matrix_tol"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_bem_matrix_tol.html#pre.dynaem.EMAnalysis.set_bem_matrix_tol">[docs]</a>    <span class="k">def</span> <span class="nf">set_bem_matrix_tol</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">p_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">q_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">w_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="EMAnalysis.set_bem_matrix_tol"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.set_bem_matrix_tol.html#pre.dynaem.EMAnalysis.set_bem_matrix_tol">[docs]</a>    <span class="k">def</span> <span class="nf">set_bem_matrix_tol</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">p_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">q_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">,</span> <span class="n">w_matrix_tol</span><span class="o">=</span><span class="mf">1e-6</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define the type of BEM matrices as well as the way they are assembled.&quot;&quot;&quot;</span>
         <span class="n">EMAnalysis</span><span class="o">.</span><span class="n">p_matrix_tol</span> <span class="o">=</span> <span class="n">p_matrix_tol</span>
         <span class="n">EMAnalysis</span><span class="o">.</span><span class="n">q_matrix_tol</span> <span class="o">=</span> <span class="n">q_matrix_tol</span>
@@ -723,15 +692,9 @@
 <div class="viewcode-block" id="EMAnalysis.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMAnalysis.create.html#pre.dynaem.EMAnalysis.create">[docs]</a>    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="n">stub</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create EMAnalysis.&quot;&quot;&quot;</span>
-        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span>
-            <span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">p_matrix_tol</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span>
-            <span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">q_matrix_tol</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span>
-            <span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">w_matrix_tol</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span><span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">p_matrix_tol</span><span class="p">))</span>
+        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span><span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">q_matrix_tol</span><span class="p">))</span>
+        <span class="n">stub</span><span class="o">.</span><span class="n">CreateEMSolverBemMat</span><span class="p">(</span><span class="n">EMSolverBemMatRequest</span><span class="p">(</span><span class="n">matid</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">reltol</span><span class="o">=</span><span class="n">EMAnalysis</span><span class="o">.</span><span class="n">w_matrix_tol</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;EM Solver BEMMAT Created...&quot;</span><span class="p">)</span></div></div>
 
 
@@ -752,7 +715,9 @@
 <span class="sd">    loadcurve : Curve</span>
 <span class="sd">        Load curve for circtyp = 1, 2, 21 or 22</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">circuitlist</span> <span class="o">=</span> <span class="p">[]</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">loadcurve</span><span class="p">,</span> <span class="n">circuit_type</span><span class="o">=</span><span class="n">CircuitType</span><span class="o">.</span><span class="n">IMPOSED_CURRENT_VS_TIME</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">circuit_type</span> <span class="o">=</span> <span class="n">circuit_type</span><span class="o">.</span><span class="n">value</span>
@@ -762,15 +727,17 @@
 
 <div class="viewcode-block" id="Circuit.set_current"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.Circuit.set_current.html#pre.dynaem.Circuit.set_current">[docs]</a>    <span class="k">def</span> <span class="nf">set_current</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">current</span><span class="p">,</span> <span class="n">current_inlet</span><span class="p">,</span> <span class="n">current_outlet</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define segment set for current.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        current : SegmentSet</span>
 <span class="sd">            Segment set for the current.</span>
 <span class="sd">        current_inlet : SegmentSet</span>
-<span class="sd">            Segment set for input voltage or input current when CIRCTYP.EQ.2/3/12/22 and CIRCTYP.EQ 1/11/21 respectively.</span>
+<span class="sd">            Segment set for input voltage or input current</span>
+<span class="sd">            when CIRCTYP.EQ.2/3/12/22 and CIRCTYP.EQ 1/11/21 respectively.</span>
 <span class="sd">        current_outlet : SegmentSet</span>
-<span class="sd">            Segment set for output voltage or output current when CIRCTYP = 2/3/12/22 and CIRCTYP = 1/11/21 respectively.</span>
+<span class="sd">            Segment set for output voltage or output current when</span>
+<span class="sd">            CIRCTYP = 2/3/12/22 and CIRCTYP = 1/11/21 respectively.</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">current_id</span> <span class="o">=</span> <span class="n">current</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inlet_id</span> <span class="o">=</span> <span class="n">current_inlet</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
@@ -798,7 +765,8 @@
 
 
 <div class="viewcode-block" id="EMContact"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaem.EMContact.html#pre.dynaem.EMContact">[docs]</a><span class="k">class</span> <span class="nc">EMContact</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Detect contact between conductors.If no contact parts defined,contact detection between all active parts associated</span>
+    <span class="sd">&quot;&quot;&quot;Detect contact between conductors.If no contact parts defined,</span>
+<span class="sd">    contact detection between all active parts associated</span>
 <span class="sd">    with a conducting material.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">contact_type</span><span class="o">=</span><span class="n">EMContactType</span><span class="o">.</span><span class="n">NODE_TO_NODE_PENALTY_BASED_CONTACT</span><span class="p">):</span>

@@ -1,0 +1,6 @@
+create\_general\_keyword
+========================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_general_keyword

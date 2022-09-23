@@ -1,0 +1,22 @@
+pre.dynabase.RotVelocity
+========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: RotVelocity
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

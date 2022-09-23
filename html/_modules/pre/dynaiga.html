@@ -43,7 +43,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,14 +221,15 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
+
+<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa : F403</span>
 
 
 <div class="viewcode-block" id="DynaIGA"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaiga.DynaIGA.html#pre.dynaiga.DynaIGA">[docs]</a><span class="k">class</span> <span class="nc">DynaIGA</span><span class="p">(</span><span class="n">DynaBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Contains methods to create keyword related to IGA.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">):</span>
-        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">casetype</span> <span class="o">=</span> <span class="n">CaseType</span><span class="o">.</span><span class="n">IGA</span>
 
 <div class="viewcode-block" id="DynaIGA.create_section_igashell"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaiga.DynaIGA.create_section_igashell.html#pre.dynaiga.DynaIGA.create_section_igashell">[docs]</a>    <span class="k">def</span> <span class="nf">create_section_igashell</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">secid</span><span class="p">,</span> <span class="n">elform</span><span class="p">,</span> <span class="n">shrf</span><span class="p">,</span> <span class="n">thickness</span><span class="p">):</span>
@@ -251,9 +252,7 @@
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateSectionIGAShell</span><span class="p">(</span>
-            <span class="n">SectionIGAShellRequest</span><span class="p">(</span>
-                <span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span> <span class="n">elform</span><span class="o">=</span><span class="n">elform</span><span class="p">,</span> <span class="n">shrf</span><span class="o">=</span><span class="n">shrf</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span>
-            <span class="p">)</span>
+            <span class="n">SectionIGAShellRequest</span><span class="p">(</span><span class="n">secid</span><span class="o">=</span><span class="n">secid</span><span class="p">,</span> <span class="n">elform</span><span class="o">=</span><span class="n">elform</span><span class="p">,</span> <span class="n">shrf</span><span class="o">=</span><span class="n">shrf</span><span class="p">,</span> <span class="n">thickness</span><span class="o">=</span><span class="n">thickness</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Section IGAShell 1 Created...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div></div>

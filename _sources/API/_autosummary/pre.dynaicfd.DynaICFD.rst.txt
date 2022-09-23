@@ -48,12 +48,6 @@ pre.dynaicfd.DynaICFD
       DynaICFD.create_damping_global
       
       
-      DynaICFD.create_database_ascii
-      
-      
-      DynaICFD.create_database_binary
-      
-      
       DynaICFD.create_defineorientation
       
       
@@ -61,9 +55,6 @@ pre.dynaicfd.DynaICFD
       
       
       DynaICFD.create_hourglass
-      
-      
-      DynaICFD.create_init_vel
       
       
       DynaICFD.create_init_vel_bodies
@@ -120,9 +111,6 @@ pre.dynaicfd.DynaICFD
       DynaICFD.mesh_embed_shell
       
       
-      DynaICFD.open_files
-      
-      
       DynaICFD.save_file
       
       
@@ -136,6 +124,9 @@ pre.dynaicfd.DynaICFD
       
       
       DynaICFD.set_hourglass
+      
+      
+      DynaICFD.set_init_velocity
       
       
       DynaICFD.set_output_database

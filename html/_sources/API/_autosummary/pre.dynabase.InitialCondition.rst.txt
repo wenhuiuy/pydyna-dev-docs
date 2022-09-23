@@ -1,0 +1,28 @@
+pre.dynabase.InitialCondition
+=============================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: InitialCondition
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      InitialCondition.create
+      
+      
+      InitialCondition.create_velocity
+      
+   
+   
+
+   
+   
+   

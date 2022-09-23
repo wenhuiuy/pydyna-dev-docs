@@ -1,6 +1,0 @@
-create\_control\_contact
-========================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_control_contact

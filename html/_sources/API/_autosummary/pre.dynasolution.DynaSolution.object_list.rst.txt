@@ -1,0 +1,6 @@
+object\_list
+============
+
+.. currentmodule:: pre.dynasolution
+
+.. autoattribute:: DynaSolution.object_list

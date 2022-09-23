@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pre.dynamaterial
+
+.. automethod:: MatSpringNonlinearElastic.create

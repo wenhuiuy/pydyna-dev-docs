@@ -44,7 +44,7 @@
     <script src="_static/underscore.js"></script>
     <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="_static/doctools.js"></script>
-    <link rel="shortcut icon" href="_static/favicon.png"/>
+    <link rel="shortcut icon" href="_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="Getting Started" href="Resources/Getting_Started.html" />
@@ -266,7 +266,7 @@
 <h1>PyDyna Documentation  0.0.1<a class="headerlink" href="#pydyna-documentation-0-0-1" title="Permalink to this heading">#</a></h1>
 <section id="pydyna">
 <h2>PyDyna<a class="headerlink" href="#pydyna" title="Permalink to this heading">#</a></h2>
-<p>PyDyna is a pythonic dyna package aims to provide user a more convient and complete way to
+<p>PyDyna is a pythonic dyna package that aims to provide user a more convenient and complete way to
 build up ansys-dyna input deck, submit to solver and finally post processing their results.</p>
 <section id="project-overview">
 <h3>Project Overview<a class="headerlink" href="#project-overview" title="Permalink to this heading">#</a></h3>
@@ -308,24 +308,28 @@ option is for you to download the code from GitHub:</p>
 <section id="usage">
 <h3>Usage<a class="headerlink" href="#usage" title="Permalink to this heading">#</a></h3>
 <p>Here is a basic pre-processing example:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">pre.dynaiga</span> <span class="kn">import</span> <span class="o">*</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynasolution</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynaiga</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
-<span class="n">iga</span> <span class="o">=</span> <span class="n">DynaIGA</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
+<span class="n">iga_solution</span> <span class="o">=</span> <span class="n">DynaSolution</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
 <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
 <span class="n">path</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">getcwd</span><span class="p">()</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s2">&quot;input&quot;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span> <span class="o">+</span> <span class="s2">&quot;iga_sample&quot;</span> <span class="o">+</span> <span class="n">os</span><span class="o">.</span><span class="n">sep</span>
 <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;maino.k&quot;</span><span class="p">)</span>
 <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;rkrwelds.key&quot;</span><span class="p">)</span>
 <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;27parts.key&quot;</span><span class="p">)</span>
-<span class="n">iga</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+<span class="n">iga_solution</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+<span class="n">iga_solution</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">iga_solution</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
+<span class="n">iga</span> <span class="o">=</span> <span class="n">DynaIGA</span><span class="p">()</span>
+<span class="n">iga_solution</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">iga</span><span class="p">)</span>
 <span class="n">iga</span><span class="o">.</span><span class="n">set_timestep</span><span class="p">(</span><span class="n">timestep_size_for_mass_scaled</span><span class="o">=-</span><span class="mf">0.0004</span><span class="p">)</span>
-<span class="n">iga</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
 <span class="o">...</span>
 <span class="n">selfcontact</span> <span class="o">=</span> <span class="n">Contact</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="n">ContactType</span><span class="o">.</span><span class="n">AUTOMATIC</span><span class="p">)</span>
 <span class="n">selfcontact</span><span class="o">.</span><span class="n">set_friction_coefficient</span><span class="p">(</span><span class="n">static</span><span class="o">=</span><span class="mf">0.2</span><span class="p">)</span>
 <span class="n">surf1</span><span class="o">=</span><span class="n">ContactSurface</span><span class="p">(</span><span class="n">PartSet</span><span class="p">(</span><span class="n">igaparts</span><span class="p">))</span>
 <span class="n">selfcontact</span><span class="o">.</span><span class="n">set_slave_surface</span><span class="p">(</span><span class="n">surf1</span><span class="p">)</span>
-<span class="n">iga</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
-<span class="n">iga</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
+<span class="n">iga_solution</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>Here is a basic solving example:</p>

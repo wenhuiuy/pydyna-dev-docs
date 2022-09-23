@@ -1,0 +1,6 @@
+create\_control\_solid
+======================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_control_solid

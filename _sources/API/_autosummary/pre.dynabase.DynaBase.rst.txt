@@ -39,12 +39,6 @@ pre.dynabase.DynaBase
       DynaBase.create_damping_global
       
       
-      DynaBase.create_database_ascii
-      
-      
-      DynaBase.create_database_binary
-      
-      
       DynaBase.create_defineorientation
       
       
@@ -52,9 +46,6 @@ pre.dynabase.DynaBase
       
       
       DynaBase.create_hourglass
-      
-      
-      DynaBase.create_init_vel
       
       
       DynaBase.create_init_vel_bodies
@@ -96,9 +87,6 @@ pre.dynabase.DynaBase
       DynaBase.get_stub
       
       
-      DynaBase.open_files
-      
-      
       DynaBase.save_file
       
       
@@ -114,13 +102,13 @@ pre.dynabase.DynaBase
       DynaBase.set_hourglass
       
       
+      DynaBase.set_init_velocity
+      
+      
       DynaBase.set_output_database
       
       
       DynaBase.set_part_damping_stiffness
-      
-      
-      DynaBase.set_termination
       
       
       DynaBase.set_timestep

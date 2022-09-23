@@ -9,16 +9,6 @@
 
    
    
-   .. rubric:: Functions
-
-   .. autosummary::
-      :toctree:
-   
-      download
-      get_file_chunks
-      init_log
-      upload
-   
    
 
    
@@ -30,6 +20,7 @@
       :template: custom-class-template.rst
    
       AnalysisType
+      BaseSet
       BeamFormulation
       BeamPart
       BeamSection
@@ -45,27 +36,35 @@
       ContactType
       Curve
       DOF
+      DRO
       Direction
+      DiscretePart
       DynaBase
       EnergyFlag
+      Gravity
+      GravityOption
       HourglassControl
       HourglassType
       IGAFormulation
       IGAPart
       IGASection
       ImplicitAnalysis
+      InitialCondition
       Integration
       InvariantNode
       Motion
       NodeSet
+      NodesetGeneral
       OffsetType
       Part
       PartSet
       Point
       RigidwallCylinder
       RigidwallPlanar
+      RotVelocity
       SBOPT
       SegmentSet
+      SetType
       ShellFormulation
       ShellPart
       ShellSection
@@ -73,6 +72,7 @@
       SolidPart
       Switch
       TimestepCtrol
+      Velocity
    
    
 

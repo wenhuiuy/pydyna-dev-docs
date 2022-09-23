@@ -1,0 +1,52 @@
+pre.dynasolution.DynaSolution
+=============================
+
+.. currentmodule:: pre.dynasolution
+
+.. autoclass:: DynaSolution
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      DynaSolution.add
+      
+      
+      DynaSolution.create_database_ascii
+      
+      
+      DynaSolution.create_database_binary
+      
+      
+      DynaSolution.get_stub
+      
+      
+      DynaSolution.open_files
+      
+      
+      DynaSolution.save_file
+      
+      
+      DynaSolution.set_termination
+      
+   
+   
+
+   
+   
+   .. rubric:: Attributes
+
+   .. autosummary::
+      :toctree:
+   
+      
+      DynaSolution.object_list
+      
+   
+   

@@ -1,0 +1,25 @@
+pre.dynabase.NodesetGeneral
+===========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: NodesetGeneral
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      NodesetGeneral.create
+      
+   
+   
+
+   
+   
+   

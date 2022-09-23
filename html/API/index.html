@@ -44,7 +44,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PyDyna-pre APIs" href="pre.html" />
@@ -212,28 +212,13 @@
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynabase.download.html">
-       download
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynabase.get_file_chunks.html">
-       get_file_chunks
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynabase.init_log.html">
-       init_log
-      </a>
-     </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynabase.upload.html">
-       upload
-      </a>
-     </li>
-     <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.AnalysisType.html">
        pre.dynabase.AnalysisType
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.BaseSet.html">
+       pre.dynabase.BaseSet
       </a>
      </li>
      <li class="toctree-l3">
@@ -267,6 +252,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_extra_nodes.html">
+         set_extra_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_material.html">
          set_material
         </a>
@@ -274,6 +264,16 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_property.html">
          set_property
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
         </a>
        </li>
        <li class="toctree-l4">
@@ -358,6 +358,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create_joint_spherical.html">
+         create_joint_spherical
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create_spotweld.html">
          create_spotweld
         </a>
@@ -365,6 +370,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.Constraint.cnrbsetidlist.html">
          cnrbsetidlist
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Constraint.jointsphericallist.html">
+         jointsphericallist
         </a>
        </li>
       </ul>
@@ -496,16 +506,73 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.DRO.html">
+       pre.dynabase.DRO
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.Direction.html">
        pre.dynabase.Direction
       </a>
      </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.html">
-       pre.dynabase.DynaBase
+      <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.html">
+       pre.dynabase.DiscretePart
       </a>
       <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
       <label for="toctree-checkbox-10">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_displacement_option.html">
+         set_displacement_option
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_element_formulation.html">
+         set_element_formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_extra_nodes.html">
+         set_extra_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_material.html">
+         set_material
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_property.html">
+         set_property
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.partlist.html">
+         partlist
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.html">
+       pre.dynabase.DynaBase
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+      <label for="toctree-checkbox-11">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -551,16 +618,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_database_ascii.html">
-         create_database_ascii
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_database_binary.html">
-         create_database_binary
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_defineorientation.html">
          create_defineorientation
         </a>
@@ -573,11 +630,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_hourglass.html">
          create_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_init_vel.html">
-         create_init_vel
         </a>
        </li>
        <li class="toctree-l4">
@@ -646,11 +698,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.open_files.html">
-         open_files
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.save_file.html">
          save_file
         </a>
@@ -676,6 +723,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_output_database.html">
          set_output_database
         </a>
@@ -683,11 +735,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_part_damping_stiffness.html">
          set_part_damping_stiffness
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_termination.html">
-         set_termination
         </a>
        </li>
        <li class="toctree-l4">
@@ -700,6 +747,33 @@
      <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.EnergyFlag.html">
        pre.dynabase.EnergyFlag
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynabase.Gravity.html">
+       pre.dynabase.Gravity
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+      <label for="toctree-checkbox-12">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Gravity.create.html">
+         create
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Gravity.gravitylist.html">
+         gravitylist
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.GravityOption.html">
+       pre.dynabase.GravityOption
       </a>
      </li>
      <li class="toctree-l3">
@@ -721,8 +795,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.html">
        pre.dynabase.IGAPart
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-      <label for="toctree-checkbox-11">
+      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+      <label for="toctree-checkbox-13">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -730,6 +804,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_element_formulation.html">
          set_element_formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_extra_nodes.html">
+         set_extra_nodes
         </a>
        </li>
        <li class="toctree-l4">
@@ -743,8 +822,18 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_shear_factor.html">
          set_shear_factor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
         </a>
        </li>
        <li class="toctree-l4">
@@ -768,8 +857,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.ImplicitAnalysis.html">
        pre.dynabase.ImplicitAnalysis
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-      <label for="toctree-checkbox-12">
+      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+      <label for="toctree-checkbox-14">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -796,6 +885,28 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.html">
+       pre.dynabase.InitialCondition
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+      <label for="toctree-checkbox-15">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.create.html">
+         create
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.create_velocity.html">
+         create_velocity
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.Integration.html">
        pre.dynabase.Integration
@@ -815,8 +926,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.NodeSet.html">
        pre.dynabase.NodeSet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-      <label for="toctree-checkbox-13">
+      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
+      <label for="toctree-checkbox-16">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -838,6 +949,23 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynabase.NodesetGeneral.html">
+       pre.dynabase.NodesetGeneral
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
+      <label for="toctree-checkbox-17">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.NodesetGeneral.create.html">
+         create
+        </a>
+       </li>
+      </ul>
+     </li>
      <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.OffsetType.html">
        pre.dynabase.OffsetType
@@ -847,8 +975,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.Part.html">
        pre.dynabase.Part
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
-      <label for="toctree-checkbox-14">
+      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
+      <label for="toctree-checkbox-18">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -859,8 +987,28 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Part.set_extra_nodes.html">
+         set_extra_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.Part.set_material.html">
          set_material
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Part.set_property.html">
+         set_property
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Part.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.Part.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
         </a>
        </li>
       </ul>
@@ -869,8 +1017,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.PartSet.html">
        pre.dynabase.PartSet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-      <label for="toctree-checkbox-15">
+      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
+      <label for="toctree-checkbox-19">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -901,8 +1049,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.RigidwallCylinder.html">
        pre.dynabase.RigidwallCylinder
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/>
-      <label for="toctree-checkbox-16">
+      <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
+      <label for="toctree-checkbox-20">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -930,6 +1078,11 @@
       </a>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.RotVelocity.html">
+       pre.dynabase.RotVelocity
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.SBOPT.html">
        pre.dynabase.SBOPT
       </a>
@@ -938,8 +1091,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.SegmentSet.html">
        pre.dynabase.SegmentSet
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-17" name="toctree-checkbox-17" type="checkbox"/>
-      <label for="toctree-checkbox-17">
+      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
+      <label for="toctree-checkbox-21">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -952,6 +1105,11 @@
       </ul>
      </li>
      <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.SetType.html">
+       pre.dynabase.SetType
+      </a>
+     </li>
+     <li class="toctree-l3">
       <a class="reference internal" href="_autosummary/pre.dynabase.ShellFormulation.html">
        pre.dynabase.ShellFormulation
       </a>
@@ -960,15 +1118,25 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.html">
        pre.dynabase.ShellPart
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-18" name="toctree-checkbox-18" type="checkbox"/>
-      <label for="toctree-checkbox-18">
+      <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
+      <label for="toctree-checkbox-22">
        <i class="fas fa-chevron-down">
        </i>
       </label>
       <ul>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_des_surface.html">
+         set_des_surface
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_element_formulation.html">
          set_element_formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_extra_nodes.html">
+         set_extra_nodes
         </a>
        </li>
        <li class="toctree-l4">
@@ -997,8 +1165,18 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_shear_factor.html">
          set_shear_factor
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
         </a>
        </li>
        <li class="toctree-l4">
@@ -1027,8 +1205,8 @@
       <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.html">
        pre.dynabase.SolidPart
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-19" name="toctree-checkbox-19" type="checkbox"/>
-      <label for="toctree-checkbox-19">
+      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
+      <label for="toctree-checkbox-23">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1036,6 +1214,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_element_formulation.html">
          set_element_formulation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_extra_nodes.html">
+         set_extra_nodes
         </a>
        </li>
        <li class="toctree-l4">
@@ -1051,6 +1234,16 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_property.html">
          set_property
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_rigidbody_initial_velocity.html">
+         set_rigidbody_initial_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_stiffness_damping_coefficient.html">
+         set_stiffness_damping_coefficient
         </a>
        </li>
        <li class="toctree-l4">
@@ -1070,215 +1263,284 @@
        pre.dynabase.TimestepCtrol
       </a>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynabase.Velocity.html">
+       pre.dynabase.Velocity
+      </a>
+     </li>
     </ul>
    </li>
    <li class="toctree-l2 has-children">
-    <a class="reference internal" href="_autosummary/pre.dynaairbag.html">
-     pre.dynaairbag
+    <a class="reference internal" href="_autosummary/pre.dynasolution.html">
+     pre.dynasolution
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-20" name="toctree-checkbox-20" type="checkbox"/>
-    <label for="toctree-checkbox-20">
+    <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
+    <label for="toctree-checkbox-24">
      <i class="fas fa-chevron-down">
      </i>
     </label>
     <ul>
      <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynaairbag.Airbag.html">
-       pre.dynaairbag.Airbag
+      <a class="reference internal" href="_autosummary/pre.dynasolution.download.html">
+       download
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynasolution.get_file_chunks.html">
+       get_file_chunks
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynasolution.init_log.html">
+       init_log
+      </a>
+     </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynasolution.upload.html">
+       upload
       </a>
      </li>
      <li class="toctree-l3 has-children">
-      <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.html">
-       pre.dynaairbag.DynaAirbag
+      <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.html">
+       pre.dynasolution.DynaSolution
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-21" name="toctree-checkbox-21" type="checkbox"/>
-      <label for="toctree-checkbox-21">
+      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
+      <label for="toctree-checkbox-25">
        <i class="fas fa-chevron-down">
        </i>
       </label>
       <ul>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_boundary_prescribed_motion.html">
-         create_boundary_prescribed_motion
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.add.html">
+         add
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_constrained_extra_nodes.html">
-         create_constrained_extra_nodes
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_constrained_joint.html">
-         create_constrained_joint
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_contact.html">
-         create_control_contact
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_output.html">
-         create_control_output
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_shell.html">
-         create_control_shell
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_solid.html">
-         create_control_solid
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_damping_global.html">
-         create_damping_global
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_database_ascii.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.create_database_ascii.html">
          create_database_ascii
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_database_binary.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.create_database_binary.html">
          create_database_binary
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_defineorientation.html">
-         create_defineorientation
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_general_keyword.html">
-         create_general_keyword
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_hourglass.html">
-         create_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel.html">
-         create_init_vel
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel_bodies.html">
-         create_init_vel_bodies
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel_rigidbody.html">
-         create_init_vel_rigidbody
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_load_body.html">
-         create_load_body
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_damper_nonlinear_viscous.html">
-         create_mat_damper_nonlinear_viscous
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_damper_viscous.html">
-         create_mat_damper_viscous
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_spring_nonlinear_elastic.html">
-         create_mat_spring_nonlinear_elastic
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_rigidwall_planar.html">
-         create_rigidwall_planar
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_section_discrete.html">
-         create_section_discrete
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_section_solid.html">
-         create_section_solid
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_shellset.html">
-         create_shellset
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_solidset.html">
-         create_solidset
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.get_solid_elements.html">
-         get_solid_elements
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.get_stub.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.get_stub.html">
          get_stub
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.open_files.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.open_files.html">
          open_files
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.save_file.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.save_file.html">
          save_file
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_accuracy.html">
-         set_accuracy
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_bulk_viscosity.html">
-         set_bulk_viscosity
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_energy.html">
-         set_energy
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_hourglass.html">
-         set_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_output_database.html">
-         set_output_database
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_part_damping_stiffness.html">
-         set_part_damping_stiffness
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_termination.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.set_termination.html">
          set_termination
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_timestep.html">
+        <a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.object_list.html">
+         object_list
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="_autosummary/pre.dynamech.html">
+     pre.dynamech
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
+    <label for="toctree-checkbox-26">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynamech.Airbag.html">
+       pre.dynamech.Airbag
+      </a>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.html">
+       pre.dynamech.DynaMech
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
+      <label for="toctree-checkbox-27">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_boundary_prescribed_motion.html">
+         create_boundary_prescribed_motion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_constrained_extra_nodes.html">
+         create_constrained_extra_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_constrained_joint.html">
+         create_constrained_joint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_contact.html">
+         create_control_contact
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_output.html">
+         create_control_output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_shell.html">
+         create_control_shell
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_solid.html">
+         create_control_solid
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_damping_global.html">
+         create_damping_global
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_defineorientation.html">
+         create_defineorientation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_general_keyword.html">
+         create_general_keyword
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_hourglass.html">
+         create_hourglass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_init_vel_bodies.html">
+         create_init_vel_bodies
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_init_vel_rigidbody.html">
+         create_init_vel_rigidbody
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_load_body.html">
+         create_load_body
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_damper_nonlinear_viscous.html">
+         create_mat_damper_nonlinear_viscous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_damper_viscous.html">
+         create_mat_damper_viscous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_spring_nonlinear_elastic.html">
+         create_mat_spring_nonlinear_elastic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_rigidwall_planar.html">
+         create_rigidwall_planar
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_section_discrete.html">
+         create_section_discrete
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_section_solid.html">
+         create_section_solid
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_shellset.html">
+         create_shellset
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_solidset.html">
+         create_solidset
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.get_solid_elements.html">
+         get_solid_elements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.get_stub.html">
+         get_stub
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.save_file.html">
+         save_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_accuracy.html">
+         set_accuracy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_bulk_viscosity.html">
+         set_bulk_viscosity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_energy.html">
+         set_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_hourglass.html">
+         set_hourglass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_output_database.html">
+         set_output_database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_part_damping_stiffness.html">
+         set_part_damping_stiffness
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_timestep.html">
          set_timestep
         </a>
        </li>
@@ -1290,8 +1552,8 @@
     <a class="reference internal" href="_autosummary/pre.dynaem.html">
      pre.dynaem
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-22" name="toctree-checkbox-22" type="checkbox"/>
-    <label for="toctree-checkbox-22">
+    <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
+    <label for="toctree-checkbox-28">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1305,8 +1567,8 @@
       <a class="reference internal" href="_autosummary/pre.dynaem.Circuit.html">
        pre.dynaem.Circuit
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-23" name="toctree-checkbox-23" type="checkbox"/>
-      <label for="toctree-checkbox-23">
+      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
+      <label for="toctree-checkbox-29">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1337,8 +1599,8 @@
       <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.html">
        pre.dynaem.DynaEM
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-24" name="toctree-checkbox-24" type="checkbox"/>
-      <label for="toctree-checkbox-24">
+      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
+      <label for="toctree-checkbox-30">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1386,16 +1648,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_damping_global.html">
          create_damping_global
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_database_ascii.html">
-         create_database_ascii
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_database_binary.html">
-         create_database_binary
         </a>
        </li>
        <li class="toctree-l4">
@@ -1464,11 +1716,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_init_vel.html">
-         create_init_vel
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_init_vel_bodies.html">
          create_init_vel_bodies
         </a>
@@ -1534,11 +1781,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.open_files.html">
-         open_files
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.save_file.html">
          save_file
         </a>
@@ -1564,6 +1806,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_output_database.html">
          set_output_database
         </a>
@@ -1579,11 +1826,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_termination.html">
-         set_termination
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_timestep.html">
          set_timestep
         </a>
@@ -1594,8 +1836,8 @@
       <a class="reference internal" href="_autosummary/pre.dynaem.EMAnalysis.html">
        pre.dynaem.EMAnalysis
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-25" name="toctree-checkbox-25" type="checkbox"/>
-      <label for="toctree-checkbox-25">
+      <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
+      <label for="toctree-checkbox-31">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1668,8 +1910,8 @@
     <a class="reference internal" href="_autosummary/pre.dynaicfd.html">
      pre.dynaicfd
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-26" name="toctree-checkbox-26" type="checkbox"/>
-    <label for="toctree-checkbox-26">
+    <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
+    <label for="toctree-checkbox-32">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -1679,17 +1921,12 @@
        pre.dynaicfd.Compressible
       </a>
      </li>
-     <li class="toctree-l3">
-      <a class="reference internal" href="_autosummary/pre.dynaicfd.DOF.html">
-       pre.dynaicfd.DOF
-      </a>
-     </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.html">
        pre.dynaicfd.DynaICFD
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-27" name="toctree-checkbox-27" type="checkbox"/>
-      <label for="toctree-checkbox-27">
+      <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
+      <label for="toctree-checkbox-33">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1750,16 +1987,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_database_ascii.html">
-         create_database_ascii
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_database_binary.html">
-         create_database_binary
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_defineorientation.html">
          create_defineorientation
         </a>
@@ -1772,11 +1999,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_hourglass.html">
          create_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_init_vel.html">
-         create_init_vel
         </a>
        </li>
        <li class="toctree-l4">
@@ -1870,11 +2092,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.open_files.html">
-         open_files
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.save_file.html">
          save_file
         </a>
@@ -1900,6 +2117,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_output_database.html">
          set_output_database
         </a>
@@ -1921,12 +2143,17 @@
        </li>
       </ul>
      </li>
+     <li class="toctree-l3">
+      <a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDDOF.html">
+       pre.dynaicfd.ICFDDOF
+      </a>
+     </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDPart.html">
        pre.dynaicfd.ICFDPart
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-28" name="toctree-checkbox-28" type="checkbox"/>
-      <label for="toctree-checkbox-28">
+      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
+      <label for="toctree-checkbox-34">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -1982,8 +2209,8 @@
       <a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDVolumePart.html">
        pre.dynaicfd.ICFDVolumePart
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-29" name="toctree-checkbox-29" type="checkbox"/>
-      <label for="toctree-checkbox-29">
+      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
+      <label for="toctree-checkbox-35">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2005,17 +2232,29 @@
        </li>
       </ul>
      </li>
-     <li class="toctree-l3">
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynaicfd.MatICFD.html">
        pre.dynaicfd.MatICFD
       </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
+      <label for="toctree-checkbox-36">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynaicfd.MatICFD.create.html">
+         create
+        </a>
+       </li>
+      </ul>
      </li>
      <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynaicfd.MeshedVolume.html">
        pre.dynaicfd.MeshedVolume
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-30" name="toctree-checkbox-30" type="checkbox"/>
-      <label for="toctree-checkbox-30">
+      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
+      <label for="toctree-checkbox-37">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2048,8 +2287,8 @@
     <a class="reference internal" href="_autosummary/pre.dynaiga.html">
      pre.dynaiga
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-31" name="toctree-checkbox-31" type="checkbox"/>
-    <label for="toctree-checkbox-31">
+    <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
+    <label for="toctree-checkbox-38">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2058,8 +2297,8 @@
       <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.html">
        pre.dynaiga.DynaIGA
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-32" name="toctree-checkbox-32" type="checkbox"/>
-      <label for="toctree-checkbox-32">
+      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
+      <label for="toctree-checkbox-39">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2105,16 +2344,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_database_ascii.html">
-         create_database_ascii
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_database_binary.html">
-         create_database_binary
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_defineorientation.html">
          create_defineorientation
         </a>
@@ -2127,11 +2356,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_hourglass.html">
          create_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_init_vel.html">
-         create_init_vel
         </a>
        </li>
        <li class="toctree-l4">
@@ -2205,11 +2429,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.open_files.html">
-         open_files
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.save_file.html">
          save_file
         </a>
@@ -2235,6 +2454,11 @@
         </a>
        </li>
        <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_output_database.html">
          set_output_database
         </a>
@@ -2242,11 +2466,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_part_damping_stiffness.html">
          set_part_damping_stiffness
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_termination.html">
-         set_termination
         </a>
        </li>
        <li class="toctree-l4">
@@ -2262,8 +2481,8 @@
     <a class="reference internal" href="_autosummary/pre.dynamaterial.html">
      pre.dynamaterial
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-33" name="toctree-checkbox-33" type="checkbox"/>
-    <label for="toctree-checkbox-33">
+    <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
+    <label for="toctree-checkbox-40">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2272,8 +2491,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.Air.html">
        pre.dynamaterial.Air
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-34" name="toctree-checkbox-34" type="checkbox"/>
-      <label for="toctree-checkbox-34">
+      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
+      <label for="toctree-checkbox-41">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2294,8 +2513,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.HighExplosive.html">
        pre.dynamaterial.HighExplosive
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-35" name="toctree-checkbox-35" type="checkbox"/>
-      <label for="toctree-checkbox-35">
+      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
+      <label for="toctree-checkbox-42">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2311,8 +2530,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.Liner.html">
        pre.dynamaterial.Liner
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-36" name="toctree-checkbox-36" type="checkbox"/>
-      <label for="toctree-checkbox-36">
+      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
+      <label for="toctree-checkbox-43">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2328,8 +2547,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatAdditional.html">
        pre.dynamaterial.MatAdditional
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-37" name="toctree-checkbox-37" type="checkbox"/>
-      <label for="toctree-checkbox-37">
+      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
+      <label for="toctree-checkbox-44">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2347,11 +2566,45 @@
       </ul>
      </li>
      <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.html">
+       pre.dynamaterial.MatDamperNonlinearViscous
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
+      <label for="toctree-checkbox-45">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.create.html">
+         create
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperViscous.html">
+       pre.dynamaterial.MatDamperViscous
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
+      <label for="toctree-checkbox-46">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperViscous.create.html">
+         create
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatElastic.html">
        pre.dynamaterial.MatElastic
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-38" name="toctree-checkbox-38" type="checkbox"/>
-      <label for="toctree-checkbox-38">
+      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
+      <label for="toctree-checkbox-47">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2372,8 +2625,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatFabric.html">
        pre.dynamaterial.MatFabric
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-39" name="toctree-checkbox-39" type="checkbox"/>
-      <label for="toctree-checkbox-39">
+      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
+      <label for="toctree-checkbox-48">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2389,8 +2642,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatModifiedPiecewiseLinearPlasticity.html">
        pre.dynamaterial.MatModifiedPiecewiseLinearPlasticity
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-40" name="toctree-checkbox-40" type="checkbox"/>
-      <label for="toctree-checkbox-40">
+      <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
+      <label for="toctree-checkbox-49">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2406,8 +2659,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatNull.html">
        pre.dynamaterial.MatNull
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-41" name="toctree-checkbox-41" type="checkbox"/>
-      <label for="toctree-checkbox-41">
+      <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
+      <label for="toctree-checkbox-50">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2423,8 +2676,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatPiecewiseLinearPlasticity.html">
        pre.dynamaterial.MatPiecewiseLinearPlasticity
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-42" name="toctree-checkbox-42" type="checkbox"/>
-      <label for="toctree-checkbox-42">
+      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
+      <label for="toctree-checkbox-51">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2440,8 +2693,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatRigid.html">
        pre.dynamaterial.MatRigid
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-43" name="toctree-checkbox-43" type="checkbox"/>
-      <label for="toctree-checkbox-43">
+      <input class="toctree-checkbox" id="toctree-checkbox-52" name="toctree-checkbox-52" type="checkbox"/>
+      <label for="toctree-checkbox-52">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2462,8 +2715,8 @@
       <a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpotweld.html">
        pre.dynamaterial.MatSpotweld
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-44" name="toctree-checkbox-44" type="checkbox"/>
-      <label for="toctree-checkbox-44">
+      <input class="toctree-checkbox" id="toctree-checkbox-53" name="toctree-checkbox-53" type="checkbox"/>
+      <label for="toctree-checkbox-53">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2476,11 +2729,28 @@
       </ul>
      </li>
      <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.html">
+       pre.dynamaterial.MatSpringNonlinearElastic
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-54" name="toctree-checkbox-54" type="checkbox"/>
+      <label for="toctree-checkbox-54">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.create.html">
+         create
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toctree-l3 has-children">
       <a class="reference internal" href="_autosummary/pre.dynamaterial.Vacuum.html">
        pre.dynamaterial.Vacuum
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-45" name="toctree-checkbox-45" type="checkbox"/>
-      <label for="toctree-checkbox-45">
+      <input class="toctree-checkbox" id="toctree-checkbox-55" name="toctree-checkbox-55" type="checkbox"/>
+      <label for="toctree-checkbox-55">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2498,8 +2768,8 @@
     <a class="reference internal" href="_autosummary/pre.dynasale.html">
      pre.dynasale
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-46" name="toctree-checkbox-46" type="checkbox"/>
-    <label for="toctree-checkbox-46">
+    <input class="toctree-checkbox" id="toctree-checkbox-56" name="toctree-checkbox-56" type="checkbox"/>
+    <label for="toctree-checkbox-56">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2518,8 +2788,8 @@
       <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.html">
        pre.dynasale.DynaSALE
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-47" name="toctree-checkbox-47" type="checkbox"/>
-      <label for="toctree-checkbox-47">
+      <input class="toctree-checkbox" id="toctree-checkbox-57" name="toctree-checkbox-57" type="checkbox"/>
+      <label for="toctree-checkbox-57">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2565,16 +2835,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_database_ascii.html">
-         create_database_ascii
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_database_binary.html">
-         create_database_binary
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_defineorientation.html">
          create_defineorientation
         </a>
@@ -2587,11 +2847,6 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_hourglass.html">
          create_hourglass
-        </a>
-       </li>
-       <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_init_vel.html">
-         create_init_vel
         </a>
        </li>
        <li class="toctree-l4">
@@ -2665,11 +2920,6 @@
         </a>
        </li>
        <li class="toctree-l4">
-        <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.open_files.html">
-         open_files
-        </a>
-       </li>
-       <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.save_file.html">
          save_file
         </a>
@@ -2697,6 +2947,11 @@
        <li class="toctree-l4">
         <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_hourglass.html">
          set_hourglass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_init_velocity.html">
+         set_init_velocity
         </a>
        </li>
        <li class="toctree-l4">
@@ -2735,8 +2990,8 @@
       <a class="reference internal" href="_autosummary/pre.dynasale.StructuredMesh.html">
        pre.dynasale.StructuredMesh
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-48" name="toctree-checkbox-48" type="checkbox"/>
-      <label for="toctree-checkbox-48">
+      <input class="toctree-checkbox" id="toctree-checkbox-58" name="toctree-checkbox-58" type="checkbox"/>
+      <label for="toctree-checkbox-58">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2765,14 +3020,213 @@
      </li>
     </ul>
    </li>
+   <li class="toctree-l2 has-children">
+    <a class="reference internal" href="_autosummary/pre.dynadem.html">
+     pre.dynadem
+    </a>
+    <input class="toctree-checkbox" id="toctree-checkbox-59" name="toctree-checkbox-59" type="checkbox"/>
+    <label for="toctree-checkbox-59">
+     <i class="fas fa-chevron-down">
+     </i>
+    </label>
+    <ul>
+     <li class="toctree-l3 has-children">
+      <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.html">
+       pre.dynadem.DynaDEM
+      </a>
+      <input class="toctree-checkbox" id="toctree-checkbox-60" name="toctree-checkbox-60" type="checkbox"/>
+      <label for="toctree-checkbox-60">
+       <i class="fas fa-chevron-down">
+       </i>
+      </label>
+      <ul>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_boundary_prescribed_motion.html">
+         create_boundary_prescribed_motion
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_constrained_extra_nodes.html">
+         create_constrained_extra_nodes
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_constrained_joint.html">
+         create_constrained_joint
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_contact.html">
+         create_control_contact
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_output.html">
+         create_control_output
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_shell.html">
+         create_control_shell
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_solid.html">
+         create_control_solid
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_damping_global.html">
+         create_damping_global
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_define_de_mesh_surface.html">
+         create_define_de_mesh_surface
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_defineorientation.html">
+         create_defineorientation
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_general_keyword.html">
+         create_general_keyword
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_hourglass.html">
+         create_hourglass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_init_vel_bodies.html">
+         create_init_vel_bodies
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_init_vel_rigidbody.html">
+         create_init_vel_rigidbody
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_load_body.html">
+         create_load_body
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_damper_nonlinear_viscous.html">
+         create_mat_damper_nonlinear_viscous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_damper_viscous.html">
+         create_mat_damper_viscous
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_spring_nonlinear_elastic.html">
+         create_mat_spring_nonlinear_elastic
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_rigidwall_planar.html">
+         create_rigidwall_planar
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_section_discrete.html">
+         create_section_discrete
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_section_solid.html">
+         create_section_solid
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_shellset.html">
+         create_shellset
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_solidset.html">
+         create_solidset
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.get_solid_elements.html">
+         get_solid_elements
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.get_stub.html">
+         get_stub
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.save_file.html">
+         save_file
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_accuracy.html">
+         set_accuracy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_bulk_viscosity.html">
+         set_bulk_viscosity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_des.html">
+         set_des
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_energy.html">
+         set_energy
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_hourglass.html">
+         set_hourglass
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_init_velocity.html">
+         set_init_velocity
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_output_database.html">
+         set_output_database
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_part_damping_stiffness.html">
+         set_part_damping_stiffness
+        </a>
+       </li>
+       <li class="toctree-l4">
+        <a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_timestep.html">
+         set_timestep
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="solver.html">
    PyDyna-solver APIs
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-49" name="toctree-checkbox-49" type="checkbox"/>
-  <label for="toctree-checkbox-49">
+  <input class="toctree-checkbox" id="toctree-checkbox-61" name="toctree-checkbox-61" type="checkbox"/>
+  <label for="toctree-checkbox-61">
    <i class="fas fa-chevron-down">
    </i>
   </label>
@@ -2781,8 +3235,8 @@
     <a class="reference internal" href="_autosummary/solver.dynasolver.html">
      solver.dynasolver
     </a>
-    <input class="toctree-checkbox" id="toctree-checkbox-50" name="toctree-checkbox-50" type="checkbox"/>
-    <label for="toctree-checkbox-50">
+    <input class="toctree-checkbox" id="toctree-checkbox-62" name="toctree-checkbox-62" type="checkbox"/>
+    <label for="toctree-checkbox-62">
      <i class="fas fa-chevron-down">
      </i>
     </label>
@@ -2791,8 +3245,8 @@
       <a class="reference internal" href="_autosummary/solver.dynasolver.DynaSolver.html">
        solver.dynasolver.DynaSolver
       </a>
-      <input class="toctree-checkbox" id="toctree-checkbox-51" name="toctree-checkbox-51" type="checkbox"/>
-      <label for="toctree-checkbox-51">
+      <input class="toctree-checkbox" id="toctree-checkbox-63" name="toctree-checkbox-63" type="checkbox"/>
+      <label for="toctree-checkbox-63">
        <i class="fas fa-chevron-down">
        </i>
       </label>
@@ -2952,18 +3406,18 @@ to view API documentation.</p>
 <li class="toctree-l1"><a class="reference internal" href="pre.html">PyDyna-pre APIs</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynabase.html">pre.dynabase</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynabase.html#base">Base</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.download.html">download</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.get_file_chunks.html">get_file_chunks</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.init_log.html">init_log</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.upload.html">upload</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.AnalysisType.html">pre.dynabase.AnalysisType</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.BaseSet.html">pre.dynabase.BaseSet</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.BeamFormulation.html">pre.dynabase.BeamFormulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.html">pre.dynabase.BeamPart</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_cross_type.html">set_cross_type</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_diameter.html">set_diameter</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_extra_nodes.html">set_extra_nodes</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_material.html">set_material</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.BeamPart.partlist.html">partlist</a></li>
 </ul>
 </li>
@@ -2982,8 +3436,10 @@ to view API documentation.</p>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.html">pre.dynabase.Constraint</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create.html">create</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create_cnrb.html">create_cnrb</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create_joint_spherical.html">create_joint_spherical</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.create_spotweld.html">create_spotweld</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.cnrbsetidlist.html">cnrbsetidlist</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Constraint.jointsphericallist.html">jointsphericallist</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Contact.html">pre.dynabase.Contact</a><ul>
@@ -3013,7 +3469,19 @@ to view API documentation.</p>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.DOF.html">pre.dynabase.DOF</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.DRO.html">pre.dynabase.DRO</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Direction.html">pre.dynabase.Direction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.html">pre.dynabase.DiscretePart</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_displacement_option.html">set_displacement_option</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_extra_nodes.html">set_extra_nodes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_material.html">set_material</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DiscretePart.partlist.html">partlist</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.html">pre.dynabase.DynaBase</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_boundary_prescribed_motion.html">create_boundary_prescribed_motion</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_constrained_extra_nodes.html">create_constrained_extra_nodes</a></li>
@@ -3023,12 +3491,9 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_control_shell.html">create_control_shell</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_control_solid.html">create_control_solid</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_database_binary.html">create_database_binary</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_defineorientation.html">create_defineorientation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_general_keyword.html">create_general_keyword</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_init_vel.html">create_init_vel</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_load_body.html">create_load_body</a></li>
@@ -3042,27 +3507,35 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.create_solidset.html">create_solidset</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.get_solid_elements.html">get_solid_elements</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.get_stub.html">get_stub</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.open_files.html">open_files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.save_file.html">save_file</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_accuracy.html">set_accuracy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_energy.html">set_energy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_init_velocity.html">set_init_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_output_database.html">set_output_database</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_termination.html">set_termination</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.DynaBase.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.EnergyFlag.html">pre.dynabase.EnergyFlag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Gravity.html">pre.dynabase.Gravity</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Gravity.create.html">create</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Gravity.gravitylist.html">gravitylist</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.GravityOption.html">pre.dynabase.GravityOption</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.HourglassControl.html">pre.dynabase.HourglassControl</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.HourglassType.html">pre.dynabase.HourglassType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.IGAFormulation.html">pre.dynabase.IGAFormulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.html">pre.dynabase.IGAPart</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_extra_nodes.html">set_extra_nodes</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_material.html">set_material</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_shear_factor.html">set_shear_factor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.set_thickness.html">set_thickness</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.IGAPart.partlist.html">partlist</a></li>
 </ul>
@@ -3075,6 +3548,11 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ImplicitAnalysis.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.html">pre.dynabase.InitialCondition</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.create.html">create</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.InitialCondition.create_velocity.html">create_velocity</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Integration.html">pre.dynabase.Integration</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.InvariantNode.html">pre.dynabase.InvariantNode</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Motion.html">pre.dynabase.Motion</a></li>
@@ -3084,10 +3562,18 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.NodeSet.num.html">num</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.NodesetGeneral.html">pre.dynabase.NodesetGeneral</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.NodesetGeneral.create.html">create</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.OffsetType.html">pre.dynabase.OffsetType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Part.html">pre.dynabase.Part</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_extra_nodes.html">set_extra_nodes</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_material.html">set_material</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.Part.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.PartSet.html">pre.dynabase.PartSet</a><ul>
@@ -3104,20 +3590,26 @@ to view API documentation.</p>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.RigidwallPlanar.html">pre.dynabase.RigidwallPlanar</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.RotVelocity.html">pre.dynabase.RotVelocity</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.SBOPT.html">pre.dynabase.SBOPT</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.SegmentSet.html">pre.dynabase.SegmentSet</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SegmentSet.create.html">create</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.SetType.html">pre.dynabase.SetType</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.ShellFormulation.html">pre.dynabase.ShellFormulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.html">pre.dynabase.ShellPart</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_des_surface.html">set_des_surface</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_extra_nodes.html">set_extra_nodes</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_hourglass.html">set_hourglass</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_integration_points.html">set_integration_points</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_material.html">set_material</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_printout.html">set_printout</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_shear_factor.html">set_shear_factor</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.set_thickness.html">set_thickness</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.ShellPart.partlist.html">partlist</a></li>
 </ul>
@@ -3126,59 +3618,80 @@ to view API documentation.</p>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.SolidFormulation.html">pre.dynabase.SolidFormulation</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.html">pre.dynabase.SolidPart</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_element_formulation.html">set_element_formulation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_extra_nodes.html">set_extra_nodes</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_hourglass.html">set_hourglass</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_material.html">set_material</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_property.html">set_property</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_rigidbody_initial_velocity.html">set_rigidbody_initial_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.set_stiffness_damping_coefficient.html">set_stiffness_damping_coefficient</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynabase.SolidPart.partlist.html">partlist</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Switch.html">pre.dynabase.Switch</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.TimestepCtrol.html">pre.dynabase.TimestepCtrol</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynabase.Velocity.html">pre.dynabase.Velocity</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynaairbag.html">pre.dynaairbag</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynaairbag.html#airbag-api">Airbag API</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaairbag.Airbag.html">pre.dynaairbag.Airbag</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.html">pre.dynaairbag.DynaAirbag</a><ul>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_boundary_prescribed_motion.html">create_boundary_prescribed_motion</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_constrained_extra_nodes.html">create_constrained_extra_nodes</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_constrained_joint.html">create_constrained_joint</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_contact.html">create_control_contact</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_output.html">create_control_output</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_shell.html">create_control_shell</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_control_solid.html">create_control_solid</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_database_binary.html">create_database_binary</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_defineorientation.html">create_defineorientation</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_general_keyword.html">create_general_keyword</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel.html">create_init_vel</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_load_body.html">create_load_body</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_damper_nonlinear_viscous.html">create_mat_damper_nonlinear_viscous</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_damper_viscous.html">create_mat_damper_viscous</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_mat_spring_nonlinear_elastic.html">create_mat_spring_nonlinear_elastic</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_rigidwall_planar.html">create_rigidwall_planar</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_section_discrete.html">create_section_discrete</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_section_solid.html">create_section_solid</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_shellset.html">create_shellset</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.create_solidset.html">create_solidset</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.get_solid_elements.html">get_solid_elements</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.get_stub.html">get_stub</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.open_files.html">open_files</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.save_file.html">save_file</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_accuracy.html">set_accuracy</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_energy.html">set_energy</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_hourglass.html">set_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_output_database.html">set_output_database</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_termination.html">set_termination</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaairbag.DynaAirbag.set_timestep.html">set_timestep</a></li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynasolution.html">pre.dynasolution</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynasolution.html#solution">Solution</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynasolution.download.html">download</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynasolution.get_file_chunks.html">get_file_chunks</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynasolution.init_log.html">init_log</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynasolution.upload.html">upload</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.html">pre.dynasolution.DynaSolution</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.add.html">add</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.create_database_ascii.html">create_database_ascii</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.create_database_binary.html">create_database_binary</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.get_stub.html">get_stub</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.open_files.html">open_files</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.save_file.html">save_file</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.set_termination.html">set_termination</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasolution.DynaSolution.object_list.html">object_list</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynamech.html">pre.dynamech</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynamech.html#mechanical-api">Mechanical API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamech.Airbag.html">pre.dynamech.Airbag</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.html">pre.dynamech.DynaMech</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_boundary_prescribed_motion.html">create_boundary_prescribed_motion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_constrained_extra_nodes.html">create_constrained_extra_nodes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_constrained_joint.html">create_constrained_joint</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_contact.html">create_control_contact</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_output.html">create_control_output</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_shell.html">create_control_shell</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_control_solid.html">create_control_solid</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_damping_global.html">create_damping_global</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_defineorientation.html">create_defineorientation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_general_keyword.html">create_general_keyword</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_hourglass.html">create_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_load_body.html">create_load_body</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_damper_nonlinear_viscous.html">create_mat_damper_nonlinear_viscous</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_damper_viscous.html">create_mat_damper_viscous</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_mat_spring_nonlinear_elastic.html">create_mat_spring_nonlinear_elastic</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_rigidwall_planar.html">create_rigidwall_planar</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_section_discrete.html">create_section_discrete</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_section_solid.html">create_section_solid</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_shellset.html">create_shellset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.create_solidset.html">create_solidset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.get_solid_elements.html">get_solid_elements</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.get_stub.html">get_stub</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.save_file.html">save_file</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_accuracy.html">set_accuracy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_energy.html">set_energy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_init_velocity.html">set_init_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_output_database.html">set_output_database</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamech.DynaMech.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
 </ul>
@@ -3205,8 +3718,6 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_control_shell.html">create_control_shell</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_control_solid.html">create_control_solid</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_database_binary.html">create_database_binary</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_defineorientation.html">create_defineorientation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_em_contact.html">create_em_contact</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_em_control.html">create_em_control</a></li>
@@ -3220,7 +3731,6 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_em_timestep.html">create_em_timestep</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_general_keyword.html">create_general_keyword</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_init_vel.html">create_init_vel</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_load_body.html">create_load_body</a></li>
@@ -3234,16 +3744,15 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.create_solidset.html">create_solidset</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.get_solid_elements.html">get_solid_elements</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.get_stub.html">get_stub</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.open_files.html">open_files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.save_file.html">save_file</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_accuracy.html">set_accuracy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_energy.html">set_energy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_init_velocity.html">set_init_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_output_database.html">set_output_database</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_rogowsky_coil_to_output_current.html">set_rogowsky_coil_to_output_current</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_termination.html">set_termination</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaem.DynaEM.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
@@ -3269,7 +3778,6 @@ to view API documentation.</p>
 <li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynaicfd.html">pre.dynaicfd</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynaicfd.html#icfd-api">ICFD API</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.Compressible.html">pre.dynaicfd.Compressible</a></li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.DOF.html">pre.dynaicfd.DOF</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.html">pre.dynaicfd.DynaICFD</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_boundary_prescribed_motion.html">create_boundary_prescribed_motion</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_constrained_extra_nodes.html">create_constrained_extra_nodes</a></li>
@@ -3282,12 +3790,9 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_control_solid.html">create_control_solid</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_control_turbulence.html">create_control_turbulence</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_database_binary.html">create_database_binary</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_defineorientation.html">create_defineorientation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_general_keyword.html">create_general_keyword</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_init_vel.html">create_init_vel</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.create_load_body.html">create_load_body</a></li>
@@ -3306,18 +3811,19 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.get_stub.html">get_stub</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.mesh_create_size_shape.html">mesh_create_size_shape</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.mesh_embed_shell.html">mesh_embed_shell</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.open_files.html">open_files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.save_file.html">save_file</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_accuracy.html">set_accuracy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_energy.html">set_energy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_init_velocity.html">set_init_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_output_database.html">set_output_database</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_termination.html">set_termination</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.DynaICFD.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDDOF.html">pre.dynaicfd.ICFDDOF</a></li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDPart.html">pre.dynaicfd.ICFDPart</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDPart.compute_drag_force.html">compute_drag_force</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDPart.set_boundary_layer.html">set_boundary_layer</a></li>
@@ -3336,7 +3842,10 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.ICFDVolumePart.partlist.html">partlist</a></li>
 </ul>
 </li>
-<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.MatICFD.html">pre.dynaicfd.MatICFD</a></li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.MatICFD.html">pre.dynaicfd.MatICFD</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.MatICFD.create.html">create</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynaicfd.MeshedVolume.html">pre.dynaicfd.MeshedVolume</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.MeshedVolume.create.html">create</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaicfd.MeshedVolume.embed_shell.html">embed_shell</a></li>
@@ -3359,12 +3868,9 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_control_shell.html">create_control_shell</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_control_solid.html">create_control_solid</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_database_binary.html">create_database_binary</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_defineorientation.html">create_defineorientation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_general_keyword.html">create_general_keyword</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_init_vel.html">create_init_vel</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_load_body.html">create_load_body</a></li>
@@ -3379,15 +3885,14 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.create_solidset.html">create_solidset</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.get_solid_elements.html">get_solid_elements</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.get_stub.html">get_stub</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.open_files.html">open_files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.save_file.html">save_file</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_accuracy.html">set_accuracy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_energy.html">set_energy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_init_velocity.html">set_init_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_output_database.html">set_output_database</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_termination.html">set_termination</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynaiga.DynaIGA.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
@@ -3413,6 +3918,14 @@ to view API documentation.</p>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatAdditional.html">pre.dynamaterial.MatAdditional</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatAdditional.create.html">create</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatAdditional.set_electromagnetic_property.html">set_electromagnetic_property</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.html">pre.dynamaterial.MatDamperNonlinearViscous</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.create.html">create</a></li>
+</ul>
+</li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperViscous.html">pre.dynamaterial.MatDamperViscous</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatDamperViscous.create.html">create</a></li>
 </ul>
 </li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatElastic.html">pre.dynamaterial.MatElastic</a><ul>
@@ -3445,6 +3958,10 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpotweld.create.html">create</a></li>
 </ul>
 </li>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.html">pre.dynamaterial.MatSpringNonlinearElastic</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.create.html">create</a></li>
+</ul>
+</li>
 <li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynamaterial.Vacuum.html">pre.dynamaterial.Vacuum</a><ul>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynamaterial.Vacuum.create.html">create</a></li>
 </ul>
@@ -3466,12 +3983,9 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_control_shell.html">create_control_shell</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_control_solid.html">create_control_solid</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_damping_global.html">create_damping_global</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_database_ascii.html">create_database_ascii</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_database_binary.html">create_database_binary</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_defineorientation.html">create_defineorientation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_general_keyword.html">create_general_keyword</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_hourglass.html">create_hourglass</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_init_vel.html">create_init_vel</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_load_body.html">create_load_body</a></li>
@@ -3486,13 +4000,13 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.create_solidset.html">create_solidset</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.get_solid_elements.html">get_solid_elements</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.get_stub.html">get_stub</a></li>
-<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.open_files.html">open_files</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.save_file.html">save_file</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_accuracy.html">set_accuracy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_analysis_type.html">set_analysis_type</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_energy.html">set_energy</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_init_velocity.html">set_init_velocity</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_output_database.html">set_output_database</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_output_interval.html">set_output_interval</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.DynaSALE.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
@@ -3506,6 +4020,50 @@ to view API documentation.</p>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.StructuredMesh.initial_detonation.html">initial_detonation</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.StructuredMesh.refine.html">refine</a></li>
 <li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynasale.StructuredMesh.num_meshpart.html">num_meshpart</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="_autosummary/pre.dynadem.html">pre.dynadem</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="_autosummary/pre.dynadem.html#dem-api">DEM API</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.html">pre.dynadem.DynaDEM</a><ul>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_boundary_prescribed_motion.html">create_boundary_prescribed_motion</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_constrained_extra_nodes.html">create_constrained_extra_nodes</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_constrained_joint.html">create_constrained_joint</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_contact.html">create_control_contact</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_output.html">create_control_output</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_shell.html">create_control_shell</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_control_solid.html">create_control_solid</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_damping_global.html">create_damping_global</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_define_de_mesh_surface.html">create_define_de_mesh_surface</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_defineorientation.html">create_defineorientation</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_general_keyword.html">create_general_keyword</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_hourglass.html">create_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_init_vel_bodies.html">create_init_vel_bodies</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_init_vel_rigidbody.html">create_init_vel_rigidbody</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_load_body.html">create_load_body</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_damper_nonlinear_viscous.html">create_mat_damper_nonlinear_viscous</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_damper_viscous.html">create_mat_damper_viscous</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_mat_spring_nonlinear_elastic.html">create_mat_spring_nonlinear_elastic</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_rigidwall_planar.html">create_rigidwall_planar</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_section_discrete.html">create_section_discrete</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_section_solid.html">create_section_solid</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_shellset.html">create_shellset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.create_solidset.html">create_solidset</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.get_solid_elements.html">get_solid_elements</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.get_stub.html">get_stub</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.save_file.html">save_file</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_accuracy.html">set_accuracy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_bulk_viscosity.html">set_bulk_viscosity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_des.html">set_des</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_energy.html">set_energy</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_hourglass.html">set_hourglass</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_init_velocity.html">set_init_velocity</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_output_database.html">set_output_database</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_part_damping_stiffness.html">set_part_damping_stiffness</a></li>
+<li class="toctree-l5"><a class="reference internal" href="_autosummary/pre.dynadem.DynaDEM.set_timestep.html">set_timestep</a></li>
 </ul>
 </li>
 </ul>

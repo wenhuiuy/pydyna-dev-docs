@@ -1,6 +1,0 @@
-create\_database\_ascii
-=======================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_database_ascii

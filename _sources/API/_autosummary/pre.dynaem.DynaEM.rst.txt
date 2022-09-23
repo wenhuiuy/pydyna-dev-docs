@@ -42,12 +42,6 @@ pre.dynaem.DynaEM
       DynaEM.create_damping_global
       
       
-      DynaEM.create_database_ascii
-      
-      
-      DynaEM.create_database_binary
-      
-      
       DynaEM.create_defineorientation
       
       
@@ -85,9 +79,6 @@ pre.dynaem.DynaEM
       
       
       DynaEM.create_hourglass
-      
-      
-      DynaEM.create_init_vel
       
       
       DynaEM.create_init_vel_bodies
@@ -129,9 +120,6 @@ pre.dynaem.DynaEM
       DynaEM.get_stub
       
       
-      DynaEM.open_files
-      
-      
       DynaEM.save_file
       
       
@@ -147,6 +135,9 @@ pre.dynaem.DynaEM
       DynaEM.set_hourglass
       
       
+      DynaEM.set_init_velocity
+      
+      
       DynaEM.set_output_database
       
       
@@ -154,9 +145,6 @@ pre.dynaem.DynaEM
       
       
       DynaEM.set_rogowsky_coil_to_output_current
-      
-      
-      DynaEM.set_termination
       
       
       DynaEM.set_timestep

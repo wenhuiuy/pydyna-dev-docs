@@ -1,0 +1,6 @@
+set\_stiffness\_damping\_coefficient
+====================================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: BeamPart.set_stiffness_damping_coefficient

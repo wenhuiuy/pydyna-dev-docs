@@ -1,6 +1,0 @@
-set\_termination
-================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.set_termination

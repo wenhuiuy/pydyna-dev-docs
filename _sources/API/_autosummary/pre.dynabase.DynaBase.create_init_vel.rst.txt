@@ -1,6 +1,0 @@
-create\_init\_vel
-=================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_init_vel

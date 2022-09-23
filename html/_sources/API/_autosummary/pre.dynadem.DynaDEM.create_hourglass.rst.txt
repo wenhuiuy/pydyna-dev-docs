@@ -1,0 +1,6 @@
+create\_hourglass
+=================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_hourglass

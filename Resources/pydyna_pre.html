@@ -44,7 +44,7 @@
     <script src="../_static/underscore.js"></script>
     <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="PyDyna-solver" href="pydyna_solver.html" />
@@ -425,7 +425,7 @@ Then running command:</p>
 </pre></div>
 </div>
 <p>At the same time, corresponding information will be printed in the server side.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>Load model: C:\pyDyna\ansys\dyna\pre\Server\input\efpcase.k
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>Load model: C:<span class="se">\p</span>yDyna<span class="se">\a</span>nsys<span class="se">\d</span>yna<span class="se">\p</span>re<span class="se">\S</span>erver<span class="se">\i</span>nput<span class="se">\e</span>fpcase.k
 *DATABASE_SALE Created...
 Termination Created...
 DB Binary Created...
@@ -455,16 +455,16 @@ Saved Successfully!
 </pre></div>
 </div>
 <p>After running this file,the result file will be save in pyDyna/ansys/dyna/pre/Server/output</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="p">(</span><span class="n">venv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">pyDyna</span>\<span class="n">ansys</span>\<span class="n">dyna</span>\<span class="n">pre</span>\<span class="n">Server</span><span class="o">&gt;</span> <span class="n">cd</span> <span class="o">.</span>\<span class="n">output</span>\
-<span class="p">(</span><span class="n">venv</span><span class="p">)</span> <span class="n">C</span><span class="p">:</span>\<span class="n">pyDyna</span>\<span class="n">ansys</span>\<span class="n">dyna</span>\<span class="n">pre</span>\<span class="n">Server</span>\<span class="n">output</span><span class="o">&gt;</span> <span class="n">ls</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="o">(</span>venv<span class="o">)</span> C:<span class="se">\p</span>yDyna<span class="se">\a</span>nsys<span class="se">\d</span>yna<span class="se">\p</span>re<span class="se">\S</span>erver&gt; <span class="nb">cd</span> .<span class="se">\o</span>utput<span class="se">\</span>
+<span class="o">(</span>venv<span class="o">)</span> C:<span class="se">\p</span>yDyna<span class="se">\a</span>nsys<span class="se">\d</span>yna<span class="se">\p</span>re<span class="se">\S</span>erver<span class="se">\o</span>utput&gt; ls
 
 
-    <span class="n">Directory</span><span class="p">:</span> <span class="n">C</span><span class="p">:</span>\<span class="n">pyDyna</span>\<span class="n">ansys</span>\<span class="n">dyna</span>\<span class="n">pre</span>\<span class="n">Server</span>\<span class="n">output</span>
+    Directory: C:<span class="se">\p</span>yDyna<span class="se">\a</span>nsys<span class="se">\d</span>yna<span class="se">\p</span>re<span class="se">\S</span>erver<span class="se">\o</span>utput
 
 
-<span class="n">Mode</span>                 <span class="n">LastWriteTime</span>         <span class="n">Length</span> <span class="n">Name</span>
-<span class="o">----</span>                 <span class="o">-------------</span>         <span class="o">------</span> <span class="o">----</span>
-<span class="o">-</span><span class="n">a</span><span class="o">----</span>          <span class="mi">2022</span><span class="o">/</span><span class="mi">7</span><span class="o">/</span><span class="mi">5</span>      <span class="mi">8</span><span class="p">:</span><span class="mi">19</span>        <span class="mi">2436058</span> <span class="n">efpcase</span><span class="o">.</span><span class="n">k</span>
+Mode                 LastWriteTime         Length Name
+----                 -------------         ------ ----
+-a----          <span class="m">2022</span>/7/5      <span class="m">8</span>:19        <span class="m">2436058</span> efpcase.k
 </pre></div>
 </div>
 <p>Submit the result file, efpcase.k, to LS-Dyna for simulation results.</p>

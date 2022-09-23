@@ -1,6 +1,0 @@
-set\_accuracy
-=============
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.set_accuracy

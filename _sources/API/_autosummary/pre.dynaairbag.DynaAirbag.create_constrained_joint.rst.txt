@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_constrained_joint

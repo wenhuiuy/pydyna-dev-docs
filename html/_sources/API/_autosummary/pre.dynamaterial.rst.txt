@@ -24,6 +24,8 @@
       HighExplosive
       Liner
       MatAdditional
+      MatDamperNonlinearViscous
+      MatDamperViscous
       MatElastic
       MatFabric
       MatModifiedPiecewiseLinearPlasticity
@@ -31,6 +33,7 @@
       MatPiecewiseLinearPlasticity
       MatRigid
       MatSpotweld
+      MatSpringNonlinearElastic
       Vacuum
    
    

@@ -1,6 +1,0 @@
-set\_termination
-================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.set_termination

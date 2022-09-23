@@ -1,6 +1,0 @@
-create\_database\_binary
-========================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_database_binary

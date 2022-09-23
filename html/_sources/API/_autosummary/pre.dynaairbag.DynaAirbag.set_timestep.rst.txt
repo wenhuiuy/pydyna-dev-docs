@@ -1,6 +1,0 @@
-set\_timestep
-=============
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.set_timestep

@@ -1,6 +1,0 @@
-create\_init\_vel
-=================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_init_vel

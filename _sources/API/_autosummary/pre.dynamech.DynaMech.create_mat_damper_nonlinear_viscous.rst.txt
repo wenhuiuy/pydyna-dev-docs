@@ -1,0 +1,6 @@
+create\_mat\_damper\_nonlinear\_viscous
+=======================================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.create_mat_damper_nonlinear_viscous

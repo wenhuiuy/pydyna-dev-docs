@@ -1,0 +1,6 @@
+create\_rigidwall\_planar
+=========================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.create_rigidwall_planar

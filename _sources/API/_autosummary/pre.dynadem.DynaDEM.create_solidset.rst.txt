@@ -1,0 +1,6 @@
+create\_solidset
+================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_solidset

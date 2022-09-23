@@ -1,6 +1,0 @@
-set\_termination
-================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.set_termination

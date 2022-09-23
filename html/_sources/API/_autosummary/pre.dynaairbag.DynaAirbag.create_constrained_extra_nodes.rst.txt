@@ -1,6 +1,0 @@
-create\_constrained\_extra\_nodes
-=================================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_constrained_extra_nodes

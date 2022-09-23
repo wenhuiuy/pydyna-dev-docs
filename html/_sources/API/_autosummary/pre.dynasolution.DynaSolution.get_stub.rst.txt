@@ -1,0 +1,6 @@
+get\_stub
+=========
+
+.. currentmodule:: pre.dynasolution
+
+.. automethod:: DynaSolution.get_stub

@@ -1,0 +1,22 @@
+pre.dynabase.BaseSet
+====================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: BaseSet
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+   
+   
+
+   
+   
+   

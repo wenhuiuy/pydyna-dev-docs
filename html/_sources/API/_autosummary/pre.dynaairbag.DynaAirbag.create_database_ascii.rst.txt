@@ -1,6 +1,0 @@
-create\_database\_ascii
-=======================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_database_ascii

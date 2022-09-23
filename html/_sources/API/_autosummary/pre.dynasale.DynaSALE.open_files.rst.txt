@@ -1,6 +1,0 @@
-open\_files
-===========
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.open_files

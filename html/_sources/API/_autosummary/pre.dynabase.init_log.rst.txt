@@ -1,6 +1,0 @@
-init\_log
-=========
-
-.. currentmodule:: pre.dynabase
-
-.. autofunction:: init_log

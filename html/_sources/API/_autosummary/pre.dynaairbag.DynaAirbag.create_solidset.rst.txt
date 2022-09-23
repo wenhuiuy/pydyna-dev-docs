@@ -1,6 +1,0 @@
-create\_solidset
-================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_solidset

@@ -1,6 +1,0 @@
-create\_general\_keyword
-========================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_general_keyword

@@ -18,6 +18,9 @@ pre.dynabase.SolidPart
       SolidPart.set_element_formulation
       
       
+      SolidPart.set_extra_nodes
+      
+      
       SolidPart.set_hourglass
       
       
@@ -25,6 +28,12 @@ pre.dynabase.SolidPart
       
       
       SolidPart.set_property
+      
+      
+      SolidPart.set_rigidbody_initial_velocity
+      
+      
+      SolidPart.set_stiffness_damping_coefficient
       
    
    

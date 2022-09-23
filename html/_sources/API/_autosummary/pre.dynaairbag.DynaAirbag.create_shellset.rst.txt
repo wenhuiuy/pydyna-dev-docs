@@ -1,6 +1,0 @@
-create\_shellset
-================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_shellset

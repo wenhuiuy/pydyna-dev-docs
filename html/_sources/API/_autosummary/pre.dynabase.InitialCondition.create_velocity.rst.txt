@@ -1,0 +1,6 @@
+create\_velocity
+================
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: InitialCondition.create_velocity

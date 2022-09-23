@@ -1,0 +1,6 @@
+create\_boundary\_prescribed\_motion
+====================================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_boundary_prescribed_motion

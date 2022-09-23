@@ -44,7 +44,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="ICFD examples" href="../ICFD/index.html" />
@@ -401,409 +401,96 @@ to download the full example code</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../ansys/dyna&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">pre.dynabase</span> <span class="kn">import</span> <span class="n">DynaBase</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynasolution</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamech</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">belted_dummy_data</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">hostname</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">dummy</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
+
+    <span class="n">dummy_solution</span> <span class="o">=</span> <span class="n">DynaSolution</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
     <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">path</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/os.html#os.getcwd" title="os.getcwd" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">()</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a> <span class="o">+</span> <span class="s2">&quot;input&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a> <span class="o">+</span> <span class="s2">&quot;belted_dummy&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;belted_dummy.k&quot;</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="n">termination_time</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">2.5e-3</span><span class="p">)</span>
 
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_termination</span><span class="p">(</span><span class="n">endtim</span><span class="o">=</span><span class="mf">0.12</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_control_contact</span><span class="p">(</span><span class="n">rwpnal</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">orien</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_timestep</span><span class="p">(</span><span class="n">tssfac</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">2.5e-3</span><span class="p">)</span>
-    <span class="n">vel</span> <span class="o">=</span> <span class="p">[</span><span class="mf">14.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_init_vel</span><span class="p">(</span><span class="n">nsid</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">velocity</span><span class="o">=</span><span class="n">vel</span><span class="p">)</span>
+    <span class="n">dummy</span> <span class="o">=</span> <span class="n">DynaMech</span><span class="p">()</span>
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">dummy</span><span class="p">)</span>
 
-    <span class="nb">abs</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mf">0.00000000e00</span><span class="p">,</span>
-        <span class="mf">4.00000019e-03</span><span class="p">,</span>
-        <span class="mf">6.00000005e-03</span><span class="p">,</span>
-        <span class="mf">9.99999978e-03</span><span class="p">,</span>
-        <span class="mf">1.35000004e-02</span><span class="p">,</span>
-        <span class="mf">1.79999992e-02</span><span class="p">,</span>
-        <span class="mf">2.34999992e-02</span><span class="p">,</span>
-        <span class="mf">3.09999995e-02</span><span class="p">,</span>
-        <span class="mf">3.40000018e-02</span><span class="p">,</span>
-        <span class="mf">3.59999985e-02</span><span class="p">,</span>
-        <span class="mf">3.99999991e-02</span><span class="p">,</span>
-        <span class="mf">4.19999994e-02</span><span class="p">,</span>
-        <span class="mf">4.45000008e-02</span><span class="p">,</span>
-        <span class="mf">4.69999984e-02</span><span class="p">,</span>
-        <span class="mf">4.89999987e-02</span><span class="p">,</span>
-        <span class="mf">5.15000001e-02</span><span class="p">,</span>
-        <span class="mf">5.40000014e-02</span><span class="p">,</span>
-        <span class="mf">7.99999982e-02</span><span class="p">,</span>
-        <span class="mf">9.00000036e-02</span><span class="p">,</span>
-        <span class="mf">9.49999988e-02</span><span class="p">,</span>
-        <span class="mf">9.74999964e-02</span><span class="p">,</span>
-        <span class="mf">1.03000000e-01</span><span class="p">,</span>
-        <span class="mf">1.08999997e-01</span><span class="p">,</span>
-        <span class="mf">1.15000002e-01</span><span class="p">,</span>
-        <span class="mf">1.19499996e-01</span><span class="p">,</span>
-        <span class="mf">1.12499997e-01</span><span class="p">,</span>
-        <span class="mf">1.29999995e-01</span><span class="p">,</span>
-        <span class="mf">1.41000003e-01</span><span class="p">,</span>
-        <span class="mf">1.49000004e-01</span><span class="p">,</span>
-        <span class="mf">1.51999995e-01</span><span class="p">,</span>
-    <span class="p">]</span>
-    <span class="nb">ord</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mf">0.00000000e00</span><span class="p">,</span>
-        <span class="mf">4.41500015e01</span><span class="p">,</span>
-        <span class="mf">2.94300003e01</span><span class="p">,</span>
-        <span class="mf">7.84800034e01</span><span class="p">,</span>
-        <span class="mf">4.41500015e01</span><span class="p">,</span>
-        <span class="mf">1.37300003e02</span><span class="p">,</span>
-        <span class="mf">1.66800003e02</span><span class="p">,</span>
-        <span class="mf">2.35399994e02</span><span class="p">,</span>
-        <span class="mf">2.35399994e02</span><span class="p">,</span>
-        <span class="mf">2.55100006e02</span><span class="p">,</span>
-        <span class="mf">2.60000000e02</span><span class="p">,</span>
-        <span class="mf">2.60000000e02</span><span class="p">,</span>
-        <span class="mf">2.69799988e02</span><span class="p">,</span>
-        <span class="mf">2.60000000e02</span><span class="p">,</span>
-        <span class="mf">2.60000000e02</span><span class="p">,</span>
-        <span class="mf">2.55100006e02</span><span class="p">,</span>
-        <span class="mf">2.55100006e02</span><span class="p">,</span>
-        <span class="mf">1.22599998e02</span><span class="p">,</span>
-        <span class="mf">4.90499992e01</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">9.81000042e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">2.45300007e01</span><span class="p">,</span>
-        <span class="mf">1.47200003e01</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">1.47200003e01</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">9.81000042e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">4.90999985e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">9.81000042e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">2.45000005e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">1.96200008e01</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">2.45000005e00</span><span class="p">,</span>
-        <span class="o">-</span><span class="mf">1.47200003e01</span><span class="p">,</span>
-    <span class="p">]</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_definecurve</span><span class="p">(</span><span class="n">lcid</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">abscissa</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ordinate</span><span class="o">=</span><span class="nb">ord</span><span class="p">)</span>
+    <span class="n">dummy</span><span class="o">.</span><span class="n">set_timestep</span><span class="p">(</span><span class="n">tssfac</span><span class="o">=</span><span class="mf">0.8</span><span class="p">)</span>
+    <span class="n">dummy</span><span class="o">.</span><span class="n">set_init_velocity</span><span class="p">(</span><span class="n">Velocity</span><span class="p">(</span><span class="mf">14.8</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">))</span>
 
-    <span class="n">nodeslist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mi">1763</span><span class="p">,</span>
-        <span class="mi">1764</span><span class="p">,</span>
-        <span class="mi">1765</span><span class="p">,</span>
-        <span class="mi">1766</span><span class="p">,</span>
-        <span class="mi">1767</span><span class="p">,</span>
-        <span class="mi">1768</span><span class="p">,</span>
-        <span class="mi">1769</span><span class="p">,</span>
-        <span class="mi">1770</span><span class="p">,</span>
-        <span class="mi">1771</span><span class="p">,</span>
-        <span class="mi">1772</span><span class="p">,</span>
-        <span class="mi">1773</span><span class="p">,</span>
-        <span class="mi">1774</span><span class="p">,</span>
-        <span class="mi">1775</span><span class="p">,</span>
-        <span class="mi">1776</span><span class="p">,</span>
-        <span class="mi">1777</span><span class="p">,</span>
-        <span class="mi">1778</span><span class="p">,</span>
-        <span class="mi">1779</span><span class="p">,</span>
-        <span class="mi">1780</span><span class="p">,</span>
-        <span class="mi">1781</span><span class="p">,</span>
-        <span class="mi">1782</span><span class="p">,</span>
-        <span class="mi">1783</span><span class="p">,</span>
-        <span class="mi">1784</span><span class="p">,</span>
-        <span class="mi">1785</span><span class="p">,</span>
-        <span class="mi">1786</span><span class="p">,</span>
-        <span class="mi">1787</span><span class="p">,</span>
-        <span class="mi">1788</span><span class="p">,</span>
-        <span class="mi">1789</span><span class="p">,</span>
-        <span class="mi">1792</span><span class="p">,</span>
-        <span class="mi">1795</span><span class="p">,</span>
-        <span class="mi">1904</span><span class="p">,</span>
-        <span class="mi">1906</span><span class="p">,</span>
-        <span class="mi">1908</span><span class="p">,</span>
-        <span class="mi">1909</span><span class="p">,</span>
-        <span class="mi">1910</span><span class="p">,</span>
-        <span class="mi">1997</span><span class="p">,</span>
-        <span class="mi">1998</span><span class="p">,</span>
-        <span class="mi">1999</span><span class="p">,</span>
-        <span class="mi">2043</span><span class="p">,</span>
-    <span class="p">]</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_nodeset</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s2">&quot;LIST&quot;</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="n">nodeslist</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_boundary_prescribed_motion</span><span class="p">(</span>
-        <span class="nb">id</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">heading</span><span class="o">=</span><span class="s2">&quot;motion&quot;</span><span class="p">,</span>
-        <span class="n">option</span><span class="o">=</span><span class="s2">&quot;SET&quot;</span><span class="p">,</span>
-        <span class="n">typeid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">dof</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">vad</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">lcid</span><span class="o">=</span><span class="mi">50</span><span class="p">,</span>
-        <span class="n">sf</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
-        <span class="n">vid</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span>
-    <span class="p">)</span>
-
-    <span class="nb">abs</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.152</span><span class="p">]</span>
-    <span class="nb">ord</span> <span class="o">=</span> <span class="p">[</span><span class="mf">9.81</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">]</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_definecurve</span><span class="p">(</span><span class="n">lcid</span><span class="o">=</span><span class="mi">51</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">abscissa</span><span class="o">=</span><span class="nb">abs</span><span class="p">,</span> <span class="n">ordinate</span><span class="o">=</span><span class="nb">ord</span><span class="p">)</span>
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_load_body</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s2">&quot;Z&quot;</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="mi">51</span><span class="p">)</span>
-
-    <span class="n">cid</span> <span class="o">=</span> <span class="mi">1</span>
-    <span class="n">fslist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">12</span><span class="p">):</span>
-        <span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;contact&quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_contact</span><span class="p">(</span>
-            <span class="n">cid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span>
-            <span class="n">title</span><span class="o">=</span><span class="n">title</span><span class="p">,</span>
-            <span class="n">option1</span><span class="o">=</span><span class="s2">&quot;SURFACE_TO_SURFACE&quot;</span><span class="p">,</span>
-            <span class="n">option3</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-            <span class="n">ssid</span><span class="o">=</span><span class="n">cid</span><span class="p">,</span>
-            <span class="n">msid</span><span class="o">=</span><span class="n">cid</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span>
-            <span class="n">sstyp</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="n">mstyp</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
-            <span class="n">fs</span><span class="o">=</span><span class="n">fslist</span><span class="p">[</span><span class="n">i</span> <span class="o">-</span> <span class="mi">1</span><span class="p">],</span>
-        <span class="p">)</span>
-        <span class="n">cid</span> <span class="o">+=</span> <span class="mi">2</span>
-
-    <span class="n">nodeslist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">227</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">228</span><span class="p">,</span> <span class="mi">405</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">406</span><span class="p">,</span> <span class="mi">865</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">866</span><span class="p">,</span> <span class="mi">971</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">407</span><span class="p">,</span> <span class="mi">537</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">538</span><span class="p">,</span> <span class="mi">685</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">408</span><span class="p">,</span> <span class="mi">603</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">604</span><span class="p">,</span> <span class="mi">763</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">972</span><span class="p">,</span> <span class="mi">1097</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1098</span><span class="p">,</span> <span class="mi">1497</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1498</span><span class="p">,</span> <span class="mi">1645</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">973</span><span class="p">,</span> <span class="mi">1317</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1318</span><span class="p">,</span> <span class="mi">1579</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1580</span><span class="p">,</span> <span class="mi">1733</span><span class="p">],</span>
-    <span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">):</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_constrained_joint</span><span class="p">(</span>
-            <span class="nb">type</span><span class="o">=</span><span class="s2">&quot;SPHERICAL&quot;</span><span class="p">,</span> <span class="n">nodes</span><span class="o">=</span><span class="n">nodeslist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">rps</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">damp</span><span class="o">=</span><span class="mi">0</span>
-        <span class="p">)</span>
-
-    <span class="n">nodeslist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">[</span><span class="mi">99</span><span class="p">,</span> <span class="mi">100</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">102</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">227</span><span class="p">,</span> <span class="mi">228</span><span class="p">,</span> <span class="mi">229</span><span class="p">,</span> <span class="mi">230</span><span class="p">,</span> <span class="mi">231</span><span class="p">,</span> <span class="mi">232</span><span class="p">,</span> <span class="mi">233</span><span class="p">,</span> <span class="mi">234</span><span class="p">],</span>
-        <span class="p">[</span>
-            <span class="mi">405</span><span class="p">,</span>
-            <span class="mi">406</span><span class="p">,</span>
-            <span class="mi">407</span><span class="p">,</span>
-            <span class="mi">408</span><span class="p">,</span>
-            <span class="mi">409</span><span class="p">,</span>
-            <span class="mi">410</span><span class="p">,</span>
-            <span class="mi">411</span><span class="p">,</span>
-            <span class="mi">412</span><span class="p">,</span>
-            <span class="mi">413</span><span class="p">,</span>
-            <span class="mi">414</span><span class="p">,</span>
-            <span class="mi">415</span><span class="p">,</span>
-            <span class="mi">416</span><span class="p">,</span>
-            <span class="mi">417</span><span class="p">,</span>
-            <span class="mi">418</span><span class="p">,</span>
-            <span class="mi">419</span><span class="p">,</span>
-            <span class="mi">420</span><span class="p">,</span>
-        <span class="p">],</span>
-        <span class="p">[</span><span class="mi">537</span><span class="p">,</span> <span class="mi">538</span><span class="p">,</span> <span class="mi">539</span><span class="p">,</span> <span class="mi">540</span><span class="p">,</span> <span class="mi">541</span><span class="p">,</span> <span class="mi">542</span><span class="p">,</span> <span class="mi">543</span><span class="p">,</span> <span class="mi">544</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">603</span><span class="p">,</span> <span class="mi">604</span><span class="p">,</span> <span class="mi">605</span><span class="p">,</span> <span class="mi">606</span><span class="p">,</span> <span class="mi">607</span><span class="p">,</span> <span class="mi">608</span><span class="p">,</span> <span class="mi">609</span><span class="p">,</span> <span class="mi">610</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">685</span><span class="p">,</span> <span class="mi">686</span><span class="p">,</span> <span class="mi">687</span><span class="p">,</span> <span class="mi">688</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">763</span><span class="p">,</span> <span class="mi">764</span><span class="p">,</span> <span class="mi">765</span><span class="p">,</span> <span class="mi">766</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">865</span><span class="p">,</span> <span class="mi">866</span><span class="p">,</span> <span class="mi">867</span><span class="p">,</span> <span class="mi">868</span><span class="p">,</span> <span class="mi">869</span><span class="p">,</span> <span class="mi">870</span><span class="p">,</span> <span class="mi">871</span><span class="p">,</span> <span class="mi">872</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">971</span><span class="p">,</span> <span class="mi">972</span><span class="p">,</span> <span class="mi">973</span><span class="p">,</span> <span class="mi">974</span><span class="p">,</span> <span class="mi">975</span><span class="p">,</span> <span class="mi">976</span><span class="p">,</span> <span class="mi">977</span><span class="p">,</span> <span class="mi">978</span><span class="p">,</span> <span class="mi">979</span><span class="p">,</span> <span class="mi">980</span><span class="p">,</span> <span class="mi">981</span><span class="p">,</span> <span class="mi">982</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1097</span><span class="p">,</span> <span class="mi">1098</span><span class="p">,</span> <span class="mi">1099</span><span class="p">,</span> <span class="mi">1100</span><span class="p">,</span> <span class="mi">1101</span><span class="p">,</span> <span class="mi">1102</span><span class="p">,</span> <span class="mi">1103</span><span class="p">,</span> <span class="mi">1104</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1317</span><span class="p">,</span> <span class="mi">1318</span><span class="p">,</span> <span class="mi">1319</span><span class="p">,</span> <span class="mi">1320</span><span class="p">,</span> <span class="mi">1321</span><span class="p">,</span> <span class="mi">1322</span><span class="p">,</span> <span class="mi">1323</span><span class="p">,</span> <span class="mi">1324</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1497</span><span class="p">,</span> <span class="mi">1498</span><span class="p">,</span> <span class="mi">1499</span><span class="p">,</span> <span class="mi">1500</span><span class="p">,</span> <span class="mi">1501</span><span class="p">,</span> <span class="mi">1502</span><span class="p">,</span> <span class="mi">1503</span><span class="p">,</span> <span class="mi">1504</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1579</span><span class="p">,</span> <span class="mi">1580</span><span class="p">,</span> <span class="mi">1581</span><span class="p">,</span> <span class="mi">1582</span><span class="p">,</span> <span class="mi">1583</span><span class="p">,</span> <span class="mi">1584</span><span class="p">,</span> <span class="mi">1585</span><span class="p">,</span> <span class="mi">1586</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1645</span><span class="p">,</span> <span class="mi">1646</span><span class="p">,</span> <span class="mi">1647</span><span class="p">,</span> <span class="mi">1648</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1733</span><span class="p">,</span> <span class="mi">1734</span><span class="p">,</span> <span class="mi">1735</span><span class="p">,</span> <span class="mi">1736</span><span class="p">],</span>
-    <span class="p">]</span>
-
+    <span class="c1">#Define material</span>
+    <span class="n">shellmatlist</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_nodeset</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s2">&quot;LIST&quot;</span><span class="p">,</span> <span class="n">sid</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">,</span> <span class="n">entities</span><span class="o">=</span><span class="n">nodeslist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_constrained_extra_nodes</span><span class="p">(</span><span class="n">option</span><span class="o">=</span><span class="s2">&quot;SET&quot;</span><span class="p">,</span> <span class="n">pid</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span><span class="p">,</span> <span class="n">nid</span><span class="o">=</span><span class="n">i</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
+        <span class="n">matrigid</span> <span class="o">=</span> <span class="n">MatRigid</span><span class="p">(</span><span class="n">mass_density</span><span class="o">=</span><span class="n">rigidmats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">young_modulus</span><span class="o">=</span><span class="n">rigidmats</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">poisson_ratio</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">shellmatlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matrigid</span><span class="p">)</span>
 
-    <span class="n">vector</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
-    <span class="n">nlist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="p">[</span><span class="mi">100</span><span class="p">,</span> <span class="mi">229</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">101</span><span class="p">,</span> <span class="mi">230</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">102</span><span class="p">,</span> <span class="mi">231</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">232</span><span class="p">,</span> <span class="mi">409</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">233</span><span class="p">,</span> <span class="mi">410</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">234</span><span class="p">,</span> <span class="mi">411</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">412</span><span class="p">,</span> <span class="mi">867</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">413</span><span class="p">,</span> <span class="mi">868</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">414</span><span class="p">,</span> <span class="mi">869</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">870</span><span class="p">,</span> <span class="mi">974</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">871</span><span class="p">,</span> <span class="mi">975</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">872</span><span class="p">,</span> <span class="mi">976</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">415</span><span class="p">,</span> <span class="mi">539</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">416</span><span class="p">,</span> <span class="mi">540</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">417</span><span class="p">,</span> <span class="mi">541</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">542</span><span class="p">,</span> <span class="mi">686</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">543</span><span class="p">,</span> <span class="mi">687</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">544</span><span class="p">,</span> <span class="mi">688</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">418</span><span class="p">,</span> <span class="mi">605</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">419</span><span class="p">,</span> <span class="mi">606</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">420</span><span class="p">,</span> <span class="mi">607</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">608</span><span class="p">,</span> <span class="mi">764</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">609</span><span class="p">,</span> <span class="mi">765</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">610</span><span class="p">,</span> <span class="mi">766</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">977</span><span class="p">,</span> <span class="mi">1099</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">978</span><span class="p">,</span> <span class="mi">1100</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">979</span><span class="p">,</span> <span class="mi">1101</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1102</span><span class="p">,</span> <span class="mi">1499</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1103</span><span class="p">,</span> <span class="mi">1500</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1104</span><span class="p">,</span> <span class="mi">1501</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1502</span><span class="p">,</span> <span class="mi">1646</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1503</span><span class="p">,</span> <span class="mi">1647</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1504</span><span class="p">,</span> <span class="mi">1648</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">980</span><span class="p">,</span> <span class="mi">1319</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">981</span><span class="p">,</span> <span class="mi">1320</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">982</span><span class="p">,</span> <span class="mi">1321</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1322</span><span class="p">,</span> <span class="mi">1581</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1323</span><span class="p">,</span> <span class="mi">1582</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1324</span><span class="p">,</span> <span class="mi">1583</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1584</span><span class="p">,</span> <span class="mi">1734</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1585</span><span class="p">,</span> <span class="mi">1735</span><span class="p">],</span>
-        <span class="p">[</span><span class="mi">1586</span><span class="p">,</span> <span class="mi">1736</span><span class="p">],</span>
-    <span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">42</span><span class="p">):</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_defineorientation</span><span class="p">(</span>
-            <span class="n">vid</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">iop</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">vector</span><span class="o">=</span><span class="n">vector</span><span class="p">,</span> <span class="n">node1</span><span class="o">=</span><span class="n">nlist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span> <span class="n">node2</span><span class="o">=</span><span class="n">nlist</span><span class="p">[</span><span class="n">i</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span>
-        <span class="p">)</span>
-
-    <span class="n">rolist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mi">4064</span><span class="p">,</span>
-        <span class="mi">4190</span><span class="p">,</span>
-        <span class="mi">4760</span><span class="p">,</span>
-        <span class="mi">2920</span><span class="p">,</span>
-        <span class="mi">2920</span><span class="p">,</span>
-        <span class="mi">2290</span><span class="p">,</span>
-        <span class="mi">2290</span><span class="p">,</span>
-        <span class="mi">1350</span><span class="p">,</span>
-        <span class="mi">8170</span><span class="p">,</span>
-        <span class="mi">2680</span><span class="p">,</span>
-        <span class="mi">2680</span><span class="p">,</span>
-        <span class="mi">2580</span><span class="p">,</span>
-        <span class="mi">2580</span><span class="p">,</span>
-        <span class="mi">2000</span><span class="p">,</span>
-        <span class="mi">2000</span><span class="p">,</span>
-    <span class="p">]</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">15</span><span class="p">):</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="mi">1</span>
-        <span class="n">e</span> <span class="o">=</span> <span class="mf">4e8</span>
-        <span class="k">if</span> <span class="nb">id</span> <span class="o">==</span> <span class="mi">6</span><span class="p">:</span>
-            <span class="n">e</span> <span class="o">=</span> <span class="mf">4e6</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_mat_rigid</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="n">rolist</span><span class="p">[</span><span class="n">i</span><span class="p">],</span> <span class="n">e</span><span class="o">=</span><span class="n">e</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
-
-    <span class="n">rolist</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4646</span><span class="p">,</span> <span class="mi">4646</span><span class="p">,</span> <span class="mi">4646</span><span class="p">,</span> <span class="mi">4646</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">2000</span><span class="p">,</span> <span class="mi">4000</span><span class="p">]</span>
-    <span class="n">elist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">4e8</span><span class="p">,</span> <span class="mf">4e8</span><span class="p">,</span> <span class="mf">4e9</span><span class="p">,</span> <span class="mf">4e8</span><span class="p">,</span> <span class="mf">4.1e8</span><span class="p">,</span> <span class="mf">4.1e8</span><span class="p">,</span> <span class="mf">2e8</span><span class="p">]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">16</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_mat_elastic</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">ro</span><span class="o">=</span><span class="n">rolist</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">e</span><span class="o">=</span><span class="n">elist</span><span class="p">[</span><span class="n">index</span><span class="p">],</span> <span class="n">pr</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">matelastic</span> <span class="o">=</span> <span class="n">MatElastic</span><span class="p">(</span><span class="n">mass_density</span><span class="o">=</span><span class="n">elasticmats</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">young_modulus</span><span class="o">=</span><span class="n">elasticmats</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">1</span><span class="p">],</span><span class="n">poisson_ratio</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+        <span class="n">shellmatlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">matelastic</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">43</span><span class="p">):</span>
-        <span class="nb">id</span> <span class="o">=</span> <span class="mi">100</span> <span class="o">+</span> <span class="n">i</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_mat_spring_nonlinear_elastic</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="nb">id</span><span class="p">,</span> <span class="n">lcid</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+    <span class="n">discmatlist</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">143</span><span class="p">):</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">101</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">MatSpringNonlinearElastic</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="n">Curve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">curvedata</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">curvedata</span><span class="p">[</span><span class="n">index</span><span class="p">][</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">discmatlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
 
-    <span class="n">dclist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">2.3</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mf">30.5</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">2</span><span class="p">,</span>
-        <span class="mi">6</span><span class="p">,</span>
-        <span class="mi">6</span><span class="p">,</span>
-        <span class="mi">5</span><span class="p">,</span>
-        <span class="mf">7.5</span><span class="p">,</span>
-        <span class="mi">5</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">6</span><span class="p">,</span>
-        <span class="mi">6</span><span class="p">,</span>
-        <span class="mi">5</span><span class="p">,</span>
-        <span class="mf">7.5</span><span class="p">,</span>
-        <span class="mi">5</span><span class="p">,</span>
-        <span class="mi">4</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-        <span class="mi">1</span><span class="p">,</span>
-    <span class="p">]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">143</span><span class="p">,</span> <span class="mi">185</span><span class="p">):</span>
-        <span class="n">index</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">143</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_mat_damper_viscous</span><span class="p">(</span><span class="n">mid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">dc</span><span class="o">=</span><span class="n">dclist</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">143</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">MatDamperViscous</span><span class="p">(</span><span class="n">damping_constant</span> <span class="o">=</span> <span class="n">dampingconst</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">discmatlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
 
-    <span class="n">lcidlist</span> <span class="o">=</span> <span class="p">[</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">43</span><span class="p">,</span>
-        <span class="mi">44</span><span class="p">,</span>
-        <span class="mi">44</span><span class="p">,</span>
-        <span class="mi">45</span><span class="p">,</span>
-        <span class="mi">45</span><span class="p">,</span>
-        <span class="mi">44</span><span class="p">,</span>
-        <span class="mi">44</span><span class="p">,</span>
-        <span class="mi">45</span><span class="p">,</span>
-        <span class="mi">45</span><span class="p">,</span>
-        <span class="mi">46</span><span class="p">,</span>
-        <span class="mi">47</span><span class="p">,</span>
-        <span class="mi">47</span><span class="p">,</span>
-        <span class="mi">48</span><span class="p">,</span>
-        <span class="mi">49</span><span class="p">,</span>
-        <span class="mi">46</span><span class="p">,</span>
-        <span class="mi">47</span><span class="p">,</span>
-        <span class="mi">47</span><span class="p">,</span>
-        <span class="mi">48</span><span class="p">,</span>
-        <span class="mi">49</span><span class="p">,</span>
-    <span class="p">]</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">185</span><span class="p">,</span> <span class="mi">209</span><span class="p">):</span>
         <span class="n">index</span> <span class="o">=</span> <span class="n">i</span> <span class="o">-</span> <span class="mi">185</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_mat_damper_nonlinear_viscous</span><span class="p">(</span><span class="n">i</span><span class="p">,</span> <span class="n">lcidlist</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">mat</span> <span class="o">=</span> <span class="n">MatDamperNonlinearViscous</span><span class="p">(</span><span class="n">curve</span><span class="o">=</span><span class="n">Curve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">curvedata</span><span class="p">[</span><span class="n">lcidlist</span><span class="p">[</span><span class="n">index</span><span class="p">]][</span><span class="mi">0</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="n">curvedata</span><span class="p">[</span><span class="n">lcidlist</span><span class="p">[</span><span class="n">index</span><span class="p">]][</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">discmatlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">mat</span><span class="p">)</span>
 
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
-        <span class="n">thk</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">,</span> <span class="mf">0.01</span><span class="p">]</span>
-        <span class="n">nip</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">18</span><span class="p">:</span>
-            <span class="n">thk</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">]</span>
-        <span class="k">if</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">20</span> <span class="ow">or</span> <span class="n">i</span> <span class="o">==</span> <span class="mi">21</span><span class="p">:</span>
-            <span class="n">nip</span> <span class="o">=</span> <span class="mi">1</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">create_section_shell</span><span class="p">(</span><span class="n">secid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">elform</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">thick</span><span class="o">=</span><span class="n">thk</span><span class="p">,</span> <span class="n">nip</span><span class="o">=</span><span class="n">nip</span><span class="p">)</span>
+    <span class="c1">#Set part properties</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">23</span><span class="p">):</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="n">ShellPart</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">part</span><span class="o">.</span><span class="n">set_material</span><span class="p">(</span><span class="n">shellmatlist</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+        <span class="n">part</span><span class="o">.</span><span class="n">set_thickness</span><span class="p">(</span><span class="n">shellsec</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+        <span class="n">part</span><span class="o">.</span><span class="n">set_integration_points</span><span class="p">(</span><span class="n">shellsec</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">][</span><span class="mi">1</span><span class="p">])</span>
+        <span class="k">if</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">16</span><span class="p">):</span>
+            <span class="n">part</span><span class="o">.</span><span class="n">set_extra_nodes</span><span class="p">(</span><span class="n">NodeSet</span><span class="p">(</span><span class="n">extra_nodes</span><span class="p">[</span><span class="n">i</span><span class="o">-</span><span class="mi">1</span><span class="p">]))</span>
 
-    <span class="n">dummy</span><span class="o">.</span><span class="n">create_section_discrete</span><span class="p">(</span><span class="n">secid</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">dro</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">16</span><span class="p">,</span> <span class="mi">23</span><span class="p">):</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">set_partproperty</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">101</span><span class="p">,</span> <span class="mi">209</span><span class="p">):</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">set_partproperty</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="mi">101</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
-    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">16</span><span class="p">):</span>
-        <span class="n">dummy</span><span class="o">.</span><span class="n">set_partproperty</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">secid</span><span class="o">=</span><span class="n">i</span><span class="p">,</span> <span class="n">mid</span><span class="o">=</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">index</span> <span class="o">=</span> <span class="n">i</span><span class="o">-</span><span class="mi">101</span>
+        <span class="n">part</span> <span class="o">=</span> <span class="n">DiscretePart</span><span class="p">(</span><span class="n">i</span><span class="p">)</span>
+        <span class="n">part</span><span class="o">.</span><span class="n">set_material</span><span class="p">(</span><span class="n">discmatlist</span><span class="p">[</span><span class="n">index</span><span class="p">])</span>
+        <span class="n">part</span><span class="o">.</span><span class="n">set_displacement_option</span><span class="p">(</span><span class="n">displacement_option</span><span class="o">=</span><span class="n">DRO</span><span class="o">.</span><span class="n">DESCRIBES_TORSIONAL_SPRING</span><span class="p">)</span>
 
-    <span class="n">dummy</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
+    <span class="c1">#Contact</span>
+    <span class="n">fslist</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.62</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mf">0.8</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mf">0.16</span><span class="p">,</span> <span class="mf">0.88</span><span class="p">,</span> <span class="mi">0</span><span class="p">]</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">11</span><span class="p">):</span>
+        <span class="n">contact</span> <span class="o">=</span> <span class="n">Contact</span><span class="p">(</span><span class="n">category</span><span class="o">=</span><span class="n">ContactCategory</span><span class="o">.</span><span class="n">SURFACE_TO_SURFACE_CONTACT</span><span class="p">)</span>
+        <span class="n">contact</span><span class="o">.</span><span class="n">set_friction_coefficient</span><span class="p">(</span><span class="n">static</span><span class="o">=</span><span class="n">fslist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+        <span class="n">surf1</span><span class="o">=</span><span class="n">ContactSurface</span><span class="p">(</span><span class="n">SegmentSet</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="p">]))</span>
+        <span class="n">surf2</span><span class="o">=</span><span class="n">ContactSurface</span><span class="p">(</span><span class="n">SegmentSet</span><span class="p">(</span><span class="n">segments</span><span class="p">[</span><span class="mi">2</span><span class="o">*</span><span class="n">i</span><span class="o">+</span><span class="mi">1</span><span class="p">]))</span>
+        <span class="n">contact</span><span class="o">.</span><span class="n">set_slave_surface</span><span class="p">(</span><span class="n">surf1</span><span class="p">)</span>
+        <span class="n">contact</span><span class="o">.</span><span class="n">set_master_surface</span><span class="p">(</span><span class="n">surf2</span><span class="p">)</span>
+
+    <span class="c1">#Constraint</span>
+    <span class="n">cons</span> <span class="o">=</span> <span class="n">Constraint</span><span class="p">()</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">14</span><span class="p">):</span>
+        <span class="n">cons</span><span class="o">.</span><span class="n">create_joint_spherical</span><span class="p">(</span><span class="n">nodes</span><span class="o">=</span><span class="n">jointlist</span><span class="p">[</span><span class="n">i</span><span class="p">])</span>
+
+    <span class="c1">#Boundary condition</span>
+    <span class="n">bdy</span> <span class="o">=</span> <span class="n">BoundaryCondition</span><span class="p">()</span>
+    <span class="n">bdy</span><span class="o">.</span><span class="n">create_imposed_motion</span><span class="p">(</span><span class="n">NodeSet</span><span class="p">(</span><span class="n">motion_nodes</span><span class="p">),</span><span class="n">Curve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">motion_curve_x</span><span class="p">,</span><span class="n">y</span><span class="o">=</span><span class="n">motion_curve_y</span><span class="p">),</span><span class="n">motion</span><span class="o">=</span><span class="n">Motion</span><span class="o">.</span><span class="n">ACCELERATION</span><span class="p">,</span><span class="n">scalefactor</span><span class="o">=-</span><span class="mi">1</span><span class="p">)</span>
+    <span class="c1">#Load</span>
+    <span class="n">g</span> <span class="o">=</span> <span class="n">Gravity</span><span class="p">(</span><span class="nb">dir</span><span class="o">=</span><span class="n">GravityOption</span><span class="o">.</span><span class="n">DIR_Z</span><span class="p">,</span><span class="n">load</span> <span class="o">=</span> <span class="n">Curve</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mf">0.152</span><span class="p">],</span><span class="n">y</span><span class="o">=</span><span class="p">[</span><span class="mf">9.81</span><span class="p">,</span> <span class="mf">9.81</span><span class="p">]))</span>
+
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">2.5e-3</span><span class="p">)</span>
+    <span class="n">dummy_solution</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>

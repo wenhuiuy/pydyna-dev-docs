@@ -39,12 +39,6 @@ pre.dynaiga.DynaIGA
       DynaIGA.create_damping_global
       
       
-      DynaIGA.create_database_ascii
-      
-      
-      DynaIGA.create_database_binary
-      
-      
       DynaIGA.create_defineorientation
       
       
@@ -52,9 +46,6 @@ pre.dynaiga.DynaIGA
       
       
       DynaIGA.create_hourglass
-      
-      
-      DynaIGA.create_init_vel
       
       
       DynaIGA.create_init_vel_bodies
@@ -99,9 +90,6 @@ pre.dynaiga.DynaIGA
       DynaIGA.get_stub
       
       
-      DynaIGA.open_files
-      
-      
       DynaIGA.save_file
       
       
@@ -117,13 +105,13 @@ pre.dynaiga.DynaIGA
       DynaIGA.set_hourglass
       
       
+      DynaIGA.set_init_velocity
+      
+      
       DynaIGA.set_output_database
       
       
       DynaIGA.set_part_damping_stiffness
-      
-      
-      DynaIGA.set_termination
       
       
       DynaIGA.set_timestep

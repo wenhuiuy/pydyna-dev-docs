@@ -1,6 +1,0 @@
-open\_files
-===========
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.open_files

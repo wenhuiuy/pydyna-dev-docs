@@ -1,0 +1,6 @@
+create\_init\_vel\_bodies
+=========================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.create_init_vel_bodies

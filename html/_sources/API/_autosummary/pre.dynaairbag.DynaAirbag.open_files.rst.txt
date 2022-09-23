@@ -1,6 +1,0 @@
-open\_files
-===========
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.open_files

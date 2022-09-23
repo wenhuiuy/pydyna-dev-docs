@@ -21,6 +21,9 @@ pre.dynabase.Constraint
       Constraint.create_cnrb
       
       
+      Constraint.create_joint_spherical
+      
+      
       Constraint.create_spotweld
       
    
@@ -35,6 +38,9 @@ pre.dynabase.Constraint
    
       
       Constraint.cnrbsetidlist
+      
+      
+      Constraint.jointsphericallist
       
    
    

@@ -1,6 +1,0 @@
-create\_load\_body
-==================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_load_body

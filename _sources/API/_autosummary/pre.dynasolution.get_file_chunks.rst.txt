@@ -1,0 +1,6 @@
+get\_file\_chunks
+=================
+
+.. currentmodule:: pre.dynasolution
+
+.. autofunction:: get_file_chunks

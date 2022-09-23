@@ -1,0 +1,6 @@
+create\_load\_body
+==================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.create_load_body

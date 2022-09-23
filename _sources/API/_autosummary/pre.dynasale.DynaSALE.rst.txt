@@ -39,12 +39,6 @@ pre.dynasale.DynaSALE
       DynaSALE.create_damping_global
       
       
-      DynaSALE.create_database_ascii
-      
-      
-      DynaSALE.create_database_binary
-      
-      
       DynaSALE.create_defineorientation
       
       
@@ -52,9 +46,6 @@ pre.dynasale.DynaSALE
       
       
       DynaSALE.create_hourglass
-      
-      
-      DynaSALE.create_init_vel
       
       
       DynaSALE.create_init_vel_bodies
@@ -99,9 +90,6 @@ pre.dynasale.DynaSALE
       DynaSALE.get_stub
       
       
-      DynaSALE.open_files
-      
-      
       DynaSALE.save_file
       
       
@@ -118,6 +106,9 @@ pre.dynasale.DynaSALE
       
       
       DynaSALE.set_hourglass
+      
+      
+      DynaSALE.set_init_velocity
       
       
       DynaSALE.set_output_database

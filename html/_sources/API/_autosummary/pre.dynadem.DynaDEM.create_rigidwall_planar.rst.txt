@@ -1,0 +1,6 @@
+create\_rigidwall\_planar
+=========================
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.create_rigidwall_planar

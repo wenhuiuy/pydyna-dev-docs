@@ -1,6 +1,0 @@
-create\_init\_vel
-=================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_init_vel

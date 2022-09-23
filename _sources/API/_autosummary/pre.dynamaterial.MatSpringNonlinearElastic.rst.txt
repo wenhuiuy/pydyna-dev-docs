@@ -1,0 +1,25 @@
+pre.dynamaterial.MatSpringNonlinearElastic
+==========================================
+
+.. currentmodule:: pre.dynamaterial
+
+.. autoclass:: MatSpringNonlinearElastic
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      MatSpringNonlinearElastic.create
+      
+   
+   
+
+   
+   
+   

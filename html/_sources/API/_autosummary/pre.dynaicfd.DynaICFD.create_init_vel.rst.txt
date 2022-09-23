@@ -1,6 +1,0 @@
-create\_init\_vel
-=================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_init_vel

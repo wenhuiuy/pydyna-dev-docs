@@ -1,0 +1,6 @@
+create\_hourglass
+=================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.create_hourglass

@@ -15,7 +15,13 @@ pre.dynabase.ShellPart
    
       
       
+      ShellPart.set_des_surface
+      
+      
       ShellPart.set_element_formulation
+      
+      
+      ShellPart.set_extra_nodes
       
       
       ShellPart.set_hourglass
@@ -33,7 +39,13 @@ pre.dynabase.ShellPart
       ShellPart.set_property
       
       
+      ShellPart.set_rigidbody_initial_velocity
+      
+      
       ShellPart.set_shear_factor
+      
+      
+      ShellPart.set_stiffness_damping_coefficient
       
       
       ShellPart.set_thickness

@@ -1,0 +1,41 @@
+﻿pre.dynasolution
+================
+
+.. automodule:: pre.dynasolution
+  
+   
+   
+   
+
+   
+   
+   .. rubric:: Functions
+
+   .. autosummary::
+      :toctree:
+   
+      download
+      get_file_chunks
+      init_log
+      upload
+   
+   
+
+   
+   
+   .. rubric:: Classes
+
+   .. autosummary::
+      :toctree:
+      :template: custom-class-template.rst
+   
+      DynaSolution
+   
+   
+
+   
+   
+   
+
+
+

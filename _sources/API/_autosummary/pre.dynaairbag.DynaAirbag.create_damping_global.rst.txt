@@ -1,6 +1,0 @@
-create\_damping\_global
-=======================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_damping_global

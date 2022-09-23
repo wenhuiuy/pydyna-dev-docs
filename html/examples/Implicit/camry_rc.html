@@ -44,7 +44,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="SALE examples" href="../SALE/index.html" />
@@ -402,16 +402,18 @@ to download the full example code</p>
 <span class="kn">from</span> <span class="nn">re</span> <span class="kn">import</span> <span class="n">X</span>
 <span class="kn">import</span> <span class="nn">sys</span>
 
-<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../ansys/dyna&#39;</span><span class="p">))</span>
-<span class="kn">from</span> <span class="nn">pre.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
-<span class="kn">from</span> <span class="nn">pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.join" title="os.path.join" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">join</span></a><span class="p">(</span><a href="https://docs.python.org/dev/library/os.path.html#os.path.dirname" title="os.path.dirname" class="sphx-glr-backref-module-os-path sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">dirname</span></a><span class="p">(</span><span class="vm">__file__</span><span class="p">),</span><span class="s1">&#39;../../&#39;</span><span class="p">))</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynasolution</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamech</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">ansys.dyna.pre.dynamaterial</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">camry_rc_data</span> <span class="kn">import</span> <span class="o">*</span>
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>
     <span class="n">hostname</span> <span class="o">=</span> <span class="s2">&quot;localhost&quot;</span>
     <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
         <span class="n">hostname</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/sys.html#sys.argv" title="sys.argv" class="sphx-glr-backref-module-sys sphx-glr-backref-type-py-data"><span class="n">sys</span><span class="o">.</span><span class="n">argv</span></a><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
-    <span class="n">camry</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="p">(</span><span class="n">hostname</span><span class="o">=</span><span class="n">hostname</span><span class="p">)</span>
+
+    <span class="n">camry_solution</span> <span class="o">=</span> <span class="n">DynaSolution</span><span class="p">(</span><span class="n">hostname</span><span class="p">)</span>
     <span class="c1">#Import the initial mesh data(nodes and elements)</span>
     <span class="n">fns</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="n">path</span> <span class="o">=</span> <a href="https://docs.python.org/dev/library/os.html#os.getcwd" title="os.getcwd" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-function"><span class="n">os</span><span class="o">.</span><span class="n">getcwd</span></a><span class="p">()</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a> <span class="o">+</span> <span class="s2">&quot;input&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a><span class="o">+</span> <span class="s2">&quot;camry_rc&quot;</span> <span class="o">+</span> <a href="https://docs.python.org/dev/library/os.html#os.sep" title="os.sep" class="sphx-glr-backref-module-os sphx-glr-backref-type-py-data"><span class="n">os</span><span class="o">.</span><span class="n">sep</span></a>
@@ -422,10 +424,14 @@ to download the full example code</p>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;roof_welds.k&quot;</span><span class="p">)</span>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;weld7.k&quot;</span><span class="p">)</span>
     <span class="n">fns</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">path</span> <span class="o">+</span> <span class="s2">&quot;xtra_sw.k&quot;</span><span class="p">)</span>
-    <span class="n">camry</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
+    <span class="n">camry_solution</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="n">fns</span><span class="p">)</span>
 
     <span class="c1">#global setting</span>
-    <span class="n">camry</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">camry_solution</span><span class="o">.</span><span class="n">set_termination</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+    <span class="n">camry_solution</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
+
+    <span class="n">camry</span> <span class="o">=</span> <span class="n">DynaMech</span><span class="p">()</span>
+    <span class="n">camry_solution</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">camry</span><span class="p">)</span>
 
     <span class="n">analysis</span> <span class="o">=</span> <span class="n">ImplicitAnalysis</span><span class="p">(</span><span class="n">initial_timestep_size</span><span class="o">=</span><span class="mf">0.1</span><span class="p">)</span>
     <span class="n">analysis</span><span class="o">.</span><span class="n">set_timestep</span><span class="p">(</span><span class="n">control_flag</span><span class="o">=</span><span class="n">TimestepCtrol</span><span class="o">.</span><span class="n">AUTOMATICALLY_ADJUST_TIMESTEP_SIZE</span><span class="p">,</span><span class="n">Optimum_equilibrium_iteration_count</span><span class="o">=</span><span class="mi">511</span><span class="p">)</span>
@@ -547,10 +553,9 @@ to download the full example code</p>
     <span class="n">bdy</span><span class="o">.</span><span class="n">create_imposed_motion</span><span class="p">(</span><span class="n">platen</span><span class="p">,</span><span class="n">crv</span><span class="p">,</span><span class="n">dof</span><span class="o">=</span><span class="n">DOF</span><span class="o">.</span><span class="n">Y_TRANSLATIONAL</span><span class="p">,</span><span class="n">scalefactor</span><span class="o">=-</span><span class="mf">0.0802216</span><span class="p">)</span>
     <span class="n">bdy</span><span class="o">.</span><span class="n">create_imposed_motion</span><span class="p">(</span><span class="n">platen</span><span class="p">,</span><span class="n">crv</span><span class="p">,</span><span class="n">dof</span><span class="o">=</span><span class="n">DOF</span><span class="o">.</span><span class="n">Z_TRANSLATIONAL</span><span class="p">,</span><span class="n">scalefactor</span><span class="o">=-</span><span class="mf">0.0802216</span><span class="p">)</span>
 
-    <span class="n">camry</span><span class="o">.</span><span class="n">create_database_binary</span><span class="p">(</span><span class="n">dt</span><span class="o">=</span><span class="mf">0.001</span><span class="p">)</span>
     <span class="n">camry</span><span class="o">.</span><span class="n">set_output_database</span><span class="p">(</span><span class="n">elout</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">glstat</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">matsum</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">nodout</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">rbdout</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">rcforc</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">,</span><span class="n">secforc</span><span class="o">=</span><span class="mf">0.0001</span><span class="p">)</span>
 
-    <span class="n">camry</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
+    <span class="n">camry_solution</span><span class="o">.</span><span class="n">save_file</span><span class="p">()</span>
 </pre></div>
 </div>
 <p class="sphx-glr-timing"><strong>Total running time of the script:</strong> ( 0 minutes  0.000 seconds)</p>

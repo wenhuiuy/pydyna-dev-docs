@@ -1,6 +1,0 @@
-create\_rigidwall\_planar
-=========================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_rigidwall_planar

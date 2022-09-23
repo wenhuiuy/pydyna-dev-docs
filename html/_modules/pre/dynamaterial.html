@@ -43,7 +43,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,9 +221,9 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa : F403</span>
 
 
 <div class="viewcode-block" id="Air"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.Air.html#pre.dynamaterial.Air">[docs]</a><span class="k">class</span> <span class="nc">Air</span><span class="p">:</span>
@@ -249,6 +249,7 @@
 <span class="sd">    bool</span>
 <span class="sd">        &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">mass_density</span><span class="o">=</span><span class="mf">1.280e-03</span><span class="p">,</span>
@@ -257,7 +258,7 @@
         <span class="n">initial_relative_volume</span><span class="o">=</span><span class="mf">1.0</span><span class="p">,</span>
         <span class="n">equation_coefficient</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mf">0.4</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span>
     <span class="p">):</span>
-        
+
         <span class="bp">self</span><span class="o">.</span><span class="n">mass_density</span> <span class="o">=</span> <span class="n">mass_density</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">pressure_cutoff</span> <span class="o">=</span> <span class="n">pressure_cutoff</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">initial_internal_energy</span> <span class="o">=</span> <span class="n">initial_internal_energy</span>
@@ -274,9 +275,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eos_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">eosid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatNull</span><span class="p">(</span>
-            <span class="n">MatNullRequest</span><span class="p">(</span><span class="n">ro</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mass_density</span><span class="p">,</span> <span class="n">pc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pressure_cutoff</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatNull</span><span class="p">(</span><span class="n">MatNullRequest</span><span class="p">(</span><span class="n">ro</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">mass_density</span><span class="p">,</span> <span class="n">pc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pressure_cutoff</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;air&quot;</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span></div></div>
@@ -290,6 +289,7 @@
 <span class="sd">    bool</span>
 <span class="sd">        &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">mass_density</span><span class="o">=</span><span class="mf">8.96</span><span class="p">,</span>
@@ -309,7 +309,7 @@
         <span class="n">volume_correction_coefficient</span><span class="o">=</span><span class="mf">0.47</span><span class="p">,</span>
         <span class="n">initial_internal_energy</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">):</span>
-        
+
         <span class="bp">self</span><span class="o">.</span><span class="n">mass_density</span> <span class="o">=</span> <span class="n">mass_density</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">shear_modulus</span> <span class="o">=</span> <span class="n">shear_modulus</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">youngs_modulus</span> <span class="o">=</span> <span class="n">youngs_modulus</span>
@@ -372,6 +372,7 @@
 <span class="sd">    bool</span>
 <span class="sd">        &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="n">mass_density</span><span class="o">=</span><span class="mf">1.835</span><span class="p">,</span>
@@ -394,9 +395,7 @@
             <span class="p">)</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateEOSJWL</span><span class="p">(</span>
-            <span class="n">EOSJWLRequest</span><span class="p">(</span><span class="n">jwl_equation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">jwl_equation_parameters</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateEOSJWL</span><span class="p">(</span><span class="n">EOSJWLRequest</span><span class="p">(</span><span class="n">jwl_equation</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">jwl_equation_parameters</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eos_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">eosid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;HE&quot;</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span></div></div>
@@ -409,20 +408,19 @@
 <span class="sd">    ----------</span>
 <span class="sd">    estimated_material_density : float</span>
 <span class="sd">        Estimated material density.</span>
-<span class="sd">    </span>
+
 <span class="sd">    Returns</span>
 <span class="sd">    -------</span>
 <span class="sd">    bool</span>
 <span class="sd">        &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">estimated_material_density</span><span class="o">=</span><span class="mf">1e-9</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">estimated_material_density</span> <span class="o">=</span> <span class="n">estimated_material_density</span>
 
 <div class="viewcode-block" id="Vacuum.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.Vacuum.create.html#pre.dynamaterial.Vacuum.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create null material.&quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatVacuum</span><span class="p">(</span>
-            <span class="n">MatVacuumRequest</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">estimated_material_density</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatVacuum</span><span class="p">(</span><span class="n">MatVacuumRequest</span><span class="p">(</span><span class="n">rho</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">estimated_material_density</span><span class="p">))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">eos_id</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;vacuum&quot;</span>
@@ -457,10 +455,9 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">em</span> <span class="o">=</span> <span class="kc">False</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">thermal</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="MatAdditional.set_electromagnetic_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatAdditional.set_electromagnetic_property.html#pre.dynamaterial.MatAdditional.set_electromagnetic_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_electromagnetic_property</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">material_type</span><span class="o">=</span><span class="n">EMMATTYPE</span><span class="o">.</span><span class="n">CONDUCTOR</span><span class="p">,</span> <span class="n">initial_conductivity</span><span class="o">=</span><span class="mi">0</span>
-    <span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Define the electromagnetic material type and properties for a material whose permeability equals the free space permeability.&quot;&quot;&quot;</span>
+<div class="viewcode-block" id="MatAdditional.set_electromagnetic_property"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatAdditional.set_electromagnetic_property.html#pre.dynamaterial.MatAdditional.set_electromagnetic_property">[docs]</a>    <span class="k">def</span> <span class="nf">set_electromagnetic_property</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">material_type</span><span class="o">=</span><span class="n">EMMATTYPE</span><span class="o">.</span><span class="n">CONDUCTOR</span><span class="p">,</span> <span class="n">initial_conductivity</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Define the electromagnetic material type and properties</span>
+<span class="sd">        for a material whose permeability equals the free space permeability.&quot;&quot;&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">em</span> <span class="o">=</span> <span class="kc">True</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">em_material_type</span> <span class="o">=</span> <span class="n">material_type</span><span class="o">.</span><span class="n">value</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">em_initial_conductivity</span> <span class="o">=</span> <span class="n">initial_conductivity</span></div>
@@ -535,7 +532,9 @@
 
 
 <div class="viewcode-block" id="MatPiecewiseLinearPlasticity"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatPiecewiseLinearPlasticity.html#pre.dynamaterial.MatPiecewiseLinearPlasticity">[docs]</a><span class="k">class</span> <span class="nc">MatPiecewiseLinearPlasticity</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Define an elasto-plastic material with an arbitrary stress as a function of strain curve that can also have an arbitrary strain rate dependency.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Define an elasto-plastic material with an arbitrary stress</span>
+<span class="sd">    as a function of strain curve that can also have an arbitrary</span>
+<span class="sd">    strain rate dependency.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -554,9 +553,7 @@
 <div class="viewcode-block" id="MatPiecewiseLinearPlasticity.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatPiecewiseLinearPlasticity.create.html#pre.dynamaterial.MatPiecewiseLinearPlasticity.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create piecewise linear plasticity material.&quot;&quot;&quot;</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatPiecewiseLinearPlasticity</span><span class="p">(</span>
-            <span class="n">MatPiecewiseLinearPlasticityRequest</span><span class="p">(</span>
-                <span class="n">ro</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ro</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">,</span> <span class="n">sigy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sigy</span><span class="p">,</span> <span class="n">etan</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">etan</span>
-            <span class="p">)</span>
+            <span class="n">MatPiecewiseLinearPlasticityRequest</span><span class="p">(</span><span class="n">ro</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">ro</span><span class="p">,</span> <span class="n">e</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">e</span><span class="p">,</span> <span class="n">pr</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">pr</span><span class="p">,</span> <span class="n">sigy</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">sigy</span><span class="p">,</span> <span class="n">etan</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">etan</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="s2">&quot;Piecewise Linear Plasticity&quot;</span>
@@ -564,7 +561,8 @@
 
 
 <div class="viewcode-block" id="MatModifiedPiecewiseLinearPlasticity"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatModifiedPiecewiseLinearPlasticity.html#pre.dynamaterial.MatModifiedPiecewiseLinearPlasticity">[docs]</a><span class="k">class</span> <span class="nc">MatModifiedPiecewiseLinearPlasticity</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Define an elasto-plastic material supporting an arbitrary stress as a function of strain curve as well as arbitrary strain rate dependency.&quot;&quot;&quot;</span>
+    <span class="sd">&quot;&quot;&quot;Define an elasto-plastic material supporting an arbitrary</span>
+<span class="sd">    stress as a function of strain curve as well as arbitrary strain rate dependency.&quot;&quot;&quot;</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -693,6 +691,57 @@
         <span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Material Fabric Created...&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="MatSpringNonlinearElastic"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.html#pre.dynamaterial.MatSpringNonlinearElastic">[docs]</a><span class="k">class</span> <span class="nc">MatSpringNonlinearElastic</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Provide a nonlinear elastic translational and rotational spring with arbitrary force as a function of displacement and moment as a function of rotation.</span>
+<span class="sd">        </span>
+<span class="sd">        Parameters</span>
+<span class="sd">        ----------</span>
+<span class="sd">        curve : Curve</span>
+<span class="sd">            Load curve describing force as a function of displacement or moment as a function of rotation relationship.</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">curve</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span>
+
+<div class="viewcode-block" id="MatSpringNonlinearElastic.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatSpringNonlinearElastic.create.html#pre.dynamaterial.MatSpringNonlinearElastic.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create material spring nonlinear elastic.&quot;&quot;&quot;</span>
+        <span class="n">lcid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">stub</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatSpringNonlinearElastic</span><span class="p">(</span>
+            <span class="n">MatSpringNonlinearElasticRequest</span><span class="p">(</span><span class="n">lcid</span><span class="o">=</span><span class="n">lcid</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Material Spring Nonlinear Elastic Created...&quot;</span><span class="p">)</span> </div></div>
+
+<div class="viewcode-block" id="MatDamperViscous"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatDamperViscous.html#pre.dynamaterial.MatDamperViscous">[docs]</a><span class="k">class</span> <span class="nc">MatDamperViscous</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Provide a linear translational or rotational damper located between two nodes.&quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">damping_constant</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">dc</span> <span class="o">=</span> <span class="n">damping_constant</span>
+
+<div class="viewcode-block" id="MatDamperViscous.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatDamperViscous.create.html#pre.dynamaterial.MatDamperViscous.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create material damper viscous.&quot;&quot;&quot;</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatDamperViscous</span><span class="p">(</span><span class="n">MatDamperViscousRequest</span><span class="p">(</span> <span class="n">dc</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">dc</span><span class="p">))</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Material damper viscous Created...&quot;</span><span class="p">)</span></div></div>
+
+<div class="viewcode-block" id="MatDamperNonlinearViscous"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.html#pre.dynamaterial.MatDamperNonlinearViscous">[docs]</a><span class="k">class</span> <span class="nc">MatDamperNonlinearViscous</span><span class="p">:</span>
+    <span class="sd">&quot;&quot;&quot;Provide a viscous translational damper with an arbitrary force as a function of velocity dependency or a rotational damper with an arbitrary moment as a function of rotational velocity dependency.</span>
+<span class="sd">    </span>
+<span class="sd">    Parameters</span>
+<span class="sd">    ----------</span>
+<span class="sd">    curve : Curve</span>
+<span class="sd">        Load curve defining force as a function of rate-of-displacement relationship or a moment as a function of rate-of-rotation relationship.</span>
+<span class="sd">    &quot;&quot;&quot;</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span><span class="n">curve</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">curve</span> <span class="o">=</span> <span class="n">curve</span>
+
+<div class="viewcode-block" id="MatDamperNonlinearViscous.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynamaterial.MatDamperNonlinearViscous.create.html#pre.dynamaterial.MatDamperNonlinearViscous.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create material damper nonlinear viscous.&quot;&quot;&quot;</span>
+        <span class="n">lcdr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">curve</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="n">stub</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="n">stub</span><span class="o">.</span><span class="n">CreateMatDamperNonlinearViscous</span><span class="p">(</span>
+            <span class="n">MatDamperNonlinearViscousRequest</span><span class="p">(</span> <span class="n">lcdr</span><span class="o">=</span><span class="n">lcdr</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">material_id</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">mid</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Material damper viscous Created...&quot;</span><span class="p">)</span> </div></div>
 </pre></div>
 
               </article>

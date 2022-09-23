@@ -43,7 +43,7 @@
     <script src="../../_static/underscore.js"></script>
     <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
     <script src="../../_static/doctools.js"></script>
-    <link rel="shortcut icon" href="../../_static/favicon.png"/>
+    <link rel="shortcut icon" href="../../_static/ansys-favicon.png"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -221,9 +221,9 @@
 <span class="sd">&quot;&quot;&quot;</span>
 
 <span class="kn">import</span> <span class="nn">logging</span>
-
-<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span>
+
+<span class="kn">from</span> <span class="nn">.dynabase</span> <span class="kn">import</span> <span class="o">*</span>  <span class="c1"># noqa : F403</span>
 
 
 <div class="viewcode-block" id="AdvectionMethod"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.AdvectionMethod.html#pre.dynasale.AdvectionMethod">[docs]</a><span class="k">class</span> <span class="nc">AdvectionMethod</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
@@ -240,16 +240,17 @@
 
 <div class="viewcode-block" id="ControlPoint"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.ControlPoint.html#pre.dynasale.ControlPoint">[docs]</a><span class="k">class</span> <span class="nc">ControlPoint</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Provide spacing information to generate a 3D structured ALE mesh.</span>
-<span class="sd">        </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    number : int</span>
 <span class="sd">        Control point node number.</span>
 <span class="sd">    position : float</span>
 <span class="sd">        Control point position.</span>
-<span class="sd">    ratio : float   </span>
+<span class="sd">    ratio : float</span>
 <span class="sd">        Ratio for progressive mesh spacing.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number</span><span class="p">,</span> <span class="n">position</span><span class="p">,</span> <span class="n">ratio</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">number</span> <span class="o">=</span> <span class="n">number</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
@@ -258,7 +259,7 @@
 
 <div class="viewcode-block" id="StructuredMesh"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.html#pre.dynasale.StructuredMesh">[docs]</a><span class="k">class</span> <span class="nc">StructuredMesh</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Generate a structured 2D or 3D mesh and invoke the Structured ALE (S-ALE) solver.</span>
-<span class="sd">        </span>
+
 <span class="sd">    Parameters</span>
 <span class="sd">    ----------</span>
 <span class="sd">    meshid : int</span>
@@ -266,6 +267,7 @@
 <span class="sd">    partid : int</span>
 <span class="sd">        Default Part ID. The elements generated are assigned to DPID.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
+
     <span class="n">num_meshpart</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">,</span> <span class="n">meshid</span><span class="p">,</span> <span class="n">partid</span><span class="p">):</span>
@@ -285,7 +287,7 @@
         <span class="n">reference_pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Perform volume filling operations on a structured ALE mesh.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        material_name : string</span>
@@ -334,7 +336,7 @@
 
 <div class="viewcode-block" id="StructuredMesh.refine"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.refine.html#pre.dynasale.StructuredMesh.refine">[docs]</a>    <span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refine_factor_x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">refine_factor_y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">refine_factor_z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Refine existing structured ALE (S-ALE) meshes.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        refine_factor_x/y/y : int</span>
@@ -358,21 +360,19 @@
 
 <div class="viewcode-block" id="StructuredMesh.initial_detonation"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.initial_detonation.html#pre.dynasale.StructuredMesh.initial_detonation">[docs]</a>    <span class="k">def</span> <span class="nf">initial_detonation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detonation_point</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define points to initiate the location of high explosive detonations.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        detonation_point : list [x,y,z]</span>
 <span class="sd">            x,y,z-coordinate of detonation point.</span>
-<span class="sd">            </span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">partid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">partid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateInitDetonation</span><span class="p">(</span>
-            <span class="n">InitDetonationRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="n">detonation_point</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateInitDetonation</span><span class="p">(</span><span class="n">InitDetonationRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="n">detonation_point</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location of high explosive detonation Defined...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div></div>
 
@@ -380,14 +380,13 @@
 <div class="viewcode-block" id="DynaSALE"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.html#pre.dynasale.DynaSALE">[docs]</a><span class="k">class</span> <span class="nc">DynaSALE</span><span class="p">(</span><span class="n">DynaBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Setup SALE simulation process.&quot;&quot;&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="o">=</span><span class="s2">&quot;localhost&quot;</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="p">[]):</span>
-        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">hostname</span><span class="p">)</span>
-        <span class="n">DynaBase</span><span class="o">.</span><span class="n">open_files</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">filenames</span><span class="o">=</span><span class="n">filenames</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBSALE</span><span class="p">(</span><span class="n">DBSALERequest</span><span class="p">(</span><span class="n">switch</span><span class="o">=</span><span class="mi">1</span><span class="p">))</span>
 
 <div class="viewcode-block" id="DynaSALE.set_termination"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_termination.html#pre.dynasale.DynaSALE.set_termination">[docs]</a>    <span class="k">def</span> <span class="nf">set_termination</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">endtime</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setting termination time to stop the job.</span>
-<span class="sd">    </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        termination_time : float</span>
@@ -402,7 +401,7 @@
 
 <div class="viewcode-block" id="DynaSALE.set_output_interval"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_output_interval.html#pre.dynasale.DynaSALE.set_output_interval">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_interval</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">database_plot_interval</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Request binary output.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        database_plot_interval : float</span>
@@ -413,9 +412,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBBinary</span><span class="p">(</span>
-            <span class="n">DBBinaryRequest</span><span class="p">(</span><span class="n">filetype</span><span class="o">=</span><span class="s2">&quot;D3PLOT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">database_plot_interval</span><span class="p">)</span>
-        <span class="p">)</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBBinary</span><span class="p">(</span><span class="n">DBBinaryRequest</span><span class="p">(</span><span class="n">filetype</span><span class="o">=</span><span class="s2">&quot;D3PLOT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">database_plot_interval</span><span class="p">))</span></div>
 
 <div class="viewcode-block" id="DynaSALE.set_analysis_type"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_analysis_type.html#pre.dynasale.DynaSALE.set_analysis_type">[docs]</a>    <span class="k">def</span> <span class="nf">set_analysis_type</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -424,7 +421,7 @@
         <span class="n">background_pressure</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span>
     <span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Setup analysis type.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        num_of_cycle : float</span>
@@ -456,13 +453,14 @@
 
 <div class="viewcode-block" id="DynaSALE.create_mesh"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.create_mesh.html#pre.dynasale.DynaSALE.create_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">create_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control_points_x</span><span class="p">,</span> <span class="n">control_points_y</span><span class="p">,</span> <span class="n">control_points_z</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Create mesh.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        control_points_x/y/z : list [[N1,X1,ratio1],[N2,X2,ratio2],...]</span>
-<span class="sd">            Defines a one-dimensional mesh using control points. Each control point consists of a node number (N) and a coordinate (X).</span>
+<span class="sd">            Defines a one-dimensional mesh using control points. Each control point</span>
+<span class="sd">            consists of a node number (N) and a coordinate (X).</span>
 <span class="sd">            ratio : Ratio for progressive mesh spacing.</span>
-<span class="sd">            </span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
@@ -491,27 +489,19 @@
             <span class="n">ratioz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
 
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span>
-                <span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nx</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xx</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratiox</span>
-            <span class="p">)</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nx</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xx</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratiox</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">cpidx</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span>
-                <span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">ny</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioy</span>
-            <span class="p">)</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">ny</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioy</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">cpidy</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span>
-                <span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xz</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioz</span>
-            <span class="p">)</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xz</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioz</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">cpidz</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMesh</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshRequest</span><span class="p">(</span>
-                <span class="n">nbid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">ebid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">cpidx</span><span class="o">=</span><span class="n">cpidx</span><span class="p">,</span> <span class="n">cpidy</span><span class="o">=</span><span class="n">cpidy</span><span class="p">,</span> <span class="n">cpidz</span><span class="o">=</span><span class="n">cpidz</span>
-            <span class="p">)</span>
+            <span class="n">ALECreateStructuredMeshRequest</span><span class="p">(</span><span class="n">nbid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">ebid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">cpidx</span><span class="o">=</span><span class="n">cpidx</span><span class="p">,</span> <span class="n">cpidy</span><span class="o">=</span><span class="n">cpidy</span><span class="p">,</span> <span class="n">cpidz</span><span class="o">=</span><span class="n">cpidz</span><span class="p">)</span>
         <span class="p">)</span>
         <span class="n">meshid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">meshid</span>
         <span class="n">partid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">partid</span>
@@ -522,27 +512,23 @@
 
 <div class="viewcode-block" id="DynaSALE.set_output_database"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_output_database.html#pre.dynasale.DynaSALE.set_output_database">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">matsum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">glstat</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Obtain output files containing results information.</span>
-<span class="sd">        </span>
+
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
 <span class="sd">        matsum : float</span>
 <span class="sd">            Time interval between outputs of part energies.</span>
 <span class="sd">        glstat : float</span>
 <span class="sd">            Time interval between outputs of global statistics and energies.</span>
-<span class="sd">            </span>
+
 <span class="sd">        Returns</span>
 <span class="sd">        -------</span>
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="n">matsum</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBAscii</span><span class="p">(</span>
-                <span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;MATSUM&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">matsum</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBAscii</span><span class="p">(</span><span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;MATSUM&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">matsum</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
         <span class="k">if</span> <span class="n">glstat</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBAscii</span><span class="p">(</span>
-                <span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;GLSTAT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">glstat</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBAscii</span><span class="p">(</span><span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;GLSTAT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">glstat</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Output Setting...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div></div>

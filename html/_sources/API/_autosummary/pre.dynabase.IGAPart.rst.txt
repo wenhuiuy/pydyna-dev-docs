@@ -18,13 +18,22 @@ pre.dynabase.IGAPart
       IGAPart.set_element_formulation
       
       
+      IGAPart.set_extra_nodes
+      
+      
       IGAPart.set_material
       
       
       IGAPart.set_property
       
       
+      IGAPart.set_rigidbody_initial_velocity
+      
+      
       IGAPart.set_shear_factor
+      
+      
+      IGAPart.set_stiffness_damping_coefficient
       
       
       IGAPart.set_thickness

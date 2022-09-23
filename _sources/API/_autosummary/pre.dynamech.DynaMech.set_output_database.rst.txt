@@ -1,0 +1,6 @@
+set\_output\_database
+=====================
+
+.. currentmodule:: pre.dynamech
+
+.. automethod:: DynaMech.set_output_database

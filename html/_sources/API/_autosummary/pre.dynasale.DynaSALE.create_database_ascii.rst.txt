@@ -1,6 +1,0 @@
-create\_database\_ascii
-=======================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_database_ascii

@@ -1,6 +1,0 @@
-create\_database\_ascii
-=======================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_database_ascii

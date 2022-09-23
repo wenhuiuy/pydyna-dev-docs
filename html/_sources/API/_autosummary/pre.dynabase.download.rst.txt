@@ -1,6 +1,0 @@
-download
-========
-
-.. currentmodule:: pre.dynabase
-
-.. autofunction:: download

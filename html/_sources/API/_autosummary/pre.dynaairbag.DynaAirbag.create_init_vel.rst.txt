@@ -1,6 +1,0 @@
-create\_init\_vel
-=================
-
-.. currentmodule:: pre.dynaairbag
-
-.. automethod:: DynaAirbag.create_init_vel
