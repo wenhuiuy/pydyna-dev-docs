@@ -25,13 +25,4 @@ pre.dynabase.RigidwallCylinder
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      RigidwallCylinder.rwlist
-      
-   
    

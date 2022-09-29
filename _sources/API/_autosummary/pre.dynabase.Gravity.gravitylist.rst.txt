@@ -1,6 +1,0 @@
-gravitylist
-===========
-
-.. currentmodule:: pre.dynabase
-
-.. autoattribute:: Gravity.gravitylist

@@ -55,13 +55,4 @@ pre.dynabase.ShellPart
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      ShellPart.partlist
-      
-   
    

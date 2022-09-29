@@ -1,6 +1,0 @@
-set\_init\_velocity
-===================
-
-.. currentmodule:: pre.dynadem
-
-.. automethod:: DynaDEM.set_init_velocity

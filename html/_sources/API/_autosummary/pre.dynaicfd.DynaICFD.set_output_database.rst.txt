@@ -1,6 +1,0 @@
-set\_output\_database
-=====================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.set_output_database

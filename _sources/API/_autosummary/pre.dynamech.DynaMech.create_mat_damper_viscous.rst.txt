@@ -1,6 +1,0 @@
-create\_mat\_damper\_viscous
-============================
-
-.. currentmodule:: pre.dynamech
-
-.. automethod:: DynaMech.create_mat_damper_viscous

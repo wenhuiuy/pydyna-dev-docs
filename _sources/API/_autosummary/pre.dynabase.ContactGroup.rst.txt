@@ -1,0 +1,28 @@
+pre.dynabase.ContactGroup
+=========================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: ContactGroup
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      ContactGroup.add
+      
+      
+      ContactGroup.create
+      
+   
+   
+
+   
+   
+   

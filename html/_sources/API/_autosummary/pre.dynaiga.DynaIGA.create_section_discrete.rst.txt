@@ -1,6 +1,0 @@
-create\_section\_discrete
-=========================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_section_discrete

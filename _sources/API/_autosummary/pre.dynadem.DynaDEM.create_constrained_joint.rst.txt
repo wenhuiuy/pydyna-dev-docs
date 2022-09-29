@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynadem
-
-.. automethod:: DynaDEM.create_constrained_joint

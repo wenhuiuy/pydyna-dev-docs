@@ -14,6 +14,9 @@ pre.dynabase.RigidwallPlanar
       :toctree:
    
       
+      
+      RigidwallPlanar.create
+      
    
    
 

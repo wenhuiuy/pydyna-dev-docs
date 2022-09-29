@@ -1,6 +1,0 @@
-create\_init\_vel\_bodies
-=========================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_init_vel_bodies

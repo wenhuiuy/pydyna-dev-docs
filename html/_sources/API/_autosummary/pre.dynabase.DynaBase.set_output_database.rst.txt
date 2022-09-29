@@ -1,6 +1,0 @@
-set\_output\_database
-=====================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.set_output_database

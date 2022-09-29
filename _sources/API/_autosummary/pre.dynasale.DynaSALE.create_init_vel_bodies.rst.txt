@@ -1,6 +1,0 @@
-create\_init\_vel\_bodies
-=========================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_init_vel_bodies

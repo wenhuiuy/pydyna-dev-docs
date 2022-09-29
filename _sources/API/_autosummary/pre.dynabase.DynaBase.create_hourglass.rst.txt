@@ -1,6 +1,0 @@
-create\_hourglass
-=================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_hourglass

@@ -15,6 +15,9 @@ pre.dynasale.StructuredMesh
    
       
       
+      StructuredMesh.create
+      
+      
       StructuredMesh.fill
       
       
@@ -27,14 +30,5 @@ pre.dynasale.StructuredMesh
    
 
    
-   
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      StructuredMesh.num_meshpart
-      
    
    

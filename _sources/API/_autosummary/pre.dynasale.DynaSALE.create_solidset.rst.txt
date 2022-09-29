@@ -1,6 +1,0 @@
-create\_solidset
-================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_solidset

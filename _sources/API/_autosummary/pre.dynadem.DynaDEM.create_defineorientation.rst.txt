@@ -1,6 +1,0 @@
-create\_defineorientation
-=========================
-
-.. currentmodule:: pre.dynadem
-
-.. automethod:: DynaDEM.create_defineorientation

@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_constrained_joint

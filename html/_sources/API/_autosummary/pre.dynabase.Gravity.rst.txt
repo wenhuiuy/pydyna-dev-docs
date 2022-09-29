@@ -22,13 +22,4 @@ pre.dynabase.Gravity
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      Gravity.gravitylist
-      
-   
    

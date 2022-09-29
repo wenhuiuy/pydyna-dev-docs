@@ -1,6 +1,0 @@
-create\_load\_body
-==================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_load_body

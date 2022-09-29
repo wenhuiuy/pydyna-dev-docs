@@ -31,16 +31,4 @@ pre.dynabase.Constraint
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      Constraint.cnrbsetidlist
-      
-      
-      Constraint.jointsphericallist
-      
-   
    

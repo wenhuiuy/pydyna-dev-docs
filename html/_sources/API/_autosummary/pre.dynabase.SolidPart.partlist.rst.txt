@@ -1,6 +1,0 @@
-partlist
-========
-
-.. currentmodule:: pre.dynabase
-
-.. autoattribute:: SolidPart.partlist

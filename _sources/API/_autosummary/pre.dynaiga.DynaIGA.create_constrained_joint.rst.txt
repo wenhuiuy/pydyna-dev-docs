@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_constrained_joint

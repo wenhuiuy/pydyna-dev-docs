@@ -1,6 +1,0 @@
-create\_defineorientation
-=========================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_defineorientation

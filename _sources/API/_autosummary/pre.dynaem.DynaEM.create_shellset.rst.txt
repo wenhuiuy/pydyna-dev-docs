@@ -1,6 +1,0 @@
-create\_shellset
-================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_shellset

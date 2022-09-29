@@ -1,6 +1,0 @@
-create\_init\_vel\_bodies
-=========================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_init_vel_bodies

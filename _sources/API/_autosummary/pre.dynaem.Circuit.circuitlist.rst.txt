@@ -1,6 +1,0 @@
-circuitlist
-===========
-
-.. currentmodule:: pre.dynaem
-
-.. autoattribute:: Circuit.circuitlist

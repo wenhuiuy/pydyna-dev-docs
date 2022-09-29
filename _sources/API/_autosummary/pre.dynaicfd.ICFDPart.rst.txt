@@ -43,13 +43,4 @@ pre.dynaicfd.ICFDPart
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      ICFDPart.partlist
-      
-   
    

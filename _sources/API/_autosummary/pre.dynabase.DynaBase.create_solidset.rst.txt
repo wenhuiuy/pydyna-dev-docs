@@ -1,6 +1,0 @@
-create\_solidset
-================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_solidset

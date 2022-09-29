@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pre.dynasale
+
+.. automethod:: StructuredMesh.create

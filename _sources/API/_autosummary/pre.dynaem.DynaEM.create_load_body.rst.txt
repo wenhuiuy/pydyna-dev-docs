@@ -1,6 +1,0 @@
-create\_load\_body
-==================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_load_body

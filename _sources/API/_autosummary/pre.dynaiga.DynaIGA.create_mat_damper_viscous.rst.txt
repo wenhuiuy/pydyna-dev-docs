@@ -1,6 +1,0 @@
-create\_mat\_damper\_viscous
-============================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_mat_damper_viscous

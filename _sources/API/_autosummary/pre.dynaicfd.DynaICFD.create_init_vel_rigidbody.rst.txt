@@ -1,6 +1,0 @@
-create\_init\_vel\_rigidbody
-============================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_init_vel_rigidbody

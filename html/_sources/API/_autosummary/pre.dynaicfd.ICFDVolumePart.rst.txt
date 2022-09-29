@@ -25,13 +25,4 @@ pre.dynaicfd.ICFDVolumePart
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      ICFDVolumePart.partlist
-      
-   
    

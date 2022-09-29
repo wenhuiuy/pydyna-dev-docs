@@ -1,6 +1,0 @@
-create\_load\_body
-==================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_load_body

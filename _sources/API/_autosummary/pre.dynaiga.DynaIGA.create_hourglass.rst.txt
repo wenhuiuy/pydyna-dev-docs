@@ -1,6 +1,0 @@
-create\_hourglass
-=================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_hourglass

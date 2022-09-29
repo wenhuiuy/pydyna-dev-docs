@@ -1,6 +1,0 @@
-jointsphericallist
-==================
-
-.. currentmodule:: pre.dynabase
-
-.. autoattribute:: Constraint.jointsphericallist

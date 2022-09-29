@@ -449,10 +449,7 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ICFDCreateControlTime</span><span class="p">(</span><span class="n">ICFDControlTimeRequest</span><span class="p">(</span><span class="n">tim</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">termination</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">timestep</span><span class="p">))</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;ICFD control time Created...&quot;</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">create_section_icfd</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">ICFDPart</span><span class="o">.</span><span class="n">partlist</span><span class="p">:</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">set_property</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="n">ICFDVolumePart</span><span class="o">.</span><span class="n">partlist</span><span class="p">:</span>
-            <span class="n">obj</span><span class="o">.</span><span class="n">create</span><span class="p">()</span></div></div>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="n">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 
 <div class="viewcode-block" id="Compressible"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.Compressible.html#pre.dynaicfd.Compressible">[docs]</a><span class="k">class</span> <span class="nc">Compressible</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">VACUUM</span> <span class="o">=</span> <span class="mi">0</span>
@@ -500,14 +497,12 @@
 <div class="viewcode-block" id="ICFDPart"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.html#pre.dynaicfd.ICFDPart">[docs]</a><span class="k">class</span> <span class="nc">ICFDPart</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Define part for the incompressible flow solver.&quot;&quot;&quot;</span>
 
-    <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="nb">id</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;ICFD&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">secid</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
-        <span class="n">ICFDPart</span><span class="o">.</span><span class="n">partlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ICFDPart.set_material"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDPart.set_material.html#pre.dynaicfd.ICFDPart.set_material">[docs]</a>    <span class="k">def</span> <span class="nf">set_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set material.&quot;&quot;&quot;</span>
@@ -600,15 +595,13 @@
 <span class="sd">        List of Part IDs for the surface elements that define the volume mesh.</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-    <span class="n">partlist</span> <span class="o">=</span> <span class="p">[]</span>
-
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">surfaces</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">type</span> <span class="o">=</span> <span class="s2">&quot;ICFDVOLUME&quot;</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">id</span> <span class="o">=</span> <span class="nb">id</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">secid</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">mid</span> <span class="o">=</span> <span class="mi">0</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">surfaces</span> <span class="o">=</span> <span class="n">surfaces</span>
-        <span class="n">ICFDVolumePart</span><span class="o">.</span><span class="n">partlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span>
 
 <div class="viewcode-block" id="ICFDVolumePart.set_material"><a class="viewcode-back" href="../../API/_autosummary/pre.dynaicfd.ICFDVolumePart.set_material.html#pre.dynaicfd.ICFDVolumePart.set_material">[docs]</a>    <span class="k">def</span> <span class="nf">set_material</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">mat</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Set material.&quot;&quot;&quot;</span>

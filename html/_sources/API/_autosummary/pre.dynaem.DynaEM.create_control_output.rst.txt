@@ -1,6 +1,0 @@
-create\_control\_output
-=======================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.create_control_output

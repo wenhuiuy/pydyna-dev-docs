@@ -1,6 +1,0 @@
-create\_shellset
-================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.create_shellset

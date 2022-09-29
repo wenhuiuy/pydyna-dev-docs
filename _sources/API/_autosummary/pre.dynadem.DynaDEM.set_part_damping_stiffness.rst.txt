@@ -1,6 +1,0 @@
-set\_part\_damping\_stiffness
-=============================
-
-.. currentmodule:: pre.dynadem
-
-.. automethod:: DynaDEM.set_part_damping_stiffness

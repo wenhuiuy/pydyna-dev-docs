@@ -15,19 +15,10 @@ pre.dynasale.DynaSALE
    
       
       
-      DynaSALE.create_boundary_prescribed_motion
-      
-      
-      DynaSALE.create_constrained_extra_nodes
-      
-      
-      DynaSALE.create_constrained_joint
+      DynaSALE.add
       
       
       DynaSALE.create_control_contact
-      
-      
-      DynaSALE.create_control_output
       
       
       DynaSALE.create_control_shell
@@ -39,49 +30,7 @@ pre.dynasale.DynaSALE
       DynaSALE.create_damping_global
       
       
-      DynaSALE.create_defineorientation
-      
-      
       DynaSALE.create_general_keyword
-      
-      
-      DynaSALE.create_hourglass
-      
-      
-      DynaSALE.create_init_vel_bodies
-      
-      
-      DynaSALE.create_init_vel_rigidbody
-      
-      
-      DynaSALE.create_load_body
-      
-      
-      DynaSALE.create_mat_damper_nonlinear_viscous
-      
-      
-      DynaSALE.create_mat_damper_viscous
-      
-      
-      DynaSALE.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaSALE.create_mesh
-      
-      
-      DynaSALE.create_rigidwall_planar
-      
-      
-      DynaSALE.create_section_discrete
-      
-      
-      DynaSALE.create_section_solid
-      
-      
-      DynaSALE.create_shellset
-      
-      
-      DynaSALE.create_solidset
       
       
       DynaSALE.get_solid_elements
@@ -108,16 +57,10 @@ pre.dynasale.DynaSALE
       DynaSALE.set_hourglass
       
       
-      DynaSALE.set_init_velocity
-      
-      
       DynaSALE.set_output_database
       
       
       DynaSALE.set_output_interval
-      
-      
-      DynaSALE.set_part_damping_stiffness
       
       
       DynaSALE.set_termination

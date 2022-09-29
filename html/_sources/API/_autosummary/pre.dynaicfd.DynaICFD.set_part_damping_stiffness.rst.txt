@@ -1,6 +1,0 @@
-set\_part\_damping\_stiffness
-=============================
-
-.. currentmodule:: pre.dynaicfd
-
-.. automethod:: DynaICFD.set_part_damping_stiffness

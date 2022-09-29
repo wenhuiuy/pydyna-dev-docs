@@ -1,6 +1,0 @@
-create\_shellset
-================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_shellset

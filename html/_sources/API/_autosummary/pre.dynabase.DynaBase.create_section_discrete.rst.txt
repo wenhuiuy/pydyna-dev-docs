@@ -1,6 +1,0 @@
-create\_section\_discrete
-=========================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_section_discrete

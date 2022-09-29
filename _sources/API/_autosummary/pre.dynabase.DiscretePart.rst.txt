@@ -40,13 +40,4 @@ pre.dynabase.DiscretePart
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      DiscretePart.partlist
-      
-   
    

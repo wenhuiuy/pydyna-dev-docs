@@ -1,0 +1,6 @@
+add
+===
+
+.. currentmodule:: pre.dynadem
+
+.. automethod:: DynaDEM.add

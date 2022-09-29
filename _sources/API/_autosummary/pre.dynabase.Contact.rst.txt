@@ -46,13 +46,4 @@ pre.dynabase.Contact
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      Contact.contactlist
-      
-   
    

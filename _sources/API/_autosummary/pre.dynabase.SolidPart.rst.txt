@@ -40,13 +40,4 @@ pre.dynabase.SolidPart
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      SolidPart.partlist
-      
-   
    

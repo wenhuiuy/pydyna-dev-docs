@@ -1,6 +1,0 @@
-set\_part\_damping\_stiffness
-=============================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.set_part_damping_stiffness

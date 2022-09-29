@@ -15,19 +15,10 @@ pre.dynabase.DynaBase
    
       
       
-      DynaBase.create_boundary_prescribed_motion
-      
-      
-      DynaBase.create_constrained_extra_nodes
-      
-      
-      DynaBase.create_constrained_joint
+      DynaBase.add
       
       
       DynaBase.create_control_contact
-      
-      
-      DynaBase.create_control_output
       
       
       DynaBase.create_control_shell
@@ -39,46 +30,7 @@ pre.dynabase.DynaBase
       DynaBase.create_damping_global
       
       
-      DynaBase.create_defineorientation
-      
-      
       DynaBase.create_general_keyword
-      
-      
-      DynaBase.create_hourglass
-      
-      
-      DynaBase.create_init_vel_bodies
-      
-      
-      DynaBase.create_init_vel_rigidbody
-      
-      
-      DynaBase.create_load_body
-      
-      
-      DynaBase.create_mat_damper_nonlinear_viscous
-      
-      
-      DynaBase.create_mat_damper_viscous
-      
-      
-      DynaBase.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaBase.create_rigidwall_planar
-      
-      
-      DynaBase.create_section_discrete
-      
-      
-      DynaBase.create_section_solid
-      
-      
-      DynaBase.create_shellset
-      
-      
-      DynaBase.create_solidset
       
       
       DynaBase.get_solid_elements
@@ -100,15 +52,6 @@ pre.dynabase.DynaBase
       
       
       DynaBase.set_hourglass
-      
-      
-      DynaBase.set_init_velocity
-      
-      
-      DynaBase.set_output_database
-      
-      
-      DynaBase.set_part_damping_stiffness
       
       
       DynaBase.set_timestep

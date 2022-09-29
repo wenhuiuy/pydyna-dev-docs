@@ -15,6 +15,9 @@ pre.dynabase.ImplicitAnalysis
    
       
       
+      ImplicitAnalysis.create
+      
+      
       ImplicitAnalysis.set_dynamic
       
       

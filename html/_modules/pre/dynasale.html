@@ -232,11 +232,9 @@
     <span class="n">DONOR_CELL_WITH_HIS</span> <span class="o">=</span> <span class="mi">3</span>
     <span class="n">FINITE_VOLUME_METHOD</span> <span class="o">=</span> <span class="mi">6</span></div>
 
-
 <div class="viewcode-block" id="FillDirection"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.FillDirection.html#pre.dynasale.FillDirection">[docs]</a><span class="k">class</span> <span class="nc">FillDirection</span><span class="p">(</span><span class="n">Enum</span><span class="p">):</span>
     <span class="n">INSIDE_THE_GEOMETRY</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">OUTSIDE_THE_GEOMETRY</span> <span class="o">=</span> <span class="mi">1</span></div>
-
 
 <div class="viewcode-block" id="ControlPoint"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.ControlPoint.html#pre.dynasale.ControlPoint">[docs]</a><span class="k">class</span> <span class="nc">ControlPoint</span><span class="p">:</span>
     <span class="sd">&quot;&quot;&quot;Provide spacing information to generate a 3D structured ALE mesh.</span>
@@ -256,25 +254,18 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">position</span> <span class="o">=</span> <span class="n">position</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">ratio</span> <span class="o">=</span> <span class="n">ratio</span></div>
 
-
 <div class="viewcode-block" id="StructuredMesh"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.html#pre.dynasale.StructuredMesh">[docs]</a><span class="k">class</span> <span class="nc">StructuredMesh</span><span class="p">:</span>
-    <span class="sd">&quot;&quot;&quot;Generate a structured 2D or 3D mesh and invoke the Structured ALE (S-ALE) solver.</span>
+    <span class="sd">&quot;&quot;&quot;Generate a structured 2D or 3D mesh and invoke the Structured ALE (S-ALE) solver.&quot;&quot;&quot;</span>
 
-<span class="sd">    Parameters</span>
-<span class="sd">    ----------</span>
-<span class="sd">    meshid : int</span>
-<span class="sd">        S-ALE Mesh ID.</span>
-<span class="sd">    partid : int</span>
-<span class="sd">        Default Part ID. The elements generated are assigned to DPID.</span>
-<span class="sd">    &quot;&quot;&quot;</span>
-
-    <span class="n">num_meshpart</span> <span class="o">=</span> <span class="mi">0</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">stub</span><span class="p">,</span> <span class="n">meshid</span><span class="p">,</span> <span class="n">partid</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">meshid</span> <span class="o">=</span> <span class="n">meshid</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">partid</span> <span class="o">=</span> <span class="n">partid</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">stub</span>
-        <span class="n">StructuredMesh</span><span class="o">.</span><span class="n">num_meshpart</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control_points_x</span><span class="p">,</span> <span class="n">control_points_y</span><span class="p">,</span> <span class="n">control_points_z</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span> <span class="o">=</span> <span class="n">DynaBase</span><span class="o">.</span><span class="n">get_stub</span><span class="p">()</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_points_x</span> <span class="o">=</span> <span class="n">control_points_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_points_y</span> <span class="o">=</span> <span class="n">control_points_y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">control_points_z</span> <span class="o">=</span> <span class="n">control_points_z</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_x</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_y</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_z</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fillings</span> <span class="o">=</span> <span class="p">[]</span>
 
 <div class="viewcode-block" id="StructuredMesh.fill"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.fill.html#pre.dynasale.StructuredMesh.fill">[docs]</a>    <span class="k">def</span> <span class="nf">fill</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
@@ -308,31 +299,7 @@
 <span class="sd">        bool</span>
 <span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">material</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMultiMaterialGroup</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMultiMatGroupRequest</span><span class="p">(</span>
-                <span class="n">nmmgnm</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                <span class="n">mid</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">material_id</span><span class="p">,</span>
-                <span class="n">eosid</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">eos_id</span><span class="p">,</span>
-                <span class="n">pref</span><span class="o">=</span><span class="n">reference_pressure</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">geometry_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;NULL&quot;</span><span class="p">:</span>
-            <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshVolumeFilling</span><span class="p">(</span>
-                <span class="n">ALECreateStructuredMeshVolumeFillingRequest</span><span class="p">(</span>
-                    <span class="n">mshid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meshid</span><span class="p">,</span>
-                    <span class="n">ammgto</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-                    <span class="n">nsample</span><span class="o">=</span><span class="n">nsample</span><span class="p">,</span>
-                    <span class="n">geom</span><span class="o">=</span><span class="n">geometry_type</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span>
-                    <span class="n">vid</span><span class="o">=</span><span class="n">vid</span><span class="p">,</span>
-                    <span class="n">inout</span><span class="o">=</span><span class="n">inout</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
-                    <span class="n">e</span><span class="o">=</span><span class="n">define_geometry_parameters</span><span class="p">,</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> filled in Mesh </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">meshid</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">fillings</span><span class="o">.</span><span class="n">append</span><span class="p">([</span><span class="n">material</span><span class="p">,</span><span class="n">geometry_type</span><span class="p">,</span><span class="n">nsample</span><span class="p">,</span><span class="n">define_geometry_parameters</span><span class="p">,</span><span class="n">inout</span><span class="p">,</span><span class="n">vid</span><span class="p">,</span><span class="n">reference_pressure</span><span class="p">])</span></div>
 
 <div class="viewcode-block" id="StructuredMesh.refine"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.refine.html#pre.dynasale.StructuredMesh.refine">[docs]</a>    <span class="k">def</span> <span class="nf">refine</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">refine_factor_x</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">refine_factor_y</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">refine_factor_z</span><span class="o">=</span><span class="mi">1</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Refine existing structured ALE (S-ALE) meshes.</span>
@@ -341,41 +308,107 @@
 <span class="sd">        ----------</span>
 <span class="sd">        refine_factor_x/y/y : int</span>
 <span class="sd">            Refinement factor for each local direction.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshRefine</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshRefineRequest</span><span class="p">(</span>
-                <span class="n">mshid</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">meshid</span><span class="p">,</span>
-                <span class="n">ifx</span><span class="o">=</span><span class="n">refine_factor_x</span><span class="p">,</span>
-                <span class="n">ify</span><span class="o">=</span><span class="n">refine_factor_y</span><span class="p">,</span>
-                <span class="n">ifz</span><span class="o">=</span><span class="n">refine_factor_z</span><span class="p">,</span>
-            <span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">meshid</span><span class="si">}</span><span class="s2"> Refined...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_x</span> <span class="o">=</span> <span class="n">refine_factor_x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_y</span> <span class="o">=</span> <span class="n">refine_factor_y</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_z</span> <span class="o">=</span> <span class="n">refine_factor_z</span></div>
 
 <div class="viewcode-block" id="StructuredMesh.initial_detonation"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.initial_detonation.html#pre.dynasale.StructuredMesh.initial_detonation">[docs]</a>    <span class="k">def</span> <span class="nf">initial_detonation</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">detonation_point</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Define points to initiate the location of high explosive detonations.</span>
 
 <span class="sd">        Parameters</span>
 <span class="sd">        ----------</span>
-<span class="sd">        detonation_point : list [x,y,z]</span>
+<span class="sd">        detonation_point : Point</span>
 <span class="sd">            x,y,z-coordinate of detonation point.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
 <span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">partid</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">partid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateInitDetonation</span><span class="p">(</span><span class="n">InitDetonationRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="n">detonation_point</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location of high explosive detonation Defined...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div></div>
+        <span class="bp">self</span><span class="o">.</span><span class="n">detonation_point</span> <span class="o">=</span> <span class="n">detonation_point</span></div>
 
+<div class="viewcode-block" id="StructuredMesh.create"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.StructuredMesh.create.html#pre.dynasale.StructuredMesh.create">[docs]</a>    <span class="k">def</span> <span class="nf">create</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Create mesh.&quot;&quot;&quot;</span>
+        <span class="n">nx</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">xx</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ratiox</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_x</span><span class="p">)):</span>
+            <span class="n">nx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">xx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+            <span class="n">ratiox</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
+        <span class="n">ny</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">xy</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ratioy</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_y</span><span class="p">)):</span>
+            <span class="n">ny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">xy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+            <span class="n">ratioy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
+        <span class="n">nz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">xz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">ratioz</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_z</span><span class="p">)):</span>
+            <span class="n">nz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
+            <span class="n">xz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
+            <span class="n">ratioz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
+
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nx</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xx</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratiox</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">cpidx</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">ny</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioy</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">cpidy</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xz</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioz</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">cpidz</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMesh</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMeshRequest</span><span class="p">(</span><span class="n">nbid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">ebid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">cpidx</span><span class="o">=</span><span class="n">cpidx</span><span class="p">,</span> <span class="n">cpidy</span><span class="o">=</span><span class="n">cpidy</span><span class="p">,</span> <span class="n">cpidz</span><span class="o">=</span><span class="n">cpidz</span><span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">meshid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">meshid</span>
+        <span class="n">partid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">partid</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ALE Structured mesh </span><span class="si">{</span><span class="n">meshid</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
+
+        <span class="k">for</span> <span class="n">obj</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">fillings</span><span class="p">:</span>
+            <span class="n">material</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+            <span class="n">geometry_type</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+            <span class="n">nsample</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+            <span class="n">define_geometry_parameters</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+            <span class="n">inout</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>
+            <span class="n">vid</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span>
+            <span class="n">reference_pressure</span> <span class="o">=</span> <span class="n">obj</span><span class="p">[</span><span class="mi">6</span><span class="p">]</span>
+            <span class="n">material</span><span class="o">.</span><span class="n">create</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">)</span>
+        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMultiMaterialGroup</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMultiMatGroupRequest</span><span class="p">(</span>
+                <span class="n">nmmgnm</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                <span class="n">mid</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">material_id</span><span class="p">,</span>
+                <span class="n">eosid</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">eos_id</span><span class="p">,</span>
+                <span class="n">pref</span><span class="o">=</span><span class="n">reference_pressure</span><span class="p">,</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">geometry_type</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="o">!=</span> <span class="s2">&quot;NULL&quot;</span><span class="p">:</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshVolumeFilling</span><span class="p">(</span>
+                <span class="n">ALECreateStructuredMeshVolumeFillingRequest</span><span class="p">(</span>
+                    <span class="n">mshid</span><span class="o">=</span><span class="n">meshid</span><span class="p">,</span>
+                    <span class="n">ammgto</span><span class="o">=</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
+                    <span class="n">nsample</span><span class="o">=</span><span class="n">nsample</span><span class="p">,</span>
+                    <span class="n">geom</span><span class="o">=</span><span class="n">geometry_type</span><span class="o">.</span><span class="n">upper</span><span class="p">(),</span>
+                    <span class="n">vid</span><span class="o">=</span><span class="n">vid</span><span class="p">,</span>
+                    <span class="n">inout</span><span class="o">=</span><span class="n">inout</span><span class="o">.</span><span class="n">value</span><span class="p">,</span>
+                    <span class="n">e</span><span class="o">=</span><span class="n">define_geometry_parameters</span><span class="p">,</span>
+                <span class="p">)</span>
+            <span class="p">)</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Material </span><span class="si">{</span><span class="n">material</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> filled in Mesh </span><span class="si">{</span><span class="n">meshid</span><span class="si">}</span><span class="s2">...&quot;</span><span class="p">)</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshRefine</span><span class="p">(</span>
+            <span class="n">ALECreateStructuredMeshRefineRequest</span><span class="p">(</span>
+                <span class="n">mshid</span><span class="o">=</span><span class="n">meshid</span><span class="p">,</span>
+                <span class="n">ifx</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_x</span><span class="p">,</span>
+                <span class="n">ify</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_y</span><span class="p">,</span>
+                <span class="n">ifz</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">refine_factor_z</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Mesh </span><span class="si">{</span><span class="n">meshid</span><span class="si">}</span><span class="s2"> Refined...&quot;</span><span class="p">)</span>
+        <span class="n">dpoint</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">detonation_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">detonation_point</span><span class="o">.</span><span class="n">y</span><span class="p">,</span><span class="bp">self</span><span class="o">.</span><span class="n">detonation_point</span><span class="o">.</span><span class="n">z</span><span class="p">]</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateInitDetonation</span><span class="p">(</span><span class="n">InitDetonationRequest</span><span class="p">(</span><span class="n">pid</span><span class="o">=</span><span class="n">partid</span><span class="p">,</span> <span class="n">coord</span><span class="o">=</span><span class="n">dpoint</span><span class="p">,</span> <span class="n">lt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
+        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Location of high explosive detonation Defined...&quot;</span><span class="p">)</span></div></div>
 
 <div class="viewcode-block" id="DynaSALE"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.html#pre.dynasale.DynaSALE">[docs]</a><span class="k">class</span> <span class="nc">DynaSALE</span><span class="p">(</span><span class="n">DynaBase</span><span class="p">):</span>
     <span class="sd">&quot;&quot;&quot;Setup SALE simulation process.&quot;&quot;&quot;</span>
@@ -451,65 +484,6 @@
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Setup Analysis...&quot;</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">ret</span></div>
 
-<div class="viewcode-block" id="DynaSALE.create_mesh"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.create_mesh.html#pre.dynasale.DynaSALE.create_mesh">[docs]</a>    <span class="k">def</span> <span class="nf">create_mesh</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">control_points_x</span><span class="p">,</span> <span class="n">control_points_y</span><span class="p">,</span> <span class="n">control_points_z</span><span class="p">):</span>
-        <span class="sd">&quot;&quot;&quot;Create mesh.</span>
-
-<span class="sd">        Parameters</span>
-<span class="sd">        ----------</span>
-<span class="sd">        control_points_x/y/z : list [[N1,X1,ratio1],[N2,X2,ratio2],...]</span>
-<span class="sd">            Defines a one-dimensional mesh using control points. Each control point</span>
-<span class="sd">            consists of a node number (N) and a coordinate (X).</span>
-<span class="sd">            ratio : Ratio for progressive mesh spacing.</span>
-
-<span class="sd">        Returns</span>
-<span class="sd">        -------</span>
-<span class="sd">        bool</span>
-<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
-<span class="sd">        &quot;&quot;&quot;</span>
-        <span class="n">nx</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">xx</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">ratiox</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">control_points_x</span><span class="p">)):</span>
-            <span class="n">nx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
-            <span class="n">xx</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
-            <span class="n">ratiox</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_x</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
-        <span class="n">ny</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">xy</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">ratioy</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">control_points_y</span><span class="p">)):</span>
-            <span class="n">ny</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
-            <span class="n">xy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
-            <span class="n">ratioy</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_y</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
-        <span class="n">nz</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">xz</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">ratioz</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">control_points_z</span><span class="p">)):</span>
-            <span class="n">nz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">number</span><span class="p">)</span>
-            <span class="n">xz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">position</span><span class="p">)</span>
-            <span class="n">ratioz</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">control_points_z</span><span class="p">[</span><span class="n">i</span><span class="p">]</span><span class="o">.</span><span class="n">ratio</span><span class="p">)</span>
-
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nx</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xx</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratiox</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">cpidx</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">ny</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xy</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioy</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">cpidy</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMeshCtrlPoints</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshControlPointsRequest</span><span class="p">(</span><span class="n">icase</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">sfo</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">n</span><span class="o">=</span><span class="n">nz</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">xz</span><span class="p">,</span> <span class="n">ratio</span><span class="o">=</span><span class="n">ratioz</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">cpidz</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">cpid</span>
-        <span class="n">ret</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">ALECreateStructuredMesh</span><span class="p">(</span>
-            <span class="n">ALECreateStructuredMeshRequest</span><span class="p">(</span><span class="n">nbid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">ebid</span><span class="o">=</span><span class="mi">2000001</span><span class="p">,</span> <span class="n">cpidx</span><span class="o">=</span><span class="n">cpidx</span><span class="p">,</span> <span class="n">cpidy</span><span class="o">=</span><span class="n">cpidy</span><span class="p">,</span> <span class="n">cpidz</span><span class="o">=</span><span class="n">cpidz</span><span class="p">)</span>
-        <span class="p">)</span>
-        <span class="n">meshid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">meshid</span>
-        <span class="n">partid</span> <span class="o">=</span> <span class="n">ret</span><span class="o">.</span><span class="n">partid</span>
-        <span class="n">mesh</span> <span class="o">=</span> <span class="n">StructuredMesh</span><span class="p">(</span><span class="n">stub</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="p">,</span> <span class="n">meshid</span><span class="o">=</span><span class="n">meshid</span><span class="p">,</span> <span class="n">partid</span><span class="o">=</span><span class="n">partid</span><span class="p">)</span>
-
-        <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;ALE Structured mesh </span><span class="si">{</span><span class="n">meshid</span><span class="si">}</span><span class="s2"> Created...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">mesh</span></div>
-
 <div class="viewcode-block" id="DynaSALE.set_output_database"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.set_output_database.html#pre.dynasale.DynaSALE.set_output_database">[docs]</a>    <span class="k">def</span> <span class="nf">set_output_database</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">matsum</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">glstat</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
         <span class="sd">&quot;&quot;&quot;Obtain output files containing results information.</span>
 
@@ -531,7 +505,21 @@
             <span class="bp">self</span><span class="o">.</span><span class="n">stub</span><span class="o">.</span><span class="n">CreateDBAscii</span><span class="p">(</span><span class="n">DBAsciiRequest</span><span class="p">(</span><span class="nb">type</span><span class="o">=</span><span class="s2">&quot;GLSTAT&quot;</span><span class="p">,</span> <span class="n">dt</span><span class="o">=</span><span class="n">glstat</span><span class="p">,</span> <span class="n">binary</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">lcur</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">ioopt</span><span class="o">=</span><span class="mi">0</span><span class="p">))</span>
         <span class="n">ret</span> <span class="o">=</span> <span class="mi">1</span>
         <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Output Setting...&quot;</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ret</span></div></div>
+        <span class="k">return</span> <span class="n">ret</span></div>
+
+<div class="viewcode-block" id="DynaSALE.save_file"><a class="viewcode-back" href="../../API/_autosummary/pre.dynasale.DynaSALE.save_file.html#pre.dynasale.DynaSALE.save_file">[docs]</a>    <span class="k">def</span> <span class="nf">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="sd">&quot;&quot;&quot;Save keyword files.</span>
+
+<span class="sd">        Returns</span>
+<span class="sd">        -------</span>
+<span class="sd">        bool</span>
+<span class="sd">            &quot;True&quot; when successful, &quot;False&quot; when failed</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">set_energy</span><span class="p">(</span>
+            <span class="n">hourglass_energy</span><span class="o">=</span><span class="n">EnergyFlag</span><span class="o">.</span><span class="n">COMPUTED</span><span class="p">,</span>
+            <span class="n">sliding_interface_energy</span><span class="o">=</span><span class="n">EnergyFlag</span><span class="o">.</span><span class="n">COMPUTED</span><span class="p">,</span>
+        <span class="p">)</span>
+        <span class="n">DynaBase</span><span class="o">.</span><span class="n">save_file</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span></div></div>
 </pre></div>
 
               </article>

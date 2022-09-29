@@ -15,19 +15,10 @@ pre.dynaiga.DynaIGA
    
       
       
-      DynaIGA.create_boundary_prescribed_motion
-      
-      
-      DynaIGA.create_constrained_extra_nodes
-      
-      
-      DynaIGA.create_constrained_joint
+      DynaIGA.add
       
       
       DynaIGA.create_control_contact
-      
-      
-      DynaIGA.create_control_output
       
       
       DynaIGA.create_control_shell
@@ -39,49 +30,10 @@ pre.dynaiga.DynaIGA
       DynaIGA.create_damping_global
       
       
-      DynaIGA.create_defineorientation
-      
-      
       DynaIGA.create_general_keyword
       
       
-      DynaIGA.create_hourglass
-      
-      
-      DynaIGA.create_init_vel_bodies
-      
-      
-      DynaIGA.create_init_vel_rigidbody
-      
-      
-      DynaIGA.create_load_body
-      
-      
-      DynaIGA.create_mat_damper_nonlinear_viscous
-      
-      
-      DynaIGA.create_mat_damper_viscous
-      
-      
-      DynaIGA.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaIGA.create_rigidwall_planar
-      
-      
-      DynaIGA.create_section_discrete
-      
-      
       DynaIGA.create_section_igashell
-      
-      
-      DynaIGA.create_section_solid
-      
-      
-      DynaIGA.create_shellset
-      
-      
-      DynaIGA.create_solidset
       
       
       DynaIGA.get_solid_elements
@@ -103,15 +55,6 @@ pre.dynaiga.DynaIGA
       
       
       DynaIGA.set_hourglass
-      
-      
-      DynaIGA.set_init_velocity
-      
-      
-      DynaIGA.set_output_database
-      
-      
-      DynaIGA.set_part_damping_stiffness
       
       
       DynaIGA.set_timestep

@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_constrained_joint

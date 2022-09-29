@@ -1,6 +1,0 @@
-create\_constrained\_joint
-==========================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.create_constrained_joint

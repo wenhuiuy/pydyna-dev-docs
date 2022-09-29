@@ -1,6 +1,0 @@
-create\_mat\_damper\_nonlinear\_viscous
-=======================================
-
-.. currentmodule:: pre.dynasale
-
-.. automethod:: DynaSALE.create_mat_damper_nonlinear_viscous

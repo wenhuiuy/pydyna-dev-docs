@@ -33,6 +33,9 @@ pre.dynasolution.DynaSolution
       DynaSolution.save_file
       
       
+      DynaSolution.set_output_database
+      
+      
       DynaSolution.set_termination
       
    

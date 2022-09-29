@@ -1,6 +1,0 @@
-set\_init\_velocity
-===================
-
-.. currentmodule:: pre.dynabase
-
-.. automethod:: DynaBase.set_init_velocity

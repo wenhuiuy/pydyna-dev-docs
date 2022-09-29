@@ -1,0 +1,6 @@
+create
+======
+
+.. currentmodule:: pre.dynabase
+
+.. automethod:: BoundaryCondition.create

@@ -15,22 +15,13 @@ pre.dynaem.DynaEM
    
       
       
+      DynaEM.add
+      
+      
       DynaEM.create_Permanent_magnet
       
       
-      DynaEM.create_boundary_prescribed_motion
-      
-      
-      DynaEM.create_constrained_extra_nodes
-      
-      
-      DynaEM.create_constrained_joint
-      
-      
       DynaEM.create_control_contact
-      
-      
-      DynaEM.create_control_output
       
       
       DynaEM.create_control_shell
@@ -40,9 +31,6 @@ pre.dynaem.DynaEM
       
       
       DynaEM.create_damping_global
-      
-      
-      DynaEM.create_defineorientation
       
       
       DynaEM.create_em_contact
@@ -78,42 +66,6 @@ pre.dynaem.DynaEM
       DynaEM.create_general_keyword
       
       
-      DynaEM.create_hourglass
-      
-      
-      DynaEM.create_init_vel_bodies
-      
-      
-      DynaEM.create_init_vel_rigidbody
-      
-      
-      DynaEM.create_load_body
-      
-      
-      DynaEM.create_mat_damper_nonlinear_viscous
-      
-      
-      DynaEM.create_mat_damper_viscous
-      
-      
-      DynaEM.create_mat_spring_nonlinear_elastic
-      
-      
-      DynaEM.create_rigidwall_planar
-      
-      
-      DynaEM.create_section_discrete
-      
-      
-      DynaEM.create_section_solid
-      
-      
-      DynaEM.create_shellset
-      
-      
-      DynaEM.create_solidset
-      
-      
       DynaEM.get_solid_elements
       
       
@@ -133,15 +85,6 @@ pre.dynaem.DynaEM
       
       
       DynaEM.set_hourglass
-      
-      
-      DynaEM.set_init_velocity
-      
-      
-      DynaEM.set_output_database
-      
-      
-      DynaEM.set_part_damping_stiffness
       
       
       DynaEM.set_rogowsky_coil_to_output_current

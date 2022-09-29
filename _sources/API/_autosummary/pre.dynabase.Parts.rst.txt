@@ -1,0 +1,28 @@
+pre.dynabase.Parts
+==================
+
+.. currentmodule:: pre.dynabase
+
+.. autoclass:: Parts
+
+   
+
+   
+   .. rubric:: Methods
+
+   .. autosummary::
+      :toctree:
+   
+      
+      
+      Parts.add
+      
+      
+      Parts.set_property
+      
+   
+   
+
+   
+   
+   

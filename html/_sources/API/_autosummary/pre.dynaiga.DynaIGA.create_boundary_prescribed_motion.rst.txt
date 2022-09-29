@@ -1,6 +1,0 @@
-create\_boundary\_prescribed\_motion
-====================================
-
-.. currentmodule:: pre.dynaiga
-
-.. automethod:: DynaIGA.create_boundary_prescribed_motion

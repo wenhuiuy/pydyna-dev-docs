@@ -1,6 +1,0 @@
-set\_output\_database
-=====================
-
-.. currentmodule:: pre.dynaem
-
-.. automethod:: DynaEM.set_output_database

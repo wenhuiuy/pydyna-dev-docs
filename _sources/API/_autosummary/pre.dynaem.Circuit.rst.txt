@@ -25,13 +25,4 @@ pre.dynaem.Circuit
 
    
    
-   .. rubric:: Attributes
-
-   .. autosummary::
-      :toctree:
-   
-      
-      Circuit.circuitlist
-      
-   
    

@@ -32,6 +32,7 @@
       Contact
       ContactCategory
       ContactFormulation
+      ContactGroup
       ContactSurface
       ContactType
       Curve
@@ -58,6 +59,7 @@
       OffsetType
       Part
       PartSet
+      Parts
       Point
       RigidwallCylinder
       RigidwallPlanar

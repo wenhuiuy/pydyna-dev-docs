@@ -15,13 +15,7 @@ pre.dynaicfd.DynaICFD
    
       
       
-      DynaICFD.create_boundary_prescribed_motion
-      
-      
-      DynaICFD.create_constrained_extra_nodes
-      
-      
-      DynaICFD.create_constrained_joint
+      DynaICFD.add
       
       
       DynaICFD.create_control_contact
@@ -48,52 +42,13 @@ pre.dynaicfd.DynaICFD
       DynaICFD.create_damping_global
       
       
-      DynaICFD.create_defineorientation
-      
-      
       DynaICFD.create_general_keyword
-      
-      
-      DynaICFD.create_hourglass
-      
-      
-      DynaICFD.create_init_vel_bodies
-      
-      
-      DynaICFD.create_init_vel_rigidbody
-      
-      
-      DynaICFD.create_load_body
-      
-      
-      DynaICFD.create_mat_damper_nonlinear_viscous
-      
-      
-      DynaICFD.create_mat_damper_viscous
-      
-      
-      DynaICFD.create_mat_spring_nonlinear_elastic
       
       
       DynaICFD.create_part_icfd
       
       
-      DynaICFD.create_rigidwall_planar
-      
-      
-      DynaICFD.create_section_discrete
-      
-      
       DynaICFD.create_section_icfd
-      
-      
-      DynaICFD.create_section_solid
-      
-      
-      DynaICFD.create_shellset
-      
-      
-      DynaICFD.create_solidset
       
       
       DynaICFD.create_solver_tol_mmov
@@ -124,15 +79,6 @@ pre.dynaicfd.DynaICFD
       
       
       DynaICFD.set_hourglass
-      
-      
-      DynaICFD.set_init_velocity
-      
-      
-      DynaICFD.set_output_database
-      
-      
-      DynaICFD.set_part_damping_stiffness
       
       
       DynaICFD.set_termination
